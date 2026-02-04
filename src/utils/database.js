@@ -1,0 +1,170 @@
+// src/utils/database.js
+import { 
+  doc, 
+  getDoc, 
+  setDoc, 
+  updateDoc,
+  collection,
+  query,
+  where,
+  orderBy,
+  limit,
+  getDocs,
+  Timestamp
+} from 'firebase/firestore';
+import { db } from '../config/firebase';
+import { getTodayKey, calculateStreak } from './helpers';
+
+// ============================================
+// USER FUNCTIONS
+// ============================================
+
+// Get or create user profile
+export const getUserProfile = async (userId) => {
+  const userRef = doc(db, 'users', odLLuserId);
+  const userSnap = await getDoc(userRef);
+
+  if (userSnap.exists()) {
+    return { id: odLLuserId, ...userSnap.data() };
+  }
+  return null;
+};
+
+// Create new user profile
+export const createUserProfile = async (userId, displayName) => {
+  const userRef = doc(db, 'users', odLLuserId);
+  const userData = {
+    displayName,
+    streak: 0,
+    longestStreak: 0,
+    totalGames: 0,
+    totalCorrect: 0,
+    lastPlayed: null,
+    createdAt: Timestamp.now()
+  };
+
+  await setDoc(userRef, userData);
+  return { id: odLLuserId, ...userData };
+};
+
+// Update user after completing a game
+export const updateUserStats = async (userId, score, totalQuestions) => {
+  const userRef = doc(db, 'users', odLLuserId);
+  const userSnap = await getDoc(userRef);
+
+  if (!userSnap.exists()) return null;
+
+  const userData = userSnap.data();
+  const today = getTodayKey();
+  const newStreak = calculateStreak(userData.lastPlayed, userData.streak);
+  const longestStreak = Math.max(newStreak, userData.longestStreak || 0);
+
+  const updates = {
+    streak: newStreak,
+    longestStreak,
+    totalGames: userData.totalGames + 1,
+    totalCorrect: userData.totalCorrect + score,
+    lastPlayed: today
+  };
+
+  await updateDoc(userRef, updates);
+  return { id: odLLuserId, ...userData, ...updates };
+};
+
+// ============================================
+// SCORE FUNCTIONS
+// ============================================
+
+// Save a score for today
+export const saveScore = async (userId, displayName, score, totalQuestions) => {
+  const today = getTodayKey();
+  const scoreId = `${odLLuserId}_${today}`;
+  const scoreRef = doc(db, 'scores', scoreId);
+
+  const scoreData = {
+    odLLuserId,
+    displayName,
+    score,
+    totalQuestions,
+    date: today,
+    timestamp: Timestamp.now()
+  };
+
+  await setDoc(scoreRef, scoreData);
+  return scoreData;
+};
+
+// Check if user already played today
+export const hasPlayedToday = async (userId) => {
+  const today = getTodayKey();
+  const scoreId = `${odLLuserId}_${today}`;
+  const scoreRef = doc(db, 'scores', scoreId);
+  const scoreSnap = await getDoc(scoreRef);
+
+  return scoreSnap.exists() ? scoreSnap.data() : null;
+};
+
+// Get today's leaderboard
+export const getTodayLeaderboard = async () => {
+  const today = getTodayKey();
+  const scoresRef = collection(db, 'scores');
+  const q = query(
+    scoresRef,
+    where('date', '==', today),
+    orderBy('score', 'desc'),
+    limit(50)
+  );
+
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+};
+
+// Get weekly leaderboard (aggregated scores)
+export const getWeeklyLeaderboard = async () => {
+  const today = new Date();
+  const weekAgo = new Date(today);
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const weekAgoKey = `${weekAgo.getFullYear()}-${String(weekAgo.getMonth() + 1).padStart(2, '0')}-${String(weekAgo.getDate()).padStart(2, '0')}`;
+
+  const scoresRef = collection(db, 'scores');
+  const q = query(
+    scoresRef,
+    where('date', '>=', weekAgoKey),
+    orderBy('date', 'desc')
+  );
+
+  const snapshot = await getDocs(q);
+  const scores = snapshot.docs.map(doc => doc.data());
+
+  // Aggregate by user
+  const userScores = {};
+  scores.forEach(score => {
+    if (!userScores[score.odLLuserId]) {
+      userScores[score.odLLuserId] = {
+        odLLuserId: score.odLLuserId,
+        displayName: score.displayName,
+        totalScore: 0,
+        gamesPlayed: 0
+      };
+    }
+    userScores[score.odLLuserId].totalScore += score.score;
+    userScores[score.odLLuserId].gamesPlayed += 1;
+  });
+
+  // Sort by total score
+  return Object.values(userScores).sort((a, b) => b.totalScore - a.totalScore);
+};
+
+// Get user's score history
+export const getUserScoreHistory = async (userId, limitCount = 30) => {
+  const scoresRef = collection(db, 'scores');
+  const q = query(
+    scoresRef,
+    where('odLLuserId', '==', odLLuserId),
+    orderBy('date', 'desc'),
+    limit(limitCount)
+  );
+
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+};
