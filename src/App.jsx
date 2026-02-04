@@ -45,51 +45,51 @@ export default function App() {
   const [todayLeaderboard, setTodayLeaderboard] = useState([]);
   const [weeklyLeaderboard, setWeeklyLeaderboard] = useState([]);
 
-  // Listen to auth state
+  // Handle auth state and redirect result
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
-      setUser(firebaseUser);
-      
-      if (firebaseUser) {
-        // Get or create user profile
-        let profile = await getUserProfile(firebaseUser.uid);
-        if (!profile) {
-          profile = await createUserProfile(
-            firebaseUser.uid, 
-            firebaseUser.displayName || 'Player'
-          );
-        }
-        setUserProfile(profile);
+    let unsubscribe;
 
-        // Check if already played today
-        const todayResult = await hasPlayedToday(firebaseUser.uid);
-        setTodayScore(todayResult);
-        setLastCheckedDate(getTodayKey());
-      } else {
-        setUserProfile(null);
-        setTodayScore(null);
-      }
-      
-      setAuthLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  // Handle redirect result (for mobile sign-in)
-  useEffect(() => {
-    const handleRedirectResult = async () => {
+    const initAuth = async () => {
+      // First, check for redirect result (important for mobile sign-in)
       try {
-        const result = await getRedirectResult(auth);
-        if (result) {
-          // User successfully signed in via redirect
-          // The onAuthStateChanged listener will handle the rest
-        }
+        await getRedirectResult(auth);
       } catch (error) {
         console.error('Redirect sign in error:', error);
       }
+
+      // Then listen to auth state changes
+      unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+        setUser(firebaseUser);
+
+        if (firebaseUser) {
+          // Get or create user profile
+          let profile = await getUserProfile(firebaseUser.uid);
+          if (!profile) {
+            profile = await createUserProfile(
+              firebaseUser.uid,
+              firebaseUser.displayName || 'Player'
+            );
+          }
+          setUserProfile(profile);
+
+          // Check if already played today
+          const todayResult = await hasPlayedToday(firebaseUser.uid);
+          setTodayScore(todayResult);
+          setLastCheckedDate(getTodayKey());
+        } else {
+          setUserProfile(null);
+          setTodayScore(null);
+        }
+
+        setAuthLoading(false);
+      });
     };
-    handleRedirectResult();
+
+    initAuth();
+
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
   }, []);
 
   // Recheck if date has changed when app regains focus/visibility
