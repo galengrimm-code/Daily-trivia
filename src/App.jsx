@@ -179,8 +179,8 @@ export default function App() {
       setShowFeedback(false);
     } else {
       // Quiz complete - calculate and save score
-      const finalScore = answers.filter(a => a.correct).length + 
-        (selectedAnswer === todaysQuestions[currentQuestion].correct ? 1 : 0);
+      // answers array already includes all responses including the last one
+      const finalScore = answers.filter(a => a.correct).length;
       
       // Save to Firebase
       await saveScore(
@@ -205,8 +205,7 @@ export default function App() {
 
   // Get current score during quiz
   const getScore = () => {
-    return answers.filter(a => a.correct).length +
-      (showFeedback && selectedAnswer === todaysQuestions[currentQuestion]?.correct ? 1 : 0);
+    return answers.filter(a => a.correct).length;
   };
 
   // Load leaderboard data
