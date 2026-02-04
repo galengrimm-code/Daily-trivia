@@ -1,9 +1,11 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react';
-import { 
-  signInWithPopup, 
-  signOut, 
-  onAuthStateChanged 
+import {
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+  signOut,
+  onAuthStateChanged
 } from 'firebase/auth';
 import { auth, googleProvider } from './config/firebase';
 import {
@@ -16,7 +18,7 @@ import {
   getWeeklyLeaderboard
 } from './utils/database';
 import { loadTodaysQuestions } from './utils/api';
-import { CATEGORIES, ALL_CATEGORIES } from './utils/helpers';
+import { CATEGORIES, ALL_CATEGORIES, getTodayKey } from './utils/helpers';
 import { 
   Trophy, Star, Flame, ChevronRight, Check, X, 
   RotateCcw, Share2, Home, Award, Zap, Loader, LogOut 
@@ -37,6 +39,7 @@ export default function App() {
   const [todaysQuestions, setTodaysQuestions] = useState([]);
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(false);
   const [todayScore, setTodayScore] = useState(null);
+  const [lastCheckedDate, setLastCheckedDate] = useState(null);
 
   // Leaderboard state
   const [todayLeaderboard, setTodayLeaderboard] = useState([]);
@@ -60,9 +63,8 @@ export default function App() {
 
         // Check if already played today
         const todayResult = await hasPlayedToday(firebaseUser.uid);
-        if (todayResult) {
-          setTodayScore(todayResult);
-        }
+        setTodayScore(todayResult);
+        setLastCheckedDate(getTodayKey());
       } else {
         setUserProfile(null);
         setTodayScore(null);
@@ -74,10 +76,63 @@ export default function App() {
     return () => unsubscribe();
   }, []);
 
+  // Handle redirect result (for mobile sign-in)
+  useEffect(() => {
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth);
+        if (result) {
+          // User successfully signed in via redirect
+          // The onAuthStateChanged listener will handle the rest
+        }
+      } catch (error) {
+        console.error('Redirect sign in error:', error);
+      }
+    };
+    handleRedirectResult();
+  }, []);
+
+  // Recheck if date has changed when app regains focus/visibility
+  useEffect(() => {
+    const recheckForNewDay = async () => {
+      const today = getTodayKey();
+      if (user && lastCheckedDate && lastCheckedDate !== today) {
+        // Date has changed, recheck if user played today
+        const todayResult = await hasPlayedToday(user.uid);
+        setTodayScore(todayResult);
+        setLastCheckedDate(today);
+        // Reset to home screen for the new day
+        if (!todayResult) {
+          setScreen('home');
+        }
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        recheckForNewDay();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', recheckForNewDay);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', recheckForNewDay);
+    };
+  }, [user, lastCheckedDate]);
+
   // Sign in with Google
   const handleSignIn = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      // Use redirect for mobile (popups don't work well on mobile)
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        await signInWithRedirect(auth, googleProvider);
+      } else {
+        await signInWithPopup(auth, googleProvider);
+      }
     } catch (error) {
       console.error('Sign in error:', error);
     }

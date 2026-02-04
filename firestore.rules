@@ -18,12 +18,23 @@ service cloud.firestore {
     match /scores/{scoreId} {
       // Anyone authenticated can read scores (for leaderboard)
       allow read: if request.auth != null;
-      
+
       // Users can only create their own scores
-      allow create: if request.auth != null 
+      allow create: if request.auth != null
         && request.resource.data.userId == request.auth.uid;
-      
+
       // Scores cannot be updated or deleted (prevents cheating)
+      allow update, delete: if false;
+    }
+
+    // Daily questions collection
+    match /dailyQuestions/{date} {
+      // Anyone authenticated can read today's questions
+      allow read: if request.auth != null;
+
+      // Anyone authenticated can create questions (first player of the day)
+      // But cannot update or delete once created
+      allow create: if request.auth != null;
       allow update, delete: if false;
     }
   }

@@ -1,5 +1,6 @@
 // src/utils/api.js
 import { decodeHTML, shuffleArray, seededRandom, getTodaySeed, CATEGORIES } from './helpers';
+import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB } from './database';
 import bibleQuestions from '../data/bibleQuestions';
 
 // Fallback questions if API fails
@@ -80,8 +81,8 @@ export const getFallbackQuestion = (category, seedOffset = 0) => {
   return { ...questions[index] };
 };
 
-// Load all questions for today
-export const loadTodaysQuestions = async () => {
+// Generate fresh questions (called only when no questions exist for today)
+const generateTodaysQuestions = async () => {
   const questions = [];
   const categories = Object.keys(CATEGORIES);
 
@@ -107,6 +108,21 @@ export const loadTodaysQuestions = async () => {
       }
     }
   }
+
+  return questions;
+};
+
+// Load all questions for today (checks Firebase first, generates if needed)
+export const loadTodaysQuestions = async () => {
+  // Check if questions already exist for today
+  const existingQuestions = await getTodaysQuestionsFromDB();
+  if (existingQuestions) {
+    return existingQuestions;
+  }
+
+  // Generate new questions and save to Firebase
+  const questions = await generateTodaysQuestions();
+  await saveTodaysQuestionsToDB(questions);
 
   return questions;
 };

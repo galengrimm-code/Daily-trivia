@@ -168,3 +168,33 @@ export const getUserScoreHistory = async (userId, limitCount = 30) => {
   const snapshot = await getDocs(q);
   return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 };
+
+// ============================================
+// DAILY QUESTIONS FUNCTIONS
+// ============================================
+
+// Get today's questions from Firestore
+export const getTodaysQuestionsFromDB = async () => {
+  const today = getTodayKey();
+  const questionsRef = doc(db, 'dailyQuestions', today);
+  const questionsSnap = await getDoc(questionsRef);
+
+  if (questionsSnap.exists()) {
+    return questionsSnap.data().questions;
+  }
+  return null;
+};
+
+// Save today's questions to Firestore
+export const saveTodaysQuestionsToDB = async (questions) => {
+  const today = getTodayKey();
+  const questionsRef = doc(db, 'dailyQuestions', today);
+
+  await setDoc(questionsRef, {
+    questions,
+    date: today,
+    createdAt: Timestamp.now()
+  });
+
+  return questions;
+};
