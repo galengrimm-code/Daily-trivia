@@ -574,6 +574,22 @@ export default function App() {
 
   // Review Screen
   if (screen === 'review') {
+    // Load questions if not already loaded
+    if (todaysQuestions.length === 0) {
+      loadTodaysQuestions().then(questions => {
+        setTodaysQuestions(questions);
+      });
+
+      return (
+        <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 flex items-center justify-center">
+          <div className="text-center">
+            <Loader className="w-12 h-12 text-white animate-spin mx-auto mb-4" />
+            <p className="text-white text-xl">Loading review...</p>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 p-4">
         <div className="max-w-md mx-auto">
