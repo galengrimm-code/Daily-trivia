@@ -237,7 +237,7 @@ export default function App() {
   // Loading screen
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 flex items-center justify-center">
         <div className="text-white text-xl flex items-center gap-3">
           <Loader className="w-6 h-6 animate-spin" />
           Loading...
@@ -249,7 +249,7 @@ export default function App() {
   // Sign in screen
   if (!user) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 flex items-center justify-center p-4">
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 max-w-md w-full border border-white/20 text-center">
           <h1 className="text-4xl font-bold text-white mb-2">Daily Trivia</h1>
           <p className="text-white/70 mb-8">Test your knowledge every day with your family!</p>
@@ -282,7 +282,7 @@ export default function App() {
     const hasPlayed = !!todayScore;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 p-4">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 p-4">
         <div className="max-w-md mx-auto">
           {/* Header */}
           <div className="flex items-center justify-between py-4">
@@ -306,7 +306,7 @@ export default function App() {
           {/* Stats */}
           <div className="flex justify-center gap-4 mb-8">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <Flame className="w-5 h-5 text-orange-400" />
+              <Flame className="w-5 h-5 text-cyan-400" />
               <span className="text-white font-semibold">{userProfile?.streak || 0} day streak</span>
             </div>
             <button
@@ -363,7 +363,7 @@ export default function App() {
           ) : (
             <button
               onClick={startQuiz}
-              className="w-full py-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl font-bold text-gray-900 text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
+              className="w-full py-4 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-xl font-bold text-gray-900 text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/30"
             >
               Start Today's Trivia
               <ChevronRight className="w-6 h-6" />
@@ -377,7 +377,7 @@ export default function App() {
   // Quiz Loading
   if (screen === 'quiz' && isLoadingQuestions) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 flex items-center justify-center">
         <div className="text-center">
           <Loader className="w-12 h-12 text-white animate-spin mx-auto mb-4" />
           <p className="text-white text-xl">Loading questions...</p>
@@ -392,7 +392,7 @@ export default function App() {
     const style = CATEGORIES[question.category] || { color: 'bg-gray-500', icon: '❓' };
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 p-4">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 p-4">
         <div className="max-w-md mx-auto">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
@@ -408,7 +408,7 @@ export default function App() {
           {/* Progress Bar */}
           <div className="h-2 bg-white/20 rounded-full mb-8 overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-500"
+              className="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 transition-all duration-500"
               style={{ width: `${((currentQuestion + (showFeedback ? 1 : 0)) / todaysQuestions.length) * 100}%` }}
             />
           </div>
@@ -475,7 +475,7 @@ export default function App() {
           {showFeedback && (
             <button
               onClick={nextQuestion}
-              className="w-full py-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl font-bold text-gray-900 text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+              className="w-full py-4 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-xl font-bold text-gray-900 text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
             >
               {currentQuestion < todaysQuestions.length - 1 ? 'Next Question' : 'See Results'}
               <ChevronRight className="w-6 h-6" />
@@ -506,7 +506,7 @@ export default function App() {
     else if (percentage >= 40) { message = "Good effort!"; emoji = "👍"; }
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 p-4 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 p-4 flex items-center justify-center">
         <div className="max-w-md w-full">
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 text-center">
             <div className="text-6xl mb-4">{emoji}</div>
@@ -531,8 +531,8 @@ export default function App() {
             </div>
 
             {/* Streak */}
-            <div className="flex items-center justify-center gap-2 bg-orange-500/20 rounded-full px-6 py-3 mb-8">
-              <Flame className="w-6 h-6 text-orange-400" />
+            <div className="flex items-center justify-center gap-2 bg-cyan-500/20 rounded-full px-6 py-3 mb-8">
+              <Flame className="w-6 h-6 text-cyan-400" />
               <span className="text-white font-bold text-lg">{userProfile?.streak || 0} Day Streak!</span>
             </div>
 
@@ -550,7 +550,7 @@ export default function App() {
                 <Trophy className="w-5 h-5" />
                 View Leaderboard
               </button>
-              <button onClick={() => setScreen('home')} className="w-full py-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl font-bold text-gray-900 hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+              <button onClick={() => setScreen('home')} className="w-full py-3 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-xl font-bold text-gray-900 hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                 <Home className="w-5 h-5" />
                 Back to Home
               </button>
@@ -564,7 +564,7 @@ export default function App() {
   // Review Screen
   if (screen === 'review') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 p-4">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 p-4">
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-bold text-white">Review Answers</h1>
@@ -599,7 +599,7 @@ export default function App() {
             })}
           </div>
 
-          <button onClick={() => setScreen('home')} className="w-full mt-6 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl font-bold text-gray-900 hover:opacity-90 transition-opacity">
+          <button onClick={() => setScreen('home')} className="w-full mt-6 py-4 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-xl font-bold text-gray-900 hover:opacity-90 transition-opacity">
             Back to Home
           </button>
         </div>
@@ -610,7 +610,7 @@ export default function App() {
   // Leaderboard Screen
   if (screen === 'leaderboard') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 p-4">
+      <div className="min-h-screen bg-gradient-to-b from-blue-900 via-teal-800 to-emerald-900 p-4">
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-bold text-white flex items-center gap-2">
@@ -650,7 +650,7 @@ export default function App() {
           {/* Weekly Scores */}
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 border border-white/20">
             <h2 className="text-white font-semibold mb-3 flex items-center gap-2">
-              <Award className="w-5 h-5 text-purple-400" />
+              <Award className="w-5 h-5 text-teal-400" />
               This Week
             </h2>
             {weeklyLeaderboard.length === 0 ? (
@@ -658,7 +658,7 @@ export default function App() {
             ) : (
               <div className="space-y-2">
                 {weeklyLeaderboard.map((entry, idx) => (
-                  <div key={entry.userId} className={`flex items-center justify-between p-3 rounded-xl ${entry.userId === user.uid ? 'bg-purple-500/20 border border-purple-500/30' : 'bg-white/5'}`}>
+                  <div key={entry.userId} className={`flex items-center justify-between p-3 rounded-xl ${entry.userId === user.uid ? 'bg-teal-500/20 border border-teal-500/30' : 'bg-white/5'}`}>
                     <div className="flex items-center gap-3">
                       <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${idx === 0 ? 'bg-yellow-500 text-gray-900' : idx === 1 ? 'bg-gray-300 text-gray-900' : idx === 2 ? 'bg-amber-600 text-white' : 'bg-white/20 text-white'}`}>
                         {idx + 1}
@@ -675,7 +675,7 @@ export default function App() {
             )}
           </div>
 
-          <button onClick={() => setScreen('home')} className="w-full mt-6 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl font-bold text-gray-900 hover:opacity-90 transition-opacity">
+          <button onClick={() => setScreen('home')} className="w-full mt-6 py-4 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-xl font-bold text-gray-900 hover:opacity-90 transition-opacity">
             Back to Home
           </button>
         </div>
