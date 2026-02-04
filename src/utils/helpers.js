@@ -35,12 +35,18 @@ export const shuffleArray = (array) => {
   return shuffled;
 };
 
-// Calculate days between two date strings
+// Parse a YYYY-MM-DD string as local date (not UTC)
+export const parseLocalDate = (dateStr) => {
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day);
+};
+
+// Calculate days between two date strings (using local time)
 export const daysBetween = (date1, date2) => {
-  const d1 = new Date(date1);
-  const d2 = new Date(date2);
+  const d1 = parseLocalDate(date1);
+  const d2 = parseLocalDate(date2);
   const diffTime = Math.abs(d2 - d1);
-  return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  return Math.round(diffTime / (1000 * 60 * 60 * 24));
 };
 
 // Check if streak should continue or reset
