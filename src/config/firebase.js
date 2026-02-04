@@ -19,14 +19,14 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// TODO: Replace with your Firebase project config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyD2EquXAFa4_6VsTs2MbarcAtVwbKWaS4Q",
+  authDomain: "daily-trivia-75954.firebaseapp.com",
+  projectId: "daily-trivia-75954",
+  storageBucket: "daily-trivia-75954.firebasestorage.app",
+  messagingSenderId: "146196428161",
+  appId: "1:146196428161:web:3135c94987c9fd17c6e480",
+  measurementId: "G-6K1G5Y22RM"
 };
 
 // Initialize Firebase
