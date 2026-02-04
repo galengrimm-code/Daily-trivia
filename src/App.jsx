@@ -5,7 +5,9 @@ import {
   signInWithRedirect,
   getRedirectResult,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  browserLocalPersistence,
+  setPersistence
 } from 'firebase/auth';
 import { auth, googleProvider } from './config/firebase';
 import {
@@ -126,12 +128,21 @@ export default function App() {
   // Sign in with Google
   const handleSignIn = async () => {
     try {
-      // Use redirect for mobile (popups don't work well on mobile)
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      if (isMobile) {
-        await signInWithRedirect(auth, googleProvider);
-      } else {
+      // Set persistence before sign-in
+      await setPersistence(auth, browserLocalPersistence);
+
+      // Try popup first, fall back to redirect if blocked
+      try {
         await signInWithPopup(auth, googleProvider);
+      } catch (popupError) {
+        // If popup is blocked or fails, use redirect
+        if (popupError.code === 'auth/popup-blocked' ||
+            popupError.code === 'auth/popup-closed-by-user' ||
+            popupError.code === 'auth/cancelled-popup-request') {
+          await signInWithRedirect(auth, googleProvider);
+        } else {
+          throw popupError;
+        }
       }
     } catch (error) {
       console.error('Sign in error:', error);
