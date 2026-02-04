@@ -303,15 +303,16 @@ export default function App() {
             </div>
             <button
               onClick={handleSignOut}
-              className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
             >
-              <LogOut className="w-5 h-5 text-white" />
+              <LogOut className="w-4 h-4 text-white" />
+              <span className="text-white text-sm">Sign Out</span>
             </button>
           </div>
 
           <div className="text-center py-4">
             <h1 className="text-4xl font-bold text-white mb-2">Daily Trivia</h1>
-            <p className="text-white/70">5 questions across 5 categories</p>
+            <p className="text-white/70">6 questions across 6 categories</p>
           </div>
 
           {/* Stats */}
