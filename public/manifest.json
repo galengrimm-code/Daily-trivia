@@ -4,8 +4,8 @@
   "description": "Test your knowledge every day with your family!",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#4c1d95",
-  "theme_color": "#4c1d95",
+  "background_color": "#1e3a8a",
+  "theme_color": "#1e3a8a",
   "orientation": "portrait",
   "categories": ["games", "education", "entertainment"],
   "icons": [
