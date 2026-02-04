@@ -132,7 +132,7 @@ daily-trivia/
 Firestore Database:
 
 users/
-  └── {odLLuserId}
+  └── {userId}
         ├── displayName: "Mom"
         ├── streak: 5
         ├── longestStreak: 12
@@ -142,8 +142,8 @@ users/
         └── createdAt: Timestamp
 
 scores/
-  └── {odLLuserId}_{date}
-        ├── odLLuserId: "abc123"
+  └── {userId}_{date}
+        ├── userId: "abc123"
         ├── displayName: "Mom"
         ├── score: 4
         ├── totalQuestions: 5

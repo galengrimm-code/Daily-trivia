@@ -21,18 +21,18 @@ import { getTodayKey, calculateStreak } from './helpers';
 
 // Get or create user profile
 export const getUserProfile = async (userId) => {
-  const userRef = doc(db, 'users', odLLuserId);
+  const userRef = doc(db, 'users', userId);
   const userSnap = await getDoc(userRef);
 
   if (userSnap.exists()) {
-    return { id: odLLuserId, ...userSnap.data() };
+    return { id: userId, ...userSnap.data() };
   }
   return null;
 };
 
 // Create new user profile
 export const createUserProfile = async (userId, displayName) => {
-  const userRef = doc(db, 'users', odLLuserId);
+  const userRef = doc(db, 'users', userId);
   const userData = {
     displayName,
     streak: 0,
@@ -44,12 +44,12 @@ export const createUserProfile = async (userId, displayName) => {
   };
 
   await setDoc(userRef, userData);
-  return { id: odLLuserId, ...userData };
+  return { id: userId, ...userData };
 };
 
 // Update user after completing a game
 export const updateUserStats = async (userId, score, totalQuestions) => {
-  const userRef = doc(db, 'users', odLLuserId);
+  const userRef = doc(db, 'users', userId);
   const userSnap = await getDoc(userRef);
 
   if (!userSnap.exists()) return null;
@@ -68,7 +68,7 @@ export const updateUserStats = async (userId, score, totalQuestions) => {
   };
 
   await updateDoc(userRef, updates);
-  return { id: odLLuserId, ...userData, ...updates };
+  return { id: userId, ...userData, ...updates };
 };
 
 // ============================================
@@ -78,11 +78,11 @@ export const updateUserStats = async (userId, score, totalQuestions) => {
 // Save a score for today
 export const saveScore = async (userId, displayName, score, totalQuestions) => {
   const today = getTodayKey();
-  const scoreId = `${odLLuserId}_${today}`;
+  const scoreId = `${userId}_${today}`;
   const scoreRef = doc(db, 'scores', scoreId);
 
   const scoreData = {
-    odLLuserId,
+    userId,
     displayName,
     score,
     totalQuestions,
@@ -97,7 +97,7 @@ export const saveScore = async (userId, displayName, score, totalQuestions) => {
 // Check if user already played today
 export const hasPlayedToday = async (userId) => {
   const today = getTodayKey();
-  const scoreId = `${odLLuserId}_${today}`;
+  const scoreId = `${userId}_${today}`;
   const scoreRef = doc(db, 'scores', scoreId);
   const scoreSnap = await getDoc(scoreRef);
 
@@ -139,16 +139,16 @@ export const getWeeklyLeaderboard = async () => {
   // Aggregate by user
   const userScores = {};
   scores.forEach(score => {
-    if (!userScores[score.odLLuserId]) {
-      userScores[score.odLLuserId] = {
-        odLLuserId: score.odLLuserId,
+    if (!userScores[score.userId]) {
+      userScores[score.userId] = {
+        userId: score.userId,
         displayName: score.displayName,
         totalScore: 0,
         gamesPlayed: 0
       };
     }
-    userScores[score.odLLuserId].totalScore += score.score;
-    userScores[score.odLLuserId].gamesPlayed += 1;
+    userScores[score.userId].totalScore += score.score;
+    userScores[score.userId].gamesPlayed += 1;
   });
 
   // Sort by total score
@@ -160,7 +160,7 @@ export const getUserScoreHistory = async (userId, limitCount = 30) => {
   const scoresRef = collection(db, 'scores');
   const q = query(
     scoresRef,
-    where('odLLuserId', '==', odLLuserId),
+    where('userId', '==', userId),
     orderBy('date', 'desc'),
     limit(limitCount)
   );

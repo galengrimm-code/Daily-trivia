@@ -579,7 +579,7 @@ export default function App() {
             ) : (
               <div className="space-y-2">
                 {todayLeaderboard.map((entry, idx) => (
-                  <div key={entry.id} className={`flex items-center justify-between p-3 rounded-xl ${entry.odLLuserId === user.uid ? 'bg-yellow-500/20 border border-yellow-500/30' : 'bg-white/5'}`}>
+                  <div key={entry.id} className={`flex items-center justify-between p-3 rounded-xl ${entry.userId === user.uid ? 'bg-yellow-500/20 border border-yellow-500/30' : 'bg-white/5'}`}>
                     <div className="flex items-center gap-3">
                       <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${idx === 0 ? 'bg-yellow-500 text-gray-900' : idx === 1 ? 'bg-gray-300 text-gray-900' : idx === 2 ? 'bg-amber-600 text-white' : 'bg-white/20 text-white'}`}>
                         {idx + 1}
@@ -604,7 +604,7 @@ export default function App() {
             ) : (
               <div className="space-y-2">
                 {weeklyLeaderboard.map((entry, idx) => (
-                  <div key={entry.odLLuserId} className={`flex items-center justify-between p-3 rounded-xl ${entry.odLLuserId === user.uid ? 'bg-purple-500/20 border border-purple-500/30' : 'bg-white/5'}`}>
+                  <div key={entry.userId} className={`flex items-center justify-between p-3 rounded-xl ${entry.userId === user.uid ? 'bg-purple-500/20 border border-purple-500/30' : 'bg-white/5'}`}>
                     <div className="flex items-center gap-3">
                       <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${idx === 0 ? 'bg-yellow-500 text-gray-900' : idx === 1 ? 'bg-gray-300 text-gray-900' : idx === 2 ? 'bg-amber-600 text-white' : 'bg-white/20 text-white'}`}>
                         {idx + 1}
