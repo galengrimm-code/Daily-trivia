@@ -32,6 +32,13 @@ const fallbackQuestions = {
     { q: "How many sides does a hexagon have?", options: ["5", "6", "7", "8"], correct: 1, fact: "'Hex' comes from Greek 'hexa' meaning six." },
     { q: "What is 15% of 200?", options: ["20", "25", "30", "35"], correct: 2, fact: "Percentages come from the Latin 'per centum' meaning 'by the hundred.'" },
     { q: "What is the next prime number after 7?", options: ["9", "10", "11", "13"], correct: 2, fact: "Prime numbers have exactly two factors: 1 and themselves." },
+  ],
+  Animals: [
+    { q: "What is the fastest land animal?", options: ["Lion", "Cheetah", "Gazelle", "Horse"], correct: 1, fact: "Cheetahs can reach speeds up to 70 mph!" },
+    { q: "What is the largest mammal on Earth?", options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"], correct: 1, fact: "Blue whales can weigh up to 200 tons." },
+    { q: "How many legs does an octopus have?", options: ["6", "8", "10", "12"], correct: 1, fact: "Octopuses have 8 legs and 3 hearts!" },
+    { q: "What is a group of lions called?", options: ["Herd", "Pack", "Pride", "Flock"], correct: 2, fact: "A pride typically has 10-15 lions." },
+    { q: "Which bird is known for its ability to mimic human speech?", options: ["Eagle", "Parrot", "Owl", "Penguin"], correct: 1, fact: "Some parrots can learn over 100 words!" },
   ]
 };
 

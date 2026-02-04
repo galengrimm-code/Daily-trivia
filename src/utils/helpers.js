@@ -67,7 +67,8 @@ export const CATEGORIES = {
   Geography: { id: 22, color: 'bg-emerald-500', icon: '🌍' },
   Science: { id: 17, color: 'bg-blue-500', icon: '🔬' },
   Bible: { id: null, color: 'bg-purple-500', icon: '📖' },
-  Math: { id: 19, color: 'bg-rose-500', icon: '🔢' }
+  Math: { id: 19, color: 'bg-rose-500', icon: '🔢' },
+  Animals: { id: 27, color: 'bg-green-500', icon: '🐾' }
 };
 
 export const ALL_CATEGORIES = Object.keys(CATEGORIES);
