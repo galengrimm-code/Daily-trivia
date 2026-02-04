@@ -2,16 +2,149 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+
+    <!-- Theme and App Colors -->
     <meta name="theme-color" content="#4c1d95" />
+    <meta name="msapplication-TileColor" content="#4c1d95" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
+
+    <!-- App Description -->
     <meta name="description" content="Daily Trivia - Test your knowledge every day with your family!" />
+    <meta name="application-name" content="Daily Trivia" />
+
+    <!-- iOS Specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Daily Trivia" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Android Specific -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+
+    <!-- Web Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <title>Daily Trivia</title>
+
     <!-- Tailwind CSS CDN for development -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Mobile-optimized styles -->
+    <style>
+      /* Prevent overscroll bounce on iOS */
+      html, body {
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Safe area insets for notched devices */
+      body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+
+      /* Prevent text selection on interactive elements */
+      button, a {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      /* Smooth scrolling */
+      * {
+        scroll-behavior: smooth;
+      }
+
+      /* Prevent pull-to-refresh on mobile */
+      body {
+        overscroll-behavior-y: contain;
+      }
+
+      /* Fix 100vh issue on mobile browsers */
+      .min-h-screen {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+
+      /* Loading animation */
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+
+      /* Splash screen styles */
+      #splash {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #db2777 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+
+      #splash.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
+    <!-- Splash screen while app loads -->
+    <div id="splash">
+      <svg width="120" height="120" viewBox="0 0 512 512" style="animation: pulse 1.5s ease-in-out infinite;">
+        <defs>
+          <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#facc15"/>
+            <stop offset="100%" style="stop-color:#f97316"/>
+          </linearGradient>
+        </defs>
+        <rect x="16" y="16" width="480" height="480" rx="96" ry="96" fill="rgba(255,255,255,0.1)"/>
+        <g transform="translate(256, 256)">
+          <path d="M-20 -120 C-80 -120 -100 -60 -100 -20 C-100 40 -60 60 -20 80 L-20 100"
+                fill="none" stroke="url(#accent)" stroke-width="40" stroke-linecap="round"/>
+          <circle cx="-20" cy="140" r="25" fill="url(#accent)"/>
+          <circle cx="80" cy="-80" r="12" fill="#facc15" opacity="0.9"/>
+          <circle cx="100" cy="-40" r="8" fill="#f97316" opacity="0.7"/>
+          <circle cx="70" cy="0" r="6" fill="#facc15" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script>
+      // Hide splash screen when React app is ready
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var splash = document.getElementById('splash');
+          if (splash) {
+            splash.classList.add('hidden');
+            setTimeout(function() {
+              splash.remove();
+            }, 300);
+          }
+        }, 500);
+      });
+    </script>
   </body>
 </html>
