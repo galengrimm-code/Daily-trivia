@@ -1,7 +1,43 @@
 // src/utils/api.js
 import { decodeHTML, shuffleArray, seededRandom, getTodaySeed, CATEGORIES } from './helpers';
-import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB } from './database';
+import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getTriviaSessionToken, updateTriviaSessionToken } from './database';
 import bibleQuestions from '../data/bibleQuestions';
+
+// Session token for Open Trivia DB (prevents repeat questions)
+let cachedToken = null;
+
+// Request a new session token from Open Trivia DB
+const requestNewSessionToken = async () => {
+  try {
+    const response = await fetch('https://opentdb.com/api_token.php?command=request');
+    const data = await response.json();
+
+    if (data.response_code === 0 && data.token) {
+      cachedToken = data.token;
+      await updateTriviaSessionToken(data.token);
+      return data.token;
+    }
+  } catch (error) {
+    console.error('Failed to get session token:', error);
+  }
+  return null;
+};
+
+// Get or create session token
+const getSessionToken = async () => {
+  // Return cached token if available
+  if (cachedToken) return cachedToken;
+
+  // Try to get from Firebase
+  const tokenData = await getTriviaSessionToken();
+  if (tokenData?.token) {
+    cachedToken = tokenData.token;
+    return cachedToken;
+  }
+
+  // Request new token
+  return await requestNewSessionToken();
+};
 
 // Fallback questions if API fails
 const fallbackQuestions = {
@@ -43,15 +79,26 @@ const fallbackQuestions = {
 };
 
 // Fetch a question from Open Trivia DB API
-export const fetchAPIQuestion = async (category) => {
+export const fetchAPIQuestion = async (category, retryOnEmpty = true) => {
   try {
     const categoryId = CATEGORIES[category]?.id;
     if (!categoryId) return null;
 
+    // Get session token to prevent repeat questions
+    const token = await getSessionToken();
+    const tokenParam = token ? `&token=${token}` : '';
+
     const response = await fetch(
-      `https://opentdb.com/api.php?amount=1&category=${categoryId}&type=multiple`
+      `https://opentdb.com/api.php?amount=1&category=${categoryId}&type=multiple${tokenParam}`
     );
     const data = await response.json();
+
+    // Handle token empty (code 4) - all questions exhausted, reset token
+    if (data.response_code === 4 && retryOnEmpty) {
+      console.log('Token exhausted for category, requesting new token...');
+      await requestNewSessionToken();
+      return fetchAPIQuestion(category, false); // Retry once with new token
+    }
 
     if (data.response_code === 0 && data.results.length > 0) {
       const q = data.results[0];

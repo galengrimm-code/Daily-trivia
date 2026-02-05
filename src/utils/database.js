@@ -200,3 +200,30 @@ export const saveTodaysQuestionsToDB = async (questions) => {
 
   return questions;
 };
+
+// ============================================
+// TRIVIA SESSION TOKEN FUNCTIONS
+// ============================================
+
+// Get the global trivia session token
+export const getTriviaSessionToken = async () => {
+  const tokenRef = doc(db, 'settings', 'triviaToken');
+  const tokenSnap = await getDoc(tokenRef);
+
+  if (tokenSnap.exists()) {
+    return tokenSnap.data();
+  }
+  return null;
+};
+
+// Save/update the global trivia session token
+export const updateTriviaSessionToken = async (token) => {
+  const tokenRef = doc(db, 'settings', 'triviaToken');
+
+  await setDoc(tokenRef, {
+    token,
+    createdAt: Timestamp.now()
+  });
+
+  return token;
+};
