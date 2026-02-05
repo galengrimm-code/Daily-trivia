@@ -112,6 +112,7 @@ export const getTodayLeaderboard = async () => {
     scoresRef,
     where('date', '==', today),
     orderBy('score', 'desc'),
+    orderBy('timestamp', 'asc'), // Tiebreaker: whoever finished first ranks higher
     limit(50)
   );
 
