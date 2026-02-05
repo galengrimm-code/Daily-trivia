@@ -656,10 +656,11 @@ export default function App() {
 
           {/* Today's Scores */}
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 mb-4 border border-white/20">
-            <h2 className="text-white font-semibold mb-3 flex items-center gap-2">
+            <h2 className="text-white font-semibold mb-2 flex items-center gap-2">
               <Star className="w-5 h-5 text-yellow-400" />
               Today's Scores
             </h2>
+            <p className="text-white/50 text-xs mb-3">Ties broken by fastest completion time</p>
             {todayLeaderboard.length === 0 ? (
               <p className="text-white/60 text-center py-4">No scores yet today. Be the first!</p>
             ) : (
