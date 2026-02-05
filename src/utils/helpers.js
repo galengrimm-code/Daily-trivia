@@ -1,9 +1,23 @@
 // src/utils/helpers.js
 
-// Get today's date as a string key (YYYY-MM-DD)
-export const getTodayKey = () => {
+// Get the current "game day" in Central Time (resets at 2 AM CT)
+const getGameDay = () => {
+  // Get current time in Central Time
   const now = new Date();
-  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const centralTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+
+  // If before 2 AM CT, use previous day as the game day
+  if (centralTime.getHours() < 2) {
+    centralTime.setDate(centralTime.getDate() - 1);
+  }
+
+  return centralTime;
+};
+
+// Get today's date as a string key (YYYY-MM-DD) based on Central Time, resets at 2 AM
+export const getTodayKey = () => {
+  const gameDay = getGameDay();
+  return `${gameDay.getFullYear()}-${String(gameDay.getMonth() + 1).padStart(2, '0')}-${String(gameDay.getDate()).padStart(2, '0')}`;
 };
 
 // Seeded random for consistent daily questions
@@ -12,10 +26,10 @@ export const seededRandom = (seed) => {
   return x - Math.floor(x);
 };
 
-// Get seed from today's date
+// Get seed from today's date (based on Central Time game day)
 export const getTodaySeed = () => {
-  const today = new Date();
-  return today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  const gameDay = getGameDay();
+  return gameDay.getFullYear() * 10000 + (gameDay.getMonth() + 1) * 100 + gameDay.getDate();
 };
 
 // Decode HTML entities from API responses
