@@ -42,6 +42,7 @@ export default function App() {
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(false);
   const [todayScore, setTodayScore] = useState(null);
   const [lastCheckedDate, setLastCheckedDate] = useState(null);
+  const [quizStartTime, setQuizStartTime] = useState(null);
 
   // Leaderboard state
   const [todayLeaderboard, setTodayLeaderboard] = useState([]);
@@ -168,6 +169,7 @@ export default function App() {
     setAnswers([]);
     setSelectedAnswer(null);
     setShowFeedback(false);
+    setQuizStartTime(Date.now()); // Track when quiz started
     setIsLoadingQuestions(false);
     setScreen('quiz');
   };
@@ -192,13 +194,15 @@ export default function App() {
       // Quiz complete - calculate and save score
       // answers array already includes all responses including the last one
       const finalScore = answers.filter(a => a.correct).length;
-      
+      const durationSeconds = Math.round((Date.now() - quizStartTime) / 1000);
+
       // Save to Firebase
       await saveScore(
         user.uid,
         userProfile.displayName,
         finalScore,
-        todaysQuestions.length
+        todaysQuestions.length,
+        durationSeconds
       );
 
       // Update user stats

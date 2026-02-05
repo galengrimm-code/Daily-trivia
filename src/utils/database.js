@@ -76,7 +76,7 @@ export const updateUserStats = async (userId, score, totalQuestions) => {
 // ============================================
 
 // Save a score for today
-export const saveScore = async (userId, displayName, score, totalQuestions) => {
+export const saveScore = async (userId, displayName, score, totalQuestions, durationSeconds = 0) => {
   const today = getTodayKey();
   const scoreId = `${userId}_${today}`;
   const scoreRef = doc(db, 'scores', scoreId);
@@ -86,6 +86,7 @@ export const saveScore = async (userId, displayName, score, totalQuestions) => {
     displayName,
     score,
     totalQuestions,
+    duration: durationSeconds, // Time to complete in seconds
     date: today,
     timestamp: Timestamp.now()
   };
@@ -112,7 +113,7 @@ export const getTodayLeaderboard = async () => {
     scoresRef,
     where('date', '==', today),
     orderBy('score', 'desc'),
-    orderBy('timestamp', 'asc'), // Tiebreaker: whoever finished first ranks higher
+    orderBy('duration', 'asc'), // Tiebreaker: fastest completion time wins
     limit(50)
   );
 
