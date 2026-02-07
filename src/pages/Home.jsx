@@ -12,7 +12,14 @@ import Leaderboard from '../components/Leaderboard';
 
 export default function Home() {
   const { user, userProfile, todayScore } = usePlayer();
-  const { todayLeaderboard, weeklyLeaderboard, loading: lbLoading, loadLeaderboards } = useLeaderboard();
+  const {
+    todayLeaderboard,
+    weeklyLeaderboard,
+    boggleLeaderboard,
+    spellingBeeLeaderboard,
+    loading: lbLoading,
+    loadLeaderboards
+  } = useLeaderboard();
   const [showLeaderboard, setShowLeaderboard] = React.useState(false);
   const [boggleResult, setBoggleResult] = React.useState(null);
   const [spellingBeeResult, setSpellingBeeResult] = React.useState(null);
@@ -120,6 +127,8 @@ export default function Home() {
       <Leaderboard
         todayEntries={todayLeaderboard}
         weeklyEntries={weeklyLeaderboard}
+        boggleEntries={boggleLeaderboard}
+        spellingBeeEntries={spellingBeeLeaderboard}
         currentUserId={user?.uid}
         loading={lbLoading}
         onBack={() => setShowLeaderboard(false)}
