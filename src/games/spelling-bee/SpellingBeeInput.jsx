@@ -41,22 +41,24 @@ export default function SpellingBeeInput({
       </div>
 
       {/* Action buttons */}
-      <div className="flex items-center justify-center gap-3">
-        <button
-          onClick={onDelete}
-          disabled={disabled || !currentInput}
-          className="px-5 py-2.5 bg-white rounded-button font-semibold text-text-main shadow-card hover:shadow-card-hover transition-shadow disabled:opacity-40 flex items-center gap-1.5"
-        >
-          <Delete className="w-4 h-4" />
-          Delete
-        </button>
-        <button
-          onClick={onShuffle}
-          disabled={disabled}
-          className="p-2.5 bg-white rounded-full shadow-card hover:shadow-card-hover transition-shadow disabled:opacity-40"
-        >
-          <RotateCw className="w-5 h-5 text-text-muted" />
-        </button>
+      <div className="flex items-center justify-between px-4">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onDelete}
+            disabled={disabled || !currentInput}
+            className="px-5 py-2.5 bg-white rounded-button font-semibold text-text-main shadow-card hover:shadow-card-hover transition-shadow disabled:opacity-40 flex items-center gap-1.5"
+          >
+            <Delete className="w-4 h-4" />
+            Delete
+          </button>
+          <button
+            onClick={onShuffle}
+            disabled={disabled}
+            className="p-2.5 bg-white rounded-full shadow-card hover:shadow-card-hover transition-shadow disabled:opacity-40"
+          >
+            <RotateCw className="w-5 h-5 text-text-muted" />
+          </button>
+        </div>
         <button
           onClick={onSubmit}
           disabled={disabled || !currentInput}
