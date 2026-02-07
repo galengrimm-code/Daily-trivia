@@ -501,21 +501,25 @@ export default function useSpellingBeeGame() {
   }, [user, dictionary, showMessage, attachRoomListener, loadPuzzle]);
 
   const mpHostStart = useCallback(async () => {
-    if (!roomId) return;
+    const currentRoomId = roomId;
+    if (!currentRoomId) {
+      showMessage('Room not found. Please try again.');
+      return;
+    }
     if (roomListenerRef.current) {
       roomListenerRef.current();
       roomListenerRef.current = null;
     }
 
-    const result = await startRoom(roomId);
+    const result = await startRoom(currentRoomId);
     if (result.error) {
       showMessage(result.error);
-      attachRoomListener(roomId);
+      attachRoomListener(currentRoomId);
       return;
     }
 
     startMultiplayerCountdown(result.startTime);
-    attachRoomListener(roomId);
+    attachRoomListener(currentRoomId);
   }, [roomId, showMessage, attachRoomListener, startMultiplayerCountdown]);
 
   const endMultiplayerGame = useCallback(async () => {
