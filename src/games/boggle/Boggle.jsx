@@ -119,7 +119,7 @@ export default function Boggle() {
                 {game.message}
               </span>
             )}
-          )}
+          </div>
 
           {/* Board */}
           <div className="mb-4">
