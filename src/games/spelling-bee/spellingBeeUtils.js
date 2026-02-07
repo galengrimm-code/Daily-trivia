@@ -62,6 +62,16 @@ export function getValidWords(letters, centerLetter, dictionary) {
   return valid;
 }
 
+// Check if letter set has enough vowels (at least 2)
+function hasEnoughVowels(letters) {
+  const vowels = 'aeiou';
+  let vowelCount = 0;
+  for (const letter of letters) {
+    if (vowels.includes(letter)) vowelCount++;
+  }
+  return vowelCount >= 2;
+}
+
 export function generatePuzzle(seed, dictionary) {
   const pangramIndex = buildPangramIndex(dictionary);
   if (pangramIndex.length === 0) return null;
@@ -74,6 +84,13 @@ export function generatePuzzle(seed, dictionary) {
     const setIndex = Math.floor(seededRandom(currentSeed++) * pangramIndex.length);
     const chosen = pangramIndex[setIndex];
     const letters = [...chosen.letters];
+
+    // Skip if not enough vowels (need at least 2)
+    if (!hasEnoughVowels(letters)) {
+      currentSeed += 100;
+      attempts++;
+      continue;
+    }
 
     // Pick center letter
     const centerIndex = Math.floor(seededRandom(currentSeed++) * 7);

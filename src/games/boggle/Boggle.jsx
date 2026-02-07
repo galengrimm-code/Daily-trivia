@@ -112,13 +112,13 @@ export default function Boggle() {
             </div>
           </div>
 
-          {/* Message toast */}
-          {game.message && (
-            <div className="text-center mb-2">
+          {/* Message toast - fixed height to prevent layout shift */}
+          <div className="text-center h-8 mb-2">
+            {game.message && (
               <span className="bg-gray-100 text-text-main px-4 py-2 rounded-full font-medium text-sm">
                 {game.message}
               </span>
-            </div>
+            )}
           )}
 
           {/* Board */}
