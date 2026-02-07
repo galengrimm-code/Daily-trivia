@@ -3,8 +3,7 @@ import React from 'react';
 import SpellingBeeHexTile from './SpellingBeeHexTile';
 
 // Hex positions: center + 6 outer in a tight ring
-// Tile size: 90x100. Container: 290x310.
-// Gap between hex edges: ~2-3px
+// Tile size: 100x112. Container: 320x340.
 const POSITIONS = [
   { top: '50%', left: '50%' },       // center
   { top: '24%', left: '34%' },       // top-left
@@ -17,7 +16,7 @@ const POSITIONS = [
 
 export default function SpellingBeeHoneycomb({ centerLetter, outerLetters, onLetterClick, disabled }) {
   return (
-    <div className="relative w-[290px] h-[310px] mx-auto my-4">
+    <div className="relative w-[320px] h-[340px] mx-auto my-4">
       {/* Center hex */}
       <SpellingBeeHexTile
         letter={centerLetter}

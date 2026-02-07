@@ -26,11 +26,11 @@ export default function SpellingBeeHexTile({ letter, isCenter, onClick, disabled
         position: 'absolute',
         transform: 'translate(-50%, -50%)',
       }}
-      className={`w-[90px] h-[100px] ${disabled ? 'opacity-60' : ''}`}
+      className={`w-[100px] h-[112px] ${disabled ? 'opacity-60' : ''}`}
     >
       <div
         ref={innerRef}
-        className={`w-full h-full flex items-center justify-center text-2xl font-extrabold transition-transform duration-100 ${
+        className={`w-full h-full flex items-center justify-center text-3xl font-extrabold transition-transform duration-100 ${
           isCenter
             ? 'bg-amber-400 text-amber-900 hover:bg-amber-300 active:bg-amber-500'
             : 'bg-gray-200 text-text-main hover:bg-gray-300 active:bg-gray-400'

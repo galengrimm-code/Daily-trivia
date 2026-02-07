@@ -62,7 +62,7 @@ export default function SpellingBeeInput({
         <button
           onClick={onSubmit}
           disabled={disabled || !currentInput}
-          className="px-5 py-2.5 bg-primary text-white rounded-button font-bold hover:bg-primary-hover transition-colors disabled:opacity-40"
+          className="px-8 py-3 bg-primary text-white rounded-button font-bold text-lg hover:bg-primary-hover transition-colors disabled:opacity-40"
         >
           Enter
         </button>
