@@ -4,7 +4,6 @@ import { ChevronRight, Copy, Check } from 'lucide-react';
 import { getTodayKey } from '../../utils/helpers';
 
 export default function BoggleReady({ board, practiceMode, practiceCode, inputMode, setInputMode, onStart, onLoadCode, onBack }) {
-  const [codeInput, setCodeInput] = useState('');
   const [copied, setCopied] = useState(false);
 
   const handleCopyCode = () => {
@@ -33,7 +32,7 @@ export default function BoggleReady({ board, practiceMode, practiceCode, inputMo
         </div>
 
         {/* Date or Code */}
-        <div className="text-center mb-4">
+        <div className="text-center mb-6">
           {practiceMode ? (
             <div className="flex items-center justify-center gap-2">
               <span className="text-text-muted">Board Code:</span>
@@ -50,52 +49,11 @@ export default function BoggleReady({ board, practiceMode, practiceCode, inputMo
           )}
         </div>
 
-        {/* Board Preview (practice only — daily board hidden until Start) */}
-        {practiceMode ? (
-          <div className="bg-white rounded-card p-4 mb-6 shadow-card">
-            <div className="grid grid-cols-4 gap-2">
-              {board.map((letter, index) => (
-                <div
-                  key={index}
-                  className="aspect-square rounded-xl bg-gray-50 text-xl font-bold text-green-800 flex items-center justify-center"
-                >
-                  {letter}
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="bg-white rounded-card p-6 mb-6 shadow-card text-center">
-            <p className="text-text-muted">Find as many words as you can in 3 minutes!</p>
-            <p className="text-text-muted text-sm mt-1">Select adjacent letters to form words.</p>
-          </div>
-        )}
-
-        {/* Practice: Load from code */}
-        {practiceMode && (
-          <div className="bg-white rounded-card p-4 mb-6 shadow-card">
-            <p className="text-sm text-text-muted mb-2">Play a specific board:</p>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={codeInput}
-                onChange={(e) => setCodeInput(e.target.value)}
-                placeholder="5-digit code"
-                className="flex-1 px-4 py-2 rounded-button border border-border text-text-main outline-none focus:ring-2 focus:ring-primary"
-                maxLength={5}
-              />
-              <button
-                onClick={() => {
-                  onLoadCode(codeInput);
-                  setCodeInput('');
-                }}
-                className="px-4 py-2 bg-gray-100 rounded-button font-semibold text-text-main hover:bg-gray-200 transition-colors"
-              >
-                Load
-              </button>
-            </div>
-          </div>
-        )}
+        {/* Instructions */}
+        <div className="bg-white rounded-card p-6 mb-6 shadow-card text-center">
+          <p className="text-text-muted">Find as many words as you can in 3 minutes!</p>
+          <p className="text-text-muted text-sm mt-1">Select adjacent letters to form words.</p>
+        </div>
 
         {/* Input Method */}
         <div className="bg-white rounded-card p-4 mb-6 shadow-card">
