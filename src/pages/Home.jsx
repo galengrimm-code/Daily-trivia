@@ -93,7 +93,11 @@ export default function Home() {
       lines.push(`Boggle: ${boggleResult.score} pts \u{2022} ${boggleResult.wordCount} words`);
     }
     if (spellingBeeResult) {
-      lines.push(`Spelling Bee: ${spellingBeeResult.score} pts`);
+      let sbLine = `Spelling Bee: ${spellingBeeResult.score} pts`;
+      if (spellingBeeResult.pangramCount > 0) {
+        sbLine += ` \u{2022} PANGRAM${spellingBeeResult.pangramCount > 1 ? 'S' : ''}: ${spellingBeeResult.pangramCount}`;
+      }
+      lines.push(sbLine);
     }
 
     lines.push('', 'How did you do?');

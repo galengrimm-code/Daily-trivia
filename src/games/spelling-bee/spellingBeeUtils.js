@@ -175,13 +175,16 @@ export function generatePracticeCode() {
 export function generateShareText(score, maxScore, rankName, wordCount, pangramCount, dateKey) {
   const pct = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
   const lines = [
-    `\u{1F520} Daily Games - Spelling Bee \u{1F41D}`,
-    `\u{1F4C5} ${dateKey}`,
+    `Daily Games - Spelling Bee`,
+    dateKey,
     `Rank: ${rankName}`,
-    `Score: ${score} / ${maxScore} (${pct}%)`,
+    `Score: ${score} pts (${pct}%)`,
     `Words: ${wordCount}`,
-    pangramCount > 0 ? `Pangrams: ${pangramCount}` : null,
-  ].filter(Boolean);
+  ];
+
+  if (pangramCount > 0) {
+    lines.push(`PANGRAM${pangramCount > 1 ? 'S' : ''}: ${pangramCount}`);
+  }
 
   return lines.join('\n');
 }

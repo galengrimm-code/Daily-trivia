@@ -12,7 +12,7 @@ export async function checkSpellingBeePlayer(userId, dateKey) {
     const snapshot = await get(ref(rtdb, `spelling-bee/daily/${dateKey}/players/${userId}`));
     if (snapshot.exists()) {
       const data = snapshot.val();
-      return { played: true, score: data.score, wordCount: data.wordCount, rank: data.rank };
+      return { played: true, score: data.score, wordCount: data.wordCount, rank: data.rank, pangramCount: data.pangramCount || 0 };
     }
     return { played: false };
   } catch (e) {
@@ -21,7 +21,7 @@ export async function checkSpellingBeePlayer(userId, dateKey) {
   }
 }
 
-export async function saveSpellingBeeScore(userId, displayName, dateKey, score, wordCount, rank) {
+export async function saveSpellingBeeScore(userId, displayName, dateKey, score, wordCount, rank, pangramCount = 0) {
   try {
     const playerRef = ref(rtdb, `spelling-bee/daily/${dateKey}/players/${userId}`);
     const existing = await get(playerRef);
@@ -32,6 +32,7 @@ export async function saveSpellingBeeScore(userId, displayName, dateKey, score, 
       score,
       wordCount,
       rank,
+      pangramCount,
       playedAt: serverTimestamp()
     });
   } catch (e) {

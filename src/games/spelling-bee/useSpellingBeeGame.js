@@ -206,11 +206,12 @@ export default function useSpellingBeeGame() {
     if (!practiceMode) {
       const dateKey = getTodayKey();
       const rank = getCurrentRank(score, maxScore);
-      await saveSpellingBeeScore(user.uid, user.displayName, dateKey, score, foundWords.length, rank.name);
+      const pangramCount = foundWords.filter(w => pangrams.has(w)).length;
+      await saveSpellingBeeScore(user.uid, user.displayName, dateKey, score, foundWords.length, rank.name, pangramCount);
       const lb = await getSpellingBeeLeaderboard(dateKey);
       setLeaderboard(lb);
     }
-  }, [practiceMode, user, score, maxScore, foundWords.length]);
+  }, [practiceMode, user, score, maxScore, foundWords, pangrams]);
 
   // ============================================
   // INPUT ACTIONS
