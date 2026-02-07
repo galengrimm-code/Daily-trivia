@@ -2,16 +2,6 @@
 import React from 'react';
 import { Trophy, ArrowLeft, Loader } from 'lucide-react';
 
-// Convert full name to initials (e.g., "John Smith" -> "J.S.")
-function getInitials(name) {
-  if (!name) return '??';
-  const parts = name.trim().split(/\s+/);
-  if (parts.length === 1) {
-    return parts[0].charAt(0).toUpperCase() + '.';
-  }
-  return parts[0].charAt(0).toUpperCase() + '.' + parts[parts.length - 1].charAt(0).toUpperCase() + '.';
-}
-
 // Reusable mini leaderboard component
 function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreLabel }) {
   return (
@@ -21,18 +11,18 @@ function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreL
         {title}
       </h2>
       {entries.length === 0 ? (
-        <p className="text-text-muted text-center py-2 text-xs">No scores yet</p>
+        <p className="text-text-muted text-center py-1 text-xs">No scores yet</p>
       ) : (
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           {entries.slice(0, 5).map((entry, idx) => (
             <div
               key={entry.userId || entry.id || idx}
-              className={`flex items-center justify-between p-2 rounded-button text-sm ${
-                entry.userId === currentUserId ? 'bg-blue-50 border border-blue-200' : 'bg-gray-50'
+              className={`flex items-center justify-between px-2 py-1 rounded text-xs ${
+                entry.userId === currentUserId ? 'bg-blue-50' : 'bg-gray-50'
               }`}
             >
-              <div className="flex items-center gap-2">
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs ${
+              <div className="flex items-center gap-1.5">
+                <span className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs ${
                   idx === 0 ? 'bg-yellow-400 text-yellow-900' :
                   idx === 1 ? 'bg-gray-300 text-gray-700' :
                   idx === 2 ? 'bg-amber-600 text-white' :
@@ -40,11 +30,11 @@ function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreL
                 }`}>
                   {idx + 1}
                 </span>
-                <span className="text-text-main font-medium">{getInitials(entry.displayName)}</span>
+                <span className="text-text-main font-medium truncate max-w-[140px]">{entry.displayName}</span>
               </div>
-              <span className="text-text-main font-bold text-xs">
+              <span className="text-text-main font-bold">
                 {typeof scoreKey === 'function' ? scoreKey(entry) : entry[scoreKey]}
-                {scoreLabel && <span className="text-text-muted font-normal ml-1">{scoreLabel}</span>}
+                {scoreLabel && <span className="text-text-muted font-normal ml-0.5">{scoreLabel}</span>}
               </span>
             </div>
           ))}
@@ -124,16 +114,16 @@ export default function Leaderboard({
               <span className="text-lg">{'\u{1F3C6}'}</span>
               Weekly Trivia
             </h2>
-            <div className="space-y-1">
+            <div className="space-y-0.5">
               {weeklyEntries.slice(0, 5).map((entry, idx) => (
                 <div
                   key={entry.userId}
-                  className={`flex items-center justify-between p-2 rounded-button text-sm ${
-                    entry.userId === currentUserId ? 'bg-blue-50 border border-blue-200' : 'bg-gray-50'
+                  className={`flex items-center justify-between px-2 py-1 rounded text-xs ${
+                    entry.userId === currentUserId ? 'bg-blue-50' : 'bg-gray-50'
                   }`}
                 >
-                  <div className="flex items-center gap-2">
-                    <span className={`w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs ${
+                  <div className="flex items-center gap-1.5">
+                    <span className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs ${
                       idx === 0 ? 'bg-yellow-400 text-yellow-900' :
                       idx === 1 ? 'bg-gray-300 text-gray-700' :
                       idx === 2 ? 'bg-amber-600 text-white' :
@@ -141,12 +131,10 @@ export default function Leaderboard({
                     }`}>
                       {idx + 1}
                     </span>
-                    <div>
-                      <span className="text-text-main font-medium">{getInitials(entry.displayName)}</span>
-                      <span className="text-text-muted text-xs ml-2">{entry.gamesPlayed}g</span>
-                    </div>
+                    <span className="text-text-main font-medium truncate max-w-[120px]">{entry.displayName}</span>
+                    <span className="text-text-muted">{entry.gamesPlayed}g</span>
                   </div>
-                  <span className="text-text-main font-bold text-xs">{entry.totalScore} <span className="text-text-muted font-normal">pts</span></span>
+                  <span className="text-text-main font-bold">{entry.totalScore}<span className="text-text-muted font-normal ml-0.5">pts</span></span>
                 </div>
               ))}
             </div>
