@@ -502,7 +502,9 @@ export default function useSpellingBeeGame() {
 
   const mpHostStart = useCallback(async () => {
     const currentRoomId = roomId;
-    if (!currentRoomId) {
+    console.log('mpHostStart called, roomId:', currentRoomId, 'type:', typeof currentRoomId);
+
+    if (!currentRoomId || typeof currentRoomId !== 'string') {
       showMessage('Room not found. Please try again.');
       return;
     }
@@ -512,6 +514,8 @@ export default function useSpellingBeeGame() {
     }
 
     const result = await startRoom(currentRoomId);
+    console.log('startRoom result:', result);
+
     if (result.error) {
       showMessage(result.error);
       attachRoomListener(currentRoomId);
