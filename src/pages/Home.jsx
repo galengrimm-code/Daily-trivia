@@ -74,11 +74,11 @@ export default function Home() {
       status: 'coming-soon',
     },
     {
-      id: 'psych',
-      title: 'Psych',
-      description: 'Outwit your friends with fake answers',
-      icon: '\u{1F914}',
-      path: '/psych',
+      id: 'riddle',
+      title: 'Daily Riddle',
+      description: 'Coming soon',
+      icon: '\u{1F4A1}',
+      path: '/riddle',
       status: 'coming-soon',
     },
   ];
