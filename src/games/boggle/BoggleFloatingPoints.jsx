@@ -5,17 +5,27 @@ export default function BoggleFloatingPoints({ points, id, onDone }) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    setVisible(true);
     const timer = setTimeout(() => {
       setVisible(false);
       onDone?.();
-    }, 1200);
+    }, 800);
     return () => clearTimeout(timer);
   }, [id, onDone]);
 
   if (!visible || !points) return null;
 
   return (
-    <div className="float-points text-primary" style={{ left: '50%', top: '30%', transform: 'translateX(-50%)' }}>
+    <div
+      key={id}
+      className="float-points"
+      style={{
+        left: '50%',
+        top: '40%',
+        color: '#22C55E',
+        textShadow: '0 2px 8px rgba(34, 197, 94, 0.5)'
+      }}
+    >
       +{points}
     </div>
   );
