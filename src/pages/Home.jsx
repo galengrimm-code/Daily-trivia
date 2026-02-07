@@ -56,7 +56,7 @@ export default function Home() {
       icon: '\u{1F41D}',
       path: '/spelling-bee',
       status: spellingBeeResult ? 'completed' : 'play',
-      score: spellingBeeResult ? `${spellingBeeResult.score} pts \u{2022} ${spellingBeeResult.rank}` : null,
+      score: spellingBeeResult ? `${spellingBeeResult.score} pts` : null,
     },
     {
       id: 'wordle',
