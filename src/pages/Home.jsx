@@ -83,22 +83,20 @@ export default function Home() {
 
   const handleShareToday = () => {
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-    const lines = [`\u{1F520} Daily Games \u{2022} ${date}`, ''];
+    const lines = [`Daily Games \u{2022} ${date}`];
 
     if (todayScore) {
       const pct = Math.round((todayScore.score / todayScore.totalQuestions) * 100);
-      const bar = '\u{1F7E9}'.repeat(todayScore.score) + '\u{2B1C}'.repeat(todayScore.totalQuestions - todayScore.score);
-      lines.push(`\u{1F9E0} Trivia: ${todayScore.score}/${todayScore.totalQuestions} (${pct}%)`);
-      lines.push(bar);
+      lines.push(`Trivia: ${todayScore.score}/${todayScore.totalQuestions} (${pct}%)`);
     }
     if (boggleResult) {
-      lines.push(`\u{1F524} Boggle: ${boggleResult.score} pts \u{2022} ${boggleResult.wordCount} words`);
+      lines.push(`Boggle: ${boggleResult.score} pts \u{2022} ${boggleResult.wordCount} words`);
     }
     if (spellingBeeResult) {
-      lines.push(`\u{1F41D} Spelling Bee: ${spellingBeeResult.score} pts \u{2022} ${spellingBeeResult.rank}`);
+      lines.push(`Spelling Bee: ${spellingBeeResult.score} pts`);
     }
 
-    lines.push('', 'How did you do? \u{1F440}');
+    lines.push('', 'How did you do?');
 
     const text = lines.join('\n');
 
