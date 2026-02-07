@@ -207,7 +207,7 @@ export default function useSpellingBeeGame() {
       const dateKey = getTodayKey();
       const rank = getCurrentRank(score, maxScore);
       const pangramCount = foundWords.filter(w => pangrams.has(w)).length;
-      await saveSpellingBeeScore(user.uid, user.displayName, dateKey, score, foundWords.length, rank.name, pangramCount);
+      await saveSpellingBeeScore(user.uid, user.displayName, dateKey, score, foundWords.length, rank.name, pangramCount, maxScore);
       const lb = await getSpellingBeeLeaderboard(dateKey);
       setLeaderboard(lb);
     }

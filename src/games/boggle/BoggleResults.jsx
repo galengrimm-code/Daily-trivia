@@ -5,7 +5,7 @@ import { getWordScore, generateShareText } from './boggleUtils';
 import { getTodayKey } from '../../utils/helpers';
 
 export default function BoggleResults({
-  score, foundWords, possibleWords, practiceMode, practiceCode, dailyResult,
+  score, maxScore, foundWords, possibleWords, practiceMode, practiceCode, dailyResult,
   onShare, onViewLeaderboard, onNewGame, onReplay, onHome
 }) {
   const [showMissed, setShowMissed] = useState(false);
@@ -47,20 +47,28 @@ export default function BoggleResults({
             <p className="text-text-muted text-sm mb-2">Today's Results</p>
           )}
           <div className="text-5xl font-extrabold text-text-main mb-2">{score}</div>
-          <p className="text-text-muted text-lg">points</p>
+          <p className="text-text-muted text-lg">
+            {maxScore > 0 ? `of ${maxScore} possible points` : 'points'}
+          </p>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 gap-3 mb-6">
-          <div className="bg-white rounded-card p-4 shadow-card text-center">
-            <div className="text-2xl font-bold text-primary">{wordsFoundCount}</div>
-            <div className="text-sm text-text-muted">Words Found</div>
+        <div className="grid grid-cols-3 gap-3 mb-6">
+          <div className="bg-white rounded-card p-3 shadow-card text-center">
+            <div className="text-xl font-bold text-primary">{wordsFoundCount}</div>
+            <div className="text-xs text-text-muted">Words</div>
           </div>
-          <div className="bg-white rounded-card p-4 shadow-card text-center">
-            <div className="text-2xl font-bold text-primary">
+          <div className="bg-white rounded-card p-3 shadow-card text-center">
+            <div className="text-xl font-bold text-primary">
               {possibleWords ? possibleWords.length : '...'}
             </div>
-            <div className="text-sm text-text-muted">Possible Words</div>
+            <div className="text-xs text-text-muted">Possible</div>
+          </div>
+          <div className="bg-white rounded-card p-3 shadow-card text-center">
+            <div className="text-xl font-bold text-primary">
+              {maxScore > 0 ? `${Math.round((score / maxScore) * 100)}%` : '...'}
+            </div>
+            <div className="text-xs text-text-muted">Score</div>
           </div>
         </div>
 

@@ -23,7 +23,7 @@ export async function checkBogglePlayer(userId, dateKey) {
 }
 
 // Save daily boggle score
-export async function saveBoggleScore(userId, displayName, dateKey, score, wordCount) {
+export async function saveBoggleScore(userId, displayName, dateKey, score, wordCount, maxScore = 0) {
   try {
     const playerRef = ref(rtdb, `boggle/daily/${dateKey}/players/${userId}`);
 
@@ -31,14 +31,63 @@ export async function saveBoggleScore(userId, displayName, dateKey, score, wordC
     const existing = await get(playerRef);
     if (existing.exists()) return;
 
+    const percentage = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
+
     await set(playerRef, {
       displayName,
       score,
       wordCount,
+      maxScore,
+      percentage,
       playedAt: serverTimestamp()
     });
+
+    // Update user's running average
+    await updateUserWordGameStats(userId, 'boggle', percentage);
   } catch (e) {
     console.error('Firebase error:', e);
+  }
+}
+
+// Update user's running average for word games
+async function updateUserWordGameStats(userId, game, percentage) {
+  try {
+    const statsRef = ref(rtdb, `userStats/${userId}/${game}`);
+    const snapshot = await get(statsRef);
+
+    let gamesPlayed = 1;
+    let totalPercentage = percentage;
+
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+      gamesPlayed = (data.gamesPlayed || 0) + 1;
+      totalPercentage = (data.totalPercentage || 0) + percentage;
+    }
+
+    const averagePercentage = Math.round(totalPercentage / gamesPlayed);
+
+    await set(statsRef, {
+      gamesPlayed,
+      totalPercentage,
+      averagePercentage
+    });
+  } catch (e) {
+    console.error('Error updating user stats:', e);
+  }
+}
+
+// Get user's word game stats
+export async function getUserWordGameStats(userId) {
+  try {
+    const statsRef = ref(rtdb, `userStats/${userId}`);
+    const snapshot = await get(statsRef);
+    if (snapshot.exists()) {
+      return snapshot.val();
+    }
+    return null;
+  } catch (e) {
+    console.error('Error getting user stats:', e);
+    return null;
   }
 }
 

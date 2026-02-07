@@ -28,6 +28,7 @@ export default function useBoggleGame() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(GAME_DURATION);
   const [possibleWords, setPossibleWords] = useState(null);
+  const [maxScore, setMaxScore] = useState(0);
 
   // Input state
   const [selectedPath, setSelectedPath] = useState([]);
@@ -107,7 +108,9 @@ export default function useBoggleGame() {
       // Calculate possible words in background
       if (dictionary) {
         setTimeout(() => {
-          setPossibleWords(getAllPossibleWords(boardData, dictionary));
+          const words = getAllPossibleWords(boardData, dictionary);
+          setPossibleWords(words);
+          setMaxScore(words.reduce((sum, w) => sum + getWordScore(w), 0));
         }, 100);
       }
       // Load leaderboard
@@ -206,17 +209,19 @@ export default function useBoggleGame() {
 
     if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
 
-    // Calculate possible words in background
+    // Calculate possible words and max score
+    let calculatedMaxScore = 0;
     if (dictionary) {
-      setTimeout(() => {
-        setPossibleWords(prev => prev || getAllPossibleWords(board, dictionary));
-      }, 100);
+      const words = getAllPossibleWords(board, dictionary);
+      setPossibleWords(words);
+      calculatedMaxScore = words.reduce((sum, w) => sum + getWordScore(w), 0);
+      setMaxScore(calculatedMaxScore);
     }
 
     // Save daily score
     if (!practiceMode) {
       const dateKey = getTodayKey();
-      await saveBoggleScore(user.uid, user.displayName, dateKey, score, foundWords.length);
+      await saveBoggleScore(user.uid, user.displayName, dateKey, score, foundWords.length, calculatedMaxScore);
       const lb = await getBoggleLeaderboard(dateKey);
       setLeaderboard(lb);
     }
@@ -624,6 +629,7 @@ export default function useBoggleGame() {
     setFoundWords([]);
     setScore(0);
     setPossibleWords(null);
+    setMaxScore(0);
     setPhase('mode-select');
   }, [stopAllListeners]);
 
@@ -632,7 +638,7 @@ export default function useBoggleGame() {
     phase, setPhase,
 
     // Game state
-    board, foundWords, score, timeLeft, possibleWords,
+    board, foundWords, score, timeLeft, possibleWords, maxScore,
     dictLoading, leaderboard, dailyResult,
 
     // Input

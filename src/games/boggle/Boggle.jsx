@@ -184,6 +184,7 @@ export default function Boggle() {
     return (
       <BoggleResults
         score={game.score}
+        maxScore={game.maxScore}
         foundWords={game.foundWords}
         possibleWords={game.possibleWords}
         practiceMode={game.practiceMode}
