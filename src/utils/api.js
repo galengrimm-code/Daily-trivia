@@ -93,9 +93,12 @@ export const fetchAPIQuestion = async (category, retryOnEmpty = true) => {
     );
     const data = await response.json();
 
-    // Handle token empty (code 4) - all questions exhausted, reset token
-    if (data.response_code === 4 && retryOnEmpty) {
-      console.log('Token exhausted for category, requesting new token...');
+    // Handle token issues:
+    // Code 3 = Token expired (after 6 hours of inactivity)
+    // Code 4 = Token exhausted (all questions for category have been used)
+    if ((data.response_code === 3 || data.response_code === 4) && retryOnEmpty) {
+      console.log(`Token ${data.response_code === 3 ? 'expired' : 'exhausted'}, requesting new token...`);
+      cachedToken = null; // Clear stale cached token
       await requestNewSessionToken();
       return fetchAPIQuestion(category, false); // Retry once with new token
     }
