@@ -75,7 +75,7 @@ export default function Home() {
 
   const handleShareToday = () => {
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-    const lines = [`\u{1F3AE} Daily Games \u{2022} ${date}`, ''];
+    const lines = [`\u{1F520} Daily Games \u{2022} ${date}`, ''];
 
     if (todayScore) {
       const pct = Math.round((todayScore.score / todayScore.totalQuestions) * 100);
@@ -120,7 +120,7 @@ export default function Home() {
   const gamesPlayed = [todayScore, boggleResult, spellingBeeResult].filter(Boolean).length;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header />
 
       <main className="max-w-md mx-auto px-4 pb-8">

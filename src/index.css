@@ -7,9 +7,10 @@
    DESIGN SYSTEM TOKENS
    ============================================ */
 :root {
-  --primary: #3B82F6;
-  --primary-hover: #2563EB;
-  --background: #F8FAFC;
+  --primary: #0D9488;
+  --primary-hover: #0F766E;
+  --background: #F0FDFA;
+  --background-gradient: linear-gradient(180deg, #E0F2FE 0%, #D1FAE5 100%);
   --card: #FFFFFF;
   --text: #1E293B;
   --text-muted: #64748B;
@@ -41,7 +42,8 @@ body {
   font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background);
+  background: var(--background-gradient);
+  background-attachment: fixed;
   color: var(--text);
   -webkit-user-select: none;
   user-select: none;
@@ -205,7 +207,7 @@ input, select, textarea {
 }
 
 .swipe-line {
-  stroke: rgba(59, 130, 246, 0.7);
+  stroke: rgba(13, 148, 136, 0.7);
   stroke-width: 6;
   stroke-linecap: round;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));

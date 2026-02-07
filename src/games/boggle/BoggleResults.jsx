@@ -80,26 +80,23 @@ export default function BoggleResults({
 
         {/* Missed Words */}
         {possibleWords && missedWords.length > 0 && (
-          <div className="bg-white rounded-card p-4 mb-6 shadow-card">
+          <div className={`bg-white rounded-card shadow-card mb-6 ${showMissed ? 'p-4' : 'px-4 py-2'}`}>
             <button
               onClick={() => setShowMissed(!showMissed)}
               className="w-full flex items-center justify-between"
             >
-              <h3 className="font-bold text-text-main">
+              <span className={`text-text-muted ${showMissed ? 'font-bold text-text-main' : 'text-sm'}`}>
                 Missed Words ({missedWords.length})
-              </h3>
-              {showMissed ? <ChevronUp className="w-5 h-5 text-text-muted" /> : <ChevronDown className="w-5 h-5 text-text-muted" />}
+              </span>
+              {showMissed ? <ChevronUp className="w-4 h-4 text-text-muted" /> : <ChevronDown className="w-4 h-4 text-text-muted" />}
             </button>
             {showMissed && (
-              <div className="flex flex-wrap gap-2 mt-3">
-                {missedWords.slice(0, 50).map(word => (
+              <div className="flex flex-wrap gap-2 mt-3 max-h-64 overflow-y-auto">
+                {missedWords.map(word => (
                   <span key={word} className="bg-gray-50 text-text-muted px-3 py-1 rounded-full text-sm capitalize">
                     {word} <span className="text-gray-400">+{getWordScore(word)}</span>
                   </span>
                 ))}
-                {missedWords.length > 50 && (
-                  <span className="text-text-muted text-sm py-1">...and {missedWords.length - 50} more</span>
-                )}
               </div>
             )}
           </div>

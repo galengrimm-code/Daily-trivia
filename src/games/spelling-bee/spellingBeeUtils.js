@@ -175,7 +175,8 @@ export function generatePracticeCode() {
 export function generateShareText(score, maxScore, rankName, wordCount, pangramCount, dateKey) {
   const pct = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
   const lines = [
-    `\u{1F41D} Spelling Bee - ${dateKey}`,
+    `\u{1F520} Daily Games - Spelling Bee \u{1F41D}`,
+    `\u{1F4C5} ${dateKey}`,
     `Rank: ${rankName}`,
     `Score: ${score} / ${maxScore} (${pct}%)`,
     `Words: ${wordCount}`,

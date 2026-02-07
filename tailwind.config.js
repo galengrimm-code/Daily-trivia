@@ -8,10 +8,10 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#3B82F6',
-          hover: '#2563EB',
+          DEFAULT: '#0D9488',
+          hover: '#0F766E',
         },
-        background: '#F8FAFC',
+        background: 'transparent',
         card: '#FFFFFF',
         'text-main': '#1E293B',
         'text-muted': '#64748B',

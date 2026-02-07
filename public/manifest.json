@@ -4,8 +4,8 @@
   "description": "Word puzzles and trivia for the family!",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1e3a8a",
-  "theme_color": "#1e3a8a",
+  "background_color": "#F0FDFA",
+  "theme_color": "#0D9488",
   "orientation": "portrait",
   "categories": ["games", "education", "entertainment"],
   "icons": [
