@@ -160,6 +160,8 @@ export async function joinRoom(roomId, userId, displayName) {
 
 export async function startRoom(roomId) {
   try {
+    console.log('startRoom called with roomId:', roomId, 'type:', typeof roomId);
+
     // Validate roomId
     if (!roomId || typeof roomId !== 'string' || !/^\d{5}$/.test(roomId)) {
       console.error('Invalid roomId:', roomId);
@@ -168,16 +170,29 @@ export async function startRoom(roomId) {
 
     const startTime = Date.now() + 5000; // 5 seconds from now
     const roomPath = `spelling-bee/rooms/${roomId}`;
-    console.log('Updating room path:', roomPath);
+    console.log('Room path:', roomPath);
 
-    await update(ref(rtdb, roomPath), {
+    // Verify room exists first
+    const roomRef = ref(rtdb, roomPath);
+    const snapshot = await get(roomRef);
+    if (!snapshot.exists()) {
+      console.error('Room does not exist:', roomId);
+      return { error: 'Room not found' };
+    }
+    console.log('Room exists, updating...');
+
+    // Update with a single call
+    await update(roomRef, {
       status: 'playing',
-      startTime
+      startTime: startTime
     });
+    console.log('Room updated successfully');
 
     return { success: true, startTime };
   } catch (e) {
-    console.error('Firebase error:', e, 'roomId:', roomId);
+    console.error('Firebase error in startRoom:', e);
+    console.error('Error message:', e.message);
+    console.error('Error code:', e.code);
     return { error: e.message || 'Network error' };
   }
 }
