@@ -70,7 +70,7 @@ export default function Home() {
       id: 'psych',
       title: 'Psych',
       description: 'Outwit your friends with fake answers',
-      icon: '\u{1F3AD}',
+      icon: '\u{1F914}',
       path: '/psych',
       status: 'coming-soon',
     },
