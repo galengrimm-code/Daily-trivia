@@ -87,15 +87,15 @@ export default function Home() {
 
     if (todayScore) {
       const pct = Math.round((todayScore.score / todayScore.totalQuestions) * 100);
-      lines.push(`Trivia: ${todayScore.score}/${todayScore.totalQuestions} (${pct}%)`);
+      lines.push(`\u{1F9E0} Trivia: ${todayScore.score}/${todayScore.totalQuestions} (${pct}%)`);
     }
     if (boggleResult) {
-      lines.push(`Boggle: ${boggleResult.score} pts \u{2022} ${boggleResult.wordCount} words`);
+      lines.push(`\u{1F524} Boggle: ${boggleResult.score} pts \u{2022} ${boggleResult.wordCount} words`);
     }
     if (spellingBeeResult) {
-      let sbLine = `Spelling Bee: ${spellingBeeResult.score} pts`;
+      let sbLine = `\u{1F41D} Spelling Bee: ${spellingBeeResult.score} pts`;
       if (spellingBeeResult.pangramCount > 0) {
-        sbLine += ` \u{2022} PANGRAM${spellingBeeResult.pangramCount > 1 ? 'S' : ''}: ${spellingBeeResult.pangramCount}`;
+        sbLine += `\n\u{1F389} PANGRAM${'!'.repeat(Math.min(spellingBeeResult.pangramCount + 2, 5))}`;
       }
       lines.push(sbLine);
     }
