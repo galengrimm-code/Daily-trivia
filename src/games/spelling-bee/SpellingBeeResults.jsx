@@ -56,7 +56,7 @@ export default function SpellingBeeResults({
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 mb-6">
+        <div className="grid grid-cols-3 gap-3 mb-4">
           <div className="bg-white rounded-card p-3 shadow-card text-center">
             <div className="text-xl font-bold text-primary">{wordsFoundCount}</div>
             <div className="text-xs text-text-muted">Words</div>
@@ -68,10 +68,22 @@ export default function SpellingBeeResults({
             <div className="text-xs text-text-muted">Possible</div>
           </div>
           <div className="bg-white rounded-card p-3 shadow-card text-center">
-            <div className="text-xl font-bold text-amber-600">{pangramCount}</div>
-            <div className="text-xs text-text-muted">Pangrams</div>
+            <div className="text-xl font-bold text-primary">
+              {maxScore > 0 ? `${Math.round((displayScore / maxScore) * 100)}%` : '...'}
+            </div>
+            <div className="text-xs text-text-muted">Score</div>
           </div>
         </div>
+
+        {/* Pangrams */}
+        {pangramCount > 0 && (
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <span className="text-amber-500 text-lg">{'\u{2B50}'}</span>
+            <span className="text-amber-700 font-semibold">
+              {pangramCount} Pangram{pangramCount > 1 ? 's' : ''} Found!
+            </span>
+          </div>
+        )}
 
         {/* Found Words */}
         {foundWords.length > 0 && !isReturningPlayer && (
