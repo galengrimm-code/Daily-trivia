@@ -15,7 +15,7 @@ function SignIn() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="bg-white rounded-card p-8 max-w-md w-full shadow-card text-center">
-        <div className="text-5xl mb-4">{'\u{1F3AE}'}</div>
+        <div className="text-5xl mb-4">{'\u{1F520}'}</div>
         <h1 className="text-4xl font-extrabold text-text-main mb-2">Daily Games</h1>
         <p className="text-text-muted mb-8">Word puzzles and trivia for the family</p>
 
