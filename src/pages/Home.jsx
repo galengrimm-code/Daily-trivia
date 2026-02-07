@@ -66,6 +66,14 @@ export default function Home() {
       path: '/wordle',
       status: 'coming-soon',
     },
+    {
+      id: 'psych',
+      title: 'Psych',
+      description: 'Outwit your friends with fake answers',
+      icon: '\u{1F3AD}',
+      path: '/psych',
+      status: 'coming-soon',
+    },
   ];
 
   const handleViewLeaderboard = async () => {
