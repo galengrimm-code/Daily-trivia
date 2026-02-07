@@ -110,6 +110,7 @@ export default function Trivia() {
         currentScore={getScore()}
         onSelectAnswer={handleAnswer}
         onNext={nextQuestion}
+        onExit={() => navigate('/')}
       />
     );
   }

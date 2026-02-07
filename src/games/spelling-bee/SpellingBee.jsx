@@ -1,7 +1,7 @@
 // src/games/spelling-bee/SpellingBee.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Loader } from 'lucide-react';
+import { Loader, X } from 'lucide-react';
 import useSpellingBeeGame from './useSpellingBeeGame';
 import SpellingBeeModeSelect from './SpellingBeeModeSelect';
 import SpellingBeeReady from './SpellingBeeReady';
@@ -77,6 +77,17 @@ export default function SpellingBee() {
     return (
       <div className="min-h-screen bg-background p-4">
         <div className="max-w-md mx-auto">
+          {/* Exit button */}
+          <div className="flex justify-end mb-2">
+            <button
+              onClick={() => navigate('/')}
+              className="p-2 text-text-muted hover:text-text-main hover:bg-white rounded-full transition-colors"
+              aria-label="Exit game"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
           {/* Top bar: score + timer */}
           <div className="flex items-center justify-between mb-3">
             <div className="bg-white px-4 py-2 rounded-full shadow-card">

@@ -11,13 +11,25 @@ export default function QuestionCard({
   showFeedback,
   currentScore,
   onSelectAnswer,
-  onNext
+  onNext,
+  onExit
 }) {
   const style = CATEGORIES[question.category] || { color: 'bg-gray-500', icon: '\u{2753}' };
 
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="max-w-md mx-auto">
+        {/* Exit button */}
+        <div className="flex justify-end mb-2">
+          <button
+            onClick={onExit}
+            className="p-2 text-text-muted hover:text-text-main hover:bg-white rounded-full transition-colors"
+            aria-label="Exit game"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className={`${style.color} px-3 py-1 rounded-full text-white text-sm font-medium flex items-center gap-2`}>
