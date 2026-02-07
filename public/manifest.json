@@ -1,7 +1,7 @@
 {
-  "name": "Daily Trivia",
-  "short_name": "Trivia",
-  "description": "Test your knowledge every day with your family!",
+  "name": "Daily Games",
+  "short_name": "Daily Games",
+  "description": "Word puzzles and trivia for the family!",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e3a8a",

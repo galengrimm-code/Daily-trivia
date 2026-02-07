@@ -1,8 +1,8 @@
-// src/utils/database.js
-import { 
-  doc, 
-  getDoc, 
-  setDoc, 
+// src/utils/firestore.js
+import {
+  doc,
+  getDoc,
+  setDoc,
   updateDoc,
   collection,
   query,
@@ -12,14 +12,13 @@ import {
   getDocs,
   Timestamp
 } from 'firebase/firestore';
-import { db } from '../config/firebase';
+import { db } from './firebase';
 import { getTodayKey, calculateStreak } from './helpers';
 
 // ============================================
 // USER FUNCTIONS
 // ============================================
 
-// Get or create user profile
 export const getUserProfile = async (userId) => {
   const userRef = doc(db, 'users', userId);
   const userSnap = await getDoc(userRef);
@@ -30,7 +29,6 @@ export const getUserProfile = async (userId) => {
   return null;
 };
 
-// Create new user profile
 export const createUserProfile = async (userId, displayName) => {
   const userRef = doc(db, 'users', userId);
   const userData = {
@@ -47,7 +45,6 @@ export const createUserProfile = async (userId, displayName) => {
   return { id: userId, ...userData };
 };
 
-// Update user after completing a game
 export const updateUserStats = async (userId, score, totalQuestions) => {
   const userRef = doc(db, 'users', userId);
   const userSnap = await getDoc(userRef);
@@ -75,7 +72,6 @@ export const updateUserStats = async (userId, score, totalQuestions) => {
 // SCORE FUNCTIONS
 // ============================================
 
-// Save a score for today
 export const saveScore = async (userId, displayName, score, totalQuestions, durationSeconds = 0) => {
   const today = getTodayKey();
   const scoreId = `${userId}_${today}`;
@@ -86,7 +82,7 @@ export const saveScore = async (userId, displayName, score, totalQuestions, dura
     displayName,
     score,
     totalQuestions,
-    duration: durationSeconds, // Time to complete in seconds
+    duration: durationSeconds,
     date: today,
     timestamp: Timestamp.now()
   };
@@ -95,7 +91,6 @@ export const saveScore = async (userId, displayName, score, totalQuestions, dura
   return scoreData;
 };
 
-// Check if user already played today
 export const hasPlayedToday = async (userId) => {
   const today = getTodayKey();
   const scoreId = `${userId}_${today}`;
@@ -105,7 +100,6 @@ export const hasPlayedToday = async (userId) => {
   return scoreSnap.exists() ? scoreSnap.data() : null;
 };
 
-// Get today's leaderboard
 export const getTodayLeaderboard = async () => {
   const today = getTodayKey();
   const scoresRef = collection(db, 'scores');
@@ -113,7 +107,7 @@ export const getTodayLeaderboard = async () => {
     scoresRef,
     where('date', '==', today),
     orderBy('score', 'desc'),
-    orderBy('duration', 'asc'), // Tiebreaker: fastest completion time wins
+    orderBy('duration', 'asc'),
     limit(50)
   );
 
@@ -121,7 +115,6 @@ export const getTodayLeaderboard = async () => {
   return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 };
 
-// Get weekly leaderboard (aggregated scores)
 export const getWeeklyLeaderboard = async () => {
   const today = new Date();
   const weekAgo = new Date(today);
@@ -138,7 +131,6 @@ export const getWeeklyLeaderboard = async () => {
   const snapshot = await getDocs(q);
   const scores = snapshot.docs.map(doc => doc.data());
 
-  // Aggregate by user
   const userScores = {};
   scores.forEach(score => {
     if (!userScores[score.userId]) {
@@ -153,11 +145,9 @@ export const getWeeklyLeaderboard = async () => {
     userScores[score.userId].gamesPlayed += 1;
   });
 
-  // Sort by total score
   return Object.values(userScores).sort((a, b) => b.totalScore - a.totalScore);
 };
 
-// Get user's score history
 export const getUserScoreHistory = async (userId, limitCount = 30) => {
   const scoresRef = collection(db, 'scores');
   const q = query(
@@ -175,7 +165,6 @@ export const getUserScoreHistory = async (userId, limitCount = 30) => {
 // DAILY QUESTIONS FUNCTIONS
 // ============================================
 
-// Get today's questions from Firestore
 export const getTodaysQuestionsFromDB = async () => {
   const today = getTodayKey();
   const questionsRef = doc(db, 'dailyQuestions', today);
@@ -187,7 +176,6 @@ export const getTodaysQuestionsFromDB = async () => {
   return null;
 };
 
-// Save today's questions to Firestore
 export const saveTodaysQuestionsToDB = async (questions) => {
   const today = getTodayKey();
   const questionsRef = doc(db, 'dailyQuestions', today);
@@ -205,7 +193,6 @@ export const saveTodaysQuestionsToDB = async (questions) => {
 // TRIVIA SESSION TOKEN FUNCTIONS
 // ============================================
 
-// Get the global trivia session token
 export const getTriviaSessionToken = async () => {
   const tokenRef = doc(db, 'settings', 'triviaToken');
   const tokenSnap = await getDoc(tokenRef);
@@ -216,7 +203,6 @@ export const getTriviaSessionToken = async () => {
   return null;
 };
 
-// Save/update the global trivia session token
 export const updateTriviaSessionToken = async (token) => {
   const tokenRef = doc(db, 'settings', 'triviaToken');
 

@@ -1,6 +1,6 @@
 // src/utils/api.js
 import { decodeHTML, shuffleArray, seededRandom, getTodaySeed, CATEGORIES } from './helpers';
-import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getTriviaSessionToken, updateTriviaSessionToken } from './database';
+import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getTriviaSessionToken, updateTriviaSessionToken } from './firestore';
 import bibleQuestions from '../data/bibleQuestions';
 
 // Session token for Open Trivia DB (prevents repeat questions)

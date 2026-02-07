@@ -3,6 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   DESIGN SYSTEM TOKENS
+   ============================================ */
+:root {
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --background: #F8FAFC;
+  --card: #FFFFFF;
+  --text: #1E293B;
+  --text-muted: #64748B;
+  --border: #E2E8F0;
+  --success: #22C55E;
+  --warning: #EAB308;
+  --error: #EF4444;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.1);
+  --radius-card: 16px;
+  --radius-button: 12px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -10,18 +33,16 @@
 }
 
 html {
-  /* Prevent font size adjustment on orientation change */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Prevent text selection on long press */
+  background-color: var(--background);
+  color: var(--text);
   -webkit-user-select: none;
   user-select: none;
 }
@@ -32,33 +53,33 @@ p, span, h1, h2, h3, h4, h5, h6 {
   user-select: text;
 }
 
-/* Button touch optimization */
+/* ============================================
+   INTERACTIVE ELEMENTS
+   ============================================ */
 button {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Improve touch targets - minimum 44x44px for accessibility */
 button, a, [role="button"] {
   min-height: 44px;
 }
 
-/* Smooth transitions for all interactive elements */
 button, a, input, select, textarea {
   transition: transform 0.1s ease, opacity 0.15s ease, background-color 0.15s ease;
 }
 
-/* Active state feedback for touch */
 button:active, a:active, [role="button"]:active {
   transform: scale(0.98);
 }
 
-/* Prevent zoom on input focus (iOS) */
 input, select, textarea {
   font-size: 16px;
 }
 
-/* Hide scrollbar but allow scrolling */
+/* ============================================
+   SCROLLING UTILITIES
+   ============================================ */
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -68,89 +89,173 @@ input, select, textarea {
   display: none;
 }
 
-/* Momentum scrolling for iOS */
 .scroll-container {
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
 }
 
-/* Safe area padding utilities */
-.safe-top {
-  padding-top: env(safe-area-inset-top);
-}
+/* ============================================
+   SAFE AREA UTILITIES
+   ============================================ */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-left { padding-left: env(safe-area-inset-left); }
+.safe-right { padding-right: env(safe-area-inset-right); }
 
-.safe-bottom {
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.safe-left {
-  padding-left: env(safe-area-inset-left);
-}
-
-.safe-right {
-  padding-right: env(safe-area-inset-right);
-}
-
-/* Loading spinner animation */
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 .animate-spin {
   animation: spin 1s linear infinite;
 }
 
-/* Fade in animation for content */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
 }
 
-/* Slide up animation for modals/cards */
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-slide-up {
   animation: slideUp 0.4s ease-out forwards;
 }
 
-/* Haptic feedback simulation with subtle bounce */
 @keyframes bounce {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.95);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.95); }
 }
 
-/* Focus visible for accessibility */
+/* ============================================
+   BOGGLE TILE ANIMATIONS
+   ============================================ */
+.tile {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  will-change: transform, background-color;
+}
+
+.tile-pop { animation: pop 0.15s ease-out; }
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+.tile-shake { animation: shake 0.4s ease-out; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.tile-bounce { animation: bounce-tile 0.5s ease-out; }
+@keyframes bounce-tile {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.float-points {
+  position: fixed;
+  animation: floatUp 1.5s ease-out forwards;
+  pointer-events: none;
+  font-weight: 800;
+  font-size: 2.5rem;
+  z-index: 1000;
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translateY(0) scale(1.2); }
+  20% { opacity: 1; transform: translateY(-20px) scale(1.3); }
+  100% { opacity: 0; transform: translateY(-100px) scale(1.5); }
+}
+
+.timer-urgent {
+  animation: pulse-timer 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse-timer {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.board-container { position: relative; }
+
+.swipe-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.swipe-line {
+  stroke: rgba(59, 130, 246, 0.7);
+  stroke-width: 6;
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+/* ============================================
+   SPELLING BEE HEX ANIMATIONS
+   ============================================ */
+.hex-tile {
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+.hex-tile:active {
+  transform: translate(-50%, -50%) scale(0.92);
+}
+
+.hex-pop {
+  animation: hex-pop 0.15s ease-out;
+}
+
+@keyframes hex-pop {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(0.85); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.hex-shake {
+  animation: hex-shake 0.5s ease-out;
+}
+
+@keyframes hex-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
 button:focus-visible, a:focus-visible {
-  outline: 2px solid #facc15;
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -159,30 +264,19 @@ button:focus-visible, a:focus-visible {
   }
 }
 
-/* Dark mode support (matches app theme) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
-}
-
-/* Landscape orientation adjustments */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (orientation: landscape) and (max-height: 500px) {
   .min-h-screen {
     min-height: auto;
   }
 }
 
-/* Small phone adjustments */
 @media (max-width: 320px) {
-  html {
-    font-size: 14px;
-  }
+  html { font-size: 14px; }
 }
 
-/* Large phone / small tablet */
 @media (min-width: 414px) {
-  html {
-    font-size: 17px;
-  }
+  html { font-size: 17px; }
 }
