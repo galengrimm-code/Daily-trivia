@@ -54,31 +54,37 @@ export default function BoggleInputBar({ inputMode, setInputMode, currentWord, t
             <Send className="w-5 h-5" />
           </button>
         </div>
+      ) : inputMode === 'tap' ? (
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onClear}
+            disabled={disabled || !currentWord}
+            className="px-4 py-3 bg-white rounded-button shadow-card text-text-muted font-semibold disabled:opacity-40 hover:bg-gray-50 transition-colors flex items-center gap-2"
+          >
+            <RotateCcw className="w-4 h-4" />
+            Clear
+          </button>
+          <div className="flex-1 px-4 py-3 bg-white rounded-button shadow-card text-center min-h-[48px] flex items-center justify-center">
+            <span className={`text-lg font-bold ${currentWord ? 'text-text-main' : 'text-text-muted'}`}>
+              {currentWord || 'Tap letters...'}
+            </span>
+          </div>
+          <button
+            onClick={onSubmit}
+            disabled={disabled || currentWord.length < 3}
+            className="px-5 py-3 bg-primary text-white rounded-button font-bold disabled:opacity-40 transition-colors hover:bg-primary-hover flex items-center gap-2"
+          >
+            Enter
+            <Send className="w-4 h-4" />
+          </button>
+        </div>
       ) : (
         <div className="flex items-center gap-2">
           <div className="flex-1 px-4 py-3 bg-white rounded-button shadow-card text-center min-h-[48px] flex items-center justify-center">
             <span className={`text-lg font-bold ${currentWord ? 'text-text-main' : 'text-text-muted'}`}>
-              {currentWord || (inputMode === 'swipe' ? 'Swipe letters...' : 'Tap letters...')}
+              {currentWord || 'Swipe letters...'}
             </span>
           </div>
-          {inputMode === 'tap' && currentWord.length > 0 && (
-            <>
-              <button
-                onClick={onClear}
-                className="p-3 bg-gray-100 text-text-muted rounded-button hover:bg-gray-200 transition-colors"
-              >
-                <RotateCcw className="w-5 h-5" />
-              </button>
-              {currentWord.length >= 3 && (
-                <button
-                  onClick={onSubmit}
-                  className="p-3 bg-primary text-white rounded-button font-bold hover:bg-primary-hover transition-colors"
-                >
-                  <Send className="w-5 h-5" />
-                </button>
-              )}
-            </>
-          )}
         </div>
       )}
     </div>
