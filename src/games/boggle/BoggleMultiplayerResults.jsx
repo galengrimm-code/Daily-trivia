@@ -5,12 +5,25 @@ import { getWordScore } from './boggleUtils';
 
 const MEDALS = ['\u{1F947}', '\u{1F948}', '\u{1F949}'];
 
-export default function BoggleMultiplayerResults({ mpResults, currentUserId, isHost, onPlayAgain, onLeave }) {
-  const [expandedPlayer, setExpandedPlayer] = useState(null);
+export default function BoggleMultiplayerResults({ mpResults, possibleWords, currentUserId, isHost, onPlayAgain, onLeave }) {
+  const [expandedPlayers, setExpandedPlayers] = useState(new Set());
   const [showDuplicates, setShowDuplicates] = useState(false);
 
   const players = mpResults?.players || [];
   const duplicates = mpResults?.duplicates || [];
+  const totalPossible = possibleWords?.length || 0;
+
+  const togglePlayer = (userId) => {
+    setExpandedPlayers(prev => {
+      const next = new Set(prev);
+      if (next.has(userId)) {
+        next.delete(userId);
+      } else {
+        next.add(userId);
+      }
+      return next;
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background p-4">
@@ -18,18 +31,21 @@ export default function BoggleMultiplayerResults({ mpResults, currentUserId, isH
         <div className="text-center py-6 mb-4">
           <div className="text-5xl mb-2">{'\u{1F3C6}'}</div>
           <h1 className="text-2xl font-bold text-text-main">Results</h1>
+          {totalPossible > 0 && (
+            <p className="text-text-muted mt-1">{totalPossible} words possible</p>
+          )}
         </div>
 
         {/* Player Rankings */}
         <div className="space-y-2 mb-6">
           {players.map((player, index) => {
             const isMe = player.userId === currentUserId;
-            const isExpanded = expandedPlayer === player.userId;
+            const isExpanded = expandedPlayers.has(player.userId);
 
             return (
               <div key={player.userId}>
                 <button
-                  onClick={() => setExpandedPlayer(isExpanded ? null : player.userId)}
+                  onClick={() => togglePlayer(player.userId)}
                   className={`w-full flex items-center gap-3 bg-white rounded-card p-4 shadow-card text-left ${
                     isMe ? 'ring-2 ring-primary' : ''
                   }`}

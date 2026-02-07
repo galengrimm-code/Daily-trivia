@@ -251,6 +251,7 @@ export default function Boggle() {
     return (
       <BoggleMultiplayerResults
         mpResults={game.mpResults}
+        possibleWords={game.possibleWords}
         currentUserId={game.user?.uid}
         isHost={game.isHost}
         onPlayAgain={game.mpPlayAgainAction}
