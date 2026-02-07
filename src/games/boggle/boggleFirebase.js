@@ -177,20 +177,18 @@ export async function startRoom(roomId) {
       return { error: 'Invalid room code' };
     }
 
-    // Get server time offset
-    const offsetSnapshot = await get(ref(rtdb, '.info/serverTimeOffset'));
-    const offset = offsetSnapshot.val() || 0;
-    const serverTime = Date.now() + offset;
-    const startTime = serverTime + 5000; // 5 seconds from now
+    const startTime = Date.now() + 5000; // 5 seconds from now
+    const roomPath = `boggle/rooms/${roomId}`;
+    console.log('Updating room path:', roomPath);
 
-    await update(ref(rtdb, `boggle/rooms/${roomId}`), {
+    await update(ref(rtdb, roomPath), {
       status: 'playing',
       startTime
     });
 
     return { success: true, startTime };
   } catch (e) {
-    console.error('Firebase error:', e);
+    console.error('Firebase error:', e, 'roomId:', roomId);
     return { error: e.message || 'Network error' };
   }
 }
