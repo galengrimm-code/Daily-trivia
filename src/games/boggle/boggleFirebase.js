@@ -171,6 +171,12 @@ export async function joinRoom(roomId, userId, displayName) {
 // Start a room (host only) — sets status to playing with server-synced start time
 export async function startRoom(roomId) {
   try {
+    // Validate roomId
+    if (!roomId || typeof roomId !== 'string' || !/^\d{5}$/.test(roomId)) {
+      console.error('Invalid roomId:', roomId);
+      return { error: 'Invalid room code' };
+    }
+
     // Get server time offset
     const offsetSnapshot = await get(ref(rtdb, '.info/serverTimeOffset'));
     const offset = offsetSnapshot.val() || 0;
@@ -185,7 +191,7 @@ export async function startRoom(roomId) {
     return { success: true, startTime };
   } catch (e) {
     console.error('Firebase error:', e);
-    return { error: 'Network error' };
+    return { error: e.message || 'Network error' };
   }
 }
 
