@@ -145,7 +145,7 @@ export default function useBoggleSwipe({ board, selectedPath, setSelectedPath, s
       } else {
         onClearSelection();
       }
-      return currentPath;
+      return []; // Clear the path after submission
     });
   }, [board, onSubmitWord, onClearSelection, setSelectedPath]);
 
