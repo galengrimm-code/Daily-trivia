@@ -239,6 +239,7 @@ export default function SpellingBee() {
     return (
       <SpellingBeeMultiplayerResults
         mpResults={game.mpResults}
+        validWords={game.validWords}
         currentUserId={game.user?.uid}
         isHost={game.isHost}
         onPlayAgain={game.mpPlayAgainAction}

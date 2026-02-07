@@ -5,10 +5,23 @@ import { getSpellingBeeScore } from './spellingBeeConstants';
 
 const MEDALS = ['\u{1F947}', '\u{1F948}', '\u{1F949}'];
 
-export default function SpellingBeeMultiplayerResults({ mpResults, currentUserId, isHost, onPlayAgain, onLeave }) {
-  const [expandedPlayer, setExpandedPlayer] = useState(null);
+export default function SpellingBeeMultiplayerResults({ mpResults, validWords, currentUserId, isHost, onPlayAgain, onLeave }) {
+  const [expandedPlayers, setExpandedPlayers] = useState(new Set());
 
   const players = mpResults?.players || [];
+  const totalPossible = validWords?.length || 0;
+
+  const togglePlayer = (userId) => {
+    setExpandedPlayers(prev => {
+      const next = new Set(prev);
+      if (next.has(userId)) {
+        next.delete(userId);
+      } else {
+        next.add(userId);
+      }
+      return next;
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background p-4">
@@ -16,19 +29,21 @@ export default function SpellingBeeMultiplayerResults({ mpResults, currentUserId
         <div className="text-center py-6 mb-4">
           <div className="text-5xl mb-2">{'\u{1F3C6}'}</div>
           <h1 className="text-2xl font-bold text-text-main">Results</h1>
+          {totalPossible > 0 && (
+            <p className="text-text-muted mt-1">{totalPossible} words possible</p>
+          )}
         </div>
 
         {/* Player Rankings */}
         <div className="space-y-2 mb-6">
           {players.map((player, index) => {
             const isMe = player.userId === currentUserId;
-            const isExpanded = expandedPlayer === player.userId;
             const words = player.words || [];
 
             return (
               <div key={player.userId}>
                 <button
-                  onClick={() => setExpandedPlayer(isExpanded ? null : player.userId)}
+                  onClick={() => togglePlayer(player.userId)}
                   className={`w-full flex items-center gap-3 bg-white rounded-card p-4 shadow-card text-left ${
                     isMe ? 'ring-2 ring-primary' : ''
                   }`}
@@ -52,10 +67,10 @@ export default function SpellingBeeMultiplayerResults({ mpResults, currentUserId
                     <div className="text-xl font-bold text-text-main">{player.score}</div>
                     <div className="text-xs text-text-muted">pts</div>
                   </div>
-                  {isExpanded ? <ChevronUp className="w-4 h-4 text-text-muted" /> : <ChevronDown className="w-4 h-4 text-text-muted" />}
+                  {expandedPlayers.has(player.userId) ? <ChevronUp className="w-4 h-4 text-text-muted" /> : <ChevronDown className="w-4 h-4 text-text-muted" />}
                 </button>
 
-                {isExpanded && words.length > 0 && (
+                {expandedPlayers.has(player.userId) && words.length > 0 && (
                   <div className="bg-gray-50 rounded-b-card px-4 py-3 -mt-1">
                     <div className="flex flex-wrap gap-1">
                       {[...words].sort((a, b) => {
