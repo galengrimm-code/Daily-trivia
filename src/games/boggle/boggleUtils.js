@@ -47,7 +47,10 @@ export function generatePracticeCode() {
   return Math.floor(10000 + Math.random() * 90000);
 }
 
-// Validate board quality (min 4 vowels, max 2 duplicate letters)
+// Validate board quality
+// - Minimum 3 vowels
+// - Maximum 6 vowels
+// - No more than 3 letters that appear more than once
 export function validateBoard(board) {
   const vowels = 'AEIOU';
   let vowelCount = 0;
@@ -59,13 +62,16 @@ export function validateBoard(board) {
     letterCounts[l] = (letterCounts[l] || 0) + 1;
   });
 
-  if (vowelCount < 4) return false;
+  // Must have between 3 and 6 vowels
+  if (vowelCount < 3 || vowelCount > 6) return false;
 
+  // Count how many letters appear more than once
   let duplicateCount = 0;
   for (const count of Object.values(letterCounts)) {
     if (count >= 2) duplicateCount++;
   }
-  if (duplicateCount > 2) return false;
+  // No more than 3 duplicate letters
+  if (duplicateCount > 3) return false;
 
   return true;
 }

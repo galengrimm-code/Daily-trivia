@@ -7,9 +7,24 @@ const MEDALS = ['\u{1F947}', '\u{1F948}', '\u{1F949}'];
 
 export default function SpellingBeeMultiplayerResults({ mpResults, validWords, currentUserId, isHost, onPlayAgain, onLeave }) {
   const [expandedPlayers, setExpandedPlayers] = useState(new Set());
+  const [showAllWords, setShowAllWords] = useState(false);
 
   const players = mpResults?.players || [];
   const totalPossible = validWords?.length || 0;
+
+  // Check if a word is a pangram (uses 7 unique letters)
+  const isPangram = (word) => new Set(word.split('')).size >= 7;
+
+  // Sort possible words: pangrams first, then by length, then alphabetically
+  const sortedValidWords = [...(validWords || [])].sort((a, b) => {
+    const aP = isPangram(a) ? 1 : 0;
+    const bP = isPangram(b) ? 1 : 0;
+    if (aP !== bP) return bP - aP;
+    if (b.length !== a.length) return b.length - a.length;
+    return a.localeCompare(b);
+  });
+
+  const pangramCount = sortedValidWords.filter(isPangram).length;
 
   const togglePlayer = (userId) => {
     setExpandedPlayers(prev => {
@@ -97,6 +112,42 @@ export default function SpellingBeeMultiplayerResults({ mpResults, validWords, c
             );
           })}
         </div>
+
+        {/* All Possible Words */}
+        {totalPossible > 0 && (
+          <div className="bg-white rounded-card p-4 mb-6 shadow-card">
+            <button
+              onClick={() => setShowAllWords(!showAllWords)}
+              className="w-full flex items-center justify-between"
+            >
+              <h3 className="font-bold text-text-main">
+                All Possible Words ({totalPossible})
+                {pangramCount > 0 && (
+                  <span className="ml-2 text-amber-600 text-sm font-normal">
+                    {pangramCount} pangram{pangramCount > 1 ? 's' : ''}
+                  </span>
+                )}
+              </h3>
+              {showAllWords ? <ChevronUp className="w-4 h-4 text-text-muted" /> : <ChevronDown className="w-4 h-4 text-text-muted" />}
+            </button>
+            {showAllWords && (
+              <div className="flex flex-wrap gap-1 mt-3 max-h-64 overflow-y-auto">
+                {sortedValidWords.map(w => {
+                  const isWordPangram = isPangram(w);
+                  return (
+                    <span key={w} className={`px-2 py-0.5 rounded-full text-xs capitalize ${
+                      isWordPangram
+                        ? 'bg-amber-100 text-amber-800 ring-1 ring-amber-300 font-semibold'
+                        : 'bg-gray-100 text-text-main'
+                    }`}>
+                      {w} +{getSpellingBeeScore(w, isWordPangram)}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Actions */}
         <div className="space-y-3">

@@ -8,10 +8,17 @@ const MEDALS = ['\u{1F947}', '\u{1F948}', '\u{1F949}'];
 export default function BoggleMultiplayerResults({ mpResults, possibleWords, currentUserId, isHost, onPlayAgain, onLeave }) {
   const [expandedPlayers, setExpandedPlayers] = useState(new Set());
   const [showDuplicates, setShowDuplicates] = useState(false);
+  const [showAllWords, setShowAllWords] = useState(false);
 
   const players = mpResults?.players || [];
   const duplicates = mpResults?.duplicates || [];
   const totalPossible = possibleWords?.length || 0;
+
+  // Sort possible words by length (longest first), then alphabetically
+  const sortedPossibleWords = [...(possibleWords || [])].sort((a, b) => {
+    if (b.length !== a.length) return b.length - a.length;
+    return a.localeCompare(b);
+  });
 
   const togglePlayer = (userId) => {
     setExpandedPlayers(prev => {
@@ -107,7 +114,7 @@ export default function BoggleMultiplayerResults({ mpResults, possibleWords, cur
 
         {/* Duplicates summary */}
         {duplicates.length > 0 && (
-          <div className="bg-white rounded-card p-4 mb-6 shadow-card">
+          <div className="bg-white rounded-card p-4 mb-4 shadow-card">
             <button
               onClick={() => setShowDuplicates(!showDuplicates)}
               className="w-full flex items-center justify-between"
@@ -120,6 +127,28 @@ export default function BoggleMultiplayerResults({ mpResults, possibleWords, cur
                 {duplicates.map(w => (
                   <span key={w} className="bg-red-50 text-red-500 px-3 py-1 rounded-full text-sm capitalize">
                     {w}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* All Possible Words */}
+        {totalPossible > 0 && (
+          <div className="bg-white rounded-card p-4 mb-6 shadow-card">
+            <button
+              onClick={() => setShowAllWords(!showAllWords)}
+              className="w-full flex items-center justify-between"
+            >
+              <h3 className="font-bold text-text-main">All Possible Words ({totalPossible})</h3>
+              {showAllWords ? <ChevronUp className="w-4 h-4 text-text-muted" /> : <ChevronDown className="w-4 h-4 text-text-muted" />}
+            </button>
+            {showAllWords && (
+              <div className="flex flex-wrap gap-1 mt-3 max-h-64 overflow-y-auto">
+                {sortedPossibleWords.map(w => (
+                  <span key={w} className="bg-gray-100 text-text-main px-2 py-0.5 rounded-full text-xs capitalize">
+                    {w} +{getWordScore(w)}
                   </span>
                 ))}
               </div>
