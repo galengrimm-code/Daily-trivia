@@ -3288,6 +3288,17 @@
       ],
       "correct": 3,
       "difficulty": "medium"
+    },
+    {
+      "q": "Who painted the Mona Lisa?",
+      "options": [
+        "Michelangelo",
+        "Leonardo da Vinci",
+        "Raphael",
+        "Donatello"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
     }
   ],
   "Geography": [
@@ -6040,6 +6051,556 @@
       ],
       "correct": 1,
       "difficulty": "hard"
+    },
+    {
+      "q": "What is the capital of Australia?",
+      "options": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Perth"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which river flows through Paris?",
+      "options": [
+        "Thames",
+        "Seine",
+        "Rhine",
+        "Danube"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the largest ocean?",
+      "options": [
+        "Atlantic",
+        "Indian",
+        "Pacific",
+        "Arctic"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which country has the largest population?",
+      "options": [
+        "India",
+        "USA",
+        "China",
+        "Indonesia"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the capital of Canada?",
+      "options": [
+        "Toronto",
+        "Vancouver",
+        "Montreal",
+        "Ottawa"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which continent is the Sahara Desert on?",
+      "options": [
+        "Asia",
+        "Africa",
+        "Australia",
+        "South America"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the smallest US state by area?",
+      "options": [
+        "Delaware",
+        "Connecticut",
+        "Rhode Island",
+        "Vermont"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country is known as the Land of the Rising Sun?",
+      "options": [
+        "China",
+        "Korea",
+        "Japan",
+        "Thailand"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the longest mountain range?",
+      "options": [
+        "Himalayas",
+        "Rocky Mountains",
+        "Andes",
+        "Alps"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which sea is the saltiest?",
+      "options": [
+        "Mediterranean",
+        "Red Sea",
+        "Dead Sea",
+        "Black Sea"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the capital of Brazil?",
+      "options": [
+        "Rio de Janeiro",
+        "Sao Paulo",
+        "Brasilia",
+        "Salvador"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country has the most time zones?",
+      "options": [
+        "Russia",
+        "USA",
+        "China",
+        "France"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the largest island in the world?",
+      "options": [
+        "Madagascar",
+        "Borneo",
+        "Greenland",
+        "New Guinea"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which African country was never colonized?",
+      "options": [
+        "Kenya",
+        "Ethiopia",
+        "Nigeria",
+        "Ghana"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the capital of South Korea?",
+      "options": [
+        "Busan",
+        "Seoul",
+        "Incheon",
+        "Daegu"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which river is the longest in Europe?",
+      "options": [
+        "Danube",
+        "Rhine",
+        "Volga",
+        "Seine"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the driest continent?",
+      "options": [
+        "Africa",
+        "Australia",
+        "Antarctica",
+        "Asia"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which country has the most islands?",
+      "options": [
+        "Indonesia",
+        "Philippines",
+        "Sweden",
+        "Finland"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the capital of Egypt?",
+      "options": [
+        "Alexandria",
+        "Cairo",
+        "Luxor",
+        "Giza"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which US state is the largest by area?",
+      "options": [
+        "Texas",
+        "California",
+        "Alaska",
+        "Montana"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What strait separates Europe and Africa?",
+      "options": [
+        "Bering",
+        "Gibraltar",
+        "Hormuz",
+        "Malacca"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country is both in Europe and Asia?",
+      "options": [
+        "Russia",
+        "Turkey",
+        "Kazakhstan",
+        "All of these"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the capital of Argentina?",
+      "options": [
+        "Santiago",
+        "Buenos Aires",
+        "Lima",
+        "Montevideo"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which ocean is the deepest?",
+      "options": [
+        "Atlantic",
+        "Indian",
+        "Pacific",
+        "Southern"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the largest lake in Africa?",
+      "options": [
+        "Lake Chad",
+        "Lake Tanganyika",
+        "Lake Victoria",
+        "Lake Malawi"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country is known as the Pearl of the Orient?",
+      "options": [
+        "Thailand",
+        "Vietnam",
+        "Philippines",
+        "Malaysia"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the capital of Turkey?",
+      "options": [
+        "Istanbul",
+        "Ankara",
+        "Izmir",
+        "Antalya"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which mountain is the tallest in North America?",
+      "options": [
+        "Mt. Whitney",
+        "Mt. Rainier",
+        "Denali",
+        "Mt. Elbert"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the capital of New Zealand?",
+      "options": [
+        "Auckland",
+        "Wellington",
+        "Christchurch",
+        "Hamilton"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country has the longest coastline?",
+      "options": [
+        "Russia",
+        "Australia",
+        "Canada",
+        "USA"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the capital of Thailand?",
+      "options": [
+        "Phuket",
+        "Chiang Mai",
+        "Bangkok",
+        "Pattaya"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which European country is the smallest?",
+      "options": [
+        "Monaco",
+        "Vatican City",
+        "San Marino",
+        "Liechtenstein"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the largest country in South America?",
+      "options": [
+        "Argentina",
+        "Colombia",
+        "Brazil",
+        "Peru"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which sea lies between Italy and Croatia?",
+      "options": [
+        "Mediterranean",
+        "Adriatic",
+        "Aegean",
+        "Ionian"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the capital of Vietnam?",
+      "options": [
+        "Ho Chi Minh City",
+        "Hanoi",
+        "Da Nang",
+        "Hue"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country is home to Machu Picchu?",
+      "options": [
+        "Ecuador",
+        "Bolivia",
+        "Peru",
+        "Colombia"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the largest desert in Asia?",
+      "options": [
+        "Thar",
+        "Gobi",
+        "Karakum",
+        "Taklamakan"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country has the most volcanoes?",
+      "options": [
+        "Japan",
+        "Philippines",
+        "Indonesia",
+        "Iceland"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the capital of Poland?",
+      "options": [
+        "Krakow",
+        "Warsaw",
+        "Gdansk",
+        "Wroclaw"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which African country is the largest by area?",
+      "options": [
+        "Sudan",
+        "Algeria",
+        "DR Congo",
+        "Egypt"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the capital of Norway?",
+      "options": [
+        "Bergen",
+        "Oslo",
+        "Trondheim",
+        "Stavanger"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which river flows through London?",
+      "options": [
+        "Seine",
+        "Rhine",
+        "Thames",
+        "Danube"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the capital of Chile?",
+      "options": [
+        "Valparaiso",
+        "Santiago",
+        "Concepcion",
+        "Antofagasta"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country has the Great Barrier Reef?",
+      "options": [
+        "Indonesia",
+        "Philippines",
+        "Australia",
+        "Fiji"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the capital of Morocco?",
+      "options": [
+        "Casablanca",
+        "Marrakech",
+        "Rabat",
+        "Fez"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which lake is the deepest in the world?",
+      "options": [
+        "Lake Superior",
+        "Lake Baikal",
+        "Lake Tanganyika",
+        "Caspian Sea"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the capital of Sweden?",
+      "options": [
+        "Gothenburg",
+        "Malmo",
+        "Stockholm",
+        "Uppsala"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which country is the Taj Mahal in?",
+      "options": [
+        "Pakistan",
+        "Bangladesh",
+        "India",
+        "Nepal"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the capital of Greece?",
+      "options": [
+        "Thessaloniki",
+        "Athens",
+        "Patras",
+        "Heraklion"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which US state has the most national parks?",
+      "options": [
+        "Alaska",
+        "California",
+        "Utah",
+        "Colorado"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
     }
   ],
   "Science": [
@@ -8242,6 +8803,1106 @@
       ],
       "correct": 3,
       "difficulty": "medium"
+    },
+    {
+      "q": "What does RAID stand for?",
+      "options": [
+        "Randomized Abstract Identification Description",
+        "Range of Applications with Identical Designs",
+        "Rapid Access for Indexed Devices",
+        "Redundant Array of Independent Disks"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "On which computer hardware device is the BIOS chip located?",
+      "options": [
+        "Hard Disk Drive",
+        "Central Processing Unit",
+        "Graphics Processing Unit",
+        "Motherboard"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Lenovo acquired IBM's personal computer division, including the ThinkPad line of laptops and tablets, in what year?",
+      "options": [
+        "1999",
+        "2008",
+        "2002",
+        "2005"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which of the following is a personal computer made by the Japanese company Fujitsu?",
+      "options": [
+        "PC-9801",
+        "Xmillennium ",
+        "MSX",
+        "FM-7"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "The Harvard architecture for micro-controllers added which additional bus?",
+      "options": [
+        "Address",
+        "Data",
+        "Control",
+        "Instruction"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the code name for the mobile operating system Android 7.0?",
+      "options": [
+        "Nougat",
+        "Jelly Bean",
+        "Ice Cream Sandwich",
+        "Marshmallow"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "While Apple was formed in California, in which western state was Microsoft founded?",
+      "options": [
+        "New Mexico",
+        "Washington",
+        "Arizona",
+        "Colorado"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many bytes are in a single Kibibyte?",
+      "options": [
+        "2400",
+        "1000",
+        "1240",
+        "1024"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Nvidia's headquarters are based in which Silicon Valley city?",
+      "options": [
+        "Santa Clara",
+        "Mountain View",
+        "Cupertino",
+        "Palo Alto"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which internet company began life as an online bookstore called 'Cadabra'?",
+      "options": [
+        "eBay",
+        "Overstock",
+        "Amazon",
+        "Shopify"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "In CSS, which of these values CANNOT be used with the \"position\" property?",
+      "options": [
+        "absolute",
+        "center",
+        "static",
+        "relative"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What port does HTTP run on?",
+      "options": [
+        "80",
+        "443",
+        "53",
+        "23"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "The Electron computer was released in Britain during 1983 for the home computing market, by which company? ",
+      "options": [
+        "Amstrad PLC",
+        "Sinclair Research",
+        "Acorn Computers",
+        "Commodore Business Machines"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What does CPU stand for?",
+      "options": [
+        "Central Process Unit",
+        "Computer Personal Unit",
+        "Central Processing Unit",
+        "Central Processor Unit"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which computer hardware device provides an interface for all other connected devices to communicate?",
+      "options": [
+        "Random Access Memory",
+        "Hard Disk Drive",
+        "Central Processing Unit",
+        "Motherboard"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the name of the process that sends one qubit of information using two bits of classical information?",
+      "options": [
+        "Quantum Teleportation",
+        "Quantum Programming",
+        "Quantum Entanglement",
+        "Super Dense Coding"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What does LTS stand for in the software market?",
+      "options": [
+        "Long Term Support",
+        "Long Taco Service",
+        "Ludicrous Transfer Speed",
+        "Ludicrous Turbo Speed"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "In networking, what does OSPF stand for?",
+      "options": [
+        "Open Shortest Path First",
+        "Order State Part First",
+        "Order Sense Ping Find",
+        "Open Signal Path Finder"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What does the computer software acronym JVM stand for?",
+      "options": [
+        "Just Virtual Machine",
+        "Java Virtual Machine",
+        "Java Visual Machine",
+        "Java Vendor Machine"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "In computing, what does LAN stand for?",
+      "options": [
+        "Land Address Navigation",
+        "Light Access Node",
+        "Local Area Network",
+        "Long Antenna Node"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "How long is an IPv6 address?",
+      "options": [
+        "32 bits",
+        "64 bits",
+        "128 bits",
+        "128 bytes"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Who is the original author of the realtime physics engine called PhysX?",
+      "options": [
+        "NovodeX",
+        "Ageia",
+        "Nvidia",
+        "AMD"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What was the first Android version specifically optimized for tablets?",
+      "options": [
+        "Honeycomb",
+        "Froyo",
+        "Eclair",
+        "Marshmellow"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "The computer OEM manufacturer Clevo, known for its Sager notebook line, is based in which country?",
+      "options": [
+        "China (People's Republic of)",
+        "Taiwan",
+        "Germany",
+        "United States"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which programming language was developed by Sun Microsystems in 1995?",
+      "options": [
+        "Python",
+        "Java",
+        "Solaris OS",
+        "C++"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which coding language was the #1 programming language in terms of usage on GitHub in 2015?",
+      "options": [
+        "PHP",
+        "C#",
+        "Python",
+        "JavaScript"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "This mobile OS held the largest market share in 2012.",
+      "options": [
+        "iOS",
+        "Symbian",
+        "BlackBerry",
+        "Android"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Originally used in PCM adapters, what frequency is the standard for sampling audio in the Compact Disc Digital Audio format?",
+      "options": [
+        "20.5 kHz",
+        "44.1 kHz",
+        "1.5 MHz",
+        "32.0 kHz"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What five letter word is the motto of the IBM Computer company?",
+      "options": [
+        "Pixel",
+        "Think",
+        "Click",
+        "Logic"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Approximately how many Apple I personal computers were created?",
+      "options": [
+        "200",
+        "100",
+        "500",
+        "1000"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "If you were to code software in this language you'd only be able to type 0's and 1's.",
+      "options": [
+        "JavaScript",
+        "Binary",
+        "C++",
+        "Python"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What amount of bits commonly equals one byte?",
+      "options": [
+        "8",
+        "2",
+        "64",
+        "1"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Released in 2001, the first edition of Apple's Mac OS X operating system (version 10.0) was given what animal code name?",
+      "options": [
+        "Tiger",
+        "Cheetah",
+        "Puma",
+        "Leopard"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What does the term GPU stand for?",
+      "options": [
+        "Graphical Proprietary Unit",
+        "Graphics Processing Unit",
+        "Graphite Producing Unit",
+        "Gaming Processor Unit"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "The acronym \"RIP\" stands for which of these?",
+      "options": [
+        "Routing Information Protocol",
+        "Routine Inspection Protocol",
+        "Regular Interval Processes",
+        "Runtime Instance Processes"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What was the name given to Android 4.3?",
+      "options": [
+        "Lollipop",
+        "Nutella",
+        "Froyo",
+        "Jelly Bean"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": ".at is the top-level domain for what country?",
+      "options": [
+        "Australia",
+        "Austria",
+        "Angola",
+        "Argentina"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of the following physical typologies are used with Ethernet Networks?",
+      "options": [
+        "Star",
+        "Hex",
+        "Mesh",
+        "Ring"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What internet protocol was documented in RFC 1459?",
+      "options": [
+        "IRC",
+        "FTP",
+        "HTTP",
+        "HTTPS"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "The programming language 'Swift' was created to replace what other programming language?",
+      "options": [
+        "Ruby",
+        "C++",
+        "Objective-C",
+        "C#"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which SQL keyword is used to fetch data from a database?",
+      "options": [
+        "VALUES",
+        "EXEC",
+        "INDEX",
+        "SELECT"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "The series of the Intel HD graphics generation succeeding that of the 5000 and 6000 series (Broadwell) is called:",
+      "options": [
+        "HD Graphics 600",
+        "HD Graphics 700 ",
+        "HD Graphics 500",
+        "HD Graphics 7000"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Generally, which component of a computer draws the most power?",
+      "options": [
+        "Power Supply",
+        "Video Card",
+        "Hard Drive",
+        "Processor"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many bits make up the significand portion of a single precision floating point number?",
+      "options": [
+        "23",
+        "15",
+        "53",
+        "8"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of these is the name for the failed key escrow device introduced by the National Security Agency in 1993?",
+      "options": [
+        "Enigma Machine",
+        "Skipjack",
+        "Clipper Chip",
+        "Nautilus"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What does the 'S' in the RSA encryption algorithm stand for?",
+      "options": [
+        "Schottky",
+        "Secure",
+        "Shamir",
+        "Stable"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of the following is the oldest of these computers by release date?",
+      "options": [
+        "Commodore 64",
+        "ZX Spectrum",
+        "TRS-80",
+        "Apple 3"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "The internet domain .fm is the country-code top-level domain for which Pacific Ocean island nation?",
+      "options": [
+        "Micronesia",
+        "Fiji",
+        "Tuvalu",
+        "Marshall Islands"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Unix Time is defined as the number of seconds that have elapsed since when?",
+      "options": [
+        "Midnight on the creator of Unix's birthday",
+        "Midnight, July 4, 1976",
+        "Midnight, January 1, 1970",
+        "Midnight, July 4, 1980"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the main CPU is the Sega Mega Drive / Sega Genesis?",
+      "options": [
+        "Intel 8088",
+        "Yamaha YM2612",
+        "Zilog Z80",
+        "Motorola 68000"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What does GHz stand for?",
+      "options": [
+        "Gigahertz",
+        "Gigahatz",
+        "Gigahetz",
+        "Gigahotz"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What does AD stand for in relation to Windows Operating Systems? ",
+      "options": [
+        "Alternative Drive",
+        "Active Directory",
+        "Automated Database",
+        "Active Department"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Moore's law originally stated that the number of transistors on a microprocessor chip would double every...",
+      "options": [
+        "Four Years",
+        "Eight Years",
+        "Year",
+        "Two Years"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What language does Node.js use?",
+      "options": [
+        "JavaScript",
+        "Joomla Source Code",
+        "Java Source",
+        "Java"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "When was the programming language \"C#\" released?",
+      "options": [
+        "1998",
+        "1999",
+        "2001",
+        "2000"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What was the name of the first Bulgarian personal computer?",
+      "options": [
+        "Pravetz 8D",
+        "IMKO-1",
+        "Pravetz 82",
+        "IZOT 1030"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "On Twitter, what was the original character limit for a Tweet?",
+      "options": [
+        "120",
+        "160",
+        "100",
+        "140"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which of the following is NOT a computer science algorithm?",
+      "options": [
+        "Bubble Sort",
+        "Quick Sort",
+        "Float Sort",
+        "Merge Sort"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": ".rs is the top-level domain for what country?",
+      "options": [
+        "Serbia",
+        "Russia",
+        "Romania",
+        "Rwanda"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which operating system was released first?",
+      "options": [
+        "Windows",
+        "Linux",
+        "Mac OS",
+        "OS/2"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the codename of the eighth generation Intel Core micro-architecture launched in October 2017?",
+      "options": [
+        "Coffee Lake",
+        "Broadwell",
+        "Skylake",
+        "Sandy Bridge"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "HTML is what type of language?",
+      "options": [
+        "Macro Language",
+        "Programming Language",
+        "Scripting Language",
+        "Markup Language"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "In the programming language \"Python\", which of these statements would display the string \"Hello World\" correctly?",
+      "options": [
+        "console.log(\"Hello World\")",
+        "echo \"Hello World\"",
+        "printf(\"Hello World\")",
+        "print(\"Hello World\")"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which computer language would you associate Django framework with?",
+      "options": [
+        "C#",
+        "Python",
+        "C++",
+        "Java"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "In programming, the ternary operator is mostly defined with what symbol(s)?",
+      "options": [
+        "?:",
+        "?",
+        "if then",
+        "??"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What does \"LCD\" stand for?",
+      "options": [
+        "Last Common Difference",
+        "Language Control Design",
+        "Liquid Crystal Display",
+        "Long Continuous Design"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many values can a single byte represent?",
+      "options": [
+        "256",
+        "1024",
+        "1",
+        "8"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What was the name of the security vulnerability found in Bash in 2014?",
+      "options": [
+        "Bashbug",
+        "Heartbleed",
+        "Shellshock",
+        "Stagefright"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "The numbering system with a radix of 16 is more commonly referred to as ",
+      "options": [
+        "Hexidecimal",
+        "Octal",
+        "Duodecimal",
+        "Binary"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which data structure does FILO apply to?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Heap",
+        "Tree"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the name of Layer 7 of the OSI model?",
+      "options": [
+        "Application",
+        "Present",
+        "Session",
+        "Network"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What did the name of the Tor Anonymity Network orignially stand for?",
+      "options": [
+        "The Only Router",
+        "The Orange Router",
+        "The Ominous Router",
+        "The Onion Router"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "In the server hosting industry IaaS stands for...",
+      "options": [
+        "Infrastructure as a Service",
+        "Internet as a Service",
+        "Internet and a Server",
+        "Infrastructure as a Server"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which one of these is not an official development name for a Ubuntu release?",
+      "options": [
+        "Utopic Unicorn",
+        "Trusty Tahr",
+        "Wily Werewolf",
+        "Mystic Mansion"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "On a standard American QWERTY keyboard, what symbol will you enter if you hold the shift key and press 1?",
+      "options": [
+        "Exclamation Mark",
+        "Percent Sign",
+        "Dollar Sign",
+        "Asterisk"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What does the term MIME stand for, in regards to computing?",
+      "options": [
+        "Multipurpose Interleave Mail Exchange",
+        "Mail Internet Mail Exchange",
+        "Mail Interleave Method Exchange",
+        "Multipurpose Internet Mail Extensions"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the domain name for the country Tuvalu?",
+      "options": [
+        ".tv",
+        ".tl",
+        ".tt",
+        ".tu"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which of the following computer components can be built using only NAND gates?",
+      "options": [
+        "CPU",
+        "ALU",
+        "RAM",
+        "Register"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "In computing terms, typically what does CLI stand for?",
+      "options": [
+        "Command Line Interface",
+        "Common Language Interface",
+        "Control Line Interface",
+        "Common Language Input"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Whistler was the codename of this Microsoft Operating System.",
+      "options": [
+        "Windows 2000",
+        "Windows 95",
+        "Windows 7",
+        "Windows XP"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of these programming languages is a low-level language?",
+      "options": [
+        "Assembly",
+        "C#",
+        "Pascal",
+        "Python"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What does the Prt Sc button do?",
+      "options": [
+        "Nothing",
+        "Saves a .png file of what's on the screen in your screenshots folder in photos",
+        "Closes all windows",
+        "Captures what's on the screen and copies it to your clipboard"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which of these is not a layer in the OSI model for data communications?",
+      "options": [
+        "Connection Layer",
+        "Physical Layer",
+        "Transport Layer",
+        "Application Layer"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
+      "options": [
+        "Java",
+        "C++",
+        "Objective-C",
+        "C#"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many kilobytes in one gigabyte (in decimal)?",
+      "options": [
+        "1024",
+        "1000",
+        "1048576",
+        "1000000"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "The name of technology company HP stands for what?",
+      "options": [
+        "Howard Packmann",
+        "Hewlett-Packard",
+        "Husker-Pollosk",
+        "Hellman-Pohl"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the number of keys on a standard Windows Keyboard?",
+      "options": [
+        "76",
+        "104",
+        "94",
+        "64"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "In web design, what does CSS stand for?",
+      "options": [
+        "Computer Style Sheet",
+        "Counter Strike: Source",
+        "Corrective Style Sheet",
+        "Cascading Style Sheet"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which of these was the name of a bug found in April 2014 in the publicly available OpenSSL cryptography library?",
+      "options": [
+        "Heartbleed",
+        "Shellscript",
+        "Corrupted Blood",
+        "Shellshock"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What does the International System of Quantities refer 1024 bytes as?",
+      "options": [
+        "Kibibyte",
+        "Kylobyte",
+        "Kilobyte",
+        "Kelobyte"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which of these people was NOT a founder of Apple Inc?",
+      "options": [
+        "Steve Wozniak",
+        "Ronald Wayne",
+        "Steve Jobs",
+        "Jonathan Ive"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What does the acronym CDN stand for in terms of networking?",
+      "options": [
+        "Computational Data Network",
+        "Content Delivery Network",
+        "Content Distribution Network",
+        "Compressed Data Network"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the most preferred image format used for logos in the Wikimedia database?",
+      "options": [
+        ".png",
+        ".svg",
+        ".jpeg",
+        ".gif"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which of these names was an actual codename for a cancelled Microsoft project?",
+      "options": [
+        "Enceladus",
+        "Pollux",
+        "Saturn",
+        "Neptune"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "According to DeMorgan's Theorem, the Boolean expression (AB)' is equivalent to:",
+      "options": [
+        "A'B + B'A",
+        "A'B'",
+        "A' + B'",
+        "AB' + AB"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "When did the online streaming service \"Mixer\" launch?",
+      "options": [
+        "2011",
+        "2013",
+        "2016",
+        "2009"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which kind of algorithm is Ron Rivest not famous for creating?",
+      "options": [
+        "Secret sharing scheme",
+        "Hashing algorithm",
+        "Asymmetric encryption",
+        "Stream cipher"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What programming language was GitHub written in?",
+      "options": [
+        "JavaScript",
+        "Python",
+        "Lua",
+        "Ruby"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+      "options": [
+        "Public",
+        "Private",
+        "Final",
+        "Static"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "In computing, what does MIDI stand for?",
+      "options": [
+        "Musical Instrument Digital Interface",
+        "Musical Interface of Digital Instruments",
+        "Musical Instrument Data Interface",
+        "Modular Interface of Digital Instruments"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
     }
   ],
   "Math": [
@@ -10235,6 +11896,1315 @@
       ],
       "correct": 2,
       "difficulty": "easy"
+    },
+    {
+      "q": "What is 12 x 12?",
+      "options": [
+        "124",
+        "134",
+        "144",
+        "154"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the cube root of 64?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "8"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 1000 divided by 25?",
+      "options": [
+        "35",
+        "40",
+        "45",
+        "50"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 3.14159 commonly known as?",
+      "options": [
+        "Phi",
+        "Pi",
+        "Euler",
+        "Tau"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 17 x 17?",
+      "options": [
+        "279",
+        "289",
+        "299",
+        "309"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many degrees in each angle of an equilateral triangle?",
+      "options": [
+        "45",
+        "50",
+        "60",
+        "90"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 625 divided by 25?",
+      "options": [
+        "20",
+        "25",
+        "30",
+        "35"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 2 to the power of 10?",
+      "options": [
+        "512",
+        "1024",
+        "2048",
+        "4096"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the square root of 289?",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 33 x 3?",
+      "options": [
+        "96",
+        "99",
+        "102",
+        "105"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "How many edges does a tetrahedron have?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 15% of 300?",
+      "options": [
+        "35",
+        "40",
+        "45",
+        "50"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the next number: 1, 4, 9, 16, __?",
+      "options": [
+        "20",
+        "23",
+        "25",
+        "36"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 0.333... as a fraction?",
+      "options": [
+        "1/4",
+        "1/3",
+        "3/10",
+        "1/2"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 18 squared?",
+      "options": [
+        "314",
+        "324",
+        "334",
+        "344"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many faces does a dodecahedron have?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "20"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 7 factorial (7!)?",
+      "options": [
+        "720",
+        "2520",
+        "5040",
+        "40320"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 3/5 + 2/5?",
+      "options": [
+        "1/2",
+        "4/5",
+        "1",
+        "6/5"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the LCM of 6 and 8?",
+      "options": [
+        "12",
+        "18",
+        "24",
+        "48"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 21 x 21?",
+      "options": [
+        "421",
+        "431",
+        "441",
+        "451"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 5/6 minus 1/6?",
+      "options": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "4/6"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the GCF of 48 and 60?",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 0.625 as a fraction?",
+      "options": [
+        "5/8",
+        "3/5",
+        "2/3",
+        "5/6"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 23 x 23?",
+      "options": [
+        "519",
+        "529",
+        "539",
+        "549"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many vertices does an octahedron have?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 35% of 200?",
+      "options": [
+        "60",
+        "65",
+        "70",
+        "75"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 19 x 19?",
+      "options": [
+        "351",
+        "361",
+        "371",
+        "381"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the sum of angles in a pentagon?",
+      "options": [
+        "360°",
+        "450°",
+        "540°",
+        "720°"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 8 factorial divided by 7 factorial?",
+      "options": [
+        "1",
+        "7",
+        "8",
+        "56"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 22 squared?",
+      "options": [
+        "464",
+        "474",
+        "484",
+        "494"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 7/8 as a decimal?",
+      "options": [
+        "0.75",
+        "0.825",
+        "0.875",
+        "0.9"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the value of X if 5X - 3 = 17?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 24 x 24?",
+      "options": [
+        "566",
+        "576",
+        "586",
+        "596"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many faces does an icosahedron have?",
+      "options": [
+        "10",
+        "12",
+        "16",
+        "20"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 55% of 400?",
+      "options": [
+        "200",
+        "210",
+        "220",
+        "230"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 26 squared?",
+      "options": [
+        "666",
+        "676",
+        "686",
+        "696"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 11/12 minus 5/12?",
+      "options": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 27 cubed?",
+      "options": [
+        "17683",
+        "18683",
+        "19683",
+        "20683"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 0.2 x 0.3?",
+      "options": [
+        "0.05",
+        "0.06",
+        "0.5",
+        "0.6"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 125 to the power of 1/3?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "25"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the sum of 1 + 2 + 3 + ... + 20?",
+      "options": [
+        "190",
+        "200",
+        "210",
+        "220"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 28 squared?",
+      "options": [
+        "774",
+        "784",
+        "794",
+        "804"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 9/10 as a percentage?",
+      "options": [
+        "80%",
+        "85%",
+        "90%",
+        "95%"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 4 to the power of 4?",
+      "options": [
+        "64",
+        "128",
+        "256",
+        "512"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the next prime after 23?",
+      "options": [
+        "25",
+        "27",
+        "29",
+        "31"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 29 squared?",
+      "options": [
+        "831",
+        "841",
+        "851",
+        "861"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 2/7 + 3/7?",
+      "options": [
+        "5/14",
+        "5/7",
+        "1",
+        "6/7"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 10 to the power of 0?",
+      "options": [
+        "0",
+        "1",
+        "10",
+        "100"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the square root of 324?",
+      "options": [
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 31 squared?",
+      "options": [
+        "951",
+        "961",
+        "971",
+        "981"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 0.75 times 8?",
+      "options": [
+        "5",
+        "5.5",
+        "6",
+        "6.5"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the Roman numeral for 40?",
+      "options": [
+        "XL",
+        "VL",
+        "IL",
+        "XXX"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 32 squared?",
+      "options": [
+        "1014",
+        "1024",
+        "1034",
+        "1044"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the median of 1, 3, 3, 6, 7, 8, 9?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 33 squared?",
+      "options": [
+        "1079",
+        "1089",
+        "1099",
+        "1109"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 15 cubed?",
+      "options": [
+        "2375",
+        "3375",
+        "4375",
+        "5375"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 0.4 as a fraction in lowest terms?",
+      "options": [
+        "2/5",
+        "4/10",
+        "1/4",
+        "4/5"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 34 squared?",
+      "options": [
+        "1146",
+        "1156",
+        "1166",
+        "1176"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the next number: 2, 6, 12, 20, __?",
+      "options": [
+        "28",
+        "30",
+        "32",
+        "36"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 35 squared?",
+      "options": [
+        "1215",
+        "1225",
+        "1235",
+        "1245"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 12.5% of 80?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 36 squared?",
+      "options": [
+        "1286",
+        "1296",
+        "1306",
+        "1316"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the sum of interior angles of a hexagon?",
+      "options": [
+        "540°",
+        "620°",
+        "720°",
+        "900°"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 37 squared?",
+      "options": [
+        "1359",
+        "1369",
+        "1379",
+        "1389"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 6 cubed?",
+      "options": [
+        "196",
+        "206",
+        "216",
+        "226"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 38 squared?",
+      "options": [
+        "1434",
+        "1444",
+        "1454",
+        "1464"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the Roman numeral XCIX?",
+      "options": [
+        "89",
+        "99",
+        "109",
+        "119"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 39 squared?",
+      "options": [
+        "1511",
+        "1521",
+        "1531",
+        "1541"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 2/3 of 99?",
+      "options": [
+        "63",
+        "66",
+        "69",
+        "72"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 40 squared?",
+      "options": [
+        "1500",
+        "1600",
+        "1700",
+        "1800"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 0.8 divided by 0.2?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 41 squared?",
+      "options": [
+        "1671",
+        "1681",
+        "1691",
+        "1701"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 8 to the power of 2/3?",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "16"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 42 squared?",
+      "options": [
+        "1754",
+        "1764",
+        "1774",
+        "1784"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the sum of the first 5 prime numbers?",
+      "options": [
+        "18",
+        "26",
+        "28",
+        "36"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 43 squared?",
+      "options": [
+        "1839",
+        "1849",
+        "1859",
+        "1869"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 125% of 200?",
+      "options": [
+        "225",
+        "240",
+        "250",
+        "275"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 44 squared?",
+      "options": [
+        "1926",
+        "1936",
+        "1946",
+        "1956"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 9 cubed?",
+      "options": [
+        "619",
+        "719",
+        "729",
+        "819"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 45 squared?",
+      "options": [
+        "2015",
+        "2025",
+        "2035",
+        "2045"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 7/9 minus 2/9?",
+      "options": [
+        "4/9",
+        "5/9",
+        "6/9",
+        "1/3"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 3 to the power of 5?",
+      "options": [
+        "125",
+        "243",
+        "343",
+        "625"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 46 squared?",
+      "options": [
+        "2106",
+        "2116",
+        "2126",
+        "2136"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the average of 15, 20, 25, 30, 35?",
+      "options": [
+        "20",
+        "22",
+        "25",
+        "27"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 47 squared?",
+      "options": [
+        "2199",
+        "2209",
+        "2219",
+        "2229"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 256 divided by 16?",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 48 squared?",
+      "options": [
+        "2294",
+        "2304",
+        "2314",
+        "2324"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 1/4 + 1/3?",
+      "options": [
+        "2/7",
+        "5/12",
+        "7/12",
+        "1/2"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 49 squared?",
+      "options": [
+        "2391",
+        "2401",
+        "2411",
+        "2421"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 10 cubed?",
+      "options": [
+        "100",
+        "1000",
+        "10000",
+        "100000"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 50 squared?",
+      "options": [
+        "2400",
+        "2500",
+        "2600",
+        "2700"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What percent is 45 of 180?",
+      "options": [
+        "20%",
+        "22%",
+        "25%",
+        "30%"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 100 divided by 0.5?",
+      "options": [
+        "50",
+        "100",
+        "150",
+        "200"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 11 cubed?",
+      "options": [
+        "1221",
+        "1331",
+        "1441",
+        "1551"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 3/4 times 2/3?",
+      "options": [
+        "1/4",
+        "1/2",
+        "5/12",
+        "6/12"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 12 cubed?",
+      "options": [
+        "1628",
+        "1728",
+        "1828",
+        "1928"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the mode of 2, 3, 3, 4, 4, 4, 5?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the reciprocal of 0.25?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 999 + 999?",
+      "options": [
+        "1888",
+        "1898",
+        "1988",
+        "1998"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 5/9 of 81?",
+      "options": [
+        "35",
+        "40",
+        "45",
+        "50"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the Roman numeral MMXXV?",
+      "options": [
+        "2020",
+        "2025",
+        "2030",
+        "2050"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many prime numbers are less than 20?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 13 cubed?",
+      "options": [
+        "2097",
+        "2197",
+        "2297",
+        "2397"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 0.125 as a fraction?",
+      "options": [
+        "1/4",
+        "1/6",
+        "1/8",
+        "1/10"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 65% of 200?",
+      "options": [
+        "115",
+        "125",
+        "130",
+        "135"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 14 cubed?",
+      "options": [
+        "2644",
+        "2744",
+        "2844",
+        "2944"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 7/8 + 1/8?",
+      "options": [
+        "1/2",
+        "3/4",
+        "1",
+        "8/8"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is 9 squared plus 4 squared?",
+      "options": [
+        "85",
+        "90",
+        "95",
+        "97"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 0.6 times 0.6?",
+      "options": [
+        "0.12",
+        "0.24",
+        "0.36",
+        "0.48"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 2.5 squared?",
+      "options": [
+        "5",
+        "5.25",
+        "6.25",
+        "6.5"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 51 squared?",
+      "options": [
+        "2591",
+        "2601",
+        "2611",
+        "2621"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 4/5 as a decimal?",
+      "options": [
+        "0.75",
+        "0.8",
+        "0.85",
+        "0.9"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the cube root of 125?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is 1/6 as a percentage?",
+      "options": [
+        "14.67%",
+        "15.67%",
+        "16.67%",
+        "17.67%"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 52 squared?",
+      "options": [
+        "2694",
+        "2704",
+        "2714",
+        "2724"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the sum of angles in an octagon?",
+      "options": [
+        "720°",
+        "900°",
+        "1080°",
+        "1260°"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 16 cubed?",
+      "options": [
+        "4086",
+        "4096",
+        "4106",
+        "4116"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is 0.375 as a fraction?",
+      "options": [
+        "1/4",
+        "3/8",
+        "2/5",
+        "3/10"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the product of the first 4 prime numbers?",
+      "options": [
+        "30",
+        "105",
+        "210",
+        "330"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
     }
   ],
   "Animals": [
@@ -12533,6 +15503,1007 @@
         "1",
         "2",
         "3"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the fastest marine mammal?",
+      "options": [
+        "Seal",
+        "Dolphin",
+        "Orca",
+        "Sea lion"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which animal has the best camouflage?",
+      "options": [
+        "Tiger",
+        "Octopus",
+        "Zebra",
+        "Polar bear"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many bones does a giraffe have in its neck?",
+      "options": [
+        "5",
+        "7",
+        "9",
+        "11"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the strongest bite force?",
+      "options": [
+        "Hippo",
+        "Crocodile",
+        "Great white shark",
+        "Hyena"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the only bird that can fly backwards continuously?",
+      "options": [
+        "Kingfisher",
+        "Hummingbird",
+        "Swallow",
+        "Sparrow"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which mammal has the most teeth?",
+      "options": [
+        "Dolphin",
+        "Opossum",
+        "Giant armadillo",
+        "Spinner dolphin"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a baby panda called?",
+      "options": [
+        "Cub",
+        "Kit",
+        "Pup",
+        "Calf"
+      ],
+      "correct": 0,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which animal can go the longest without drinking water?",
+      "options": [
+        "Camel",
+        "Kangaroo rat",
+        "Tortoise",
+        "Elephant"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many species of sea turtle exist?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "9"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the wingspan of the largest bird?",
+      "options": [
+        "8 feet",
+        "10 feet",
+        "12 feet",
+        "14 feet"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal produces the most offspring at once?",
+      "options": [
+        "Rabbit",
+        "Pig",
+        "Mouse",
+        "Ocean sunfish"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What percentage of a jellyfish is water?",
+      "options": [
+        "75%",
+        "85%",
+        "95%",
+        "99%"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which fish can climb trees?",
+      "options": [
+        "Catfish",
+        "Mudskipper",
+        "Flying fish",
+        "Lungfish"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How fast can an ostrich run?",
+      "options": [
+        "30 mph",
+        "40 mph",
+        "50 mph",
+        "60 mph"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which animal sleeps only 2 hours a day?",
+      "options": [
+        "Horse",
+        "Elephant",
+        "Giraffe",
+        "All of these"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What animal has the highest blood pressure?",
+      "options": [
+        "Elephant",
+        "Giraffe",
+        "Whale",
+        "Horse"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which insect has the longest migration?",
+      "options": [
+        "Locust",
+        "Monarch butterfly",
+        "Dragonfly",
+        "Painted lady"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many teeth does a crocodile have?",
+      "options": [
+        "40-50",
+        "60-70",
+        "80-100",
+        "100+"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the best night vision?",
+      "options": [
+        "Owl",
+        "Cat",
+        "Tarsier",
+        "Bat"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the only mammal born with horns?",
+      "options": [
+        "Rhino",
+        "Giraffe",
+        "Antelope",
+        "Buffalo"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many chambers does a fish heart have?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which bird has the most feathers?",
+      "options": [
+        "Ostrich",
+        "Swan",
+        "Penguin",
+        "Peacock"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What animal produces cashmere wool?",
+      "options": [
+        "Sheep",
+        "Goat",
+        "Rabbit",
+        "Alpaca"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which animal can survive being cut in half?",
+      "options": [
+        "Starfish",
+        "Flatworm",
+        "Earthworm",
+        "All of these"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many species of monkeys are there?",
+      "options": [
+        "100+",
+        "200+",
+        "260+",
+        "400+"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which mammal has the largest brain?",
+      "options": [
+        "Elephant",
+        "Blue whale",
+        "Sperm whale",
+        "Human"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a baby platypus called?",
+      "options": [
+        "Pup",
+        "Puggle",
+        "Kit",
+        "Cub"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which snake gives live birth?",
+      "options": [
+        "Python",
+        "Cobra",
+        "Boa constrictor",
+        "Rattlesnake"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many muscles does a cat have in each ear?",
+      "options": [
+        "12",
+        "22",
+        "32",
+        "42"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which bird has the longest beak relative to body?",
+      "options": [
+        "Pelican",
+        "Toucan",
+        "Sword-billed hummingbird",
+        "Stork"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the gestation period of a hamster?",
+      "options": [
+        "10 days",
+        "16 days",
+        "21 days",
+        "30 days"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal never gets sick?",
+      "options": [
+        "Shark",
+        "Crocodile",
+        "Vulture",
+        "Opossum"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many taste buds does a catfish have?",
+      "options": [
+        "10,000",
+        "50,000",
+        "100,000",
+        "175,000"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which mammal has the most ribs?",
+      "options": [
+        "Human",
+        "Snake",
+        "Sloth",
+        "Giraffe"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What color is hippo milk?",
+      "options": [
+        "White",
+        "Pink",
+        "Yellow",
+        "Blue"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the largest egg cell?",
+      "options": [
+        "Elephant",
+        "Ostrich",
+        "Blue whale",
+        "Whale shark"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How long is an elephant trunk on average?",
+      "options": [
+        "3 feet",
+        "5 feet",
+        "7 feet",
+        "9 feet"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which animal blinks most often?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Human",
+        "Hamster"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the only dog breed that cannot bark?",
+      "options": [
+        "Basenji",
+        "Shiba Inu",
+        "Akita",
+        "Chow Chow"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many compartments does a cow stomach have?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 3,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which reptile can run on water?",
+      "options": [
+        "Iguana",
+        "Basilisk lizard",
+        "Gecko",
+        "Chameleon"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is a group of parrots called?",
+      "options": [
+        "Flock",
+        "Pandemonium",
+        "Murder",
+        "Parliament"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many whiskers does an average cat have?",
+      "options": [
+        "12",
+        "16",
+        "20",
+        "24"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which spider builds the strongest web?",
+      "options": [
+        "Black widow",
+        "Tarantula",
+        "Darwin bark spider",
+        "Orb weaver"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What percentage of all animals are insects?",
+      "options": [
+        "50%",
+        "65%",
+        "80%",
+        "90%"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal sweats pink?",
+      "options": [
+        "Flamingo",
+        "Hippo",
+        "Pig",
+        "Elephant"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many species of ants exist?",
+      "options": [
+        "1,000+",
+        "5,000+",
+        "12,000+",
+        "22,000+"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a baby koala called?",
+      "options": [
+        "Cub",
+        "Joey",
+        "Pup",
+        "Kit"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which bird can turn its head 270 degrees?",
+      "options": [
+        "Eagle",
+        "Owl",
+        "Hawk",
+        "Vulture"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "How many eyes does a spider typically have?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "correct": 3,
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the largest fish?",
+      "options": [
+        "Great white shark",
+        "Manta ray",
+        "Whale shark",
+        "Oarfish"
+      ],
+      "correct": 2,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which animal has purple blood?",
+      "options": [
+        "Octopus",
+        "Sea cucumber",
+        "Peanut worm",
+        "Horseshoe crab"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How long can a snail sleep?",
+      "options": [
+        "1 year",
+        "2 years",
+        "3 years",
+        "5 years"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the softest fur?",
+      "options": [
+        "Rabbit",
+        "Chinchilla",
+        "Mink",
+        "Persian cat"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the largest amphibian?",
+      "options": [
+        "Goliath frog",
+        "Giant salamander",
+        "Cane toad",
+        "Axolotl"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many legs does a shrimp have?",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which animal can hold its breath longest?",
+      "options": [
+        "Dolphin",
+        "Whale",
+        "Crocodile",
+        "Cuvier beaked whale"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a baby hedgehog called?",
+      "options": [
+        "Pup",
+        "Hoglet",
+        "Kit",
+        "Cub"
+      ],
+      "correct": 1,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which fish is the most poisonous?",
+      "options": [
+        "Pufferfish",
+        "Stonefish",
+        "Lionfish",
+        "Box jellyfish"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many toes does a rhino have on each foot?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a group of crows called?",
+      "options": [
+        "Flock",
+        "Murder",
+        "Herd",
+        "Pack"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which animal cannot stick out its tongue?",
+      "options": [
+        "Snake",
+        "Frog",
+        "Crocodile",
+        "Turtle"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many teeth does a rabbit have?",
+      "options": [
+        "18",
+        "24",
+        "28",
+        "32"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which bird flies the highest?",
+      "options": [
+        "Eagle",
+        "Condor",
+        "Bar-headed goose",
+        "Alpine chough"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What color is a polar bear skin?",
+      "options": [
+        "White",
+        "Pink",
+        "Black",
+        "Gray"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many species of deer exist?",
+      "options": [
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the thickest fur?",
+      "options": [
+        "Polar bear",
+        "Sea otter",
+        "Chinchilla",
+        "Arctic fox"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a female fox called?",
+      "options": [
+        "Doe",
+        "Vixen",
+        "Sow",
+        "Mare"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "How many legs does a lobster have?",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which mammal has the shortest pregnancy?",
+      "options": [
+        "Mouse",
+        "Hamster",
+        "Opossum",
+        "Shrew"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the average lifespan of a housefly?",
+      "options": [
+        "1 day",
+        "7 days",
+        "28 days",
+        "60 days"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal can see infrared light?",
+      "options": [
+        "Snake",
+        "Owl",
+        "Cat",
+        "Bat"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many muscles control a cats ear?",
+      "options": [
+        "12",
+        "22",
+        "32",
+        "42"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the longest horns?",
+      "options": [
+        "Buffalo",
+        "Longhorn",
+        "Asian water buffalo",
+        "Watusi cattle"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a baby eagle called?",
+      "options": [
+        "Chick",
+        "Eaglet",
+        "Fledgling",
+        "Hatchling"
+      ],
+      "correct": 1,
+      "difficulty": "easy"
+    },
+    {
+      "q": "How many species of lizards exist?",
+      "options": [
+        "2,000+",
+        "4,000+",
+        "6,000+",
+        "8,000+"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the most complex eyes?",
+      "options": [
+        "Eagle",
+        "Dragonfly",
+        "Mantis shrimp",
+        "Owl"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a group of ravens called?",
+      "options": [
+        "Flock",
+        "Conspiracy",
+        "Murder",
+        "Unkindness"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many hearts does an earthworm have?",
+      "options": [
+        "0",
+        "1",
+        "5",
+        "10"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal can jump highest relative to size?",
+      "options": [
+        "Flea",
+        "Grasshopper",
+        "Kangaroo",
+        "Frog"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the only marsupial found outside of Australia/Americas?",
+      "options": [
+        "Wombat",
+        "Opossum",
+        "Wallaby",
+        "Sulawesi bear cuscus"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many gallons of water can an elephant drink daily?",
+      "options": [
+        "20",
+        "30",
+        "50",
+        "80"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal has the longest fangs?",
+      "options": [
+        "King cobra",
+        "Gaboon viper",
+        "Black mamba",
+        "Rattlesnake"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is a baby otter called?",
+      "options": [
+        "Pup",
+        "Kit",
+        "Cub",
+        "Whelp"
+      ],
+      "correct": 0,
+      "difficulty": "medium"
+    },
+    {
+      "q": "How many species of bees exist?",
+      "options": [
+        "5,000+",
+        "10,000+",
+        "20,000+",
+        "30,000+"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which bird has the longest feathers?",
+      "options": [
+        "Peacock",
+        "Phoenix fowl",
+        "Bird of paradise",
+        "Lyrebird"
+      ],
+      "correct": 1,
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the most common blood type in cats?",
+      "options": [
+        "A",
+        "B",
+        "AB",
+        "O"
+      ],
+      "correct": 0,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How far can a kangaroo jump?",
+      "options": [
+        "15 feet",
+        "25 feet",
+        "30 feet",
+        "40 feet"
+      ],
+      "correct": 2,
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the only bird with calf muscles?",
+      "options": [
+        "Ostrich",
+        "Emu",
+        "Penguin",
+        "Flamingo"
+      ],
+      "correct": 3,
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many taste buds does a cow have?",
+      "options": [
+        "5,000",
+        "15,000",
+        "25,000",
+        "35,000"
+      ],
+      "correct": 2,
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which animal can rotate its eyes independently?",
+      "options": [
+        "Owl",
+        "Chameleon",
+        "Frog",
+        "Lizard"
       ],
       "correct": 1,
       "difficulty": "easy"
