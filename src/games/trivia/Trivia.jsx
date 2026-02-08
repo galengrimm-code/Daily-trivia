@@ -1,7 +1,7 @@
 // src/games/trivia/Trivia.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Loader } from 'lucide-react';
+import { ChevronRight, Loader, Users } from 'lucide-react';
 import { usePlayer } from '../../hooks/usePlayer';
 import { useLeaderboard } from '../../hooks/useLeaderboard';
 import { loadTodaysQuestions } from '../../utils/api';
@@ -11,6 +11,10 @@ import QuestionCard from './QuestionCard';
 import TriviaResults from './TriviaResults';
 import TriviaReview from './TriviaReview';
 import Leaderboard from '../../components/Leaderboard';
+import TriviaMultiplayerLobby from './TriviaMultiplayerLobby';
+import TriviaMultiplayerGame from './TriviaMultiplayerGame';
+import TriviaMultiplayerResults from './TriviaMultiplayerResults';
+import useTriviaMultiplayer from './useTriviaMultiplayer';
 
 export default function Trivia() {
   const navigate = useNavigate();
@@ -26,6 +30,9 @@ export default function Trivia() {
   const [todaysQuestions, setTodaysQuestions] = useState([]);
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(false);
   const [quizStartTime, setQuizStartTime] = useState(null);
+
+  // Multiplayer state
+  const mp = useTriviaMultiplayer(user);
 
   // If already played today, jump to results
   useEffect(() => {
@@ -85,6 +92,66 @@ export default function Trivia() {
     await loadLeaderboards();
     setPhase('leaderboard');
   };
+
+  // ============================================
+  // MULTIPLAYER RENDERS
+  // ============================================
+
+  // Multiplayer menu / host setup / lobby
+  if (mp.phase === 'mp-menu' || mp.phase === 'mp-host-setup' || mp.phase === 'mp-lobby') {
+    return (
+      <TriviaMultiplayerLobby
+        phase={mp.phase}
+        lobbies={mp.lobbies}
+        roomId={mp.roomId}
+        isHost={mp.isHost}
+        roomPlayers={mp.room?.players || {}}
+        roomHostName={mp.room?.hostName}
+        roomCategories={mp.room?.categories}
+        questionCount={mp.room?.questions?.length}
+        onHost={mp.openHostSetup}
+        onJoinLobby={mp.handleJoinRoom}
+        onCreateRoom={mp.handleCreateRoom}
+        onStart={mp.handleStartGame}
+        onLeave={mp.handleLeaveRoom}
+        onBack={mp.handleBack}
+      />
+    );
+  }
+
+  // Multiplayer game
+  if (mp.phase === 'mp-playing' && mp.room) {
+    return (
+      <TriviaMultiplayerGame
+        room={mp.room}
+        userId={user?.uid}
+        onSubmitAnswer={mp.handleSubmitAnswer}
+        onNextQuestion={mp.handleNextQuestion}
+        onExit={mp.closeMultiplayer}
+      />
+    );
+  }
+
+  // Multiplayer results
+  if (mp.phase === 'mp-results' && mp.room) {
+    return (
+      <TriviaMultiplayerResults
+        standings={mp.room.standings || []}
+        questions={mp.room.questions}
+        categories={mp.room.categories}
+        totalQuestions={mp.room.questions?.length || 20}
+        userId={user?.uid}
+        isHost={mp.isHost}
+        roomId={mp.roomId}
+        onPlayAgain={mp.handlePlayAgain}
+        onHome={mp.closeMultiplayer}
+      />
+    );
+  }
+
+  // ============================================
+  // DAILY TRIVIA RENDERS
+  // ============================================
 
   // Loading questions
   if (phase === 'playing' && isLoadingQuestions) {
@@ -194,7 +261,7 @@ export default function Trivia() {
         <button
           onClick={startQuiz}
           disabled={isLoadingQuestions}
-          className="w-full py-4 bg-primary text-white rounded-button font-bold text-lg hover:bg-primary-hover transition-colors flex items-center justify-center gap-2 shadow-lg"
+          className="w-full py-4 bg-primary text-white rounded-button font-bold text-lg hover:bg-primary-hover transition-colors flex items-center justify-center gap-2 shadow-lg mb-4"
         >
           {isLoadingQuestions ? (
             <>
@@ -208,6 +275,23 @@ export default function Trivia() {
             </>
           )}
         </button>
+
+        {/* Multiplayer Button */}
+        <button
+          onClick={mp.openMultiplayer}
+          className="w-full py-4 bg-white text-text-main rounded-button font-bold text-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-card border-2 border-gray-200"
+        >
+          <Users className="w-6 h-6 text-primary" />
+          Multiplayer
+        </button>
+
+        {/* Error Toast */}
+        {mp.error && (
+          <div className="mt-4 p-3 bg-red-100 border border-red-300 rounded-lg text-red-700 text-center">
+            {mp.error}
+            <button onClick={mp.clearError} className="ml-2 underline">Dismiss</button>
+          </div>
+        )}
       </div>
     </div>
   );
