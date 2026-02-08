@@ -3,7 +3,7 @@ import React from 'react';
 import { Trophy, ArrowLeft, Loader } from 'lucide-react';
 
 // Reusable mini leaderboard component
-function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreLabel, maxEntries = 8 }) {
+function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreLabel, maxEntries = 10 }) {
   return (
     <div className="bg-white rounded-card p-3 shadow-card">
       <h2 className="text-text-main font-semibold mb-2 flex items-center gap-2 text-sm">
@@ -54,7 +54,7 @@ export default function Leaderboard({
 }) {
   // When showing only Trivia (no other games), show more entries
   const isTriviaOnly = !boggleEntries && !spellingBeeEntries;
-  const triviaMaxEntries = isTriviaOnly ? 50 : 8;
+  const triviaMaxEntries = isTriviaOnly ? 50 : 10;
 
   if (loading) {
     return (
