@@ -106,7 +106,6 @@ export default function Home() {
       lines.push(sbLine);
     }
 
-    lines.push('', 'How did you do?');
 
     const text = lines.join('\n');
 
