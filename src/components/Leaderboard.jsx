@@ -70,7 +70,7 @@ export default function Leaderboard({
           </button>
           <h1 className="text-xl font-bold text-text-main flex items-center gap-2">
             <Trophy className="w-6 h-6 text-yellow-500" />
-            Today's Leaderboards
+            {boggleEntries || spellingBeeEntries ? "Today's Leaderboards" : "Trivia Leaderboard"}
           </h1>
           <div className="w-10" />
         </div>
@@ -86,25 +86,29 @@ export default function Leaderboard({
             scoreKey={(e) => `${e.score}/${e.totalQuestions}`}
           />
 
-          {/* Boggle Today */}
-          <MiniLeaderboard
-            title="Boggle"
-            icon={'\u{1F524}'}
-            entries={boggleEntries || []}
-            currentUserId={currentUserId}
-            scoreKey="score"
-            scoreLabel="pts"
-          />
+          {/* Boggle Today - only show if entries provided */}
+          {boggleEntries && (
+            <MiniLeaderboard
+              title="Boggle"
+              icon={'\u{1F524}'}
+              entries={boggleEntries}
+              currentUserId={currentUserId}
+              scoreKey="score"
+              scoreLabel="pts"
+            />
+          )}
 
-          {/* Spelling Bee Today */}
-          <MiniLeaderboard
-            title="Spelling Bee"
-            icon={'\u{1F41D}'}
-            entries={spellingBeeEntries || []}
-            currentUserId={currentUserId}
-            scoreKey="score"
-            scoreLabel="pts"
-          />
+          {/* Spelling Bee Today - only show if entries provided */}
+          {spellingBeeEntries && (
+            <MiniLeaderboard
+              title="Spelling Bee"
+              icon={'\u{1F41D}'}
+              entries={spellingBeeEntries}
+              currentUserId={currentUserId}
+              scoreKey="score"
+              scoreLabel="pts"
+            />
+          )}
         </div>
 
         {/* Weekly Summary */}
