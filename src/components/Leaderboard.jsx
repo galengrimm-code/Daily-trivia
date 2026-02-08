@@ -90,6 +90,9 @@ export default function Leaderboard({
             scoreKey={(e) => `${e.score}/${e.totalQuestions}`}
             maxEntries={triviaMaxEntries}
           />
+          {isTriviaOnly && (
+            <p className="text-text-muted text-xs text-center -mt-2">Ties broken by fastest completion time</p>
+          )}
 
           {/* Boggle Today - only show if entries provided */}
           {boggleEntries && (
