@@ -63,6 +63,24 @@ export const daysBetween = (date1, date2) => {
   return Math.round(diffTime / (1000 * 60 * 60 * 24));
 };
 
+// Get the start of the current week (Monday at 2 AM CT)
+// Week resets Sunday night at 2 AM CT (which is Monday 2 AM CT)
+export const getWeekStartKey = () => {
+  const gameDay = getGameDay();
+
+  // Get day of week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+  const dayOfWeek = gameDay.getDay();
+
+  // Calculate days since Monday (if Sunday, it's 6 days since Monday)
+  const daysSinceMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+
+  // Go back to Monday
+  const monday = new Date(gameDay);
+  monday.setDate(monday.getDate() - daysSinceMonday);
+
+  return `${monday.getFullYear()}-${String(monday.getMonth() + 1).padStart(2, '0')}-${String(monday.getDate()).padStart(2, '0')}`;
+};
+
 // Check if streak should continue or reset
 export const calculateStreak = (lastPlayed, currentStreak) => {
   if (!lastPlayed) return 1;

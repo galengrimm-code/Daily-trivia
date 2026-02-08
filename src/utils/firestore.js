@@ -13,7 +13,7 @@ import {
   Timestamp
 } from 'firebase/firestore';
 import { db } from './firebase';
-import { getTodayKey, calculateStreak } from './helpers';
+import { getTodayKey, getWeekStartKey, calculateStreak } from './helpers';
 
 // ============================================
 // USER FUNCTIONS
@@ -116,15 +116,13 @@ export const getTodayLeaderboard = async () => {
 };
 
 export const getWeeklyLeaderboard = async () => {
-  const today = new Date();
-  const weekAgo = new Date(today);
-  weekAgo.setDate(weekAgo.getDate() - 7);
-  const weekAgoKey = `${weekAgo.getFullYear()}-${String(weekAgo.getMonth() + 1).padStart(2, '0')}-${String(weekAgo.getDate()).padStart(2, '0')}`;
+  // Week starts Monday at 2 AM CT, resets Sunday night at 2 AM CT
+  const weekStartKey = getWeekStartKey();
 
   const scoresRef = collection(db, 'scores');
   const q = query(
     scoresRef,
-    where('date', '>=', weekAgoKey),
+    where('date', '>=', weekStartKey),
     orderBy('date', 'desc')
   );
 
