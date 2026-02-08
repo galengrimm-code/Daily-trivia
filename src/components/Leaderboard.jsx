@@ -46,6 +46,7 @@ function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreL
 
 export default function Leaderboard({
   todayEntries,
+  weeklyEntries,
   boggleEntries,
   spellingBeeEntries,
   currentUserId,
@@ -112,6 +113,40 @@ export default function Leaderboard({
               scoreKey="score"
               scoreLabel="pts"
             />
+          )}
+
+          {/* Weekly Trivia - only show in Trivia game view */}
+          {isTriviaOnly && weeklyEntries && weeklyEntries.length > 0 && (
+            <div className="bg-white rounded-card p-3 shadow-card">
+              <h2 className="text-text-main font-semibold mb-2 flex items-center gap-2 text-sm">
+                <span className="text-lg">{'\u{1F3C6}'}</span>
+                Weekly Trivia
+              </h2>
+              <div className="space-y-0.5">
+                {weeklyEntries.slice(0, 10).map((entry, idx) => (
+                  <div
+                    key={entry.userId}
+                    className={`flex items-center justify-between px-2 py-1 rounded text-xs ${
+                      entry.userId === currentUserId ? 'bg-blue-50' : 'bg-gray-50'
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5">
+                      <span className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs ${
+                        idx === 0 ? 'bg-yellow-400 text-yellow-900' :
+                        idx === 1 ? 'bg-gray-300 text-gray-700' :
+                        idx === 2 ? 'bg-amber-600 text-white' :
+                        'bg-gray-200 text-text-muted'
+                      }`}>
+                        {idx + 1}
+                      </span>
+                      <span className="text-text-main font-medium truncate max-w-[120px]">{entry.displayName}</span>
+                      <span className="text-text-muted">{entry.gamesPlayed}g</span>
+                    </div>
+                    <span className="text-text-main font-bold">{entry.totalScore}<span className="text-text-muted font-normal ml-0.5">pts</span></span>
+                  </div>
+                ))}
+              </div>
+            </div>
           )}
         </div>
 
