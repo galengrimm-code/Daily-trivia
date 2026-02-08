@@ -4,6 +4,7 @@ import {
   getDoc,
   setDoc,
   updateDoc,
+  deleteDoc,
   collection,
   query,
   where,
@@ -187,6 +188,14 @@ export const saveTodaysQuestionsToDB = async (questions) => {
   return questions;
 };
 
+export const deleteTodaysQuestions = async () => {
+  const today = getTodayKey();
+  const questionsRef = doc(db, 'dailyQuestions', today);
+  await deleteDoc(questionsRef);
+  console.log(`Deleted questions for ${today}`);
+  return today;
+};
+
 // ============================================
 // TRIVIA SESSION TOKEN FUNCTIONS
 // ============================================
@@ -216,19 +225,19 @@ export const updateTriviaSessionToken = async (token) => {
 // QUESTION TRACKING FUNCTIONS (prevent repeats)
 // ============================================
 
-// Get recently used question hashes (last 30 days)
+// Get recently used question hashes (last 60 days)
 export const getRecentQuestionHashes = async () => {
   const trackingRef = doc(db, 'settings', 'usedQuestions');
   const trackingSnap = await getDoc(trackingRef);
 
   if (trackingSnap.exists()) {
     const data = trackingSnap.data();
-    const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+    const sixtyDaysAgo = Date.now() - (60 * 24 * 60 * 60 * 1000);
 
-    // Filter to only include hashes from the last 30 days
+    // Filter to only include hashes from the last 60 days
     const recentHashes = {};
     Object.entries(data.hashes || {}).forEach(([hash, timestamp]) => {
-      if (timestamp > thirtyDaysAgo) {
+      if (timestamp > sixtyDaysAgo) {
         recentHashes[hash] = timestamp;
       }
     });
@@ -251,10 +260,10 @@ export const addQuestionHash = async (hash) => {
   // Add new hash with current timestamp
   hashes[hash] = Date.now();
 
-  // Clean up old hashes (older than 30 days)
-  const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+  // Clean up old hashes (older than 60 days)
+  const sixtyDaysAgo = Date.now() - (60 * 24 * 60 * 60 * 1000);
   Object.keys(hashes).forEach(h => {
-    if (hashes[h] < thirtyDaysAgo) {
+    if (hashes[h] < sixtyDaysAgo) {
       delete hashes[h];
     }
   });
