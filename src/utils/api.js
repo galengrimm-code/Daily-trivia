@@ -1,10 +1,8 @@
 // src/utils/api.js
-import { decodeHTML, shuffleArray, seededRandom, getTodaySeed, CATEGORIES } from './helpers';
-import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getTriviaSessionToken, updateTriviaSessionToken, getRecentQuestionHashes, addQuestionHash } from './firestore';
+import { seededRandom, getTodaySeed, CATEGORIES } from './helpers';
+import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getRecentQuestionHashes, addQuestionHash } from './firestore';
 import bibleQuestions from '../data/bibleQuestions';
-
-// Session token for Open Trivia DB (prevents repeat questions)
-let cachedToken = null;
+import triviaQuestions from '../data/triviaQuestions.json';
 
 // Simple hash function for question text
 const hashQuestion = (questionText) => {
@@ -18,41 +16,7 @@ const hashQuestion = (questionText) => {
   return hash.toString(36);
 };
 
-
-// Request a new session token from Open Trivia DB
-const requestNewSessionToken = async () => {
-  try {
-    const response = await fetch('https://opentdb.com/api_token.php?command=request');
-    const data = await response.json();
-
-    if (data.response_code === 0 && data.token) {
-      cachedToken = data.token;
-      await updateTriviaSessionToken(data.token);
-      return data.token;
-    }
-  } catch (error) {
-    console.error('Failed to get session token:', error);
-  }
-  return null;
-};
-
-// Get or create session token
-const getSessionToken = async () => {
-  // Return cached token if available
-  if (cachedToken) return cachedToken;
-
-  // Try to get from Firebase
-  const tokenData = await getTriviaSessionToken();
-  if (tokenData?.token) {
-    cachedToken = tokenData.token;
-    return cachedToken;
-  }
-
-  // Request new token
-  return await requestNewSessionToken();
-};
-
-// Fallback questions if API fails
+// Fallback questions (used when local pool is exhausted)
 const fallbackQuestions = {
   History: [
     { q: "Which ancient wonder was located in Alexandria, Egypt?", options: ["Lighthouse of Alexandria", "Colossus of Rhodes", "Hanging Gardens", "Temple of Artemis"], correct: 0, fact: "The Lighthouse of Alexandria stood about 330 feet tall!" },
@@ -81,6 +45,11 @@ const fallbackQuestions = {
     { q: "How many sides does a hexagon have?", options: ["5", "6", "7", "8"], correct: 1, fact: "'Hex' comes from Greek 'hexa' meaning six." },
     { q: "What is 15% of 200?", options: ["20", "25", "30", "35"], correct: 2, fact: "Percentages come from the Latin 'per centum' meaning 'by the hundred.'" },
     { q: "What is the next prime number after 7?", options: ["9", "10", "11", "13"], correct: 2, fact: "Prime numbers have exactly two factors: 1 and themselves." },
+    { q: "What is 7 x 8?", options: ["54", "56", "58", "64"], correct: 1, fact: "Multiplication tables were used in ancient Babylon over 4,000 years ago!" },
+    { q: "What is the sum of angles in a triangle?", options: ["90°", "180°", "270°", "360°"], correct: 1, fact: "This works for any triangle, no matter how stretched!" },
+    { q: "What is 25% of 80?", options: ["15", "20", "25", "30"], correct: 1, fact: "25% is the same as dividing by 4." },
+    { q: "How many degrees in a right angle?", options: ["45°", "90°", "180°", "360°"], correct: 1, fact: "Right angles are found everywhere in architecture and design." },
+    { q: "What is 2 to the power of 5?", options: ["16", "25", "32", "64"], correct: 2, fact: "Powers of 2 are fundamental in computer science!" },
   ],
   Animals: [
     { q: "What is the fastest land animal?", options: ["Lion", "Cheetah", "Gazelle", "Horse"], correct: 1, fact: "Cheetahs can reach speeds up to 70 mph!" },
@@ -91,60 +60,42 @@ const fallbackQuestions = {
   ]
 };
 
-// Fetch a question from Open Trivia DB API (with duplicate checking)
-export const fetchAPIQuestion = async (category, usedHashes = {}, maxRetries = 5) => {
-  const categoryId = CATEGORIES[category]?.id;
-  if (!categoryId) return null;
+// Get a question from the local pool that hasn't been used recently
+const getLocalQuestion = (category, usedHashes, seed) => {
+  const pool = triviaQuestions[category] || [];
 
-  for (let attempt = 0; attempt < maxRetries; attempt++) {
-    try {
-      // Get session token to prevent repeat questions
-      const token = await getSessionToken();
-      const tokenParam = token ? `&token=${token}` : '';
+  if (pool.length === 0) {
+    console.log(`No local questions for ${category}, using fallback`);
+    return null;
+  }
 
-      const response = await fetch(
-        `https://opentdb.com/api.php?amount=1&category=${categoryId}&type=multiple${tokenParam}`
-      );
-      const data = await response.json();
+  // Shuffle the pool using seeded random for consistent daily selection
+  const shuffledIndices = pool.map((_, i) => i);
+  for (let i = shuffledIndices.length - 1; i > 0; i--) {
+    const j = Math.floor(seededRandom(seed + i) * (i + 1));
+    [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
+  }
 
-      // Handle token issues:
-      // Code 3 = Token expired (after 6 hours of inactivity)
-      // Code 4 = Token exhausted (all questions for category have been used)
-      if (data.response_code === 3 || data.response_code === 4) {
-        console.log(`Token ${data.response_code === 3 ? 'expired' : 'exhausted'}, requesting new token...`);
-        cachedToken = null;
-        await requestNewSessionToken();
-        continue; // Retry with new token
-      }
+  // Find the first unused question
+  for (const idx of shuffledIndices) {
+    const question = pool[idx];
+    const hash = hashQuestion(question.q);
 
-      if (data.response_code === 0 && data.results.length > 0) {
-        const q = data.results[0];
-        const questionText = decodeHTML(q.question);
-        const hash = hashQuestion(questionText);
-
-        // Check if this question was used recently
-        if (usedHashes[hash]) {
-          console.log(`Question already used recently, retrying... (attempt ${attempt + 1})`);
-          continue; // Try to get a different question
-        }
-
-        const answers = shuffleArray([...q.incorrect_answers, q.correct_answer]);
-        const correctIndex = answers.indexOf(q.correct_answer);
-
-        return {
-          q: questionText,
-          options: answers.map(decodeHTML),
-          correct: correctIndex,
-          fact: `Difficulty: ${q.difficulty.charAt(0).toUpperCase() + q.difficulty.slice(1)}`,
-          _hash: hash // Include hash for tracking
-        };
-      }
-    } catch (error) {
-      console.error('API fetch failed:', error);
+    if (!usedHashes[hash]) {
+      const difficulty = question.difficulty || 'medium';
+      return {
+        q: question.q,
+        options: question.options,
+        correct: question.correct,
+        fact: `Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`,
+        _hash: hash
+      };
     }
   }
 
-  return null; // All retries failed
+  // All questions used - return null to trigger fallback
+  console.log(`All ${pool.length} questions exhausted for ${category}`);
+  return null;
 };
 
 // Get a Bible question using seeded random (same question for everyone on same day)
@@ -155,26 +106,56 @@ export const getBibleQuestion = (seedOffset = 0) => {
 };
 
 // Get a fallback question using seeded random
-export const getFallbackQuestion = (category, seedOffset = 0) => {
+export const getFallbackQuestion = (category, usedHashes, seed) => {
   const questions = fallbackQuestions[category];
   if (!questions) return null;
-  
-  const seed = getTodaySeed() + seedOffset;
-  const index = Math.floor(seededRandom(seed) * questions.length);
-  return { ...questions[index] };
+
+  // Try to find an unused fallback question
+  const shuffledIndices = questions.map((_, i) => i);
+  for (let i = shuffledIndices.length - 1; i > 0; i--) {
+    const j = Math.floor(seededRandom(seed + i + 1000) * (i + 1));
+    [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
+  }
+
+  for (const idx of shuffledIndices) {
+    const question = questions[idx];
+    const hash = hashQuestion(question.q);
+
+    if (!usedHashes[hash]) {
+      return { ...question, _hash: hash };
+    }
+  }
+
+  // If all fallbacks used, just return the first one (will be a repeat)
+  const question = questions[Math.floor(seededRandom(seed) * questions.length)];
+  return { ...question, _hash: hashQuestion(question.q) };
 };
 
 // Generate fresh questions (called only when no questions exist for today)
 const generateTodaysQuestions = async () => {
   const questions = [];
   const categories = Object.keys(CATEGORIES);
+  const seed = getTodaySeed();
 
   // Load recently used question hashes to avoid repeats
   const usedHashes = await getRecentQuestionHashes();
   console.log(`Loaded ${Object.keys(usedHashes).length} recently used question hashes`);
 
+  // Log pool sizes
+  for (const cat of categories) {
+    if (cat !== 'Bible') {
+      const poolSize = triviaQuestions[cat]?.length || 0;
+      const usedCount = Object.keys(usedHashes).filter(h => {
+        const pool = triviaQuestions[cat] || [];
+        return pool.some(q => hashQuestion(q.q) === h);
+      }).length;
+      console.log(`${cat}: ${poolSize} questions (${poolSize - usedCount} unused)`);
+    }
+  }
+
   for (let i = 0; i < categories.length; i++) {
     const category = categories[i];
+    const categorySeed = seed + i * 100;
 
     if (category === 'Bible') {
       // Use local KJV questions for Bible
@@ -186,19 +167,19 @@ const generateTodaysQuestions = async () => {
         _hash: hash
       });
     } else {
-      // Try API first, fallback to local
-      const apiQuestion = await fetchAPIQuestion(category, usedHashes);
-      if (apiQuestion) {
-        questions.push({ category, ...apiQuestion });
+      // Try local pool first
+      let question = getLocalQuestion(category, usedHashes, categorySeed);
+
+      // Fall back to fallback questions if local pool exhausted
+      if (!question) {
+        question = getFallbackQuestion(category, usedHashes, categorySeed);
+      }
+
+      if (question) {
+        questions.push({ category, ...question });
         // Add to usedHashes so we don't repeat within this generation
-        if (apiQuestion._hash) {
-          usedHashes[apiQuestion._hash] = Date.now();
-        }
-      } else {
-        const fallback = getFallbackQuestion(category, i);
-        if (fallback) {
-          const hash = hashQuestion(fallback.q);
-          questions.push({ category, ...fallback, _hash: hash });
+        if (question._hash) {
+          usedHashes[question._hash] = Date.now();
         }
       }
     }

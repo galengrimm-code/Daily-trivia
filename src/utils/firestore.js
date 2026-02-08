@@ -197,31 +197,6 @@ export const deleteTodaysQuestions = async () => {
 };
 
 // ============================================
-// TRIVIA SESSION TOKEN FUNCTIONS
-// ============================================
-
-export const getTriviaSessionToken = async () => {
-  const tokenRef = doc(db, 'settings', 'triviaToken');
-  const tokenSnap = await getDoc(tokenRef);
-
-  if (tokenSnap.exists()) {
-    return tokenSnap.data();
-  }
-  return null;
-};
-
-export const updateTriviaSessionToken = async (token) => {
-  const tokenRef = doc(db, 'settings', 'triviaToken');
-
-  await setDoc(tokenRef, {
-    token,
-    createdAt: Timestamp.now()
-  });
-
-  return token;
-};
-
-// ============================================
 // QUESTION TRACKING FUNCTIONS (prevent repeats)
 // ============================================
 
