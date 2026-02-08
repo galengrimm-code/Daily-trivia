@@ -211,3 +211,53 @@ export const updateTriviaSessionToken = async (token) => {
 
   return token;
 };
+
+// ============================================
+// QUESTION TRACKING FUNCTIONS (prevent repeats)
+// ============================================
+
+// Get recently used question hashes (last 30 days)
+export const getRecentQuestionHashes = async () => {
+  const trackingRef = doc(db, 'settings', 'usedQuestions');
+  const trackingSnap = await getDoc(trackingRef);
+
+  if (trackingSnap.exists()) {
+    const data = trackingSnap.data();
+    const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+
+    // Filter to only include hashes from the last 30 days
+    const recentHashes = {};
+    Object.entries(data.hashes || {}).forEach(([hash, timestamp]) => {
+      if (timestamp > thirtyDaysAgo) {
+        recentHashes[hash] = timestamp;
+      }
+    });
+
+    return recentHashes;
+  }
+  return {};
+};
+
+// Add a question hash to the tracking list
+export const addQuestionHash = async (hash) => {
+  const trackingRef = doc(db, 'settings', 'usedQuestions');
+  const trackingSnap = await getDoc(trackingRef);
+
+  let hashes = {};
+  if (trackingSnap.exists()) {
+    hashes = trackingSnap.data().hashes || {};
+  }
+
+  // Add new hash with current timestamp
+  hashes[hash] = Date.now();
+
+  // Clean up old hashes (older than 30 days)
+  const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+  Object.keys(hashes).forEach(h => {
+    if (hashes[h] < thirtyDaysAgo) {
+      delete hashes[h];
+    }
+  });
+
+  await setDoc(trackingRef, { hashes });
+};

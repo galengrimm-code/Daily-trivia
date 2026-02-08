@@ -1,10 +1,23 @@
 // src/utils/api.js
 import { decodeHTML, shuffleArray, seededRandom, getTodaySeed, CATEGORIES } from './helpers';
-import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getTriviaSessionToken, updateTriviaSessionToken } from './firestore';
+import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getTriviaSessionToken, updateTriviaSessionToken, getRecentQuestionHashes, addQuestionHash } from './firestore';
 import bibleQuestions from '../data/bibleQuestions';
 
 // Session token for Open Trivia DB (prevents repeat questions)
 let cachedToken = null;
+
+// Simple hash function for question text
+const hashQuestion = (questionText) => {
+  let hash = 0;
+  const str = questionText.toLowerCase().replace(/[^a-z0-9]/g, '');
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash.toString(36);
+};
+
 
 // Request a new session token from Open Trivia DB
 const requestNewSessionToken = async () => {
@@ -78,47 +91,60 @@ const fallbackQuestions = {
   ]
 };
 
-// Fetch a question from Open Trivia DB API
-export const fetchAPIQuestion = async (category, retryOnEmpty = true) => {
-  try {
-    const categoryId = CATEGORIES[category]?.id;
-    if (!categoryId) return null;
+// Fetch a question from Open Trivia DB API (with duplicate checking)
+export const fetchAPIQuestion = async (category, usedHashes = {}, maxRetries = 5) => {
+  const categoryId = CATEGORIES[category]?.id;
+  if (!categoryId) return null;
 
-    // Get session token to prevent repeat questions
-    const token = await getSessionToken();
-    const tokenParam = token ? `&token=${token}` : '';
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      // Get session token to prevent repeat questions
+      const token = await getSessionToken();
+      const tokenParam = token ? `&token=${token}` : '';
 
-    const response = await fetch(
-      `https://opentdb.com/api.php?amount=1&category=${categoryId}&type=multiple${tokenParam}`
-    );
-    const data = await response.json();
+      const response = await fetch(
+        `https://opentdb.com/api.php?amount=1&category=${categoryId}&type=multiple${tokenParam}`
+      );
+      const data = await response.json();
 
-    // Handle token issues:
-    // Code 3 = Token expired (after 6 hours of inactivity)
-    // Code 4 = Token exhausted (all questions for category have been used)
-    if ((data.response_code === 3 || data.response_code === 4) && retryOnEmpty) {
-      console.log(`Token ${data.response_code === 3 ? 'expired' : 'exhausted'}, requesting new token...`);
-      cachedToken = null; // Clear stale cached token
-      await requestNewSessionToken();
-      return fetchAPIQuestion(category, false); // Retry once with new token
+      // Handle token issues:
+      // Code 3 = Token expired (after 6 hours of inactivity)
+      // Code 4 = Token exhausted (all questions for category have been used)
+      if (data.response_code === 3 || data.response_code === 4) {
+        console.log(`Token ${data.response_code === 3 ? 'expired' : 'exhausted'}, requesting new token...`);
+        cachedToken = null;
+        await requestNewSessionToken();
+        continue; // Retry with new token
+      }
+
+      if (data.response_code === 0 && data.results.length > 0) {
+        const q = data.results[0];
+        const questionText = decodeHTML(q.question);
+        const hash = hashQuestion(questionText);
+
+        // Check if this question was used recently
+        if (usedHashes[hash]) {
+          console.log(`Question already used recently, retrying... (attempt ${attempt + 1})`);
+          continue; // Try to get a different question
+        }
+
+        const answers = shuffleArray([...q.incorrect_answers, q.correct_answer]);
+        const correctIndex = answers.indexOf(q.correct_answer);
+
+        return {
+          q: questionText,
+          options: answers.map(decodeHTML),
+          correct: correctIndex,
+          fact: `Difficulty: ${q.difficulty.charAt(0).toUpperCase() + q.difficulty.slice(1)}`,
+          _hash: hash // Include hash for tracking
+        };
+      }
+    } catch (error) {
+      console.error('API fetch failed:', error);
     }
-
-    if (data.response_code === 0 && data.results.length > 0) {
-      const q = data.results[0];
-      const answers = shuffleArray([...q.incorrect_answers, q.correct_answer]);
-      const correctIndex = answers.indexOf(q.correct_answer);
-
-      return {
-        q: decodeHTML(q.question),
-        options: answers.map(decodeHTML),
-        correct: correctIndex,
-        fact: `Difficulty: ${q.difficulty.charAt(0).toUpperCase() + q.difficulty.slice(1)}`
-      };
-    }
-  } catch (error) {
-    console.error('API fetch failed:', error);
   }
-  return null;
+
+  return null; // All retries failed
 };
 
 // Get a Bible question using seeded random (same question for everyone on same day)
@@ -143,26 +169,45 @@ const generateTodaysQuestions = async () => {
   const questions = [];
   const categories = Object.keys(CATEGORIES);
 
+  // Load recently used question hashes to avoid repeats
+  const usedHashes = await getRecentQuestionHashes();
+  console.log(`Loaded ${Object.keys(usedHashes).length} recently used question hashes`);
+
   for (let i = 0; i < categories.length; i++) {
     const category = categories[i];
 
     if (category === 'Bible') {
       // Use local KJV questions for Bible
+      const bibleQ = getBibleQuestion(i);
+      const hash = hashQuestion(bibleQ.q);
       questions.push({
         category,
-        ...getBibleQuestion(i)
+        ...bibleQ,
+        _hash: hash
       });
     } else {
       // Try API first, fallback to local
-      const apiQuestion = await fetchAPIQuestion(category);
+      const apiQuestion = await fetchAPIQuestion(category, usedHashes);
       if (apiQuestion) {
         questions.push({ category, ...apiQuestion });
+        // Add to usedHashes so we don't repeat within this generation
+        if (apiQuestion._hash) {
+          usedHashes[apiQuestion._hash] = Date.now();
+        }
       } else {
         const fallback = getFallbackQuestion(category, i);
         if (fallback) {
-          questions.push({ category, ...fallback });
+          const hash = hashQuestion(fallback.q);
+          questions.push({ category, ...fallback, _hash: hash });
         }
       }
+    }
+  }
+
+  // Save all new question hashes to Firebase for future duplicate checking
+  for (const q of questions) {
+    if (q._hash) {
+      await addQuestionHash(q._hash);
     }
   }
 
