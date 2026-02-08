@@ -15,7 +15,7 @@ import Leaderboard from '../../components/Leaderboard';
 export default function Trivia() {
   const navigate = useNavigate();
   const { user, userProfile, todayScore, completeTrivia } = usePlayer();
-  const { todayLeaderboard, weeklyLeaderboard, loading: lbLoading, loadLeaderboards } = useLeaderboard();
+  const { todayLeaderboard, loading: lbLoading, loadLeaderboards } = useLeaderboard();
 
   // Local trivia state
   const [phase, setPhase] = useState('intro'); // intro | playing | results | review | leaderboard
@@ -130,7 +130,6 @@ export default function Trivia() {
     return (
       <Leaderboard
         todayEntries={todayLeaderboard}
-        weeklyEntries={weeklyLeaderboard}
         currentUserId={user?.uid}
         loading={lbLoading}
         onBack={() => setPhase('results')}

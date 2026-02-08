@@ -14,7 +14,6 @@ export default function Home() {
   const { user, userProfile, todayScore } = usePlayer();
   const {
     todayLeaderboard,
-    weeklyLeaderboard,
     boggleLeaderboard,
     spellingBeeLeaderboard,
     loading: lbLoading,
@@ -126,7 +125,6 @@ export default function Home() {
     return (
       <Leaderboard
         todayEntries={todayLeaderboard}
-        weeklyEntries={weeklyLeaderboard}
         boggleEntries={boggleLeaderboard}
         spellingBeeEntries={spellingBeeLeaderboard}
         currentUserId={user?.uid}

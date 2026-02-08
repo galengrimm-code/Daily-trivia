@@ -3,7 +3,7 @@ import React from 'react';
 import { Trophy, ArrowLeft, Loader } from 'lucide-react';
 
 // Reusable mini leaderboard component
-function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreLabel }) {
+function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreLabel, maxEntries = 8 }) {
   return (
     <div className="bg-white rounded-card p-3 shadow-card">
       <h2 className="text-text-main font-semibold mb-2 flex items-center gap-2 text-sm">
@@ -14,7 +14,7 @@ function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreL
         <p className="text-text-muted text-center py-1 text-xs">No scores yet</p>
       ) : (
         <div className="space-y-0.5">
-          {entries.slice(0, 5).map((entry, idx) => (
+          {entries.slice(0, maxEntries).map((entry, idx) => (
             <div
               key={entry.userId || entry.id || idx}
               className={`flex items-center justify-between px-2 py-1 rounded text-xs ${
@@ -46,13 +46,16 @@ function MiniLeaderboard({ title, icon, entries, currentUserId, scoreKey, scoreL
 
 export default function Leaderboard({
   todayEntries,
-  weeklyEntries,
   boggleEntries,
   spellingBeeEntries,
   currentUserId,
   loading,
   onBack
 }) {
+  // When showing only Trivia (no other games), show more entries
+  const isTriviaOnly = !boggleEntries && !spellingBeeEntries;
+  const triviaMaxEntries = isTriviaOnly ? 50 : 8;
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -84,6 +87,7 @@ export default function Leaderboard({
             entries={todayEntries || []}
             currentUserId={currentUserId}
             scoreKey={(e) => `${e.score}/${e.totalQuestions}`}
+            maxEntries={triviaMaxEntries}
           />
 
           {/* Boggle Today - only show if entries provided */}
@@ -110,40 +114,6 @@ export default function Leaderboard({
             />
           )}
         </div>
-
-        {/* Weekly Summary */}
-        {weeklyEntries && weeklyEntries.length > 0 && (
-          <div className="bg-white rounded-card p-3 shadow-card mb-4">
-            <h2 className="text-text-main font-semibold mb-2 flex items-center gap-2 text-sm">
-              <span className="text-lg">{'\u{1F3C6}'}</span>
-              Weekly Trivia
-            </h2>
-            <div className="space-y-0.5">
-              {weeklyEntries.slice(0, 5).map((entry, idx) => (
-                <div
-                  key={entry.userId}
-                  className={`flex items-center justify-between px-2 py-1 rounded text-xs ${
-                    entry.userId === currentUserId ? 'bg-blue-50' : 'bg-gray-50'
-                  }`}
-                >
-                  <div className="flex items-center gap-1.5">
-                    <span className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs ${
-                      idx === 0 ? 'bg-yellow-400 text-yellow-900' :
-                      idx === 1 ? 'bg-gray-300 text-gray-700' :
-                      idx === 2 ? 'bg-amber-600 text-white' :
-                      'bg-gray-200 text-text-muted'
-                    }`}>
-                      {idx + 1}
-                    </span>
-                    <span className="text-text-main font-medium truncate max-w-[120px]">{entry.displayName}</span>
-                    <span className="text-text-muted">{entry.gamesPlayed}g</span>
-                  </div>
-                  <span className="text-text-main font-bold">{entry.totalScore}<span className="text-text-muted font-normal ml-0.5">pts</span></span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         <button onClick={onBack} className="w-full py-3 bg-primary text-white rounded-button font-bold hover:bg-primary-hover transition-colors">
           Back
