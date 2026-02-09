@@ -263,7 +263,7 @@ export default function Wordle() {
     return (
       <div
         key={colIndex}
-        className={`w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center text-2xl sm:text-3xl font-bold rounded ${bgColor} ${textColor}`}
+        className={`w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-bold rounded ${bgColor} ${textColor}`}
         style={{
           animation: isRevealing ? 'flip 0.5s ease forwards' : isBouncing ? 'bounce 0.3s ease forwards' : 'none',
           animationDelay: isRevealing ? `${revealDelay}ms` : isBouncing ? `${bounceDelay}ms` : '0ms'
@@ -329,9 +329,9 @@ export default function Wordle() {
       <button
         key={key}
         onClick={() => handleKeyPress(key)}
-        className={`${isWide ? 'px-3 sm:px-4' : 'w-8 sm:w-10'} h-14 rounded font-bold text-sm sm:text-base ${bgColor} ${textColor} transition-colors flex items-center justify-center`}
+        className={`${isWide ? 'px-2 sm:px-3' : 'w-8 sm:w-9'} h-11 sm:h-12 rounded font-bold text-sm ${bgColor} ${textColor} transition-colors flex items-center justify-center`}
       >
-        {key === 'BACK' ? <Delete className="w-5 h-5" /> : key === 'ENTER' ? <CornerDownLeft className="w-5 h-5" /> : key}
+        {key === 'BACK' ? <Delete className="w-4 h-4" /> : key === 'ENTER' ? <CornerDownLeft className="w-4 h-4" /> : key}
       </button>
     );
   };
@@ -339,7 +339,7 @@ export default function Wordle() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
         <button
           onClick={() => navigate('/')}
           className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -363,19 +363,19 @@ export default function Wordle() {
       )}
 
       {/* Game Board */}
-      <div className="flex-1 flex flex-col items-center justify-center p-4">
-        <div className="flex flex-col gap-1.5 mb-8">
+      <div className="flex flex-col items-center pt-2 pb-2">
+        <div className="flex flex-col gap-1">
           {[0, 1, 2, 3, 4, 5].map(renderRow)}
         </div>
 
         {/* Game Over Actions */}
         {gameState !== 'playing' && (
-          <div className="flex gap-4 mb-8">
+          <div className="flex gap-4 mt-3">
             <button
               onClick={handleShare}
-              className="flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-lg font-bold hover:bg-green-600 transition-colors"
+              className="flex items-center gap-2 px-5 py-2 bg-green-500 text-white rounded-lg font-bold hover:bg-green-600 transition-colors text-sm"
             >
-              <Share2 className="w-5 h-5" />
+              <Share2 className="w-4 h-4" />
               Share
             </button>
           </div>
@@ -383,7 +383,7 @@ export default function Wordle() {
       </div>
 
       {/* Keyboard */}
-      <div className="p-2 pb-4 sm:p-4">
+      <div className="p-2 pb-3 mt-auto">
         <div className="flex flex-col gap-1.5 items-center max-w-lg mx-auto">
           {KEYBOARD_ROWS.map((row, rowIndex) => (
             <div key={rowIndex} className="flex gap-1.5">
