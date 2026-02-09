@@ -329,7 +329,7 @@ export default function Wordle() {
       <button
         key={key}
         onClick={() => handleKeyPress(key)}
-        className={`${isWide ? 'px-3 sm:px-4 text-xs' : 'w-9 sm:w-11'} h-14 rounded-md font-bold ${bgColor} ${textColor} transition-colors flex items-center justify-center`}
+        className={`${isWide ? 'px-2 sm:px-3 text-xs' : 'w-8 sm:w-10'} h-14 rounded-md font-bold ${bgColor} ${textColor} transition-colors flex items-center justify-center`}
       >
         {key === 'BACK' ? <Delete className="w-5 h-5" /> : key}
       </button>
