@@ -22,7 +22,6 @@ export default function TriviaMultiplayerLobby({
   onBack,
 }) {
   const [copied, setCopied] = useState(false);
-  const [joinCode, setJoinCode] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([...ALL_MP_CATEGORIES]);
 
   const playerCount = Object.keys(roomPlayers || {}).length;
@@ -47,12 +46,6 @@ export default function TriviaMultiplayerLobby({
       }
     } else {
       setSelectedCategories([...selectedCategories, cat]);
-    }
-  };
-
-  const handleJoinWithCode = () => {
-    if (joinCode.length === 5) {
-      onJoinLobby(joinCode);
     }
   };
 
@@ -151,28 +144,6 @@ export default function TriviaMultiplayerLobby({
           >
             Host Game
           </button>
-
-          {/* Join with Code */}
-          <div className="bg-white rounded-card p-4 shadow-card mb-4">
-            <p className="text-sm font-bold text-text-muted mb-2">Join with Code</p>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={joinCode}
-                onChange={(e) => setJoinCode(e.target.value.replace(/\D/g, '').slice(0, 5))}
-                placeholder="Enter 5-digit code"
-                className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-button text-center text-xl font-bold tracking-widest focus:border-primary focus:outline-none"
-                maxLength={5}
-              />
-              <button
-                onClick={handleJoinWithCode}
-                disabled={joinCode.length !== 5}
-                className="px-6 py-3 bg-primary text-white rounded-button font-bold hover:bg-primary-hover transition-colors disabled:opacity-50"
-              >
-                Join
-              </button>
-            </div>
-          </div>
 
           {/* Open Games */}
           <div className="bg-white rounded-card p-4 shadow-card">

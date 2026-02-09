@@ -5,7 +5,7 @@ import { ref, get, set, update, remove, onValue, query, orderByChild, equalTo, e
 import { rtdb } from '../../utils/firebase';
 import multiplayerQuestions from '../../data/multiplayerQuestions';
 
-const QUESTIONS_PER_GAME = 20;
+const QUESTIONS_PER_GAME = 12;
 
 // ============================================
 // QUESTION SELECTION
