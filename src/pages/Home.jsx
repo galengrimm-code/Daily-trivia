@@ -96,11 +96,11 @@ export default function Home() {
       score: wordleResult ? (wordleResult.won ? `${wordleResult.guesses}/6` : 'X/6') : null,
     },
     {
-      id: 'riddle',
-      title: 'Daily Riddle',
+      id: 'memory',
+      title: 'Memory',
       description: 'Coming soon',
-      icon: '\u{1F4A1}',
-      path: '/riddle',
+      icon: '\u{1F0CF}',
+      path: '/memory',
       status: 'coming-soon',
     },
   ];
