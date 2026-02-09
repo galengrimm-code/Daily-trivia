@@ -87,6 +87,18 @@ export default function useBoggleGame() {
     };
   }, []);
 
+  // Check if user has already played today on mount
+  useEffect(() => {
+    if (user) {
+      const dateKey = getTodayKey();
+      checkBogglePlayer(user.uid, dateKey).then(result => {
+        if (result.played) {
+          setDailyResult(result);
+        }
+      });
+    }
+  }, [user]);
+
   // ============================================
   // DAILY MODE
   // ============================================

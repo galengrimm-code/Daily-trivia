@@ -87,6 +87,18 @@ export default function useSpellingBeeGame() {
     };
   }, []);
 
+  // Check if user has already played today on mount
+  useEffect(() => {
+    if (user) {
+      const dateKey = getTodayKey();
+      checkSpellingBeePlayer(user.uid, dateKey).then(result => {
+        if (result.played) {
+          setDailyResult(result);
+        }
+      });
+    }
+  }, [user]);
+
   // Helper to load puzzle into state
   const loadPuzzle = useCallback((puzzle) => {
     setCenterLetter(puzzle.centerLetter);
