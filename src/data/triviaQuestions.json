@@ -3311,7 +3311,8 @@
         "Atlantic"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Pacific Ocean is the largest and deepest ocean, covering more than 60 million square miles!"
     },
     {
       "q": "How many counties in the Republic of Ireland.",
@@ -3322,7 +3323,8 @@
         "32"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Ireland's 26 counties were formed under British rule and the names are still used today."
     },
     {
       "q": "The body of the Egyptian Sphinx was based on which animal?",
@@ -3333,7 +3335,8 @@
         "Dog"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Sphinx is one of the oldest and largest sculptures in the world, built around 2500 BC."
     },
     {
       "q": "How many countries does Mexico border?",
@@ -3344,7 +3347,8 @@
         "1"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "On which continent is the country of Angola located?",
@@ -3355,7 +3359,8 @@
         "Asia"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the capital of Denmark?",
@@ -3366,7 +3371,8 @@
         "Copenhagen"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Copenhagen is known as one of the most bike-friendly cities in the world!"
     },
     {
       "q": "What is the capital of Mauritius?",
@@ -3377,7 +3383,8 @@
         "Port Moresby"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Port Louis is named after King Louis XV of France."
     },
     {
       "q": "Which of these countries is \"doubly landlocked\" (surrounded entirely by one or more landlocked countries)?",
@@ -3388,7 +3395,8 @@
         "Switzerland"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Only two countries are doubly landlocked: Uzbekistan and Liechtenstein."
     },
     {
       "q": "What is the official German name of the Swiss Federal Railways?",
@@ -3399,7 +3407,8 @@
         "Schweizerische Staatsbahnen"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Swiss trains are famous for being incredibly punctual!"
     },
     {
       "q": "In which country is the city of Rio de Janeiro?",
@@ -3410,7 +3419,8 @@
         "Venezuela"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Brazil is the 5th largest country in the world and home to the Amazon rainforest."
     },
     {
       "q": "Colchester Overpass, otherwise known as \"Bunny Man Bridge\", is located where?",
@@ -3421,7 +3431,8 @@
         "Medford, Oregon"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The \"Bunny Man\" legend dates back to 1970 and is a popular local ghost story."
     },
     {
       "q": "Which of the following is the longest river in Europe?",
@@ -3432,7 +3443,8 @@
         "Dnieper"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Volga River flows 2,294 miles, making it the longest river in Europe."
     },
     {
       "q": "Bir Tawil, an uninhabited track of land claimed by no country, is located along the border of which two countries?",
@@ -3443,7 +3455,8 @@
         "Egypt and Sudan"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Bir Tawil is one of the few unclaimed land areas on Earth!"
     },
     {
       "q": "The prefix Sino- (As in Sino-American) is used to refer to what nationality?",
@@ -3454,7 +3467,8 @@
         "Indian"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Sino comes from the Latin word \"Sinae,\" an ancient name for China."
     },
     {
       "q": "What is the capital of Australia?",
@@ -3465,7 +3479,8 @@
         "Canberra"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Canberra was purpose-built to be Australia's capital as a compromise between Sydney and Melbourne."
     },
     {
       "q": "What is the largest freshwater lake by volume?",
@@ -3476,7 +3491,8 @@
         "Lake Michigan"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Lake Baikal contains about 20% of the world's unfrozen fresh water!"
     },
     {
       "q": "What is the capital of Greenland?",
@@ -3487,7 +3503,8 @@
         "Sisimiut"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Nuuk is the world's smallest capital city by population with around 19,000 people."
     },
     {
       "q": "Which of the following countries banned the use of personal genetic ancestry tests?",
@@ -3498,7 +3515,8 @@
         "Germany"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Germany has strict privacy laws, which is why ancestry tests are restricted."
     },
     {
       "q": "What was the African nation of Zimbabwe formerly known as?",
@@ -3509,7 +3527,8 @@
         "Rhodesia"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "The historical city Timbuktu is located in which West African country?",
@@ -3520,7 +3539,8 @@
         "Mali"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Timbuktu was once a major center of Islamic learning and trade in gold and salt."
     },
     {
       "q": "Which country was NOT formerly part of Yugoslavia?",
@@ -3531,7 +3551,8 @@
         "Macedonia"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Albania was the only European country occupied by the Axis powers that ended WWII with a larger Jewish population."
     },
     {
       "q": "What is the county seat of King County, Washington?",
@@ -3542,7 +3563,8 @@
         "Bellevue"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Seattle gets its nickname \"The Emerald City\" from the lush evergreen forests in the area."
     },
     {
       "q": "What is the official language of Bhutan?",
@@ -3553,7 +3575,8 @@
         "Groma"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Dzongkha means \"language of the fortress\" in Bhutanese."
     },
     {
       "q": "What is the Polish city known to Germans as Danzig?",
@@ -3564,7 +3587,8 @@
         "Warsaw"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Gdańsk was where WWII began when Germany attacked in 1939."
     },
     {
       "q": "What is the official language of Costa Rica?",
@@ -3575,7 +3599,8 @@
         "Spanish"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Spanish is the official language in 20 countries worldwide."
     },
     {
       "q": "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch is located on which Welsh island?",
@@ -3586,7 +3611,8 @@
         "Caldey"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "That Welsh town name has 58 letters and means \"St Mary's Church in a hollow...\"!"
     },
     {
       "q": "How many provinces are in the Netherlands?",
@@ -3597,7 +3623,8 @@
         "14"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Netherlands' 12 provinces each have their own flag and coat of arms."
     },
     {
       "q": "Which of these is NOT a real tectonic plate?",
@@ -3608,7 +3635,8 @@
         "Atlantic Plate"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "The Atlantic Ocean is the second largest ocean and is still growing wider each year."
     },
     {
       "q": "The Andaman and Nicobar Islands in South East Asia are controlled by which country?",
@@ -3619,7 +3647,8 @@
         "Indonesia"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "India has over 22 officially recognized languages!"
     },
     {
       "q": "What was the most populous city in the Americas in 2015?",
@@ -3630,7 +3659,8 @@
         "Los Angeles"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Saudi Arabia is the largest country in the world without any rivers!"
     },
     {
       "q": "What is the area of Vatican City?",
@@ -3641,7 +3671,8 @@
         "0.10km^2"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "What is the second-largest city in Lithuania?",
@@ -3652,7 +3683,8 @@
         "Kaunas"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Kaunas was Lithuania's temporary capital from 1920 to 1939."
     },
     {
       "q": "What is the name of the peninsula containing Spain and Portugal?",
@@ -3663,7 +3695,8 @@
         "Peloponnesian Peninsula"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Iberian Peninsula is home to 5 territories: Spain, Portugal, Andorra, Gibraltar, and part of France."
     },
     {
       "q": "What is the busiest port in Europe?",
@@ -3674,7 +3707,8 @@
         "Port of Rotterdam"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Rotterdam was Europe's busiest port for 42 years straight until 2004."
     },
     {
       "q": "Which is not a country in Africa?",
@@ -3685,7 +3719,8 @@
         "Senegal"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the capital of the US state Nevada?",
@@ -3696,7 +3731,8 @@
         "Las Vegas"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Carson City is one of the least populated US state capitals."
     },
     {
       "q": "What is the only country in the world with a flag that doesn't have four right angles?",
@@ -3707,7 +3743,8 @@
         "Panama"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Nepal's flag is the only national flag that isn't rectangular - it's made of two triangles!"
     },
     {
       "q": "Which small country is located between the borders of France and Spain?",
@@ -3718,7 +3755,8 @@
         "Lichtenstein"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Andorra has no airport and is one of only a few countries with no armed forces."
     },
     {
       "q": "What is Canada's smallest province?",
@@ -3729,7 +3767,8 @@
         "Yukon"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "PEI is the birthplace of Canada and where Confederation was born in 1864."
     },
     {
       "q": "On a London Underground map, what colour is the Circle Line?",
@@ -3740,7 +3779,8 @@
         "Blue"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Circle Line is one of London's oldest underground lines, opened in 1884."
     },
     {
       "q": "Which of the following Inuit languages was the FIRST to use a unique writing system not based on the Latin alphabet?",
@@ -3751,7 +3791,8 @@
         "Inupiat"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Inuktitut uses a syllabic writing system developed by missionaries in the 1800s."
     },
     {
       "q": "What state is the largest state of the United States of America?",
@@ -3762,7 +3803,8 @@
         "Washington"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Alaska is so big that if it were its own country, it would be the 18th largest in the world."
     },
     {
       "q": "Which country is the home of the largest Japanese population outside of Japan?",
@@ -3773,7 +3815,8 @@
         "China"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Brazil is the 5th largest country in the world and home to the Amazon rainforest."
     },
     {
       "q": "How many countries border Kyrgyzstan?",
@@ -3784,7 +3827,8 @@
         "3"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "What is the Capital of the United States?",
@@ -3795,7 +3839,8 @@
         "New York City, NY"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "D.C. stands for \"District of Columbia,\" named after Christopher Columbus."
     },
     {
       "q": "Which US state is nicknamed \"The Golden State\"?",
@@ -3806,7 +3851,8 @@
         "California"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "If California were a country, it would have the 5th largest economy in the world."
     },
     {
       "q": "What is the name of the formerly rich fishing grounds off the island of Newfoundland, Canada?",
@@ -3817,7 +3863,8 @@
         "Grand Banks"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "The Grand Banks were once the most productive fishing grounds in the world."
     },
     {
       "q": "Which of the following countries has a flag featuring a yellow lion wielding a sword on a dark red background?",
@@ -3828,7 +3875,8 @@
         "Sri Lanka"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Sri Lankan flag's lion represents the Sinhalese ethnic majority."
     },
     {
       "q": "The emblem on the flag of the Republic of Tajikistan features a sunrise over mountains below what symbol?",
@@ -3839,7 +3887,8 @@
         "Tree"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Tajikistan's flag crown represents sovereignty and the Tajik people."
     },
     {
       "q": "Which of these American cities has fewer than 1,000,000 people?",
@@ -3850,7 +3899,8 @@
         "San Francisco, California"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "If California were a country, it would have the 5th largest economy in the world."
     },
     {
       "q": "What is the name of the only remaining Grand Duchy in the world ?",
@@ -3861,7 +3911,8 @@
         "Luxembourg"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Luxembourg is the only Grand Duchy left in the world!"
     },
     {
       "q": "Gibraltar, located just south of the Iberian peninsula, is a territory of which West Europe country?",
@@ -3872,7 +3923,8 @@
         "France"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Gibraltar has been British since 1713 and is home to the famous Barbary macaques."
     },
     {
       "q": "In the 2016 Global Peace Index poll, out of 163 countries, what was the United States of America ranked?",
@@ -3883,7 +3935,8 @@
         "10"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "What is the capital of Spain?",
@@ -3894,7 +3947,8 @@
         "Barcelona"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Madrid is Europe's highest capital city at 2,188 feet above sea level."
     },
     {
       "q": "Which of the following Arab countries does NOT have a flag containing only Pan-Arab colours?",
@@ -3905,7 +3959,8 @@
         "Qatar"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Qatar's flag is the only national flag with a width more than twice its height."
     },
     {
       "q": "What is the capital city of Bermuda?",
@@ -3916,7 +3971,8 @@
         "Havana"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Bermuda is the oldest British overseas territory, settled in 1612."
     },
     {
       "q": "The Pyrenees mountains are located on the border of which two countries?",
@@ -3927,7 +3983,8 @@
         "Norway and Sweden"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Pyrenees stretch 305 miles and form a natural border between the two countries."
     },
     {
       "q": "Which of the following is not a megadiverse country - one that harbors a high number of the earth's endemic species?",
@@ -3938,7 +3995,8 @@
         "Mexico"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Thailand is the only Southeast Asian country never colonized by Europeans."
     },
     {
       "q": "What is the most populous Muslim-majority nation in 2010?",
@@ -3949,7 +4007,8 @@
         "Saudi Arabia"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Saudi Arabia is the largest country in the world without any rivers!"
     },
     {
       "q": "What is the largest country, by area, that has only one time zone?",
@@ -3960,7 +4019,8 @@
         "Russia"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "China spans 5 time zones geographically but uses only one for unity."
     },
     {
       "q": "What are the four corner states of the US?",
@@ -3971,7 +4031,8 @@
         "Oregon, Idaho, Nevada, Utah"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Four Corners is the only place in the US where four states meet."
     },
     {
       "q": "What is the capital of Chile?",
@@ -3982,7 +4043,8 @@
         "Copiap&oacute;"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Santiago is surrounded by the Andes mountains and the Chilean Coast Range."
     },
     {
       "q": "How many countries are larger than Australia?",
@@ -3993,7 +4055,8 @@
         "4"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Only Russia, Canada, USA, China, and Brazil are larger than Australia."
     },
     {
       "q": "What is the largest Muslim country in the world?",
@@ -4004,7 +4067,8 @@
         "Indonesia"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Indonesia has over 17,000 islands and is the world's largest archipelago!"
     },
     {
       "q": "Broome is a town in which state of Australia?",
@@ -4015,7 +4079,8 @@
         "Northern Territory"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Western Australia is the largest state/territory, covering 1/3 of Australia."
     },
     {
       "q": "What country is not a part of Scandinavia?",
@@ -4026,7 +4091,8 @@
         "Norway"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Finland has over 180,000 lakes!"
     },
     {
       "q": "What is the capital of India?",
@@ -4037,7 +4103,8 @@
         "Beijing"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "India has over 22 officially recognized languages!"
     },
     {
       "q": "Which of these countries is NOT located in Africa?",
@@ -4048,7 +4115,8 @@
         "Suriname"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "In which English county is the city of Portsmouth?",
@@ -4059,7 +4127,8 @@
         "Oxfordshire"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Portsmouth has been a major naval base for over 500 years."
     },
     {
       "q": "What is the longest river in Europe?",
@@ -4070,7 +4139,8 @@
         "Volga"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Volga River flows 2,294 miles, making it the longest river in Europe."
     },
     {
       "q": "How many rivers are in Saudi Arabia?",
@@ -4081,7 +4151,8 @@
         "1"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Saudi Arabia is the largest country in the world without any rivers!"
     },
     {
       "q": "How many sovereign states are members of the United Nations?",
@@ -4092,7 +4163,8 @@
         "195"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Only Russia, Canada, USA, China, and Brazil are larger than Australia."
     },
     {
       "q": "Which of these is NOT an island that is part of the Philippines?",
@@ -4103,7 +4175,8 @@
         "Luzon"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Java is an Indonesian island, home to over half of Indonesia's population."
     },
     {
       "q": "The derisive acronym \"PIIGS\" refers to which of the following European countries and their economic statuses?",
@@ -4114,7 +4187,8 @@
         "Portugal, Iceland, Ireland, Greece, Serbia"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Italy has more UNESCO World Heritage sites than any other country."
     },
     {
       "q": "What is the largest lake in the African continent?",
@@ -4125,7 +4199,8 @@
         "Lake Tanganyika"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the capital city of Slovenia?",
@@ -4136,7 +4211,8 @@
         "Trbovlje"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Ljubljana has a dragon as its symbol - you'll see dragon statues everywhere!"
     },
     {
       "q": "Which of these Japanese islands is the largest by area?",
@@ -4147,7 +4223,8 @@
         "Iki"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Japan has over 6,800 islands!"
     },
     {
       "q": "What is the capital city of New Zealand?",
@@ -4158,7 +4235,8 @@
         "Christchurch"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "New Zealand was the first country to give women the right to vote (1893)."
     },
     {
       "q": "When does Finland celebrate their independence day?",
@@ -4169,7 +4247,8 @@
         "February 8th"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Finland has over 180,000 lakes!"
     },
     {
       "q": "Which of the following Japanese islands is the biggest?",
@@ -4180,7 +4259,8 @@
         "Kyushu"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Japan has over 6,800 islands!"
     },
     {
       "q": "The World Health Organization headquarters is located in which European country?",
@@ -4191,7 +4271,8 @@
         "France"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Switzerland has four official languages!"
     },
     {
       "q": "What is the smallest country in the world?",
@@ -4202,7 +4283,8 @@
         "Vatican City"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Vatican City is the smallest country in the world at just 0.44 km²!"
     },
     {
       "q": "What continent is the country Lesotho in?",
@@ -4213,7 +4295,8 @@
         "Europe"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the name of the capital of Turkey?",
@@ -4224,7 +4307,8 @@
         "Izmir"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Ankara became Turkey's capital in 1923, replacing Istanbul."
     },
     {
       "q": "What is Laos?",
@@ -4235,7 +4319,8 @@
         "City"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Laos is the most bombed country in history (Vietnam War era)."
     },
     {
       "q": "Harvard University is located in which city?",
@@ -4246,7 +4331,8 @@
         "Cambridge"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Cambridge, Massachusetts is home to both Harvard and MIT!"
     },
     {
       "q": "What is the capital of Jamaica?",
@@ -4257,7 +4343,8 @@
         "Bridgetown"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Jamaica was the first Caribbean country to gain independence."
     },
     {
       "q": "What is the name of the former country that was succeeded by countries such as Serbia, Croatia and Slovenia?",
@@ -4268,7 +4355,8 @@
         "Abkhazia"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Croatia has over 1,000 islands along its coast."
     },
     {
       "q": "What is the largest country in the world ?",
@@ -4279,7 +4367,8 @@
         "Brazil"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Russia spans 11 time zones - more than any other country."
     },
     {
       "q": "Which of these Mediterranian islands is under the sovereign rule of France?",
@@ -4290,7 +4379,8 @@
         "Sardinia"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "France is the most visited country in the world."
     },
     {
       "q": "Which is the largest freshwater lake in the world?",
@@ -4301,7 +4391,8 @@
         "Lake Superior "
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Lake Superior is so big it could hold all the other Great Lakes combined!"
     },
     {
       "q": "What is the nickname for the US state Delaware?",
@@ -4312,7 +4403,8 @@
         "The Sixteenth State"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Delaware was the first state to ratify the US Constitution in 1787."
     },
     {
       "q": "Which of the following countries does NOT recognize Armenia as an independent country?",
@@ -4323,7 +4415,8 @@
         "Turkey"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Pakistan has the world's second-largest Muslim population."
     },
     {
       "q": "How many time zones does China have?",
@@ -4334,7 +4427,8 @@
         "1"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "China spans 5 time zones geographically but uses only one for unity."
     },
     {
       "q": "Which of these is NOT a province in China?",
@@ -4345,7 +4439,8 @@
         "Yangtze"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "China spans 5 time zones geographically but uses only one for unity."
     },
     {
       "q": "What is the capital of the State of Washington, United States?",
@@ -4356,7 +4451,8 @@
         "Olympia"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Olympia was named after the Olympic Mountains, visible from the city."
     },
     {
       "q": "How many timezones does Russia have?",
@@ -4367,7 +4463,8 @@
         "6"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Russia spans 11 time zones - more than any other country."
     },
     {
       "q": "Which Russian oblast forms a border with Poland?",
@@ -4378,7 +4475,8 @@
         "Kaliningrad"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Russia spans 11 time zones - more than any other country."
     },
     {
       "q": "Which of these countries is NOT a part of the Asian continent?",
@@ -4389,7 +4487,8 @@
         "Russia"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Suriname is the smallest country in South America and speaks Dutch!"
     },
     {
       "q": "What is the capital of Indonesia?",
@@ -4400,7 +4499,8 @@
         "Jakarta"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Indonesia has over 17,000 islands and is the world's largest archipelago!"
     },
     {
       "q": "Which city is the capital of the United States of America?",
@@ -4411,7 +4511,8 @@
         "Los Angeles"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "D.C. stands for District of Columbia, named after Christopher Columbus."
     },
     {
       "q": "What is the capital of Estonia?",
@@ -4422,7 +4523,8 @@
         "Tallinn"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Estonia is one of the least religious countries in the world."
     },
     {
       "q": "What is the fifth largest country by area?",
@@ -4433,7 +4535,8 @@
         "United States"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Brazil is the 5th largest country in the world and home to the Amazon rainforest."
     },
     {
       "q": "What is the capital of Lithuania?",
@@ -4444,7 +4547,8 @@
         "Vilnius"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Lithuania was once the largest country in Europe (15th century)."
     },
     {
       "q": "Which of these cities has a 4° East longitude. ",
@@ -4455,7 +4559,8 @@
         "Hong Kong"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "The towns of Brugelette, Arlon and Ath are located in which country?",
@@ -4466,7 +4571,8 @@
         "Belgium"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Belgium has three official languages: Dutch, French, and German."
     },
     {
       "q": "Kuala Lumpur is the capital of which country?",
@@ -4477,7 +4583,8 @@
         "Indonesia"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Malaysia has the world's oldest tropical rainforest - 130 million years old!"
     },
     {
       "q": "What island in the Canary Islands was the scene of one of the worst air disasters in history with the collision of two jumbo jets?",
@@ -4488,7 +4595,8 @@
         "Fuerteventura"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The 1977 Tenerife disaster killed 583 people - the deadliest aviation accident ever."
     },
     {
       "q": "The Gambia is a nation found on which continent?",
@@ -4499,7 +4607,8 @@
         "Europe"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the 15th letter of the Greek alphabet?",
@@ -4510,7 +4619,8 @@
         "Omicron (&Omicron;)"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Only Russia, Canada, USA, China, and Brazil are larger than Australia."
     },
     {
       "q": "Where would you find the \"Spanish Steps\"?",
@@ -4521,7 +4631,8 @@
         "Rome, Italy"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Spanish is the official language in 20 countries worldwide."
     },
     {
       "q": "How many countries does Spain have a land border with?",
@@ -4532,7 +4643,8 @@
         "3"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Only Russia, Canada, USA, China, and Brazil are larger than Australia."
     },
     {
       "q": "What is the capital of Seychelles?",
@@ -4543,7 +4655,8 @@
         "Luanda"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Seychelles has the smallest population of any African nation."
     },
     {
       "q": "Which is the world's longest river?",
@@ -4554,7 +4667,8 @@
         "Missouri"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Nile flows north - one of few major rivers to do so."
     },
     {
       "q": "Which of the following language families is the most controversial amongst modern linguists?",
@@ -4565,7 +4679,8 @@
         "Indo-European"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Linguists debate whether Turkish, Mongolian, and Japanese share a common origin."
     },
     {
       "q": "Which European city has the highest mileage of canals in the world?",
@@ -4576,7 +4691,8 @@
         "Berlin"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Birmingham, UK has more miles of canals than Venice!"
     },
     {
       "q": "Which country does Austria not border?",
@@ -4587,7 +4703,8 @@
         "France"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "France is the most visited country in the world."
     },
     {
       "q": "Where is the fast food chain \"Panda Express\" headquartered?",
@@ -4598,7 +4715,8 @@
         "San Diego, California"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "If California were a country, it would have the 5th largest economy in the world."
     },
     {
       "q": "How many stations does the Central Line have on the London Underground?",
@@ -4609,7 +4727,8 @@
         "49"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "Which of these countries is not a United Nations member state?",
@@ -4620,7 +4739,8 @@
         "Tuvalu"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Niue is a self-governing island nation in free association with New Zealand."
     },
     {
       "q": "Where is the \"Sonoran Desert\" located?",
@@ -4631,7 +4751,8 @@
         "North America"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Sonoran Desert spans parts of Arizona, California, and Mexico."
     },
     {
       "q": "The Japanese district Akihabara is also known by what nickname?",
@@ -4642,7 +4763,8 @@
         "Electric Town"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Japan has over 6,800 islands!"
     },
     {
       "q": "Which city is the capital of Switzerland?",
@@ -4653,7 +4775,8 @@
         "Bern"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Switzerland has four official languages!"
     },
     {
       "q": "What is the capital of Scotland?",
@@ -4664,7 +4787,8 @@
         "Edinburgh"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Scotland's national animal is the unicorn!"
     },
     {
       "q": "The Maluku islands (informally known as the Spice Islands) belong to which country?",
@@ -4675,7 +4799,8 @@
         "Indonesia"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Indonesia has over 17,000 islands and is the world's largest archipelago!"
     },
     {
       "q": "Greenland is a part of which kingdom?",
@@ -4686,7 +4811,8 @@
         "United Kingdom"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Greenland is the world's largest island that isn't a continent."
     },
     {
       "q": "What's the first National Park designated in the United States?",
@@ -4697,7 +4823,8 @@
         "Yosemite"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Circle Line is one of London's oldest underground lines, opened in 1884."
     },
     {
       "q": "Which of these is the name of the largest city in the US state Tennessee?",
@@ -4708,7 +4835,8 @@
         "Memphis"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Memphis is named after the ancient Egyptian city on the Nile."
     },
     {
       "q": "The following Spanish provinces are located in the northern area of Spain except:",
@@ -4719,7 +4847,8 @@
         "Asturias"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Spanish is the official language in 20 countries worldwide."
     },
     {
       "q": "Which country has three capital cities?",
@@ -4730,7 +4859,8 @@
         "Somalia"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "Which of the following is NOT a capital city?",
@@ -4741,7 +4871,8 @@
         "Cairo"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Sydney's Opera House took 16 years to build!"
     },
     {
       "q": "What European country is not a part of the EU?",
@@ -4752,7 +4883,8 @@
         "Norway"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Norway has the longest coastline in Europe."
     },
     {
       "q": "Which is the largest city in Morocco?",
@@ -4763,7 +4895,8 @@
         "Casablanca"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Morocco was the first country to recognize the United States in 1777."
     },
     {
       "q": "Which of these is NOT an Australian state or territory?",
@@ -4774,7 +4907,8 @@
         "Alberta"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Australia is both a country and a continent."
     },
     {
       "q": "How many stars are featured on New Zealand's flag?",
@@ -4785,7 +4919,8 @@
         "5"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "The mountainous Khyber Pass connects which of the two following countries?",
@@ -4796,7 +4931,8 @@
         "Tajikistan and Kyrgyzstan"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Pakistan has the world's second-largest Muslim population."
     },
     {
       "q": "Which German city is located on the River Isar?",
@@ -4807,7 +4943,8 @@
         "Berlin"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Munich's name means \"by the monks\" - it was founded near a monastery."
     },
     {
       "q": "What city is the Terracotta Army located in?",
@@ -4818,7 +4955,8 @@
         "Beijing"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Terracotta Army has over 8,000 life-sized clay soldiers!"
     },
     {
       "q": "The Space Needle is located in which city?",
@@ -4829,7 +4967,8 @@
         "Los Angles"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Seattle gets its nickname \"The Emerald City\" from the lush evergreen forests in the area."
     },
     {
       "q": "What name was historically used for the Turkish city currently known as Istanbul?",
@@ -4840,7 +4979,8 @@
         "Söğüt"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Constantinople was renamed Istanbul in 1930 by Turkish law."
     },
     {
       "q": "Which UK country features a dragon on their flag?",
@@ -4851,7 +4991,8 @@
         "Wales"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Wales has more castles per square mile than any other country."
     },
     {
       "q": "All of the following are towns/villages in the Pacific Island nation of Kiribati EXCEPT:",
@@ -4862,7 +5003,8 @@
         "Rungata"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Pacific Ocean is the largest and deepest ocean, covering more than 60 million square miles!"
     },
     {
       "q": "What is the capital of the US State of New York?",
@@ -4873,7 +5015,8 @@
         "Buffalo"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "New York City has over 800 languages spoken - the most diverse city linguistically!"
     },
     {
       "q": "In which country is Tallinn located?",
@@ -4884,7 +5027,8 @@
         "Sweden"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Estonia is one of the least religious countries in the world."
     },
     {
       "q": "What is the name of the Canadian national anthem?",
@@ -4895,7 +5039,8 @@
         "O Canada"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "Which of these is NOT a city in India?",
@@ -4906,7 +5051,8 @@
         "Islamabad"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "India has over 22 officially recognized languages!"
     },
     {
       "q": "Which of these country's capitals starts with the letter B?",
@@ -4917,7 +5063,8 @@
         "Lebanon"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Beirut, Lebanon's capital, was once called the \"Paris of the Middle East.\""
     },
     {
       "q": "How many countries are inside the United Kingdom?",
@@ -4928,7 +5075,8 @@
         "One"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Gibraltar has been British since 1713 and is home to the famous Barbary macaques."
     },
     {
       "q": "Which nation claims ownership of Antarctica?",
@@ -4939,7 +5087,8 @@
         "United States of America"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Antarctica contains 70% of Earth's fresh water (as ice)."
     },
     {
       "q": "Eritrea, which became the 182nd member of the UN in 1993, is in the continent of?",
@@ -4950,7 +5099,8 @@
         "Africa"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "Where is the area commonly known as the Bermuda Triangle?",
@@ -4961,7 +5111,8 @@
         "North Atlantic Ocean, between Florida and Puerto Rico"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Atlantic Ocean is the second largest ocean and is still growing wider each year."
     },
     {
       "q": "Which country was NOT part of the Soviet Union?",
@@ -4972,7 +5123,8 @@
         "Romania"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Romania is home to Dracula's Castle (Bran Castle)."
     },
     {
       "q": "Which of these island countries is located in the Caribbean?",
@@ -4983,7 +5135,8 @@
         "Seychelles"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Barbados gained independence from Britain in 1966."
     },
     {
       "q": "The longest shared border in the world can be found between which two nations?",
@@ -4994,7 +5147,8 @@
         "Russia and China"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "Which state of the United States is the smallest?",
@@ -5005,7 +5159,8 @@
         "Rhode Island "
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Rhode Island is so small you could drive across it in under an hour!"
     },
     {
       "q": "What is the highest mountain in the world?",
@@ -5016,7 +5171,8 @@
         "Mt. Everest"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Mount Everest grows about 4mm taller each year due to tectonic activity."
     },
     {
       "q": "Which Canadian province has Charlottetown as its capital?",
@@ -5027,7 +5183,8 @@
         "Saskachewan"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "PEI is the birthplace of Canada and where Confederation was born in 1864."
     },
     {
       "q": "All of the following are classified as Finno-Ugric languages EXCEPT:",
@@ -5038,7 +5195,8 @@
         "Hungarian"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Samoyedic languages are spoken by reindeer herders in Siberia."
     },
     {
       "q": "What North American tourist attraction is served by the \"Maid of the Mist\" tour company?",
@@ -5049,7 +5207,8 @@
         "Yosemite National Park"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "The Sonoran Desert spans parts of Arizona, California, and Mexico."
     },
     {
       "q": "The Alps are a mountain range on which continent?",
@@ -5060,7 +5219,8 @@
         "Africa"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Alps span 8 countries and are about 750 miles long."
     },
     {
       "q": "Where is Hadrian's Wall located?",
@@ -5071,7 +5231,8 @@
         "Carlisle, England"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "England is about 74 times smaller than Australia."
     },
     {
       "q": "Where are the Nazca Lines located?",
@@ -5082,7 +5243,8 @@
         "Ecuador"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Peru has 90 different microclimates!"
     },
     {
       "q": "Frankenmuth, a US city nicknamed \"Little Bavaria\", is located in what state?",
@@ -5093,7 +5255,8 @@
         "Virginia"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Michigan has more coastline than any state except Alaska!"
     },
     {
       "q": "Where is the world's oldest still operational space launch facility located?",
@@ -5104,7 +5267,8 @@
         "United States"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Kazakhstan is the largest landlocked country in the world."
     },
     {
       "q": "What colour is the circle on the Japanese flag?",
@@ -5115,7 +5279,8 @@
         "White"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Japan has over 6,800 islands!"
     },
     {
       "q": "The formerly East-Prussian city of Königsberg is known as which Russian City today?",
@@ -5126,7 +5291,8 @@
         "Kaliningrad"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Russia spans 11 time zones - more than any other country."
     },
     {
       "q": "What is the right way to spell the capital of Hungary?",
@@ -5137,7 +5303,8 @@
         "Budapest"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Hungary has one of the oldest parliaments in the world."
     },
     {
       "q": "What is the capital of British Columbia, Canada?",
@@ -5148,7 +5315,8 @@
         "Hope"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "In which city is the Big Nickel located in Canada?",
@@ -5159,7 +5327,8 @@
         "Sudbury, Ontario"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "What country is the second largest in the world by area?",
@@ -5170,7 +5339,8 @@
         "China"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "What mountain range lines the border between Spain and France?",
@@ -5181,7 +5351,8 @@
         "Pyrenees"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "France is the most visited country in the world."
     },
     {
       "q": "What year is on the flag of the US state Wisconsin?",
@@ -5192,7 +5363,8 @@
         "1783"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "In which Indian city can the Taj Mahal be found?",
@@ -5203,7 +5375,8 @@
         "Mumbai"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Indian Ocean is the warmest ocean in the world."
     },
     {
       "q": "What city  has the busiest airport in the world?",
@@ -5214,7 +5387,8 @@
         "London, England"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Hartsfield-Jackson Atlanta has been the world's busiest airport since 1998."
     },
     {
       "q": "What is the only state in the United States that does not have a flag in a shape with 4 edges?",
@@ -5225,7 +5399,8 @@
         "New Mexico"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "How many time zones are in Russia?",
@@ -5236,7 +5411,8 @@
         "2"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Russia spans 11 time zones - more than any other country."
     },
     {
       "q": "What is the capital of South Korea?",
@@ -5247,7 +5423,8 @@
         "Pyongyang"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "South Korea has the fastest internet speeds in the world."
     },
     {
       "q": "Which one of these countries borders with Poland?",
@@ -5258,7 +5435,8 @@
         "France"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Poland is home to 17 UNESCO World Heritage sites."
     },
     {
       "q": "The Principality of Sealand is an unrecognized micronation off the coast of what country?",
@@ -5269,7 +5447,8 @@
         "Japan"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Gibraltar has been British since 1713 and is home to the famous Barbary macaques."
     },
     {
       "q": "How many independent countries are there within the continent of South America?",
@@ -5280,7 +5459,8 @@
         "10"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Netherlands' 12 provinces each have their own flag and coat of arms."
     },
     {
       "q": "Lake Titicaca is located between which two nations?",
@@ -5291,7 +5471,8 @@
         "Kenya and Uganda"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Peru has 90 different microclimates!"
     },
     {
       "q": "In 2012 the German-speaking microstate \"Liechtenstein\" in Central Europe had a population of how many inhabitants?",
@@ -5302,7 +5483,8 @@
         "323,400"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "What is the smallest country in South America by area?",
@@ -5313,7 +5495,8 @@
         "Brazil"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Suriname is the smallest country in South America and speaks Dutch!"
     },
     {
       "q": "Vatican City, the smallest country in the world, is fully enclosed by which country?",
@@ -5324,7 +5507,8 @@
         "France"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Vatican City is the smallest country in the world at just 0.44 km²!"
     },
     {
       "q": "How many US states start with the letter K?",
@@ -5335,7 +5519,8 @@
         "None"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Kansas and Kentucky are the only US states starting with K."
     },
     {
       "q": "What is the northernmost human settlement with year round inhabitants?",
@@ -5346,7 +5531,8 @@
         "Nagurskoye, Russia"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "Which country features a maple leaf on its flag?",
@@ -5357,7 +5543,8 @@
         "India"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "Which country is the Taedong River in?",
@@ -5368,7 +5555,8 @@
         "Japan"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "North Korea has its own calendar - Juche, starting from 1912."
     },
     {
       "q": "Which of the following European languages is classified as a \"language isolate?\"",
@@ -5379,7 +5567,8 @@
         "Basque"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Basque is one of the oldest languages in Europe with no known relatives!"
     },
     {
       "q": "Which country has the abbreviation \"CH\"?",
@@ -5390,7 +5579,8 @@
         "China"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Switzerland has four official languages!"
     },
     {
       "q": "What African country has Portuguese as its official language?",
@@ -5401,7 +5591,8 @@
         "Togo"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the capital of Wisconsin, USA?",
@@ -5412,7 +5603,8 @@
         "Green Bay"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Madison is built on an isthmus between two lakes."
     },
     {
       "q": "What is the name of one of the Neo-Aramaic languages spoken by the Jewish population from Northwestern Iraq?",
@@ -5423,7 +5615,8 @@
         "Chaldean Neo-Aramaic"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Lishana Deni is endangered with only a few thousand speakers left."
     },
     {
       "q": "What event led to Liechenstein adding a crown to its flag?",
@@ -5434,7 +5627,8 @@
         "Signing of the 1862 Constitution of Liechtenstein"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "What is the largest non-continental island in the world?",
@@ -5445,7 +5639,8 @@
         "New Guinea"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Greenland is the world's largest island that isn't a continent."
     },
     {
       "q": "What is the Finnish word for \"Finland\"?",
@@ -5456,7 +5651,8 @@
         "Eesti"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Finland has over 180,000 lakes!"
     },
     {
       "q": "Which country is completely landlocked by South Africa?",
@@ -5467,7 +5663,8 @@
         "Zimbabwe"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the capital of Slovakia?",
@@ -5478,7 +5675,8 @@
         "Sofia"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Bratislava is the only capital that borders two other countries (Austria & Hungary)."
     },
     {
       "q": "How many federal states does Germany have?",
@@ -5489,7 +5687,8 @@
         "13"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Germany has strict privacy laws, which is why ancestry tests are restricted."
     },
     {
       "q": "How many countries share a land border with Luxembourg?",
@@ -5500,7 +5699,8 @@
         "4"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "How many countries does the United States share a land border with?",
@@ -5511,7 +5711,8 @@
         "2"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The US borders Canada to the north and Mexico to the south."
     },
     {
       "q": "Which country inside the United Kingdom does NOT appear on its flag, the Union Jack?",
@@ -5522,7 +5723,8 @@
         "Wales"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Gibraltar has been British since 1713 and is home to the famous Barbary macaques."
     },
     {
       "q": "Which of these African countries list \"Spanish\" as an official language?",
@@ -5533,7 +5735,8 @@
         "Equatorial Guinea"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Spanish is the official language in 20 countries worldwide."
     },
     {
       "q": "What is the largest city and commercial capital of Sri Lanka?",
@@ -5544,7 +5747,8 @@
         "Colombo"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "The Sri Lankan flag's lion represents the Sinhalese ethnic majority."
     },
     {
       "q": "What city is known as the Rose Capital of the World?",
@@ -5555,7 +5759,8 @@
         "Tyler, Texas"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Texas is the only state that was an independent country before joining the US."
     },
     {
       "q": "Which area of Eastern Europe is famous for its association with vampires?",
@@ -5566,7 +5771,8 @@
         "Silesia"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Bram Stoker's Dracula made Transylvania famous worldwide."
     },
     {
       "q": "Which of these cities is NOT in England?",
@@ -5577,7 +5783,8 @@
         "Edinburgh"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "England is about 74 times smaller than Australia."
     },
     {
       "q": "What is the capital city of the U.S. state of Texas?",
@@ -5588,7 +5795,8 @@
         "San Antonio"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Texas is the only state that was an independent country before joining the US."
     },
     {
       "q": "The Hunua Ranges is located in...",
@@ -5599,7 +5807,8 @@
         "China"
       ],
       "correct": 0,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "New Zealand was the first country to give women the right to vote (1893)."
     },
     {
       "q": "Which of these countries is located the FURTHEST away from the South China Sea?",
@@ -5610,7 +5819,8 @@
         "Malaysia"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "China spans 5 time zones geographically but uses only one for unity."
     },
     {
       "q": "In which English county is Stonehenge?",
@@ -5621,7 +5831,8 @@
         "Wiltshire"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Stonehenge was built around 3000 BC - older than the pyramids!"
     },
     {
       "q": "What is the most common climbing route for the second highest mountain in the world, K2?",
@@ -5632,7 +5843,8 @@
         "Polish Line"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "The US borders Canada to the north and Mexico to the south."
     },
     {
       "q": "What is the capital of Belarus?",
@@ -5643,7 +5855,8 @@
         "Minsk"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Belarus means \"White Russia\" or \"White Ruthenia.\""
     },
     {
       "q": "The land of Gotland is located in which European country?",
@@ -5654,7 +5867,8 @@
         "Denmark"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Sweden has a hotel made entirely of ice that's rebuilt every year."
     },
     {
       "q": "How many states are in Australia?",
@@ -5665,7 +5879,8 @@
         "7"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Australia is both a country and a continent."
     },
     {
       "q": "Which of these is NOT a city in Saudi Arabia?",
@@ -5676,7 +5891,8 @@
         "Medina"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Dubai has the world's tallest building - the Burj Khalifa at 2,717 feet."
     },
     {
       "q": "What country has a horizontal bicolor red and white flag?",
@@ -5687,7 +5903,8 @@
         "Liechenstein"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Monaco and Indonesia have nearly identical flags!"
     },
     {
       "q": "The land mass of modern day Turkey is called what?",
@@ -5698,7 +5915,8 @@
         "Ismuth of Ottoma"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Anatolia has been home to civilizations for over 10,000 years."
     },
     {
       "q": "If soccer is called football in England, what is American football called in England?",
@@ -5709,7 +5927,8 @@
         "Handball"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "England is about 74 times smaller than Australia."
     },
     {
       "q": "What is the largest hot desert in the world?",
@@ -5720,7 +5939,8 @@
         "Kalahari"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Sahara is roughly the same size as the United States!"
     },
     {
       "q": "Which of these countries is not written in its native language?",
@@ -5731,7 +5951,8 @@
         "Ell&aacute;da"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Slovakia in Slovak is \"Slovensko\" - this question tests knowledge of native country names!"
     },
     {
       "q": "Which two modern-day countries used to be known as the region of Rhodesia between the 1890s and 1980?",
@@ -5742,7 +5963,8 @@
         "Lesotho & Swaziland"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Zimbabwe gained independence in 1980 and was renamed from Rhodesia."
     },
     {
       "q": "What is the region conjoining Pakistan, India, and China with unknown leadership called?",
@@ -5753,7 +5975,8 @@
         "Kashmir"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "India has over 22 officially recognized languages!"
     },
     {
       "q": "How tall is One World Trade Center in New York City?",
@@ -5764,7 +5987,8 @@
         "1,776 ft"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "New York City has over 800 languages spoken - the most diverse city linguistically!"
     },
     {
       "q": "What national museum will you find in Cooperstown, New York?",
@@ -5775,7 +5999,8 @@
         "Museum of Modern Art"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "New York City has over 800 languages spoken - the most diverse city linguistically!"
     },
     {
       "q": "Montreal is in which Canadian province?",
@@ -5786,7 +6011,8 @@
         "Alberta"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Montreal is the second-largest French-speaking city in the world after Paris."
     },
     {
       "q": "What is the capital of Senegal?",
@@ -5797,7 +6023,8 @@
         "Dakar"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Senegal has never had a coup d'état since independence."
     },
     {
       "q": "Which English county will you find the University of East Anglia?",
@@ -5808,7 +6035,8 @@
         "Norfolk"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The University of East Anglia has over 17,000 students."
     },
     {
       "q": "Into which basin does the Jordan River flow into?",
@@ -5819,7 +6047,8 @@
         "Salton Sea"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "The Dead Sea is so salty you float without trying - 34% salinity!"
     },
     {
       "q": "What is the name of rocky region that spans most of eastern Canada?",
@@ -5830,7 +6059,8 @@
         "Canadian Shield"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "Bridgetown is the capital of which island country in the Carribean?",
@@ -5841,7 +6071,8 @@
         "Cuba"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Barbados gained independence from Britain in 1966."
     },
     {
       "q": "What tiny principality lies between Spain and France?",
@@ -5852,7 +6083,8 @@
         "San Marino"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Andorra has no airport and is one of only a few countries with no armed forces."
     },
     {
       "q": "What is the capital of Peru?",
@@ -5863,7 +6095,8 @@
         "Buenos Aires"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Peru has 90 different microclimates!"
     },
     {
       "q": "What is the capital of the American state of Arizona?",
@@ -5874,7 +6107,8 @@
         "Tallahassee"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Phoenix is the hottest large city in the US with summer temps over 100°F."
     },
     {
       "q": "Which of the following former Yugoslavian states is landlocked?",
@@ -5885,7 +6119,8 @@
         "Serbia"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Serbia is one of the largest raspberry producers in the world."
     },
     {
       "q": "Which of the following languages does NOT use the Latin alphabet?",
@@ -5896,7 +6131,8 @@
         "Turkish"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Georgian has its own unique alphabet with 33 letters."
     },
     {
       "q": "What is the official national language of Pakistan?",
@@ -5907,7 +6143,8 @@
         "Indian"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Pakistan has the world's second-largest Muslim population."
     },
     {
       "q": "All of the following countries have official claims to territory in Antartica EXCEPT:",
@@ -5918,7 +6155,8 @@
         "Chile"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The US has research stations in Antarctica but no territorial claims."
     },
     {
       "q": "What is the largest country in the world?",
@@ -5929,7 +6167,8 @@
         "Russia"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Russia spans 11 time zones - more than any other country."
     },
     {
       "q": "What is the name of New Zealand's indigenous people?",
@@ -5940,7 +6179,8 @@
         "Vikings"
       ],
       "correct": 0,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "New Zealand was the first country to give women the right to vote (1893)."
     },
     {
       "q": "What is the capital of Vietnam?",
@@ -5951,7 +6191,8 @@
         "Ho Chi Minh City"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Vietnam is the world's largest exporter of cashews."
     },
     {
       "q": "Which of the following countries is within the Eurozone but outside of the Schengen Area?",
@@ -5962,7 +6203,8 @@
         "Portugal"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Cyprus uses the Euro but isn't in the Schengen free-travel zone."
     },
     {
       "q": "What is the tallest mountain in Canada?",
@@ -5973,7 +6215,8 @@
         "Blue Mountain"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "On which continent/s is the entire country of Spain specifically located when taking into account all of its territory?",
@@ -5984,7 +6227,8 @@
         "Europe and Africa"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "Which ocean borders the west coast of the United States?",
@@ -5995,7 +6239,8 @@
         "Pacific"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Pacific Ocean is the largest and deepest ocean, covering more than 60 million square miles!"
     },
     {
       "q": "Which US state has the highest population?",
@@ -6006,7 +6251,8 @@
         "California"
       ],
       "correct": 3,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "If California were a country, it would have the 5th largest economy in the world."
     },
     {
       "q": "Which of these countries is the smallest by population?",
@@ -6017,7 +6263,8 @@
         "Finland"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Norway has the longest coastline in Europe."
     },
     {
       "q": "Which is the largest of these 4 islands?",
@@ -6028,7 +6275,8 @@
         "Madagascar"
       ],
       "correct": 0,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "Which country claims ownership of the disputed state Kosovo?",
@@ -6039,7 +6287,8 @@
         "Croatia"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Serbia is one of the largest raspberry producers in the world."
     },
     {
       "q": "What is Canada's largest island?",
@@ -6050,7 +6299,8 @@
         "Newfoundland"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "What is the capital of Australia?",
@@ -6061,7 +6311,8 @@
         "Perth"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Canberra was purpose-built to be Australia's capital as a compromise between Sydney and Melbourne."
     },
     {
       "q": "Which river flows through Paris?",
@@ -6072,7 +6323,8 @@
         "Danube"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Paris is called the \"City of Light\" because it was a center of education and ideas."
     },
     {
       "q": "What is the largest ocean?",
@@ -6083,7 +6335,8 @@
         "Arctic"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "The Pacific Ocean is the largest and deepest ocean, covering more than 60 million square miles!"
     },
     {
       "q": "Which country has the largest population?",
@@ -6094,7 +6347,8 @@
         "Indonesia"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "China spans 5 time zones geographically but uses only one for unity."
     },
     {
       "q": "What is the capital of Canada?",
@@ -6105,7 +6359,8 @@
         "Ottawa"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "Which continent is the Sahara Desert on?",
@@ -6116,7 +6371,8 @@
         "South America"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the smallest US state by area?",
@@ -6127,7 +6383,8 @@
         "Vermont"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Rhode Island is so small you could drive across it in under an hour!"
     },
     {
       "q": "Which country is known as the Land of the Rising Sun?",
@@ -6138,7 +6395,8 @@
         "Thailand"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Japan has over 6,800 islands!"
     },
     {
       "q": "What is the longest mountain range?",
@@ -6149,7 +6407,8 @@
         "Alps"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Andes stretch 4,350 miles - the world's longest mountain range!"
     },
     {
       "q": "Which sea is the saltiest?",
@@ -6160,7 +6419,8 @@
         "Black Sea"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Dead Sea is so salty you float without trying - 34% salinity!"
     },
     {
       "q": "What is the capital of Brazil?",
@@ -6171,7 +6431,8 @@
         "Salvador"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Brazil is the 5th largest country in the world and home to the Amazon rainforest."
     },
     {
       "q": "Which country has the most time zones?",
@@ -6182,7 +6443,8 @@
         "France"
       ],
       "correct": 3,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "France is the most visited country in the world."
     },
     {
       "q": "What is the largest island in the world?",
@@ -6193,7 +6455,8 @@
         "New Guinea"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Greenland is the world's largest island that isn't a continent."
     },
     {
       "q": "Which African country was never colonized?",
@@ -6204,7 +6467,8 @@
         "Ghana"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the capital of South Korea?",
@@ -6215,7 +6479,8 @@
         "Daegu"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "South Korea has the fastest internet speeds in the world."
     },
     {
       "q": "Which river is the longest in Europe?",
@@ -6226,7 +6491,8 @@
         "Seine"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Volga River flows 2,294 miles, making it the longest river in Europe."
     },
     {
       "q": "What is the driest continent?",
@@ -6237,7 +6503,8 @@
         "Asia"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Antarctica contains 70% of Earth's fresh water (as ice)."
     },
     {
       "q": "Which country has the most islands?",
@@ -6248,7 +6515,8 @@
         "Finland"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Sweden has a hotel made entirely of ice that's rebuilt every year."
     },
     {
       "q": "What is the capital of Egypt?",
@@ -6259,7 +6527,8 @@
         "Giza"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Cairo is the largest city in Africa and the Arab world."
     },
     {
       "q": "Which US state is the largest by area?",
@@ -6270,7 +6539,8 @@
         "Montana"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Alaska is so big that if it were its own country, it would be the 18th largest in the world."
     },
     {
       "q": "What strait separates Europe and Africa?",
@@ -6281,7 +6551,8 @@
         "Malacca"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "Which country is both in Europe and Asia?",
@@ -6292,7 +6563,8 @@
         "All of these"
       ],
       "correct": 3,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Turkey, Russia, Kazakhstan, and others span both Europe and Asia."
     },
     {
       "q": "What is the capital of Argentina?",
@@ -6303,7 +6575,8 @@
         "Montevideo"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Argentina is named after silver (argentum in Latin)."
     },
     {
       "q": "Which ocean is the deepest?",
@@ -6314,7 +6587,8 @@
         "Southern"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Pacific Ocean is the largest and deepest ocean, covering more than 60 million square miles!"
     },
     {
       "q": "What is the largest lake in Africa?",
@@ -6325,7 +6599,8 @@
         "Lake Malawi"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "Which country is known as the Pearl of the Orient?",
@@ -6336,7 +6611,8 @@
         "Malaysia"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "The Philippines is named after King Philip II of Spain."
     },
     {
       "q": "What is the capital of Turkey?",
@@ -6347,7 +6623,8 @@
         "Antalya"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Ankara became Turkey's capital in 1923, replacing Istanbul."
     },
     {
       "q": "Which mountain is the tallest in North America?",
@@ -6358,7 +6635,8 @@
         "Mt. Elbert"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Sonoran Desert spans parts of Arizona, California, and Mexico."
     },
     {
       "q": "What is the capital of New Zealand?",
@@ -6369,7 +6647,8 @@
         "Hamilton"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "New Zealand was the first country to give women the right to vote (1893)."
     },
     {
       "q": "Which country has the longest coastline?",
@@ -6380,7 +6659,8 @@
         "USA"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Canada has the longest coastline of any country in the world."
     },
     {
       "q": "What is the capital of Thailand?",
@@ -6391,7 +6671,8 @@
         "Pattaya"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Bangkok's full ceremonial name has 168 characters!"
     },
     {
       "q": "Which European country is the smallest?",
@@ -6402,7 +6683,8 @@
         "Liechtenstein"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Vatican City is the smallest country in the world at just 0.44 km²!"
     },
     {
       "q": "What is the largest country in South America?",
@@ -6413,7 +6695,8 @@
         "Peru"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Brazil is the 5th largest country in the world and home to the Amazon rainforest."
     },
     {
       "q": "Which sea lies between Italy and Croatia?",
@@ -6424,7 +6707,8 @@
         "Ionian"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Italy has more UNESCO World Heritage sites than any other country."
     },
     {
       "q": "What is the capital of Vietnam?",
@@ -6435,7 +6719,8 @@
         "Hue"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Vietnam is the world's largest exporter of cashews."
     },
     {
       "q": "Which country is home to Machu Picchu?",
@@ -6446,7 +6731,8 @@
         "Colombia"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Peru has 90 different microclimates!"
     },
     {
       "q": "What is the largest desert in Asia?",
@@ -6457,7 +6743,8 @@
         "Taklamakan"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "The Gobi Desert expands by about 1,400 square miles every year!"
     },
     {
       "q": "Which country has the most volcanoes?",
@@ -6468,7 +6755,8 @@
         "Iceland"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Indonesia has over 17,000 islands and is the world's largest archipelago!"
     },
     {
       "q": "What is the capital of Poland?",
@@ -6479,7 +6767,8 @@
         "Wroclaw"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Poland is home to 17 UNESCO World Heritage sites."
     },
     {
       "q": "Which African country is the largest by area?",
@@ -6490,7 +6779,8 @@
         "Egypt"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Africa is the second-largest continent and contains 54 countries."
     },
     {
       "q": "What is the capital of Norway?",
@@ -6501,7 +6791,8 @@
         "Stavanger"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Norway has the longest coastline in Europe."
     },
     {
       "q": "Which river flows through London?",
@@ -6512,7 +6803,8 @@
         "Danube"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "London has been a major settlement for nearly 2,000 years!"
     },
     {
       "q": "What is the capital of Chile?",
@@ -6523,7 +6815,8 @@
         "Antofagasta"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Santiago is surrounded by the Andes mountains and the Chilean Coast Range."
     },
     {
       "q": "Which country has the Great Barrier Reef?",
@@ -6534,7 +6827,8 @@
         "Fiji"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Australia is both a country and a continent."
     },
     {
       "q": "What is the capital of Morocco?",
@@ -6545,7 +6839,8 @@
         "Fez"
       ],
       "correct": 2,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "Morocco was the first country to recognize the United States in 1777."
     },
     {
       "q": "Which lake is the deepest in the world?",
@@ -6556,7 +6851,8 @@
         "Caspian Sea"
       ],
       "correct": 1,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Lake Baikal contains about 20% of the world's unfrozen fresh water!"
     },
     {
       "q": "What is the capital of Sweden?",
@@ -6567,7 +6863,8 @@
         "Uppsala"
       ],
       "correct": 2,
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "fact": "Sweden has a hotel made entirely of ice that's rebuilt every year."
     },
     {
       "q": "Which country is the Taj Mahal in?",
@@ -6578,7 +6875,8 @@
         "Nepal"
       ],
       "correct": 2,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "India has over 22 officially recognized languages!"
     },
     {
       "q": "What is the capital of Greece?",
@@ -6589,7 +6887,8 @@
         "Heraklion"
       ],
       "correct": 1,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "fact": "Athens is one of the oldest cities in the world, with history spanning 3,400 years."
     },
     {
       "q": "Which US state has the most national parks?",
@@ -6600,7 +6899,8 @@
         "Colorado"
       ],
       "correct": 1,
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "fact": "If California were a country, it would have the 5th largest economy in the world."
     },
     {
       "q": "Which river formed the eastern boundary of the Promised Land?",
