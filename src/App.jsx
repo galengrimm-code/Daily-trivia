@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import { Loader, ArrowLeft } from 'lucide-react';
+import { Loader } from 'lucide-react';
 import { PlayerProvider, usePlayer } from './hooks/usePlayer';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
@@ -32,31 +32,6 @@ function SignIn() {
   );
 }
 
-function ComingSoon({ title }) {
-  const navigate = useNavigate();
-
-  return (
-    <div className="min-h-screen bg-background p-4">
-      <div className="max-w-md mx-auto">
-        <div className="flex items-center justify-between py-4 mb-8">
-          <button
-            onClick={() => navigate('/')}
-            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5 text-text-main" />
-          </button>
-          <h1 className="text-xl font-bold text-text-main">{title}</h1>
-          <div className="w-10" />
-        </div>
-        <div className="text-center py-16">
-          <div className="text-6xl mb-4">{'\u{1F6A7}'}</div>
-          <h2 className="text-2xl font-bold text-text-main mb-2">Coming Soon</h2>
-          <p className="text-text-muted">This game is under construction. Check back later!</p>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function ProtectedRoute({ children }) {
   const { user, authLoading } = usePlayer();

@@ -30,8 +30,9 @@ export default function TriviaMultiplayerGame({
   // On mount, find where the player left off
   const initialized = useRef(false);
   useEffect(() => {
-    if (!initialized.current && myAnswers) {
-      const answeredCount = Object.keys(myAnswers).length;
+    if (!initialized.current) {
+      const answers = room.players?.[userId]?.answers || {};
+      const answeredCount = Object.keys(answers).length;
       if (answeredCount > 0 && answeredCount < totalQuestions) {
         setMyQuestionIndex(answeredCount);
       } else if (answeredCount >= totalQuestions) {
@@ -39,7 +40,7 @@ export default function TriviaMultiplayerGame({
       }
       initialized.current = true;
     }
-  }, [myAnswers, totalQuestions]);
+  }, [room.players, userId, totalQuestions]);
 
   // Track elapsed time for current question
   useEffect(() => {
