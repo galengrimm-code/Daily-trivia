@@ -1,7 +1,7 @@
 // src/games/wordle/Wordle.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Delete, CornerDownLeft, BarChart2, X } from 'lucide-react';
+import { ArrowLeft, Share2, Delete, BarChart2, X } from 'lucide-react';
 import { getTodaysWord, isValidWord, evaluateGuess, getKeyboardStatus, generateShareText, REVEAL_DELAY } from './wordleUtils';
 import { getTodayKey } from '../../utils/helpers';
 import { usePlayer } from '../../hooks/usePlayer';
