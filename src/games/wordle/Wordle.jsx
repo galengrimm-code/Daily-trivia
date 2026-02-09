@@ -1,18 +1,21 @@
 // src/games/wordle/Wordle.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Delete, CornerDownLeft } from 'lucide-react';
+import { ArrowLeft, Share2, Delete, CornerDownLeft, BarChart2, X } from 'lucide-react';
 import { getTodaysWord, isValidWord, evaluateGuess, getKeyboardStatus, generateShareText, REVEAL_DELAY } from './wordleUtils';
 import { getTodayKey } from '../../utils/helpers';
+import { usePlayer } from '../../hooks/usePlayer';
+import { saveWordleScore } from './wordleFirebase';
 
 const KEYBOARD_ROWS = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-  ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACK']
+  ['BACK', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'ENTER']
 ];
 
 export default function Wordle() {
   const navigate = useNavigate();
+  const { user } = usePlayer();
   const [target] = useState(() => getTodaysWord());
   const [guesses, setGuesses] = useState([]);
   const [currentGuess, setCurrentGuess] = useState('');
@@ -21,6 +24,16 @@ export default function Wordle() {
   const [shakeRow, setShakeRow] = useState(-1);
   const [revealingRow, setRevealingRow] = useState(-1);
   const [bounceRow, setBounceRow] = useState(-1);
+  const [revealedTiles, setRevealedTiles] = useState(0); // Track how many tiles have flipped in current reveal
+  const [showStats, setShowStats] = useState(false);
+  const [stats, setStats] = useState({
+    gamesPlayed: 0,
+    gamesWon: 0,
+    currentStreak: 0,
+    maxStreak: 0,
+    guessDistribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }
+  });
+  const [scoreSubmitted, setScoreSubmitted] = useState(false);
 
   // Load saved game state from localStorage
   useEffect(() => {
@@ -32,13 +45,44 @@ export default function Wordle() {
       const savedState = localStorage.getItem('wordle_state') || 'playing';
       setGuesses(savedGuesses);
       setGameState(savedState);
+      setScoreSubmitted(localStorage.getItem('wordle_submitted') === 'true');
+      // Show stats if game is already completed
+      if (savedState === 'won' || savedState === 'lost') {
+        setShowStats(true);
+      }
     } else {
       // New day - reset
       localStorage.setItem('wordle_date', today);
       localStorage.setItem('wordle_guesses', '[]');
       localStorage.setItem('wordle_state', 'playing');
+      localStorage.removeItem('wordle_submitted');
+    }
+
+    // Load stats
+    const savedStats = JSON.parse(localStorage.getItem('wordle_stats') || 'null');
+    if (savedStats) {
+      setStats(savedStats);
     }
   }, []);
+
+  // Handle sequential tile reveal animation
+  useEffect(() => {
+    if (revealingRow === -1) {
+      setRevealedTiles(0);
+      return;
+    }
+
+    // Reveal tiles one by one
+    const timers = [];
+    for (let i = 0; i <= 5; i++) {
+      const timer = setTimeout(() => {
+        setRevealedTiles(i);
+      }, i * REVEAL_DELAY + REVEAL_DELAY / 2); // Reveal at midpoint of flip
+      timers.push(timer);
+    }
+
+    return () => timers.forEach(t => clearTimeout(t));
+  }, [revealingRow]);
 
   // Save game state
   useEffect(() => {
@@ -50,6 +94,39 @@ export default function Wordle() {
     setMessage(msg);
     setTimeout(() => setMessage(''), duration);
   }, []);
+
+  const updateStats = useCallback((won, numGuesses) => {
+    setStats(prevStats => {
+      const newStats = { ...prevStats };
+      newStats.gamesPlayed += 1;
+
+      if (won) {
+        newStats.gamesWon += 1;
+        newStats.currentStreak += 1;
+        newStats.maxStreak = Math.max(newStats.maxStreak, newStats.currentStreak);
+        newStats.guessDistribution = {
+          ...newStats.guessDistribution,
+          [numGuesses]: (newStats.guessDistribution[numGuesses] || 0) + 1
+        };
+      } else {
+        newStats.currentStreak = 0;
+      }
+
+      localStorage.setItem('wordle_stats', JSON.stringify(newStats));
+      return newStats;
+    });
+
+    // Submit score to daily leaderboard
+    if (user && !scoreSubmitted) {
+      const dateKey = getTodayKey();
+      saveWordleScore(user.uid, user.displayName, dateKey, won, numGuesses);
+      setScoreSubmitted(true);
+      localStorage.setItem('wordle_submitted', 'true');
+    }
+
+    // Show stats modal immediately after game ends
+    setShowStats(true);
+  }, [user, scoreSubmitted]);
 
   const handleKeyPress = useCallback((key) => {
     if (gameState !== 'playing') return;
@@ -80,20 +157,25 @@ export default function Wordle() {
       setTimeout(() => {
         setRevealingRow(-1);
 
-        if (currentGuess.toUpperCase() === target) {
+        const won = currentGuess.toUpperCase() === target;
+        const lost = !won && newGuesses.length >= 6;
+
+        if (won) {
           setGameState('won');
           setBounceRow(newGuesses.length - 1);
           setTimeout(() => setBounceRow(-1), 1000);
           showMessage(['Genius!', 'Magnificent!', 'Impressive!', 'Splendid!', 'Great!', 'Phew!'][newGuesses.length - 1], 3000);
-        } else if (newGuesses.length >= 6) {
+          updateStats(true, newGuesses.length);
+        } else if (lost) {
           setGameState('lost');
           showMessage(target, 5000);
+          updateStats(false, null);
         }
       }, REVEAL_DELAY * 5 + 300);
     } else if (currentGuess.length < 5 && /^[A-Z]$/.test(key)) {
       setCurrentGuess(prev => prev + key);
     }
-  }, [currentGuess, guesses, gameState, target, showMessage]);
+  }, [currentGuess, guesses, gameState, target, showMessage, updateStats]);
 
   // Keyboard input handler
   useEffect(() => {
@@ -133,16 +215,20 @@ export default function Wordle() {
     const revealDelay = isRevealing ? colIndex * REVEAL_DELAY : 0;
     const bounceDelay = isBouncing ? colIndex * 100 : 0;
 
+    // Only show color after tile has flipped (using revealedTiles state)
+    const isRevealed = !isRevealing || colIndex < revealedTiles;
+    const effectiveStatus = isRevealed ? status : null;
+
     let bgColor = 'bg-white border-2 border-gray-300';
     let textColor = 'text-text-main';
 
-    if (status === 'correct') {
+    if (effectiveStatus === 'correct') {
       bgColor = 'bg-green-500 border-green-500';
       textColor = 'text-white';
-    } else if (status === 'present') {
+    } else if (effectiveStatus === 'present') {
       bgColor = 'bg-yellow-500 border-yellow-500';
       textColor = 'text-white';
-    } else if (status === 'absent') {
+    } else if (effectiveStatus === 'absent') {
       bgColor = 'bg-gray-500 border-gray-500';
       textColor = 'text-white';
     } else if (letter) {
@@ -152,7 +238,7 @@ export default function Wordle() {
     return (
       <div
         key={colIndex}
-        className={`w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center text-2xl sm:text-3xl font-bold rounded ${bgColor} ${textColor} transition-all`}
+        className={`w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center text-2xl sm:text-3xl font-bold rounded ${bgColor} ${textColor}`}
         style={{
           animation: isRevealing ? 'flip 0.5s ease forwards' : isBouncing ? 'bounce 0.3s ease forwards' : 'none',
           animationDelay: isRevealing ? `${revealDelay}ms` : isBouncing ? `${bounceDelay}ms` : '0ms'
@@ -236,7 +322,12 @@ export default function Wordle() {
           <ArrowLeft className="w-5 h-5 text-text-main" />
         </button>
         <h1 className="text-xl font-bold text-text-main">Wordle</h1>
-        <div className="w-10" />
+        <button
+          onClick={() => setShowStats(true)}
+          className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+        >
+          <BarChart2 className="w-5 h-5 text-text-main" />
+        </button>
       </div>
 
       {/* Message Toast */}
@@ -304,6 +395,80 @@ export default function Wordle() {
           20%, 40%, 60%, 80% { transform: translateX(5px); }
         }
       `}</style>
+
+      {/* Statistics Modal */}
+      {showStats && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-sm w-full p-6 relative">
+            <button
+              onClick={() => setShowStats(false)}
+              className="absolute top-4 right-4 p-1 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <X className="w-5 h-5 text-text-muted" />
+            </button>
+
+            <h2 className="text-xl font-bold text-text-main text-center mb-6">Statistics</h2>
+
+            {/* Stats Row */}
+            <div className="flex justify-center gap-4 mb-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-text-main">{stats.gamesPlayed}</div>
+                <div className="text-xs text-text-muted">Played</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-text-main">
+                  {stats.gamesPlayed > 0 ? Math.round((stats.gamesWon / stats.gamesPlayed) * 100) : 0}
+                </div>
+                <div className="text-xs text-text-muted">Win %</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-text-main">{stats.currentStreak}</div>
+                <div className="text-xs text-text-muted">Current Streak</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-text-main">{stats.maxStreak}</div>
+                <div className="text-xs text-text-muted">Max Streak</div>
+              </div>
+            </div>
+
+            {/* Guess Distribution */}
+            <h3 className="text-sm font-bold text-text-main mb-3">GUESS DISTRIBUTION</h3>
+            <div className="space-y-1 mb-6">
+              {[1, 2, 3, 4, 5, 6].map(num => {
+                const count = stats.guessDistribution[num] || 0;
+                const maxCount = Math.max(...Object.values(stats.guessDistribution), 1);
+                const width = Math.max((count / maxCount) * 100, 8);
+                const isCurrentGuess = gameState === 'won' && guesses.length === num;
+
+                return (
+                  <div key={num} className="flex items-center gap-2">
+                    <span className="w-4 text-sm font-medium text-text-main">{num}</span>
+                    <div
+                      className={`h-5 flex items-center justify-end px-2 rounded-sm ${
+                        isCurrentGuess ? 'bg-green-500' : 'bg-gray-400'
+                      }`}
+                      style={{ width: `${width}%`, minWidth: '24px' }}
+                    >
+                      <span className="text-xs font-bold text-white">{count}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Share Button (only show when game is over) */}
+            {gameState !== 'playing' && (
+              <button
+                onClick={handleShare}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-green-500 text-white rounded-lg font-bold hover:bg-green-600 transition-colors"
+              >
+                <Share2 className="w-5 h-5" />
+                Share
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

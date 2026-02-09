@@ -49,12 +49,13 @@ export default function Leaderboard({
   weeklyEntries,
   boggleEntries,
   spellingBeeEntries,
+  wordleEntries,
   currentUserId,
   loading,
   onBack
 }) {
   // When showing only Trivia (no other games), show more entries
-  const isTriviaOnly = !boggleEntries && !spellingBeeEntries;
+  const isTriviaOnly = !boggleEntries && !spellingBeeEntries && !wordleEntries;
   const triviaMaxEntries = isTriviaOnly ? 50 : 10;
 
   if (loading) {
@@ -74,7 +75,7 @@ export default function Leaderboard({
           </button>
           <h1 className="text-xl font-bold text-text-main flex items-center gap-2">
             <Trophy className="w-6 h-6 text-yellow-500" />
-            {boggleEntries || spellingBeeEntries ? "Today's Leaderboards" : "Trivia Leaderboard"}
+            {isTriviaOnly ? "Trivia Leaderboard" : "Today's Leaderboards"}
           </h1>
           <div className="w-10" />
         </div>
@@ -115,6 +116,17 @@ export default function Leaderboard({
               currentUserId={currentUserId}
               scoreKey="score"
               scoreLabel="pts"
+            />
+          )}
+
+          {/* Wordle Today - only show if entries provided */}
+          {wordleEntries && wordleEntries.length > 0 && (
+            <MiniLeaderboard
+              title="Wordle"
+              icon={'\u{1F7E9}'}
+              entries={wordleEntries}
+              currentUserId={currentUserId}
+              scoreKey={(e) => e.won ? `${e.guesses}/6` : 'X/6'}
             />
           )}
 

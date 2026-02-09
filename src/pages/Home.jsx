@@ -6,6 +6,7 @@ import { useLeaderboard } from '../hooks/useLeaderboard';
 import { getTodayKey } from '../utils/helpers';
 import { checkBogglePlayer } from '../games/boggle/boggleFirebase';
 import { checkSpellingBeePlayer } from '../games/spelling-bee/spellingBeeFirebase';
+import { checkWordlePlayer } from '../games/wordle/wordleFirebase';
 import Header from '../components/Header';
 import GameCard from '../components/GameCard';
 import Leaderboard from '../components/Leaderboard';
@@ -16,6 +17,7 @@ export default function Home() {
     todayLeaderboard,
     boggleLeaderboard,
     spellingBeeLeaderboard,
+    wordleLeaderboard,
     loading: lbLoading,
     loadLeaderboards
   } = useLeaderboard();
@@ -35,17 +37,24 @@ export default function Home() {
         if (result.played) setSpellingBeeResult(result);
       });
 
-      // Check Wordle from localStorage
-      const wordleDate = localStorage.getItem('wordle_date');
-      const wordleState = localStorage.getItem('wordle_state');
-      const wordleGuesses = JSON.parse(localStorage.getItem('wordle_guesses') || '[]');
-      if (wordleDate === dateKey && (wordleState === 'won' || wordleState === 'lost')) {
-        setWordleResult({
-          played: true,
-          won: wordleState === 'won',
-          guesses: wordleGuesses.length
-        });
-      }
+      // Check Wordle from Firebase first, then fall back to localStorage
+      checkWordlePlayer(user.uid, dateKey).then(result => {
+        if (result.played) {
+          setWordleResult(result);
+        } else {
+          // Fall back to localStorage for backwards compatibility
+          const wordleDate = localStorage.getItem('wordle_date');
+          const wordleState = localStorage.getItem('wordle_state');
+          const wordleGuesses = JSON.parse(localStorage.getItem('wordle_guesses') || '[]');
+          if (wordleDate === dateKey && (wordleState === 'won' || wordleState === 'lost')) {
+            setWordleResult({
+              played: true,
+              won: wordleState === 'won',
+              guesses: wordleGuesses.length
+            });
+          }
+        }
+      });
     }
   }, [user]);
 
@@ -143,6 +152,7 @@ export default function Home() {
         todayEntries={todayLeaderboard}
         boggleEntries={boggleLeaderboard}
         spellingBeeEntries={spellingBeeLeaderboard}
+        wordleEntries={wordleLeaderboard}
         currentUserId={user?.uid}
         loading={lbLoading}
         onBack={() => setShowLeaderboard(false)}
