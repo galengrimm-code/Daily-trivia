@@ -220,16 +220,16 @@ export default function Wordle() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyPress]);
 
-  const handleShare = async () => {
+  const handleShare = () => {
     const text = generateShareText(guesses, target, gameState === 'won');
-    try {
-      await navigator.clipboard.writeText(text);
-      showMessage('Copied to clipboard!');
-    } catch {
-      // Fallback for mobile
-      if (navigator.share) {
-        await navigator.share({ text });
-      }
+    if (navigator.share) {
+      navigator.share({ text }).catch(() => {
+        navigator.clipboard.writeText(text);
+        alert('Copied to clipboard!');
+      });
+    } else {
+      navigator.clipboard.writeText(text);
+      alert('Copied to clipboard!');
     }
   };
 
