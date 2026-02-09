@@ -363,8 +363,8 @@ export default function Wordle() {
       )}
 
       {/* Game Board */}
-      <div className="flex-1 flex flex-col items-center justify-start pt-4">
-        <div className="flex flex-col gap-1.5 mb-2">
+      <div className="flex flex-col items-center pt-4">
+        <div className="flex flex-col gap-1.5 mb-3">
           {[0, 1, 2, 3, 4, 5].map(renderRow)}
         </div>
 
