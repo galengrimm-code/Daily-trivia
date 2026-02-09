@@ -6601,6 +6601,479 @@
       ],
       "correct": 1,
       "difficulty": "hard"
+    },
+    {
+      "q": "Which river formed the eastern boundary of the Promised Land?",
+      "options": [
+        "Nile",
+        "Jordan River",
+        "Euphrates",
+        "Tigris"
+      ],
+      "correct": 1,
+      "fact": "The Jordan River marked Israel's eastern boundary. It still flows between modern Israel and Jordan."
+    },
+    {
+      "q": "Which city was the first conquered by Israel after crossing the Jordan?",
+      "options": [
+        "Ai",
+        "Jericho",
+        "Hebron",
+        "Bethel"
+      ],
+      "correct": 1,
+      "fact": "Jericho fell after Israel crossed the Jordan. Located near modern Jericho, northeast of Jerusalem."
+    },
+    {
+      "q": "On which mountain did Elijah confront the prophets of Baal?",
+      "options": [
+        "Mount Sinai",
+        "Mount Hermon",
+        "Mount Carmel",
+        "Mount Zion"
+      ],
+      "correct": 2,
+      "fact": "Elijah challenged the prophets of Baal on Mount Carmel, near modern Haifa on Israel's Mediterranean coast."
+    },
+    {
+      "q": "Which sea formed Israel's western boundary?",
+      "options": [
+        "Sea of Galilee",
+        "Dead Sea",
+        "Mediterranean Sea",
+        "Red Sea"
+      ],
+      "correct": 2,
+      "fact": "The Great Sea (Mediterranean) bordered Israel to the west."
+    },
+    {
+      "q": "Which body of water is called the \"Salt Sea\" in Scripture?",
+      "options": [
+        "Sea of Galilee",
+        "Mediterranean Sea",
+        "Red Sea",
+        "Dead Sea"
+      ],
+      "correct": 3,
+      "fact": "The Dead Sea is referred to as the Salt Sea, located east of Jerusalem."
+    },
+    {
+      "q": "Which city became King David's capital?",
+      "options": [
+        "Hebron",
+        "Bethlehem",
+        "Jerusalem",
+        "Shechem"
+      ],
+      "correct": 2,
+      "fact": "David captured Jerusalem and made it his capital (Old City area today)."
+    },
+    {
+      "q": "Which valley was known for fertile land and frequent battles?",
+      "options": [
+        "Valley of Rephaim",
+        "Valley of Jezreel",
+        "Valley of Siddim",
+        "Valley of Hinnom"
+      ],
+      "correct": 1,
+      "fact": "The Jezreel Valley was agriculturally rich and strategic, located in northern Israel."
+    },
+    {
+      "q": "Which city was known as the \"City of Palms\"?",
+      "options": [
+        "Jericho",
+        "Ai",
+        "Gaza",
+        "Hebron"
+      ],
+      "correct": 0,
+      "fact": "Jericho was famous for its palm trees, near modern Jericho in the Jordan Valley."
+    },
+    {
+      "q": "Near which city did Abraham live by the oaks of Mamre?",
+      "options": [
+        "Bethel",
+        "Hebron",
+        "Beersheba",
+        "Shechem"
+      ],
+      "correct": 1,
+      "fact": "Abraham lived near Hebron, south of Jerusalem."
+    },
+    {
+      "q": "Which city marked Israel's southern boundary?",
+      "options": [
+        "Gaza",
+        "Zoar",
+        "Beersheba",
+        "Lachish"
+      ],
+      "correct": 2,
+      "fact": "Beersheba marked Israel's southern extent, in southern Israel today."
+    },
+    {
+      "q": "In which river did Naaman wash to be healed?",
+      "options": [
+        "Euphrates",
+        "Abana",
+        "Jordan River",
+        "Nile"
+      ],
+      "correct": 2,
+      "fact": "Naaman washed in the Jordan River between Israel and Jordan."
+    },
+    {
+      "q": "Which region did the tribe of Judah inherit?",
+      "options": [
+        "Northern coast",
+        "Central plains",
+        "Southern hill country",
+        "Transjordan"
+      ],
+      "correct": 2,
+      "fact": "Judah settled the southern hill country, the Judean hills south of Jerusalem."
+    },
+    {
+      "q": "Which city was both a city of refuge and a Levitical city?",
+      "options": [
+        "Jericho",
+        "Shechem",
+        "Ai",
+        "Gibeah"
+      ],
+      "correct": 1,
+      "fact": "Shechem served as a city of refuge, near modern Nablus."
+    },
+    {
+      "q": "In which wilderness did Israel wander for 40 years?",
+      "options": [
+        "Negev",
+        "Sinai Wilderness",
+        "Judean Desert",
+        "Arabian Desert"
+      ],
+      "correct": 1,
+      "fact": "Israel wandered in the wilderness of Sinai, traditionally associated with the Sinai Peninsula."
+    },
+    {
+      "q": "From which city did Jonah flee when running from God?",
+      "options": [
+        "Tyre",
+        "Sidon",
+        "Joppa",
+        "Gaza"
+      ],
+      "correct": 2,
+      "fact": "Jonah boarded a ship at Joppa, modern Jaffa (part of Tel Aviv)."
+    },
+    {
+      "q": "Which body of water lies north of the Jordan River?",
+      "options": [
+        "Dead Sea",
+        "Mediterranean Sea",
+        "Sea of Galilee",
+        "Red Sea"
+      ],
+      "correct": 2,
+      "fact": "The Jordan flows south from the Sea of Galilee (Lake Kinneret)."
+    },
+    {
+      "q": "Which city was destroyed alongside Sodom?",
+      "options": [
+        "Zoar",
+        "Gomorrah",
+        "Bethel",
+        "Jericho"
+      ],
+      "correct": 1,
+      "fact": "Gomorrah was destroyed for wickedness, near the southeastern Dead Sea."
+    },
+    {
+      "q": "Which city housed the tabernacle for many years?",
+      "options": [
+        "Jerusalem",
+        "Shiloh",
+        "Bethel",
+        "Gilgal"
+      ],
+      "correct": 1,
+      "fact": "The tabernacle was at Shiloh, near modern Shiloh in the central hill country."
+    },
+    {
+      "q": "Which Canaanite stronghold did Joshua destroy by fire?",
+      "options": [
+        "Hazor",
+        "Tyre",
+        "Sidon",
+        "Gaza"
+      ],
+      "correct": 0,
+      "fact": "Hazor was burned and destroyed, at Tel Hazor in northern Israel."
+    },
+    {
+      "q": "Which city was associated with Og, king of Bashan?",
+      "options": [
+        "Hazor",
+        "Edrei",
+        "Dan",
+        "Kedesh"
+      ],
+      "correct": 1,
+      "fact": "Edrei was one of Og's royal cities, near modern Daraa region."
+    },
+    {
+      "q": "Where did Deborah judge Israel?",
+      "options": [
+        "Ramah",
+        "Bethel",
+        "Gibeah",
+        "Shiloh"
+      ],
+      "correct": 0,
+      "fact": "Deborah judged between Ramah and Bethel, near the Ramallah area."
+    },
+    {
+      "q": "Where did King Saul die?",
+      "options": [
+        "Gilgal",
+        "Jezreel",
+        "Mount Gilboa",
+        "En Gedi"
+      ],
+      "correct": 2,
+      "fact": "Saul died on Mount Gilboa, near Jezreel Valley in northern Israel."
+    },
+    {
+      "q": "Where did David hide from Saul?",
+      "options": [
+        "Zoar",
+        "En Gedi",
+        "Jericho",
+        "Beersheba"
+      ],
+      "correct": 1,
+      "fact": "David hid in the caves of En Gedi, an oasis along the western Dead Sea."
+    },
+    {
+      "q": "Which city deceived Israel into making a treaty?",
+      "options": [
+        "Jericho",
+        "Ai",
+        "Gibeon",
+        "Lachish"
+      ],
+      "correct": 2,
+      "fact": "The Gibeonites tricked Israel, near modern el-Jib northwest of Jerusalem."
+    },
+    {
+      "q": "Which city did Solomon fortify along with Megiddo and Hazor?",
+      "options": [
+        "Dan",
+        "Gezer",
+        "Bethel",
+        "Shiloh"
+      ],
+      "correct": 1,
+      "fact": "Solomon fortified Gezer, at Tel Gezer west of Jerusalem."
+    },
+    {
+      "q": "Which region was home to the Philistines?",
+      "options": [
+        "Hill country",
+        "Negev",
+        "Coastal plain",
+        "Transjordan"
+      ],
+      "correct": 2,
+      "fact": "The Philistines occupied the coastal plain along the Mediterranean."
+    },
+    {
+      "q": "Which mountain stood opposite Mount Gerizim?",
+      "options": [
+        "Mount Carmel",
+        "Mount Ebal",
+        "Mount Hermon",
+        "Mount Zion"
+      ],
+      "correct": 1,
+      "fact": "Mount Ebal was used for covenant curses, near modern Nablus."
+    },
+    {
+      "q": "Which mountain was used for covenant blessings?",
+      "options": [
+        "Mount Ebal",
+        "Mount Sinai",
+        "Mount Gerizim",
+        "Mount Carmel"
+      ],
+      "correct": 2,
+      "fact": "Blessings were proclaimed from Mount Gerizim, south of modern Nablus."
+    },
+    {
+      "q": "Which region was a desert area in southern Israel?",
+      "options": [
+        "Galilee",
+        "Negev",
+        "Bashan",
+        "Gilead"
+      ],
+      "correct": 1,
+      "fact": "The Negev was sparsely populated, now the Negev Desert in southern Israel."
+    },
+    {
+      "q": "Which city controlled a key mountain pass?",
+      "options": [
+        "Megiddo",
+        "Dan",
+        "Ai",
+        "Zoar"
+      ],
+      "correct": 0,
+      "fact": "Megiddo guarded vital trade routes, at Tel Megiddo in northern Israel."
+    },
+    {
+      "q": "Which site served as Israel's first base camp after crossing the Jordan?",
+      "options": [
+        "Gilgal",
+        "Shiloh",
+        "Bethel",
+        "Shechem"
+      ],
+      "correct": 0,
+      "fact": "Israel camped at Gilgal, near the Jordan Valley east of Jericho."
+    },
+    {
+      "q": "Which city was Israel's religious center before Jerusalem?",
+      "options": [
+        "Bethel",
+        "Gilgal",
+        "Shiloh",
+        "Shechem"
+      ],
+      "correct": 2,
+      "fact": "The tabernacle stood at Shiloh in the central hill country."
+    },
+    {
+      "q": "Which city was given to Caleb as an inheritance?",
+      "options": [
+        "Bethlehem",
+        "Hebron",
+        "Beersheba",
+        "Lachish"
+      ],
+      "correct": 1,
+      "fact": "Caleb received Hebron, south of Jerusalem."
+    },
+    {
+      "q": "Which city suffered defeat due to Achan's sin?",
+      "options": [
+        "Bethel",
+        "Ai",
+        "Shechem",
+        "Gibeon"
+      ],
+      "correct": 1,
+      "fact": "Israel was defeated at Ai, likely near Bethel."
+    },
+    {
+      "q": "Near which city did the sun stand still?",
+      "options": [
+        "Jericho",
+        "Gibeon",
+        "Hebron",
+        "Megiddo"
+      ],
+      "correct": 1,
+      "fact": "The battle occurred near Gibeon, in central Israel northwest of Jerusalem."
+    },
+    {
+      "q": "Which city was besieged by the Assyrians?",
+      "options": [
+        "Jerusalem",
+        "Samaria",
+        "Lachish",
+        "Dan"
+      ],
+      "correct": 2,
+      "fact": "Lachish was heavily attacked, at Tel Lachish in southern Israel."
+    },
+    {
+      "q": "Which city became the northern kingdom's capital?",
+      "options": [
+        "Shechem",
+        "Tirzah",
+        "Samaria",
+        "Megiddo"
+      ],
+      "correct": 2,
+      "fact": "Omri built Samaria, near modern Sebastia."
+    },
+    {
+      "q": "Which city featured elders at the city gate in Ruth?",
+      "options": [
+        "Bethlehem",
+        "Hebron",
+        "Beersheba",
+        "Jericho"
+      ],
+      "correct": 0,
+      "fact": "Boaz met elders at Bethlehem's gate, south of Jerusalem."
+    },
+    {
+      "q": "Which region separated Judea and Galilee?",
+      "options": [
+        "Philistia",
+        "Samaria",
+        "Bashan",
+        "Gilead"
+      ],
+      "correct": 1,
+      "fact": "Samaria lay between the two regions, in central Israel/West Bank."
+    },
+    {
+      "q": "Which region was known for balm and spices?",
+      "options": [
+        "Negev",
+        "Bashan",
+        "Gilead",
+        "Galilee"
+      ],
+      "correct": 2,
+      "fact": "Balm of Gilead was famous for healing, east of the Jordan River."
+    },
+    {
+      "q": "Which fortified city lay west of Jerusalem?",
+      "options": [
+        "Dan",
+        "Gezer",
+        "Bethel",
+        "Shiloh"
+      ],
+      "correct": 1,
+      "fact": "Gezer guarded western approaches, at Tel Gezer."
+    },
+    {
+      "q": "Which city of refuge lay east of the Jordan?",
+      "options": [
+        "Kedesh",
+        "Bezer",
+        "Hebron",
+        "Shechem"
+      ],
+      "correct": 1,
+      "fact": "Bezer served as a refuge city in the eastern Jordan region."
+    },
+    {
+      "q": "Which wilderness did David flee into?",
+      "options": [
+        "Negev",
+        "Wilderness of Zin",
+        "Wilderness of Judah",
+        "Sinai Wilderness"
+      ],
+      "correct": 2,
+      "fact": "David hid in the wilderness of Judah, the Judean Desert east of Jerusalem."
     }
   ],
   "Science": [
