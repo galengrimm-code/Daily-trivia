@@ -10,7 +10,7 @@ import { saveWordleScore, getWordleStats, saveWordleStats } from './wordleFireba
 const KEYBOARD_ROWS = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-  ['BACK', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'ENTER']
+  ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACK']
 ];
 
 export default function Wordle() {
@@ -245,10 +245,10 @@ export default function Wordle() {
     const effectiveStatus = isRevealed ? status : null;
 
     let bgColor = 'bg-white border-2 border-gray-300';
-    let textColor = 'text-text-main';
+    let textColor = 'text-gray-900';
 
     if (effectiveStatus === 'correct') {
-      bgColor = 'bg-green-500 border-green-500';
+      bgColor = 'bg-green-600 border-green-600';
       textColor = 'text-white';
     } else if (effectiveStatus === 'present') {
       bgColor = 'bg-yellow-500 border-yellow-500';
@@ -257,13 +257,13 @@ export default function Wordle() {
       bgColor = 'bg-gray-500 border-gray-500';
       textColor = 'text-white';
     } else if (letter) {
-      bgColor = 'bg-white border-2 border-gray-400';
+      bgColor = 'bg-white border-2 border-gray-900';
     }
 
     return (
       <div
         key={colIndex}
-        className={`w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-bold rounded ${bgColor} ${textColor}`}
+        className={`w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center text-2xl sm:text-3xl font-bold ${bgColor} ${textColor}`}
         style={{
           animation: isRevealing ? 'flip 0.5s ease forwards' : isBouncing ? 'bounce 0.3s ease forwards' : 'none',
           animationDelay: isRevealing ? `${revealDelay}ms` : isBouncing ? `${bounceDelay}ms` : '0ms'
@@ -295,7 +295,7 @@ export default function Wordle() {
     return (
       <div
         key={rowIndex}
-        className={`flex gap-1.5 justify-center ${isShaking ? 'animate-shake' : ''}`}
+        className={`flex gap-1 justify-center ${isShaking ? 'animate-shake' : ''}`}
       >
         {[0, 1, 2, 3, 4].map(colIndex => {
           const letter = letters[colIndex] || '';
@@ -310,10 +310,10 @@ export default function Wordle() {
   const renderKey = (key) => {
     const status = keyboardStatus[key];
     let bgColor = 'bg-gray-200 hover:bg-gray-300';
-    let textColor = 'text-text-main';
+    let textColor = 'text-gray-900';
 
     if (status === 'correct') {
-      bgColor = 'bg-green-500 hover:bg-green-600';
+      bgColor = 'bg-green-600 hover:bg-green-700';
       textColor = 'text-white';
     } else if (status === 'present') {
       bgColor = 'bg-yellow-500 hover:bg-yellow-600';
@@ -329,15 +329,15 @@ export default function Wordle() {
       <button
         key={key}
         onClick={() => handleKeyPress(key)}
-        className={`${isWide ? 'px-2 sm:px-3' : 'w-8 sm:w-9'} h-11 sm:h-12 rounded font-bold text-sm ${bgColor} ${textColor} transition-colors flex items-center justify-center`}
+        className={`${isWide ? 'px-3 sm:px-4 text-xs' : 'w-9 sm:w-11'} h-14 rounded-md font-bold ${bgColor} ${textColor} transition-colors flex items-center justify-center`}
       >
-        {key === 'BACK' ? <Delete className="w-4 h-4" /> : key === 'ENTER' ? <CornerDownLeft className="w-4 h-4" /> : key}
+        {key === 'BACK' ? <Delete className="w-5 h-5" /> : key}
       </button>
     );
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
         <button
@@ -363,19 +363,19 @@ export default function Wordle() {
       )}
 
       {/* Game Board */}
-      <div className="flex flex-col items-center pt-4 mb-6">
-        <div className="flex flex-col gap-1.5 mb-3">
+      <div className="flex-1 flex flex-col items-center justify-center">
+        <div className="flex flex-col gap-1.5">
           {[0, 1, 2, 3, 4, 5].map(renderRow)}
         </div>
 
         {/* Game Over Actions */}
         {gameState !== 'playing' && (
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-4">
             <button
               onClick={handleShare}
-              className="flex items-center gap-2 px-5 py-2 bg-green-500 text-white rounded-lg font-bold hover:bg-green-600 transition-colors text-sm"
+              className="flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition-colors"
             >
-              <Share2 className="w-4 h-4" />
+              <Share2 className="w-5 h-5" />
               Share
             </button>
           </div>
@@ -383,10 +383,10 @@ export default function Wordle() {
       </div>
 
       {/* Keyboard */}
-      <div className="p-2 pb-4">
-        <div className="flex flex-col gap-1.5 items-center max-w-lg mx-auto">
+      <div className="p-2 pb-6">
+        <div className="flex flex-col gap-2 items-center max-w-lg mx-auto">
           {KEYBOARD_ROWS.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex gap-1.5">
+            <div key={rowIndex} className="flex gap-1.5 justify-center">
               {row.map(renderKey)}
             </div>
           ))}
