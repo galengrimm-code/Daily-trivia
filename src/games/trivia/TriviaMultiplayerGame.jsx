@@ -23,9 +23,8 @@ export default function TriviaMultiplayerGame({
   const standings = room.standings || [];
   const totalQuestions = room.questions?.length || 12;
 
-  // Check if current user has already answered this question (for rejoining)
+  // Get current player data
   const myPlayer = room.players?.[userId];
-  const myAnswers = myPlayer?.answers || {};
 
   // On mount, find where the player left off
   const initialized = useRef(false);

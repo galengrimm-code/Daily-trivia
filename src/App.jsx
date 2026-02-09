@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Loader } from 'lucide-react';
 import { PlayerProvider, usePlayer } from './hooks/usePlayer';
 import Home from './pages/Home';
