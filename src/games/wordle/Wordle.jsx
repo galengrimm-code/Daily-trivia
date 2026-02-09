@@ -5,7 +5,7 @@ import { ArrowLeft, Share2, Delete, CornerDownLeft, BarChart2, X } from 'lucide-
 import { getTodaysWord, isValidWord, evaluateGuess, getKeyboardStatus, generateShareText, REVEAL_DELAY } from './wordleUtils';
 import { getTodayKey } from '../../utils/helpers';
 import { usePlayer } from '../../hooks/usePlayer';
-import { saveWordleScore } from './wordleFirebase';
+import { saveWordleScore, getWordleStats, saveWordleStats } from './wordleFirebase';
 
 const KEYBOARD_ROWS = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -57,13 +57,33 @@ export default function Wordle() {
       localStorage.setItem('wordle_state', 'playing');
       localStorage.removeItem('wordle_submitted');
     }
-
-    // Load stats
-    const savedStats = JSON.parse(localStorage.getItem('wordle_stats') || 'null');
-    if (savedStats) {
-      setStats(savedStats);
-    }
   }, []);
+
+  // Load stats from Firebase (with localStorage fallback)
+  useEffect(() => {
+    const loadStats = async () => {
+      if (user) {
+        // Try Firebase first
+        const firebaseStats = await getWordleStats(user.uid);
+        if (firebaseStats) {
+          setStats(firebaseStats);
+          // Sync to localStorage as cache
+          localStorage.setItem('wordle_stats', JSON.stringify(firebaseStats));
+          return;
+        }
+      }
+      // Fall back to localStorage
+      const savedStats = JSON.parse(localStorage.getItem('wordle_stats') || 'null');
+      if (savedStats) {
+        setStats(savedStats);
+        // If user is logged in, migrate localStorage stats to Firebase
+        if (user) {
+          saveWordleStats(user.uid, savedStats);
+        }
+      }
+    };
+    loadStats();
+  }, [user]);
 
   // Handle sequential tile reveal animation
   useEffect(() => {
@@ -96,25 +116,30 @@ export default function Wordle() {
   }, []);
 
   const updateStats = useCallback((won, numGuesses) => {
-    setStats(prevStats => {
-      const newStats = { ...prevStats };
-      newStats.gamesPlayed += 1;
+    const newStats = { ...stats };
+    newStats.gamesPlayed += 1;
 
-      if (won) {
-        newStats.gamesWon += 1;
-        newStats.currentStreak += 1;
-        newStats.maxStreak = Math.max(newStats.maxStreak, newStats.currentStreak);
-        newStats.guessDistribution = {
-          ...newStats.guessDistribution,
-          [numGuesses]: (newStats.guessDistribution[numGuesses] || 0) + 1
-        };
-      } else {
-        newStats.currentStreak = 0;
-      }
+    if (won) {
+      newStats.gamesWon += 1;
+      newStats.currentStreak += 1;
+      newStats.maxStreak = Math.max(newStats.maxStreak, newStats.currentStreak);
+      newStats.guessDistribution = {
+        ...newStats.guessDistribution,
+        [numGuesses]: (newStats.guessDistribution[numGuesses] || 0) + 1
+      };
+    } else {
+      newStats.currentStreak = 0;
+    }
 
-      localStorage.setItem('wordle_stats', JSON.stringify(newStats));
-      return newStats;
-    });
+    setStats(newStats);
+
+    // Save to localStorage as cache
+    localStorage.setItem('wordle_stats', JSON.stringify(newStats));
+
+    // Save to Firebase if logged in
+    if (user) {
+      saveWordleStats(user.uid, newStats);
+    }
 
     // Submit score to daily leaderboard
     if (user && !scoreSubmitted) {
@@ -126,7 +151,7 @@ export default function Wordle() {
 
     // Show stats modal immediately after game ends
     setShowStats(true);
-  }, [user, scoreSubmitted]);
+  }, [user, scoreSubmitted, stats]);
 
   const handleKeyPress = useCallback((key) => {
     if (gameState !== 'playing') return;

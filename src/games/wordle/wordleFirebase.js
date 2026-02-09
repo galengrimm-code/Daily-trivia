@@ -75,3 +75,28 @@ export async function getWordleLeaderboard(dateKey) {
     return [];
   }
 }
+
+// Get user's Wordle statistics from Firebase
+export async function getWordleStats(userId) {
+  try {
+    const snapshot = await get(ref(rtdb, `userStats/${userId}/wordle`));
+    if (snapshot.exists()) {
+      return snapshot.val();
+    }
+    return null;
+  } catch (e) {
+    console.error('Firebase error:', e);
+    return null;
+  }
+}
+
+// Save user's Wordle statistics to Firebase
+export async function saveWordleStats(userId, stats) {
+  try {
+    await set(ref(rtdb, `userStats/${userId}/wordle`), stats);
+    return { success: true };
+  } catch (e) {
+    console.error('Firebase error:', e);
+    return { error: 'Network error' };
+  }
+}
