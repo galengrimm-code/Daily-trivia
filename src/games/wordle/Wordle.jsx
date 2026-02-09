@@ -337,7 +337,7 @@ export default function Wordle() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="bg-background flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
         <button
@@ -383,7 +383,7 @@ export default function Wordle() {
       </div>
 
       {/* Keyboard */}
-      <div className="p-2 pb-3 mt-auto">
+      <div className="p-2 pb-3">
         <div className="flex flex-col gap-1.5 items-center max-w-lg mx-auto">
           {KEYBOARD_ROWS.map((row, rowIndex) => (
             <div key={rowIndex} className="flex gap-1.5">
