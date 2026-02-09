@@ -6,6 +6,7 @@ import {
   startGame,
   submitAnswer,
   nextQuestion,
+  checkGameCompletion,
   leaveRoom,
   playAgain,
   startRoomListener,
@@ -150,7 +151,7 @@ export default function useTriviaMultiplayer(user) {
     return result;
   }, [roomId, user]);
 
-  // Next question
+  // Next question (kept for compatibility)
   const handleNextQuestion = useCallback(async () => {
     if (!roomId) return;
 
@@ -158,6 +159,13 @@ export default function useTriviaMultiplayer(user) {
     if (result.error) {
       setError(result.error);
     }
+  }, [roomId]);
+
+  // Check if game should end (all players finished)
+  const handleCheckCompletion = useCallback(async () => {
+    if (!roomId) return;
+
+    await checkGameCompletion(roomId);
   }, [roomId]);
 
   // Leave room
@@ -233,6 +241,7 @@ export default function useTriviaMultiplayer(user) {
     handleStartGame,
     handleSubmitAnswer,
     handleNextQuestion,
+    handleCheckCompletion,
     handleLeaveRoom,
     handlePlayAgain,
     handleBack,

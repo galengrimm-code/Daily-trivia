@@ -126,7 +126,7 @@ export default function Trivia() {
         room={mp.room}
         userId={user?.uid}
         onSubmitAnswer={mp.handleSubmitAnswer}
-        onNextQuestion={mp.handleNextQuestion}
+        onCheckCompletion={mp.handleCheckCompletion}
         onExit={mp.closeMultiplayer}
       />
     );

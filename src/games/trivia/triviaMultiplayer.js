@@ -149,7 +149,7 @@ export async function createRoom(userId, displayName, categories) {
     await cleanupOldRooms();
 
     // Validate categories
-    const validCategories = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible'];
+    const validCategories = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge'];
     const selectedCategories = categories.filter(c => validCategories.includes(c));
 
     if (selectedCategories.length === 0) {
@@ -285,9 +285,9 @@ export async function submitAnswer(roomId, userId, questionIndex, answerIndex) {
 
     const room = roomSnapshot.val();
 
-    // Validate question index
-    if (questionIndex !== room.currentQuestion) {
-      return { error: 'Wrong question' };
+    // Validate question index is within bounds
+    if (questionIndex < 0 || questionIndex >= room.questions.length) {
+      return { error: 'Invalid question' };
     }
 
     // Check if already answered
@@ -296,7 +296,7 @@ export async function submitAnswer(roomId, userId, questionIndex, answerIndex) {
       return { error: 'Already answered' };
     }
 
-    // Calculate time taken
+    // Calculate time taken (use room start time as base since each player tracks their own time)
     const timeTaken = now - (room.questionStartTime || now);
 
     // Check if correct
@@ -330,7 +330,7 @@ export async function submitAnswer(roomId, userId, questionIndex, answerIndex) {
   }
 }
 
-// Move to next question (host only)
+// Move to next question (host only) - kept for compatibility
 export async function nextQuestion(roomId) {
   try {
     const roomRef = ref(rtdb, `trivia/rooms/${roomId}`);
@@ -357,6 +357,43 @@ export async function nextQuestion(roomId) {
     });
 
     return { success: true, questionIndex: nextIndex };
+  } catch (e) {
+    console.error('Firebase error:', e);
+    return { error: 'Network error' };
+  }
+}
+
+// Check if all players finished and mark game complete
+export async function checkGameCompletion(roomId) {
+  try {
+    const roomRef = ref(rtdb, `trivia/rooms/${roomId}`);
+    const snapshot = await get(roomRef);
+
+    if (!snapshot.exists()) return { error: 'Room not found' };
+
+    const room = snapshot.val();
+
+    // Don't check if already finished
+    if (room.status === 'finished') return { alreadyFinished: true };
+
+    const totalQuestions = room.questions?.length || QUESTIONS_PER_GAME;
+    const players = room.players || {};
+
+    // Check if all players have answered all questions
+    const allPlayersFinished = Object.values(players).every(player => {
+      const answeredCount = Object.keys(player.answers || {}).length;
+      return answeredCount >= totalQuestions;
+    });
+
+    if (allPlayersFinished) {
+      await update(roomRef, {
+        status: 'finished',
+        finishedAt: serverTimestamp(),
+      });
+      return { finished: true };
+    }
+
+    return { finished: false };
   } catch (e) {
     console.error('Firebase error:', e);
     return { error: 'Network error' };

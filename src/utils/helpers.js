@@ -93,14 +93,16 @@ export const calculateStreak = (lastPlayed, currentStreak) => {
   return 1; // Streak broken, start fresh
 };
 
-// Category configuration
+// Category configuration (includes all categories for styling)
 export const CATEGORIES = {
   History: { id: 23, color: 'bg-amber-500', icon: '📜' },
   Geography: { id: 22, color: 'bg-emerald-500', icon: '🌍' },
   Science: { id: 17, color: 'bg-blue-500', icon: '🔬' },
   Bible: { id: null, color: 'bg-purple-500', icon: '📖' },
   Math: { id: 19, color: 'bg-rose-500', icon: '🔢' },
-  Animals: { id: 27, color: 'bg-green-500', icon: '🐾' }
+  Animals: { id: 27, color: 'bg-green-500', icon: '🐾' },
+  'General Knowledge': { id: 9, color: 'bg-indigo-500', icon: '🧠' }
 };
 
-export const ALL_CATEGORIES = Object.keys(CATEGORIES);
+// Daily trivia categories (excludes General Knowledge - that's multiplayer only)
+export const ALL_CATEGORIES = ['History', 'Geography', 'Science', 'Bible', 'Math', 'Animals'];

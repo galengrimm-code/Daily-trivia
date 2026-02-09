@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Copy, Check, Users, Crown } from 'lucide-react';
 import { CATEGORIES } from '../../utils/helpers';
 
-const ALL_MP_CATEGORIES = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible'];
+const ALL_MP_CATEGORIES = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge'];
 
 export default function TriviaMultiplayerLobby({
   phase, // 'mp-menu', 'mp-host-setup', or 'mp-lobby'
@@ -68,7 +68,7 @@ export default function TriviaMultiplayerLobby({
           {/* Category Selection */}
           <div className="bg-white rounded-card p-4 mb-6 shadow-card">
             <h3 className="text-lg font-semibold text-text-main mb-3">Select Categories</h3>
-            <p className="text-sm text-text-muted mb-4">Choose which categories to include (20 questions total)</p>
+            <p className="text-sm text-text-muted mb-4">Choose which categories to include (12 questions total)</p>
 
             <div className="space-y-2">
               {ALL_MP_CATEGORIES.map(cat => {

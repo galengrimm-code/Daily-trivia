@@ -98,11 +98,42 @@ const getLocalQuestion = (category, usedHashes, seed) => {
   return null;
 };
 
-// Get a Bible question using seeded random (same question for everyone on same day)
-export const getBibleQuestion = (seedOffset = 0) => {
-  const seed = getTodaySeed() + seedOffset;
+// Get a Bible question that hasn't been used recently
+export const getBibleQuestion = (usedHashes, seed) => {
+  // Shuffle the pool using seeded random for consistent daily selection
+  const shuffledIndices = bibleQuestions.map((_, i) => i);
+  for (let i = shuffledIndices.length - 1; i > 0; i--) {
+    const j = Math.floor(seededRandom(seed + i) * (i + 1));
+    [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
+  }
+
+  // Find the first unused question
+  for (const idx of shuffledIndices) {
+    const question = bibleQuestions[idx];
+    const hash = hashQuestion(question.q);
+
+    if (!usedHashes[hash]) {
+      return {
+        q: question.q,
+        options: question.options,
+        correct: question.correct,
+        fact: question.fact,
+        _hash: hash
+      };
+    }
+  }
+
+  // All questions used - return a random one (will be a repeat)
+  console.log(`All ${bibleQuestions.length} Bible questions exhausted`);
   const index = Math.floor(seededRandom(seed) * bibleQuestions.length);
-  return { ...bibleQuestions[index] };
+  const question = bibleQuestions[index];
+  return {
+    q: question.q,
+    options: question.options,
+    correct: question.correct,
+    fact: question.fact,
+    _hash: hashQuestion(question.q)
+  };
 };
 
 // Get a fallback question using seeded random
@@ -143,7 +174,13 @@ const generateTodaysQuestions = async () => {
 
   // Log pool sizes
   for (const cat of categories) {
-    if (cat !== 'Bible') {
+    if (cat === 'Bible') {
+      const poolSize = bibleQuestions.length;
+      const usedCount = Object.keys(usedHashes).filter(h => {
+        return bibleQuestions.some(q => hashQuestion(q.q) === h);
+      }).length;
+      console.log(`${cat}: ${poolSize} questions (${poolSize - usedCount} unused)`);
+    } else {
       const poolSize = triviaQuestions[cat]?.length || 0;
       const usedCount = Object.keys(usedHashes).filter(h => {
         const pool = triviaQuestions[cat] || [];
@@ -158,14 +195,16 @@ const generateTodaysQuestions = async () => {
     const categorySeed = seed + i * 100;
 
     if (category === 'Bible') {
-      // Use local KJV questions for Bible
-      const bibleQ = getBibleQuestion(i);
-      const hash = hashQuestion(bibleQ.q);
+      // Use local KJV questions for Bible (now with repeat prevention)
+      const bibleQ = getBibleQuestion(usedHashes, categorySeed);
       questions.push({
         category,
-        ...bibleQ,
-        _hash: hash
+        ...bibleQ
       });
+      // Add to usedHashes so we don't repeat within this generation
+      if (bibleQ._hash) {
+        usedHashes[bibleQ._hash] = Date.now();
+      }
     } else {
       // Try local pool first
       let question = getLocalQuestion(category, usedHashes, categorySeed);
