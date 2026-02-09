@@ -363,7 +363,7 @@ export default function Wordle() {
       )}
 
       {/* Game Board */}
-      <div className="flex-1 flex flex-col items-center pt-4">
+      <div className="flex flex-col items-center pt-4 mb-4">
         <div className="flex flex-col gap-1.5">
           {[0, 1, 2, 3, 4, 5].map(renderRow)}
         </div>
@@ -383,7 +383,7 @@ export default function Wordle() {
       </div>
 
       {/* Keyboard */}
-      <div className="p-2 pb-6">
+      <div className="mt-auto p-2 pb-6">
         <div className="flex flex-col gap-2 items-center max-w-lg mx-auto">
           {KEYBOARD_ROWS.map((row, rowIndex) => (
             <div key={rowIndex} className="flex gap-1.5 justify-center">
