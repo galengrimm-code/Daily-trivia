@@ -26,12 +26,19 @@ export default function Wordle() {
   const [bounceRow, setBounceRow] = useState(-1);
   const [revealedTiles, setRevealedTiles] = useState(0); // Track how many tiles have flipped in current reveal
   const [showStats, setShowStats] = useState(false);
+  const [showImport, setShowImport] = useState(false);
   const [stats, setStats] = useState({
     gamesPlayed: 0,
     gamesWon: 0,
     currentStreak: 0,
     maxStreak: 0,
     guessDistribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }
+  });
+  const [importData, setImportData] = useState({
+    gamesPlayed: '',
+    currentStreak: '',
+    maxStreak: '',
+    g1: '', g2: '', g3: '', g4: '', g5: '', g6: ''
   });
   const [scoreSubmitted, setScoreSubmitted] = useState(false);
 
@@ -152,6 +159,39 @@ export default function Wordle() {
     // Show stats modal immediately after game ends
     setShowStats(true);
   }, [user, scoreSubmitted, stats]);
+
+  const handleImportStats = () => {
+    const gamesPlayed = parseInt(importData.gamesPlayed) || 0;
+    const currentStreak = parseInt(importData.currentStreak) || 0;
+    const maxStreak = parseInt(importData.maxStreak) || 0;
+    const guessDistribution = {
+      1: parseInt(importData.g1) || 0,
+      2: parseInt(importData.g2) || 0,
+      3: parseInt(importData.g3) || 0,
+      4: parseInt(importData.g4) || 0,
+      5: parseInt(importData.g5) || 0,
+      6: parseInt(importData.g6) || 0
+    };
+    const gamesWon = Object.values(guessDistribution).reduce((a, b) => a + b, 0);
+
+    const newStats = {
+      gamesPlayed,
+      gamesWon,
+      currentStreak,
+      maxStreak,
+      guessDistribution
+    };
+
+    setStats(newStats);
+    localStorage.setItem('wordle_stats', JSON.stringify(newStats));
+
+    if (user) {
+      saveWordleStats(user.uid, newStats);
+    }
+
+    setShowImport(false);
+    alert('Stats imported successfully!');
+  };
 
   const handleKeyPress = useCallback((key) => {
     if (gameState !== 'playing') return;
@@ -429,48 +469,48 @@ export default function Wordle() {
               onClick={() => setShowStats(false)}
               className="absolute top-4 right-4 p-1 hover:bg-gray-100 rounded-full transition-colors"
             >
-              <X className="w-5 h-5 text-text-muted" />
+              <X className="w-5 h-5 text-gray-500" />
             </button>
 
-            <h2 className="text-xl font-bold text-text-main text-center mb-6">Statistics</h2>
+            <h2 className="text-sm font-bold text-black tracking-wide text-center mb-4">STATISTICS</h2>
 
             {/* Stats Row */}
-            <div className="flex justify-center gap-4 mb-6">
+            <div className="flex justify-center gap-6 mb-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-text-main">{stats.gamesPlayed}</div>
-                <div className="text-xs text-text-muted">Played</div>
+                <div className="text-4xl font-light text-black">{stats.gamesPlayed}</div>
+                <div className="text-xs text-gray-600">Played</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-text-main">
+                <div className="text-4xl font-light text-black">
                   {stats.gamesPlayed > 0 ? Math.round((stats.gamesWon / stats.gamesPlayed) * 100) : 0}
                 </div>
-                <div className="text-xs text-text-muted">Win %</div>
+                <div className="text-xs text-gray-600">Win %</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-text-main">{stats.currentStreak}</div>
-                <div className="text-xs text-text-muted">Current Streak</div>
+                <div className="text-4xl font-light text-black">{stats.currentStreak}</div>
+                <div className="text-xs text-gray-600 leading-tight">Current<br/>Streak</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-text-main">{stats.maxStreak}</div>
-                <div className="text-xs text-text-muted">Max Streak</div>
+                <div className="text-4xl font-light text-black">{stats.maxStreak}</div>
+                <div className="text-xs text-gray-600 leading-tight">Max<br/>Streak</div>
               </div>
             </div>
 
             {/* Guess Distribution */}
-            <h3 className="text-sm font-bold text-text-main mb-3">GUESS DISTRIBUTION</h3>
+            <h3 className="text-sm font-bold text-black tracking-wide mb-3">GUESS DISTRIBUTION</h3>
             <div className="space-y-1 mb-6">
               {[1, 2, 3, 4, 5, 6].map(num => {
                 const count = stats.guessDistribution[num] || 0;
                 const maxCount = Math.max(...Object.values(stats.guessDistribution), 1);
-                const width = Math.max((count / maxCount) * 100, 8);
+                const width = Math.max((count / maxCount) * 100, 7);
                 const isCurrentGuess = gameState === 'won' && guesses.length === num;
 
                 return (
                   <div key={num} className="flex items-center gap-2">
-                    <span className="w-4 text-sm font-medium text-text-main">{num}</span>
+                    <span className="w-3 text-sm font-bold text-black">{num}</span>
                     <div
-                      className={`h-5 flex items-center justify-end px-2 rounded-sm ${
-                        isCurrentGuess ? 'bg-green-500' : 'bg-gray-400'
+                      className={`h-5 flex items-center justify-end px-2 ${
+                        isCurrentGuess ? 'bg-green-600' : 'bg-gray-500'
                       }`}
                       style={{ width: `${width}%`, minWidth: '24px' }}
                     >
@@ -485,12 +525,93 @@ export default function Wordle() {
             {gameState !== 'playing' && (
               <button
                 onClick={handleShare}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-green-500 text-white rounded-lg font-bold hover:bg-green-600 transition-colors"
+                className="w-full flex items-center justify-center gap-2 py-4 bg-green-600 text-white rounded-full font-bold text-lg hover:bg-green-700 transition-colors"
               >
-                <Share2 className="w-5 h-5" />
                 Share
+                <Share2 className="w-5 h-5" />
               </button>
             )}
+
+            {/* Import Stats Button */}
+            <button
+              onClick={() => setShowImport(true)}
+              className="w-full mt-3 text-sm text-gray-500 hover:text-gray-700 underline"
+            >
+              Import NYT Wordle Stats
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Import Stats Modal */}
+      {showImport && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-sm w-full p-6 relative">
+            <button
+              onClick={() => setShowImport(false)}
+              className="absolute top-4 right-4 p-1 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <X className="w-5 h-5 text-gray-500" />
+            </button>
+
+            <h2 className="text-lg font-bold text-black text-center mb-4">Import NYT Stats</h2>
+            <p className="text-xs text-gray-500 text-center mb-4">Enter your stats from NYT Wordle</p>
+
+            <div className="space-y-3">
+              <div className="grid grid-cols-3 gap-2">
+                <div>
+                  <label className="text-xs text-gray-600">Played</label>
+                  <input
+                    type="number"
+                    value={importData.gamesPlayed}
+                    onChange={(e) => setImportData({...importData, gamesPlayed: e.target.value})}
+                    className="w-full border rounded px-2 py-1 text-center"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-gray-600">Current Streak</label>
+                  <input
+                    type="number"
+                    value={importData.currentStreak}
+                    onChange={(e) => setImportData({...importData, currentStreak: e.target.value})}
+                    className="w-full border rounded px-2 py-1 text-center"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-gray-600">Max Streak</label>
+                  <input
+                    type="number"
+                    value={importData.maxStreak}
+                    onChange={(e) => setImportData({...importData, maxStreak: e.target.value})}
+                    className="w-full border rounded px-2 py-1 text-center"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-xs text-gray-600 block mb-1">Guess Distribution</label>
+                <div className="grid grid-cols-6 gap-1">
+                  {[1, 2, 3, 4, 5, 6].map(num => (
+                    <div key={num} className="text-center">
+                      <div className="text-xs text-gray-500 mb-1">{num}</div>
+                      <input
+                        type="number"
+                        value={importData[`g${num}`]}
+                        onChange={(e) => setImportData({...importData, [`g${num}`]: e.target.value})}
+                        className="w-full border rounded px-1 py-1 text-center text-sm"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                onClick={handleImportStats}
+                className="w-full py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition-colors mt-4"
+              >
+                Import Stats
+              </button>
+            </div>
           </div>
         </div>
       )}
