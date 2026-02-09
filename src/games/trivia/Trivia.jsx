@@ -215,6 +215,7 @@ export default function Trivia() {
         onReview={() => setPhase('review')}
         onShare={handleShare}
         onViewLeaderboard={handleViewLeaderboard}
+        onMultiplayer={mp.openMultiplayer}
         onHome={() => navigate('/')}
       />
     );

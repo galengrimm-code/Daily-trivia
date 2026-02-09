@@ -1,6 +1,6 @@
 // src/games/trivia/TriviaResults.jsx
 import React from 'react';
-import { RotateCcw, Share2, Trophy, Home, Flame } from 'lucide-react';
+import { RotateCcw, Share2, Trophy, Home, Flame, Users } from 'lucide-react';
 import { getScoreMessage } from './triviaUtils';
 
 export default function TriviaResults({
@@ -10,6 +10,7 @@ export default function TriviaResults({
   onReview,
   onShare,
   onViewLeaderboard,
+  onMultiplayer,
   onHome
 }) {
   const percentage = (score / totalQuestions) * 100;
@@ -59,6 +60,10 @@ export default function TriviaResults({
             <button onClick={onViewLeaderboard} className="w-full py-3 bg-gray-100 rounded-button font-semibold text-text-main hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
               <Trophy className="w-5 h-5" />
               View Leaderboard
+            </button>
+            <button onClick={onMultiplayer} className="w-full py-3 bg-gray-100 rounded-button font-semibold text-text-main hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
+              <Users className="w-5 h-5 text-primary" />
+              Multiplayer
             </button>
             <button onClick={onHome} className="w-full py-3 bg-primary text-white rounded-button font-bold hover:bg-primary-hover transition-colors flex items-center justify-center gap-2">
               <Home className="w-5 h-5" />
