@@ -22,8 +22,9 @@ export default function Home() {
   const [showLeaderboard, setShowLeaderboard] = React.useState(false);
   const [boggleResult, setBoggleResult] = React.useState(null);
   const [spellingBeeResult, setSpellingBeeResult] = React.useState(null);
+  const [wordleResult, setWordleResult] = React.useState(null);
 
-  // Check if user played boggle / spelling bee today
+  // Check if user played boggle / spelling bee / wordle today
   React.useEffect(() => {
     if (user) {
       const dateKey = getTodayKey();
@@ -33,6 +34,18 @@ export default function Home() {
       checkSpellingBeePlayer(user.uid, dateKey).then(result => {
         if (result.played) setSpellingBeeResult(result);
       });
+
+      // Check Wordle from localStorage
+      const wordleDate = localStorage.getItem('wordle_date');
+      const wordleState = localStorage.getItem('wordle_state');
+      const wordleGuesses = JSON.parse(localStorage.getItem('wordle_guesses') || '[]');
+      if (wordleDate === dateKey && (wordleState === 'won' || wordleState === 'lost')) {
+        setWordleResult({
+          played: true,
+          won: wordleState === 'won',
+          guesses: wordleGuesses.length
+        });
+      }
     }
   }, [user]);
 
@@ -70,7 +83,8 @@ export default function Home() {
       description: 'Guess the 5-letter word',
       icon: '\u{1F7E9}',
       path: '/wordle',
-      status: 'coming-soon',
+      status: wordleResult ? 'completed' : 'play',
+      score: wordleResult ? (wordleResult.won ? `${wordleResult.guesses}/6` : 'X/6') : null,
     },
     {
       id: 'riddle',
@@ -105,7 +119,10 @@ export default function Home() {
       }
       lines.push(sbLine);
     }
-
+    if (wordleResult) {
+      const score = wordleResult.won ? `${wordleResult.guesses}/6` : 'X/6';
+      lines.push(`\u{1F7E9} Wordle: ${score}`);
+    }
 
     const text = lines.join('\n');
 
@@ -133,7 +150,7 @@ export default function Home() {
     );
   }
 
-  const gamesPlayed = [todayScore, boggleResult, spellingBeeResult].filter(Boolean).length;
+  const gamesPlayed = [todayScore, boggleResult, spellingBeeResult, wordleResult].filter(Boolean).length;
 
   return (
     <div className="min-h-screen">
