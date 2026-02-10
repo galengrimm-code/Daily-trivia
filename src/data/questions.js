@@ -22538,7 +22538,17 @@ const questions = {
     { "q": "What is the capital of Wisconsin?", "options": ["Milwaukee", "Madison", "Green Bay", "Eau Claire"], "correct": 1, "fact": "Madison sits between two lakes.", "pool": "multiplayer" },
     { "q": "Wisconsin is famous for producing:", "options": ["Milk", "Cheese", "Butter", "Yogurt"], "correct": 1, "fact": "Wisconsin is known as America's Dairyland.", "pool": "multiplayer" },
     { "q": "What is the capital of Wyoming?", "options": ["Casper", "Cheyenne", "Laramie", "Jackson"], "correct": 1, "fact": "Cheyenne became the capital in 1869.", "pool": "multiplayer" },
-    { "q": "Which national park is mostly located in Wyoming?", "options": ["Yosemite", "Zion", "Yellowstone", "Glacier"], "correct": 2, "fact": "Most of Yellowstone National Park is in Wyoming.", "pool": "multiplayer" }
+    { "q": "Which national park is mostly located in Wyoming?", "options": ["Yosemite", "Zion", "Yellowstone", "Glacier"], "correct": 2, "fact": "Most of Yellowstone National Park is in Wyoming.", "pool": "multiplayer" },
+    { "q": "How many states are in the United States?", "options": ["48", "49", "50", "51"], "correct": 2, "fact": "The U.S. has had 50 states since 1959.", "pool": "multiplayer" },
+    { "q": "What is the longest river in the United States?", "options": ["Mississippi", "Missouri", "Colorado", "Rio Grande"], "correct": 1, "fact": "The Missouri River is the longest river in the U.S.", "pool": "multiplayer" },
+    { "q": "Which state has the highest population?", "options": ["Texas", "Florida", "California", "New York"], "correct": 2, "fact": "California has the largest population.", "pool": "multiplayer" },
+    { "q": "Which state was the last to join the Union?", "options": ["Alaska", "Arizona", "Hawaii", "New Mexico"], "correct": 2, "fact": "Hawaii became the 50th state in 1959.", "pool": "multiplayer" },
+    { "q": "What is the smallest U.S. state by area?", "options": ["Delaware", "Rhode Island", "Connecticut", "New Jersey"], "correct": 1, "fact": "Rhode Island is the smallest U.S. state by area.", "pool": "multiplayer" },
+    { "q": "Which state has the most national parks?", "options": ["California", "Alaska", "Utah", "Colorado"], "correct": 0, "fact": "California has more national parks than any other state.", "pool": "multiplayer" },
+    { "q": "What is the tallest mountain in the United States?", "options": ["Mount Rainier", "Mount Whitney", "Denali", "Mount Elbert"], "correct": 2, "fact": "Denali in Alaska rises to 20,310 feet.", "pool": "multiplayer" },
+    { "q": "Which two states do not observe Daylight Saving Time?", "options": ["Arizona and Hawaii", "Texas and Florida", "California and Oregon", "Alaska and Maine"], "correct": 0, "fact": "Arizona and Hawaii do not observe DST.", "pool": "multiplayer" },
+    { "q": "What is the most spoken language in the U.S. after English?", "options": ["French", "Chinese", "Spanish", "German"], "correct": 2, "fact": "Spanish is the second most spoken language.", "pool": "multiplayer" },
+    { "q": "What city is the capital of the United States?", "options": ["New York City", "Philadelphia", "Washington, D.C.", "Boston"], "correct": 2, "fact": "Washington, D.C. has been the U.S. capital since 1800.", "pool": "multiplayer" }
   ]
 };
 
