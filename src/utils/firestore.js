@@ -222,6 +222,17 @@ export const getRecentQuestionHashes = async () => {
   return {};
 };
 
+// Get all used question hashes (lifetime)
+export const getAllQuestionHashes = async () => {
+  const trackingRef = doc(db, 'settings', 'usedQuestions');
+  const trackingSnap = await getDoc(trackingRef);
+
+  if (trackingSnap.exists()) {
+    return trackingSnap.data().hashes || {};
+  }
+  return {};
+};
+
 // Get used question count by comparing hashes to a pool of questions
 export const getUsedQuestionCount = (questionPool, usedHashes) => {
   // Simple hash function (must match the one in api.js)

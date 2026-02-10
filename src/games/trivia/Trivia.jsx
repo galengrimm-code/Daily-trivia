@@ -6,7 +6,7 @@ import { usePlayer } from '../../hooks/usePlayer';
 import { useLeaderboard } from '../../hooks/useLeaderboard';
 import { loadTodaysQuestions } from '../../utils/api';
 import { CATEGORIES, ALL_CATEGORIES } from '../../utils/helpers';
-import { getRecentQuestionHashes, getUsedQuestionCount } from '../../utils/firestore';
+import { getAllQuestionHashes, getUsedQuestionCount } from '../../utils/firestore';
 import { shareScore } from './triviaUtils';
 import questions from '../../data/questions';
 import QuestionCard from './QuestionCard';
@@ -51,7 +51,7 @@ export default function Trivia() {
     setShowStatsModal(true);
     setLoadingStats(true);
     try {
-      const usedHashes = await getRecentQuestionHashes();
+      const usedHashes = await getAllQuestionHashes();
       const stats = ALL_CATEGORIES.map(category => {
         const pool = getDailyQuestions(category);
         const total = pool.length;
@@ -354,7 +354,7 @@ export default function Trivia() {
                 ) : statsData ? (
                   <div className="space-y-3">
                     <p className="text-sm text-text-muted mb-4">
-                      Questions used in the last 60 days vs total available
+                      Lifetime questions used vs total available
                     </p>
                     {statsData.map(({ category, used, total, remaining }) => (
                       <div key={category} className="flex items-center gap-3">

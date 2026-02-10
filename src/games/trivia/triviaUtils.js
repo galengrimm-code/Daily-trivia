@@ -1,4 +1,5 @@
 // src/games/trivia/triviaUtils.js
+import { getShortDateStr } from '../../utils/helpers';
 
 export const getScoreMessage = (score, total) => {
   const percentage = (score / total) * 100;
@@ -10,7 +11,8 @@ export const getScoreMessage = (score, total) => {
 };
 
 export const shareScore = (score, total, streak) => {
-  const text = `\u{1F520} Daily Games - Trivia \u{1F9E0}\nScore: ${score}/${total}\n\u{1F525} Streak: ${streak} days`;
+  const dateStr = getShortDateStr();
+  const text = `Trivia\n${dateStr}\nScore: ${score}/${total}\nStreak: ${streak} days`;
 
   if (navigator.share) {
     navigator.share({ text }).catch(() => {});
