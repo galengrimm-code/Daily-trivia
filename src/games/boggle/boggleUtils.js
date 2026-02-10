@@ -206,5 +206,5 @@ export function generateShareText(score, foundWords, dateString) {
 
   const stars = '\u{2B1B}'.repeat(Math.min(longestLen, 8));
 
-  return `\u{1F524} Boggle\n${dateString}\n${score} points\nLongest: ${longestLen} letters`;
+  return `${dateString}\n\u{1F524} Boggle: ${score} pts\nLongest: ${longestLen} letters`;
 }
