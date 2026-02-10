@@ -1,6 +1,6 @@
 // src/games/trivia/TriviaMultiplayerGame.jsx
 import React, { useState, useEffect, useRef } from 'react';
-import { Check, X, ChevronRight, Trophy, Clock, Users } from 'lucide-react';
+import { Check, X, ChevronRight, Trophy, Clock, Users, Zap } from 'lucide-react';
 import { CATEGORIES } from '../../utils/helpers';
 
 export default function TriviaMultiplayerGame({
@@ -246,6 +246,18 @@ export default function TriviaMultiplayerGame({
             );
           })}
         </div>
+
+        {/* Fact/Explanation */}
+        {hasAnswered && answerResult && question.fact && (
+          <div className={`rounded-card p-4 mb-4 ${
+            answerResult.correct ? 'bg-green-50 border border-green-200' : 'bg-blue-50 border border-blue-200'
+          }`}>
+            <div className="flex items-start gap-3">
+              <Zap className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+              <p className="text-text-main text-sm">{question.fact}</p>
+            </div>
+          </div>
+        )}
 
         {/* Next Button - each player advances independently */}
         {hasAnswered && answerResult && (
