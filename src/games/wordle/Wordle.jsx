@@ -99,12 +99,12 @@ export default function Wordle() {
       return;
     }
 
-    // Reveal tiles one by one
+    // Reveal tiles one by one (reveal color when tile is face-down at 50% of animation)
     const timers = [];
     for (let i = 0; i <= 5; i++) {
       const timer = setTimeout(() => {
         setRevealedTiles(i);
-      }, i * REVEAL_DELAY + REVEAL_DELAY / 2); // Reveal at midpoint of flip
+      }, i * REVEAL_DELAY + 300); // Reveal at midpoint of 600ms flip animation
       timers.push(timer);
     }
 
@@ -299,8 +299,9 @@ export default function Wordle() {
         key={colIndex}
         className={`w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center text-2xl sm:text-3xl font-bold ${bgColor} ${textColor}`}
         style={{
-          animation: isRevealing ? 'flip 0.5s ease forwards' : isBouncing ? 'bounce 0.3s ease forwards' : 'none',
-          animationDelay: isRevealing ? `${revealDelay}ms` : isBouncing ? `${bounceDelay}ms` : '0ms'
+          animation: isRevealing ? 'flip 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards' : isBouncing ? 'bounce 0.3s ease forwards' : 'none',
+          animationDelay: isRevealing ? `${revealDelay}ms` : isBouncing ? `${bounceDelay}ms` : '0ms',
+          transformStyle: 'preserve-3d'
         }}
       >
         {letter}
@@ -430,9 +431,18 @@ export default function Wordle() {
       {/* CSS for animations */}
       <style>{`
         @keyframes flip {
-          0% { transform: rotateX(0); }
-          50% { transform: rotateX(90deg); }
-          100% { transform: rotateX(0); }
+          0% {
+            transform: perspective(400px) rotateX(0deg);
+          }
+          40% {
+            transform: perspective(400px) rotateX(-90deg);
+          }
+          60% {
+            transform: perspective(400px) rotateX(-90deg);
+          }
+          100% {
+            transform: perspective(400px) rotateX(0deg);
+          }
         }
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }

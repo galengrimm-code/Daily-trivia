@@ -93,6 +93,6 @@ export const generateShareText = (guesses, target, won, shortDate) => {
 };
 
 // Animation delays for revealing tiles
-export const REVEAL_DELAY = 300; // ms per tile
+export const REVEAL_DELAY = 350; // ms per tile
 export const SHAKE_DURATION = 600; // ms for invalid word shake
 export const BOUNCE_DELAY = 100; // ms between letter bounces on win
