@@ -12,7 +12,7 @@ export const getScoreMessage = (score, total) => {
 
 export const shareScore = (score, total, streak) => {
   const dateStr = getShortDateStr();
-  const text = `Trivia\n${dateStr}\nScore: ${score}/${total}\nStreak: ${streak} days`;
+  const text = `\u{1F9E0} Trivia\n${dateStr}\nScore: ${score}/${total}\nStreak: ${streak} days`;
 
   if (navigator.share) {
     navigator.share({ text }).catch(() => {});
