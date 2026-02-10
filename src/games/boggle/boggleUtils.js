@@ -199,12 +199,5 @@ export function generateShareText(score, foundWords, dateString) {
   });
   const longestLen = longestWord ? longestWord.replace(/qu/gi, 'Q').length : 0;
 
-  let scoreEmoji = '\u{1F3AF}';
-  if (score >= 100) scoreEmoji = '\u{1F3C6}';
-  else if (score >= 50) scoreEmoji = '\u{1F525}';
-  else if (score >= 25) scoreEmoji = '\u{2B50}';
-
-  const stars = '\u{2B1B}'.repeat(Math.min(longestLen, 8));
-
   return `${dateString}\n\u{1F524} Boggle: ${score} pts\nLongest: ${longestLen} letters`;
 }
