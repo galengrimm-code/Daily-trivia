@@ -353,17 +353,6 @@
       "difficulty": "hard"
     },
     {
-      "q": "Which is the hull NO. of the Fletcher class destroyer Fletcher?",
-      "options": [
-        "DD-445",
-        "DD-446",
-        "DD-444",
-        "DD-992"
-      ],
-      "correct": 0,
-      "difficulty": "hard"
-    },
-    {
       "q": "List the following Iranic empires in chronological order:",
       "options": [
         "Median, Achaemenid, Sassanid, Parthian",
@@ -749,17 +738,6 @@
       "difficulty": "medium"
     },
     {
-      "q": "Which of the following Assyrian kings did NOT rule during the Neo-Assyrian Empire?",
-      "options": [
-        "Shamshi-Adad III",
-        "Ashur-nasir-pal II",
-        "Esharhaddon",
-        "Shalmaneser V"
-      ],
-      "correct": 0,
-      "difficulty": "medium"
-    },
-    {
       "q": "When was the Grand Patriotic War in the USSR concluded?",
       "options": [
         "September 2nd, 1945",
@@ -1054,28 +1032,6 @@
         "July 1st, 1832"
       ],
       "correct": 0,
-      "difficulty": "hard"
-    },
-    {
-      "q": "When did L. L. Zamenhof first publish \"Unua Libro\", the first publication describing his international language Esperanto?",
-      "options": [
-        "1887",
-        "1897",
-        "1905",
-        "1915"
-      ],
-      "correct": 0,
-      "difficulty": "medium"
-    },
-    {
-      "q": "The son of which pope supposedly held a lecherous f&ecirc;te involving 50 courtesans in the papal palace?",
-      "options": [
-        "Pius III",
-        "Alexander VI",
-        "Innocent V",
-        "Urban II"
-      ],
-      "correct": 1,
       "difficulty": "hard"
     },
     {
@@ -1684,17 +1640,6 @@
       "difficulty": "hard"
     },
     {
-      "q": "What date was the first flight of the P-40 Warhawk?",
-      "options": [
-        "January 12 1940",
-        "October 14 1938",
-        "August 21 1939",
-        "June 1 1939"
-      ],
-      "correct": 1,
-      "difficulty": "medium"
-    },
-    {
       "q": "Who was the first President of the People's Republic of China?",
       "options": [
         "Li Xiannian",
@@ -1704,17 +1649,6 @@
       ],
       "correct": 2,
       "difficulty": "medium"
-    },
-    {
-      "q": "When did the French Revolution begin?",
-      "options": [
-        "May 06 1799",
-        "April 12 1789",
-        "April 05 1789",
-        "May 05 1789"
-      ],
-      "correct": 3,
-      "difficulty": "hard"
     },
     {
       "q": "What is the mnemonic device for remembering the fates of the wives of Henry VIII?",
@@ -1748,17 +1682,6 @@
       ],
       "correct": 0,
       "difficulty": "easy"
-    },
-    {
-      "q": "During the Roman Triumvirate of 42 BCE, what region of the Roman Republic was given to Lepidus?",
-      "options": [
-        "Hispania ",
-        "Asia",
-        "Gallia",
-        "Italia"
-      ],
-      "correct": 0,
-      "difficulty": "hard"
     },
     {
       "q": "Who famously coined the phrase \"I think, therefore I am\"?",
@@ -2223,17 +2146,6 @@
       "difficulty": "easy"
     },
     {
-      "q": "What year did Skoal, a smokeless Tobacco company, release their first line of Pouches, known as \"Skoal Bandits\"?",
-      "options": [
-        "1984",
-        "1934",
-        "1983",
-        "1822"
-      ],
-      "correct": 2,
-      "difficulty": "medium"
-    },
-    {
       "q": "The seed drill was invented by which British inventor?",
       "options": [
         "J.J Thomson",
@@ -2251,28 +2163,6 @@
         "Argentina",
         "Peru",
         "Chile"
-      ],
-      "correct": 3,
-      "difficulty": "medium"
-    },
-    {
-      "q": "The fraudelent doctor John R. Brinkley acummulated great fame and wealth in the early 1900s offering what service?",
-      "options": [
-        "Cow liver transplant",
-        "Turkey breast implants",
-        "Pig blood transfusion",
-        "Goat testicles transplant"
-      ],
-      "correct": 3,
-      "difficulty": "medium"
-    },
-    {
-      "q": "All of the following are names of the Seven Warring States EXCEPT:",
-      "options": [
-        "Zhao (趙)",
-        "Qin (秦)",
-        "Qi (齊)",
-        "Zhai (翟)"
       ],
       "correct": 3,
       "difficulty": "medium"
@@ -2627,17 +2517,6 @@
         "Ferdinand Maximilian"
       ],
       "correct": 3,
-      "difficulty": "hard"
-    },
-    {
-      "q": "On which day did ARPANET suffer a 4 hour long network crash?",
-      "options": [
-        "October 27, 1980",
-        "December 9, 1991",
-        "October 29, 1969",
-        "November 21, 1969"
-      ],
-      "correct": 0,
       "difficulty": "hard"
     },
     {
@@ -3048,28 +2927,6 @@
       "difficulty": "easy"
     },
     {
-      "q": "The Spitfire L.F. Mk IX had what engine?",
-      "options": [
-        "Merlin 66",
-        "Merlin X",
-        "Merlin 50",
-        "Griffon 65"
-      ],
-      "correct": 0,
-      "difficulty": "medium"
-    },
-    {
-      "q": "What did the first vending machines in the early 1880's dispense?",
-      "options": [
-        "Alcohol",
-        "Cigarettes",
-        "Sodas ",
-        "Post cards"
-      ],
-      "correct": 3,
-      "difficulty": "hard"
-    },
-    {
       "q": "Which of the following countries was the first to send an object into space?",
       "options": [
         "USA",
@@ -3279,17 +3136,6 @@
       "difficulty": "hard"
     },
     {
-      "q": "Which WWII tank ace is credited with having destroyed the most tanks?",
-      "options": [
-        "Michael Wittmann",
-        "Walter Kniep",
-        "Otto Carius",
-        "Kurt Knispel"
-      ],
-      "correct": 3,
-      "difficulty": "medium"
-    },
-    {
       "q": "Who painted the Mona Lisa?",
       "options": [
         "Michelangelo",
@@ -3399,18 +3245,6 @@
       "fact": "Only two countries are doubly landlocked: Uzbekistan and Liechtenstein."
     },
     {
-      "q": "What is the official German name of the Swiss Federal Railways?",
-      "options": [
-        "Schweizerische Nationalbahnen",
-        "Bundesbahnen der Schweiz",
-        "Schweizerische Bundesbahnen",
-        "Schweizerische Staatsbahnen"
-      ],
-      "correct": 2,
-      "difficulty": "hard",
-      "fact": "Swiss trains are famous for being incredibly punctual!"
-    },
-    {
       "q": "In which country is the city of Rio de Janeiro?",
       "options": [
         "Brazil",
@@ -3421,18 +3255,6 @@
       "correct": 0,
       "difficulty": "easy",
       "fact": "Brazil is the 5th largest country in the world and home to the Amazon rainforest."
-    },
-    {
-      "q": "Colchester Overpass, otherwise known as \"Bunny Man Bridge\", is located where?",
-      "options": [
-        "Lemon Grove, California",
-        "Braxton County, Virgina",
-        "Fairfax County, Virginia",
-        "Medford, Oregon"
-      ],
-      "correct": 2,
-      "difficulty": "medium",
-      "fact": "The \"Bunny Man\" legend dates back to 1970 and is a popular local ghost story."
     },
     {
       "q": "Which of the following is the longest river in Europe?",
@@ -3675,18 +3497,6 @@
       "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
-      "q": "What is the second-largest city in Lithuania?",
-      "options": [
-        "Panevėžys",
-        "Vilnius",
-        "Klaipėda",
-        "Kaunas"
-      ],
-      "correct": 3,
-      "difficulty": "hard",
-      "fact": "Kaunas was Lithuania's temporary capital from 1920 to 1939."
-    },
-    {
       "q": "What is the name of the peninsula containing Spain and Portugal?",
       "options": [
         "Iberian Peninsula",
@@ -3783,18 +3593,6 @@
       "fact": "The Circle Line is one of London's oldest underground lines, opened in 1884."
     },
     {
-      "q": "Which of the following Inuit languages was the FIRST to use a unique writing system not based on the Latin alphabet?",
-      "options": [
-        "Greenlandic",
-        "Inuktitut",
-        "Inuinnaqtun",
-        "Inupiat"
-      ],
-      "correct": 1,
-      "difficulty": "hard",
-      "fact": "Inuktitut uses a syllabic writing system developed by missionaries in the 1800s."
-    },
-    {
       "q": "What state is the largest state of the United States of America?",
       "options": [
         "California",
@@ -3879,18 +3677,6 @@
       "fact": "The Sri Lankan flag's lion represents the Sinhalese ethnic majority."
     },
     {
-      "q": "The emblem on the flag of the Republic of Tajikistan features a sunrise over mountains below what symbol?",
-      "options": [
-        "Crown",
-        "Sickle",
-        "Bird",
-        "Tree"
-      ],
-      "correct": 0,
-      "difficulty": "hard",
-      "fact": "Tajikistan's flag crown represents sovereignty and the Tajik people."
-    },
-    {
       "q": "Which of these American cities has fewer than 1,000,000 people?",
       "options": [
         "San Antonio, Texas",
@@ -3925,18 +3711,6 @@
       "correct": 1,
       "difficulty": "medium",
       "fact": "Gibraltar has been British since 1713 and is home to the famous Barbary macaques."
-    },
-    {
-      "q": "In the 2016 Global Peace Index poll, out of 163 countries, what was the United States of America ranked?",
-      "options": [
-        "103",
-        "79",
-        "59",
-        "10"
-      ],
-      "correct": 0,
-      "difficulty": "medium",
-      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "What is the capital of Spain?",
@@ -4177,18 +3951,6 @@
       "correct": 0,
       "difficulty": "medium",
       "fact": "Java is an Indonesian island, home to over half of Indonesia's population."
-    },
-    {
-      "q": "The derisive acronym \"PIIGS\" refers to which of the following European countries and their economic statuses?",
-      "options": [
-        "Poland, Iceland, Italy, Greece, Serbia",
-        "Portugal, Ireland, Italy, Greece, Spain",
-        "Poland, Iceland, Italy, Greenland, Spain",
-        "Portugal, Iceland, Ireland, Greece, Serbia"
-      ],
-      "correct": 1,
-      "difficulty": "easy",
-      "fact": "Italy has more UNESCO World Heritage sites than any other country."
     },
     {
       "q": "What is the largest lake in the African continent?",
@@ -4551,30 +4313,6 @@
       "fact": "Lithuania was once the largest country in Europe (15th century)."
     },
     {
-      "q": "Which of these cities has a 4° East longitude. ",
-      "options": [
-        "Amsterdam",
-        "Rio de Janero",
-        "Toronto",
-        "Hong Kong"
-      ],
-      "correct": 0,
-      "difficulty": "hard",
-      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
-    },
-    {
-      "q": "The towns of Brugelette, Arlon and Ath are located in which country?",
-      "options": [
-        "Andorra",
-        "France",
-        "Luxembourg",
-        "Belgium"
-      ],
-      "correct": 3,
-      "difficulty": "medium",
-      "fact": "Belgium has three official languages: Dutch, French, and German."
-    },
-    {
       "q": "Kuala Lumpur is the capital of which country?",
       "options": [
         "Thailand",
@@ -4671,18 +4409,6 @@
       "fact": "The Nile flows north - one of few major rivers to do so."
     },
     {
-      "q": "Which of the following language families is the most controversial amongst modern linguists?",
-      "options": [
-        "Sino-Tibetan",
-        "Dravidian",
-        "Altaic",
-        "Indo-European"
-      ],
-      "correct": 2,
-      "difficulty": "medium",
-      "fact": "Linguists debate whether Turkish, Mongolian, and Japanese share a common origin."
-    },
-    {
       "q": "Which European city has the highest mileage of canals in the world?",
       "options": [
         "Venice",
@@ -4705,30 +4431,6 @@
       "correct": 3,
       "difficulty": "easy",
       "fact": "France is the most visited country in the world."
-    },
-    {
-      "q": "Where is the fast food chain \"Panda Express\" headquartered?",
-      "options": [
-        "Rosemead, California",
-        "Fresno, California",
-        "Sacramento, California",
-        "San Diego, California"
-      ],
-      "correct": 0,
-      "difficulty": "hard",
-      "fact": "If California were a country, it would have the 5th largest economy in the world."
-    },
-    {
-      "q": "How many stations does the Central Line have on the London Underground?",
-      "options": [
-        "51",
-        "43",
-        "47",
-        "49"
-      ],
-      "correct": 3,
-      "difficulty": "hard",
-      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
     },
     {
       "q": "Which of these countries is not a United Nations member state?",
@@ -4995,18 +4697,6 @@
       "fact": "Wales has more castles per square mile than any other country."
     },
     {
-      "q": "All of the following are towns/villages in the Pacific Island nation of Kiribati EXCEPT:",
-      "options": [
-        "Washington",
-        "London",
-        "Urutora",
-        "Rungata"
-      ],
-      "correct": 2,
-      "difficulty": "medium",
-      "fact": "The Pacific Ocean is the largest and deepest ocean, covering more than 60 million square miles!"
-    },
-    {
       "q": "What is the capital of the US State of New York?",
       "options": [
         "Rochester",
@@ -5187,18 +4877,6 @@
       "fact": "PEI is the birthplace of Canada and where Confederation was born in 1864."
     },
     {
-      "q": "All of the following are classified as Finno-Ugric languages EXCEPT:",
-      "options": [
-        "Estonian",
-        "Finnish",
-        "Samoyedic",
-        "Hungarian"
-      ],
-      "correct": 2,
-      "difficulty": "easy",
-      "fact": "Samoyedic languages are spoken by reindeer herders in Siberia."
-    },
-    {
       "q": "What North American tourist attraction is served by the \"Maid of the Mist\" tour company?",
       "options": [
         "Whistler, British Columbia",
@@ -5355,18 +5033,6 @@
       "fact": "France is the most visited country in the world."
     },
     {
-      "q": "What year is on the flag of the US state Wisconsin?",
-      "options": [
-        "1901",
-        "1848",
-        "1634",
-        "1783"
-      ],
-      "correct": 1,
-      "difficulty": "hard",
-      "fact": "Kyrgyzstan borders Kazakhstan, Uzbekistan, Tajikistan, and China."
-    },
-    {
       "q": "In which Indian city can the Taj Mahal be found?",
       "options": [
         "Agra",
@@ -5473,18 +5139,6 @@
       "correct": 0,
       "difficulty": "medium",
       "fact": "Peru has 90 different microclimates!"
-    },
-    {
-      "q": "In 2012 the German-speaking microstate \"Liechtenstein\" in Central Europe had a population of how many inhabitants?",
-      "options": [
-        "36,600",
-        "2,400",
-        "90,000",
-        "323,400"
-      ],
-      "correct": 0,
-      "difficulty": "hard",
-      "fact": "Mexico shares borders with the USA, Guatemala, and Belize."
     },
     {
       "q": "What is the smallest country in South America by area?",
