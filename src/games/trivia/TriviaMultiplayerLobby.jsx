@@ -28,7 +28,7 @@ export default function TriviaMultiplayerLobby({
   onBack,
 }) {
   const [copied, setCopied] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState([...ALL_MP_CATEGORIES]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
   const playerCount = Object.keys(roomPlayers || {}).length;
   const playerList = Object.entries(roomPlayers || {}).map(([uid, data]) => ({
@@ -47,9 +47,7 @@ export default function TriviaMultiplayerLobby({
 
   const toggleCategory = (cat) => {
     if (selectedCategories.includes(cat)) {
-      if (selectedCategories.length > 1) {
-        setSelectedCategories(selectedCategories.filter(c => c !== cat));
-      }
+      setSelectedCategories(selectedCategories.filter(c => c !== cat));
     } else {
       setSelectedCategories([...selectedCategories, cat]);
     }
@@ -73,8 +71,12 @@ export default function TriviaMultiplayerLobby({
 
           {/* Category Selection */}
           <div className="bg-white rounded-card p-4 mb-6 shadow-card">
-            <h3 className="text-lg font-semibold text-text-main mb-3">Select Categories</h3>
-            <p className="text-sm text-text-muted mb-4">Choose which categories to include (12 questions total)</p>
+            <h3 className="text-lg font-semibold text-text-main mb-3">Select Your Categories</h3>
+            <p className="text-sm text-text-muted mb-4">
+              {selectedCategories.length === 0
+                ? 'Choose at least one category to continue'
+                : `${selectedCategories.length} selected (12 questions total)`}
+            </p>
 
             <div className="space-y-2">
               {ALL_MP_CATEGORIES.map(cat => {
@@ -108,7 +110,7 @@ export default function TriviaMultiplayerLobby({
             <button
               onClick={() => {
                 if (selectedCategories.length === ALL_MP_CATEGORIES.length) {
-                  setSelectedCategories([ALL_MP_CATEGORIES[0]]);
+                  setSelectedCategories([]);
                 } else {
                   setSelectedCategories([...ALL_MP_CATEGORIES]);
                 }
@@ -122,7 +124,12 @@ export default function TriviaMultiplayerLobby({
           {/* Create Room Button */}
           <button
             onClick={() => onCreateRoom(selectedCategories)}
-            className="w-full py-4 bg-primary text-white rounded-button font-bold text-lg hover:bg-primary-hover transition-colors"
+            disabled={selectedCategories.length === 0}
+            className={`w-full py-4 rounded-button font-bold text-lg transition-colors ${
+              selectedCategories.length === 0
+                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                : 'bg-primary text-white hover:bg-primary-hover'
+            }`}
           >
             Create Game Room
           </button>
