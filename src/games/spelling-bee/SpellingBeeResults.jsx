@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Share2, Trophy, Home, RotateCcw, Plus, ChevronDown, ChevronUp } from 'lucide-react';
 import { getSpellingBeeScore, getCurrentRank } from './spellingBeeConstants';
 import { generateShareText } from './spellingBeeUtils';
-import { getTodayKey } from '../../utils/helpers';
+import { getShortDateStr } from '../../utils/helpers';
 
 export default function SpellingBeeResults({
   score, maxScore, foundWords, validWords, pangrams,
@@ -29,7 +29,7 @@ export default function SpellingBeeResults({
     : [];
 
   const handleShare = () => {
-    const text = generateShareText(displayScore, maxScore, rank.name, wordsFoundCount, pangramCount, getTodayKey());
+    const text = generateShareText(displayScore, maxScore, rank.name, wordsFoundCount, pangramCount, getShortDateStr());
     if (navigator.share) {
       navigator.share({ text }).catch(() => {
         navigator.clipboard.writeText(text);

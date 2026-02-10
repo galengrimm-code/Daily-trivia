@@ -56,10 +56,13 @@ export default function TriviaMultiplayerGame({
   const handleAnswer = async (index) => {
     if (hasAnswered) return;
 
+    // Calculate time taken on client side (more accurate than server calculation)
+    const timeTaken = Date.now() - questionStartTime;
+
     setSelectedAnswer(index);
     setHasAnswered(true);
 
-    const result = await onSubmitAnswer(myQuestionIndex, index);
+    const result = await onSubmitAnswer(myQuestionIndex, index, timeTaken);
     if (result && !result.error) {
       setAnswerResult({ correct: result.correct, correctAnswer: result.correctAnswer });
     }

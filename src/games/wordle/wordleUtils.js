@@ -77,10 +77,7 @@ export const getKeyboardStatus = (guesses, target) => {
 };
 
 // Generate share text for completed game
-export const generateShareText = (guesses, target, won) => {
-  const today = new Date();
-  const dateStr = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
-
+export const generateShareText = (guesses, target, won, shortDate) => {
   const emojiGrid = guesses.map(guess => {
     const evaluation = evaluateGuess(guess, target);
     return evaluation.map(({ status }) => {
@@ -92,7 +89,7 @@ export const generateShareText = (guesses, target, won) => {
 
   const score = won ? `${guesses.length}/6` : 'X/6';
 
-  return `Daily Games Wordle ${dateStr}\n${score}\n\n${emojiGrid}`;
+  return `Daily Games Wordle ${shortDate}\n${score}\n\n${emojiGrid}`;
 };
 
 // Animation delays for revealing tiles

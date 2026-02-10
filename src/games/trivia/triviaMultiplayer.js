@@ -276,9 +276,8 @@ export async function startGame(roomId) {
 }
 
 // Submit an answer
-export async function submitAnswer(roomId, userId, questionIndex, answerIndex) {
+export async function submitAnswer(roomId, userId, questionIndex, answerIndex, clientTimeTaken) {
   try {
-    const now = Date.now();
     const roomSnapshot = await get(ref(rtdb, `trivia/rooms/${roomId}`));
 
     if (!roomSnapshot.exists()) return { error: 'Room not found' };
@@ -296,8 +295,8 @@ export async function submitAnswer(roomId, userId, questionIndex, answerIndex) {
       return { error: 'Already answered' };
     }
 
-    // Calculate time taken (use room start time as base since each player tracks their own time)
-    const timeTaken = now - (room.questionStartTime || now);
+    // Use client-provided time (more accurate since each player tracks their own question timer)
+    const timeTaken = clientTimeTaken || 0;
 
     // Check if correct
     const question = room.questions[questionIndex];

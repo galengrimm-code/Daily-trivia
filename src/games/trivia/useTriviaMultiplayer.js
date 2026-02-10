@@ -144,10 +144,10 @@ export default function useTriviaMultiplayer(user) {
   }, [roomId]);
 
   // Submit an answer
-  const handleSubmitAnswer = useCallback(async (questionIndex, answerIndex) => {
+  const handleSubmitAnswer = useCallback(async (questionIndex, answerIndex, timeTaken) => {
     if (!roomId || !user) return { error: 'Not in room' };
 
-    const result = await submitAnswer(roomId, user.uid, questionIndex, answerIndex);
+    const result = await submitAnswer(roomId, user.uid, questionIndex, answerIndex, timeTaken);
     return result;
   }, [roomId, user]);
 

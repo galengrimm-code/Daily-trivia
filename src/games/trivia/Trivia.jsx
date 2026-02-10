@@ -187,6 +187,7 @@ export default function Trivia() {
     return (
       <TriviaReview
         questions={todaysQuestions}
+        userAnswers={answers}
         onBack={() => setPhase('results')}
       />
     );

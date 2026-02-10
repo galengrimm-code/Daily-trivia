@@ -20,6 +20,12 @@ export const getTodayKey = () => {
   return `${gameDay.getFullYear()}-${String(gameDay.getMonth() + 1).padStart(2, '0')}-${String(gameDay.getDate()).padStart(2, '0')}`;
 };
 
+// Get short date string for sharing (e.g., "Feb 6")
+export const getShortDateStr = () => {
+  const gameDay = getGameDay();
+  return gameDay.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+};
+
 // Seeded random for consistent daily questions
 export const seededRandom = (seed) => {
   const x = Math.sin(seed) * 10000;
