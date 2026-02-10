@@ -2,8 +2,14 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Copy, Check, Users, Crown } from 'lucide-react';
 import { CATEGORIES } from '../../utils/helpers';
+import questions from '../../data/questions';
 
-const ALL_MP_CATEGORIES = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge'];
+const ALL_MP_CATEGORIES = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge', 'US States'];
+
+// Get count of multiplayer questions per category
+const getMultiplayerCount = (category) => {
+  return (questions[category] || []).filter(q => q.pool === 'multiplayer').length;
+};
 
 export default function TriviaMultiplayerLobby({
   phase, // 'mp-menu', 'mp-host-setup', or 'mp-lobby'
@@ -74,6 +80,7 @@ export default function TriviaMultiplayerLobby({
               {ALL_MP_CATEGORIES.map(cat => {
                 const style = CATEGORIES[cat] || { color: 'bg-gray-500', icon: '?' };
                 const isSelected = selectedCategories.includes(cat);
+                const questionCount = getMultiplayerCount(cat);
 
                 return (
                   <button
@@ -88,7 +95,10 @@ export default function TriviaMultiplayerLobby({
                     <div className={`w-10 h-10 ${style.color} rounded-button flex items-center justify-center text-xl text-white`}>
                       {style.icon}
                     </div>
-                    <span className="text-text-main font-medium flex-1 text-left">{cat}</span>
+                    <span className="text-text-main font-medium flex-1 text-left">
+                      {cat}
+                      <span className="text-text-muted text-sm font-normal ml-2">({questionCount})</span>
+                    </span>
                     {isSelected && <Check className="w-5 h-5 text-primary" />}
                   </button>
                 );

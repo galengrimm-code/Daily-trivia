@@ -1,8 +1,12 @@
 // src/utils/api.js
 import { seededRandom, getTodaySeed, CATEGORIES } from './helpers';
 import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getRecentQuestionHashes, addQuestionHash } from './firestore';
-import bibleQuestions from '../data/bibleQuestions';
-import triviaQuestions from '../data/triviaQuestions.json';
+import questions from '../data/questions';
+
+// Helper to get questions filtered by pool
+const getDailyQuestions = (category) => {
+  return (questions[category] || []).filter(q => q.pool === 'daily');
+};
 
 // Simple hash function for question text
 const hashQuestion = (questionText) => {
@@ -62,7 +66,7 @@ const fallbackQuestions = {
 
 // Get a question from the local pool that hasn't been used recently
 const getLocalQuestion = (category, usedHashes, seed) => {
-  const pool = triviaQuestions[category] || [];
+  const pool = getDailyQuestions(category);
 
   if (pool.length === 0) {
     console.log(`No local questions for ${category}, using fallback`);
@@ -100,8 +104,10 @@ const getLocalQuestion = (category, usedHashes, seed) => {
 
 // Get a Bible question that hasn't been used recently
 export const getBibleQuestion = (usedHashes, seed) => {
+  const biblePool = getDailyQuestions('Bible');
+
   // Shuffle the pool using seeded random for consistent daily selection
-  const shuffledIndices = bibleQuestions.map((_, i) => i);
+  const shuffledIndices = biblePool.map((_, i) => i);
   for (let i = shuffledIndices.length - 1; i > 0; i--) {
     const j = Math.floor(seededRandom(seed + i) * (i + 1));
     [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
@@ -109,7 +115,7 @@ export const getBibleQuestion = (usedHashes, seed) => {
 
   // Find the first unused question
   for (const idx of shuffledIndices) {
-    const question = bibleQuestions[idx];
+    const question = biblePool[idx];
     const hash = hashQuestion(question.q);
 
     if (!usedHashes[hash]) {
@@ -124,9 +130,9 @@ export const getBibleQuestion = (usedHashes, seed) => {
   }
 
   // All questions used - return a random one (will be a repeat)
-  console.log(`All ${bibleQuestions.length} Bible questions exhausted`);
-  const index = Math.floor(seededRandom(seed) * bibleQuestions.length);
-  const question = bibleQuestions[index];
+  console.log(`All ${biblePool.length} Bible questions exhausted`);
+  const index = Math.floor(seededRandom(seed) * biblePool.length);
+  const question = biblePool[index];
   return {
     q: question.q,
     options: question.options,
@@ -164,7 +170,7 @@ export const getFallbackQuestion = (category, usedHashes, seed) => {
 
 // Generate fresh questions (called only when no questions exist for today)
 const generateTodaysQuestions = async () => {
-  const questions = [];
+  const todaysQuestions = [];
   const categories = Object.keys(CATEGORIES);
   const seed = getTodaySeed();
 
@@ -174,20 +180,12 @@ const generateTodaysQuestions = async () => {
 
   // Log pool sizes
   for (const cat of categories) {
-    if (cat === 'Bible') {
-      const poolSize = bibleQuestions.length;
-      const usedCount = Object.keys(usedHashes).filter(h => {
-        return bibleQuestions.some(q => hashQuestion(q.q) === h);
-      }).length;
-      console.log(`${cat}: ${poolSize} questions (${poolSize - usedCount} unused)`);
-    } else {
-      const poolSize = triviaQuestions[cat]?.length || 0;
-      const usedCount = Object.keys(usedHashes).filter(h => {
-        const pool = triviaQuestions[cat] || [];
-        return pool.some(q => hashQuestion(q.q) === h);
-      }).length;
-      console.log(`${cat}: ${poolSize} questions (${poolSize - usedCount} unused)`);
-    }
+    const pool = getDailyQuestions(cat);
+    const poolSize = pool.length;
+    const usedCount = Object.keys(usedHashes).filter(h => {
+      return pool.some(q => hashQuestion(q.q) === h);
+    }).length;
+    console.log(`${cat}: ${poolSize} questions (${poolSize - usedCount} unused)`);
   }
 
   for (let i = 0; i < categories.length; i++) {
@@ -197,7 +195,7 @@ const generateTodaysQuestions = async () => {
     if (category === 'Bible') {
       // Use local KJV questions for Bible (now with repeat prevention)
       const bibleQ = getBibleQuestion(usedHashes, categorySeed);
-      questions.push({
+      todaysQuestions.push({
         category,
         ...bibleQ
       });
@@ -215,7 +213,7 @@ const generateTodaysQuestions = async () => {
       }
 
       if (question) {
-        questions.push({ category, ...question });
+        todaysQuestions.push({ category, ...question });
         // Add to usedHashes so we don't repeat within this generation
         if (question._hash) {
           usedHashes[question._hash] = Date.now();
@@ -225,13 +223,13 @@ const generateTodaysQuestions = async () => {
   }
 
   // Save all new question hashes to Firebase for future duplicate checking
-  for (const q of questions) {
+  for (const q of todaysQuestions) {
     if (q._hash) {
       await addQuestionHash(q._hash);
     }
   }
 
-  return questions;
+  return todaysQuestions;
 };
 
 // Load all questions for today (checks Firebase first, generates if needed)
@@ -243,8 +241,8 @@ export const loadTodaysQuestions = async () => {
   }
 
   // Generate new questions and save to Firebase
-  const questions = await generateTodaysQuestions();
-  await saveTodaysQuestionsToDB(questions);
+  const generatedQuestions = await generateTodaysQuestions();
+  await saveTodaysQuestionsToDB(generatedQuestions);
 
-  return questions;
+  return generatedQuestions;
 };

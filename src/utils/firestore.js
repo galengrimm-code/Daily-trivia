@@ -222,6 +222,31 @@ export const getRecentQuestionHashes = async () => {
   return {};
 };
 
+// Get used question count by comparing hashes to a pool of questions
+export const getUsedQuestionCount = (questionPool, usedHashes) => {
+  // Simple hash function (must match the one in api.js)
+  const hashQuestion = (questionText) => {
+    let hash = 0;
+    const str = questionText.toLowerCase().replace(/[^a-z0-9]/g, '');
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash;
+    }
+    return hash.toString(36);
+  };
+
+  let usedCount = 0;
+  questionPool.forEach(q => {
+    const hash = hashQuestion(q.q);
+    if (usedHashes[hash]) {
+      usedCount++;
+    }
+  });
+
+  return usedCount;
+};
+
 // Add a question hash to the tracking list
 export const addQuestionHash = async (hash) => {
   const trackingRef = doc(db, 'settings', 'usedQuestions');

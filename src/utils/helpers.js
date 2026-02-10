@@ -107,7 +107,8 @@ export const CATEGORIES = {
   Bible: { id: null, color: 'bg-purple-500', icon: '📖' },
   Math: { id: 19, color: 'bg-rose-500', icon: '🔢' },
   Animals: { id: 27, color: 'bg-green-500', icon: '🐾' },
-  'General Knowledge': { id: 9, color: 'bg-indigo-500', icon: '🧠' }
+  'General Knowledge': { id: 9, color: 'bg-indigo-500', icon: '🧠' },
+  'US States': { id: null, color: 'bg-red-500', icon: '🇺🇸' }
 };
 
 // Daily trivia categories (excludes General Knowledge - that's multiplayer only)

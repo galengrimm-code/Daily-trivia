@@ -1,12 +1,14 @@
 // src/games/trivia/Trivia.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Loader, Users } from 'lucide-react';
+import { ChevronRight, Loader, Users, Info, X } from 'lucide-react';
 import { usePlayer } from '../../hooks/usePlayer';
 import { useLeaderboard } from '../../hooks/useLeaderboard';
 import { loadTodaysQuestions } from '../../utils/api';
 import { CATEGORIES, ALL_CATEGORIES } from '../../utils/helpers';
+import { getRecentQuestionHashes, getUsedQuestionCount } from '../../utils/firestore';
 import { shareScore } from './triviaUtils';
+import questions from '../../data/questions';
 import QuestionCard from './QuestionCard';
 import TriviaResults from './TriviaResults';
 import TriviaReview from './TriviaReview';
@@ -15,6 +17,11 @@ import TriviaMultiplayerLobby from './TriviaMultiplayerLobby';
 import TriviaMultiplayerGame from './TriviaMultiplayerGame';
 import TriviaMultiplayerResults from './TriviaMultiplayerResults';
 import useTriviaMultiplayer from './useTriviaMultiplayer';
+
+// Helper to get daily questions for a category
+const getDailyQuestions = (category) => {
+  return (questions[category] || []).filter(q => q.pool === 'daily');
+};
 
 export default function Trivia() {
   const navigate = useNavigate();
@@ -31,8 +38,33 @@ export default function Trivia() {
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(false);
   const [quizStartTime, setQuizStartTime] = useState(null);
 
+  // Stats modal state
+  const [showStatsModal, setShowStatsModal] = useState(false);
+  const [statsData, setStatsData] = useState(null);
+  const [loadingStats, setLoadingStats] = useState(false);
+
   // Multiplayer state
   const mp = useTriviaMultiplayer(user);
+
+  // Load question stats when modal opens
+  const handleOpenStats = async () => {
+    setShowStatsModal(true);
+    setLoadingStats(true);
+    try {
+      const usedHashes = await getRecentQuestionHashes();
+      const stats = ALL_CATEGORIES.map(category => {
+        const pool = getDailyQuestions(category);
+        const total = pool.length;
+        const used = getUsedQuestionCount(pool, usedHashes);
+        return { category, used, total, remaining: total - used };
+      });
+      setStatsData(stats);
+    } catch (e) {
+      console.error('Error loading stats:', e);
+      setStatsData(null);
+    }
+    setLoadingStats(false);
+  };
 
   // If already played today, jump to results
   useEffect(() => {
@@ -243,7 +275,16 @@ export default function Trivia() {
 
         {/* Categories */}
         <div className="bg-white rounded-card p-6 mb-6 shadow-card">
-          <h3 className="text-lg font-semibold text-text-main mb-4">Today's Topics</h3>
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-text-main">Today's Topics</h3>
+            <button
+              onClick={handleOpenStats}
+              className="p-2 text-text-muted hover:text-primary hover:bg-gray-100 rounded-full transition-colors"
+              title="View question pool stats"
+            >
+              <Info className="w-5 h-5" />
+            </button>
+          </div>
           <div className="space-y-3">
             {ALL_CATEGORIES.map((category) => (
               <div key={category} className="flex items-center gap-3 bg-gray-50 rounded-button p-3">
@@ -289,6 +330,62 @@ export default function Trivia() {
           <div className="mt-4 p-3 bg-red-100 border border-red-300 rounded-lg text-red-700 text-center">
             {mp.error}
             <button onClick={mp.clearError} className="ml-2 underline">Dismiss</button>
+          </div>
+        )}
+
+        {/* Stats Modal */}
+        {showStatsModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-card max-w-sm w-full shadow-xl">
+              <div className="flex items-center justify-between p-4 border-b">
+                <h3 className="text-lg font-bold text-text-main">Question Pool Stats</h3>
+                <button
+                  onClick={() => setShowStatsModal(false)}
+                  className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <X className="w-5 h-5 text-text-muted" />
+                </button>
+              </div>
+              <div className="p-4">
+                {loadingStats ? (
+                  <div className="flex items-center justify-center py-8">
+                    <Loader className="w-8 h-8 text-primary animate-spin" />
+                  </div>
+                ) : statsData ? (
+                  <div className="space-y-3">
+                    <p className="text-sm text-text-muted mb-4">
+                      Questions used in the last 60 days vs total available
+                    </p>
+                    {statsData.map(({ category, used, total, remaining }) => (
+                      <div key={category} className="flex items-center gap-3">
+                        <div className={`w-8 h-8 ${CATEGORIES[category].color} rounded-button flex items-center justify-center text-sm`}>
+                          {CATEGORIES[category].icon}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm font-medium text-text-main">{category}</span>
+                            <span className="text-sm text-text-muted">
+                              {used} / {total}
+                            </span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
+                            <div
+                              className={`h-2 rounded-full ${remaining > 0 ? 'bg-primary' : 'bg-orange-500'}`}
+                              style={{ width: `${total > 0 ? (used / total) * 100 : 0}%` }}
+                            />
+                          </div>
+                          <span className="text-xs text-text-muted">
+                            {remaining} remaining
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-text-muted text-center py-4">Failed to load stats</p>
+                )}
+              </div>
+            </div>
           </div>
         )}
       </div>

@@ -3,7 +3,12 @@
 
 import { ref, get, set, update, remove, onValue, query, orderByChild, equalTo, endAt, limitToFirst, serverTimestamp } from 'firebase/database';
 import { rtdb } from '../../utils/firebase';
-import multiplayerQuestions from '../../data/multiplayerQuestions';
+import questions from '../../data/questions';
+
+// Helper to get questions filtered by pool
+const getMultiplayerQuestions = (category) => {
+  return (questions[category] || []).filter(q => q.pool === 'multiplayer');
+};
 
 const QUESTIONS_PER_GAME = 12;
 
@@ -74,7 +79,7 @@ async function selectQuestions(categories) {
   let totalAvailable = 0;
 
   categories.forEach(cat => {
-    const catQuestions = multiplayerQuestions[cat] || [];
+    const catQuestions = getMultiplayerQuestions(cat);
     availableByCategory[cat] = catQuestions.filter(q => {
       const hash = hashQuestion(q.q);
       return !usedHashes[hash];
@@ -87,7 +92,7 @@ async function selectQuestions(categories) {
     await resetUsedQuestions();
     // Refetch with cleared pool
     categories.forEach(cat => {
-      availableByCategory[cat] = multiplayerQuestions[cat] || [];
+      availableByCategory[cat] = getMultiplayerQuestions(cat);
     });
   }
 
@@ -149,7 +154,7 @@ export async function createRoom(userId, displayName, categories) {
     await cleanupOldRooms();
 
     // Validate categories
-    const validCategories = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge'];
+    const validCategories = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge', 'US States'];
     const selectedCategories = categories.filter(c => validCategories.includes(c));
 
     if (selectedCategories.length === 0) {
