@@ -13,12 +13,6 @@ export const shareScore = (score, total, streak) => {
   const text = `\u{1F520} Daily Games - Trivia \u{1F9E0}\nScore: ${score}/${total}\n\u{1F525} Streak: ${streak} days`;
 
   if (navigator.share) {
-    navigator.share({ text }).catch(() => {
-      navigator.clipboard.writeText(text);
-    });
-    return 'shared';
-  } else {
-    navigator.clipboard.writeText(text);
-    return 'clipboard';
+    navigator.share({ text }).catch(() => {});
   }
 };

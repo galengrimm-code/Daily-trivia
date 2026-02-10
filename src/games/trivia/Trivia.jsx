@@ -82,10 +82,7 @@ export default function Trivia() {
     const score = todayScore?.score || 0;
     const total = todayScore?.totalQuestions || 5;
     const streak = userProfile?.streak || 0;
-    const result = shareScore(score, total, streak);
-    if (result === 'clipboard') {
-      alert('Score copied to clipboard!');
-    }
+    shareScore(score, total, streak);
   };
 
   const handleViewLeaderboard = async () => {

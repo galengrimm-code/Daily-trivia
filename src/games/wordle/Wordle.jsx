@@ -263,13 +263,7 @@ export default function Wordle() {
   const handleShare = () => {
     const text = generateShareText(guesses, target, gameState === 'won', getShortDateStr());
     if (navigator.share) {
-      navigator.share({ text }).catch(() => {
-        navigator.clipboard.writeText(text);
-        alert('Copied to clipboard!');
-      });
-    } else {
-      navigator.clipboard.writeText(text);
-      alert('Copied to clipboard!');
+      navigator.share({ text }).catch(() => {});
     }
   };
 

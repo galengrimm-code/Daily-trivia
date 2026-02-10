@@ -27,13 +27,7 @@ export default function BoggleResults({
   const handleShare = () => {
     const text = generateShareText(score, foundWords, getShortDateStr());
     if (navigator.share) {
-      navigator.share({ text }).catch(() => {
-        navigator.clipboard.writeText(text);
-        alert('Copied to clipboard!');
-      });
-    } else {
-      navigator.clipboard.writeText(text);
-      alert('Copied to clipboard!');
+      navigator.share({ text }).catch(() => {});
     }
   };
 

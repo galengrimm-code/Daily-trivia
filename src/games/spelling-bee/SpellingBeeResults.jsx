@@ -31,13 +31,7 @@ export default function SpellingBeeResults({
   const handleShare = () => {
     const text = generateShareText(displayScore, maxScore, rank.name, wordsFoundCount, pangramCount, getShortDateStr());
     if (navigator.share) {
-      navigator.share({ text }).catch(() => {
-        navigator.clipboard.writeText(text);
-        alert('Copied to clipboard!');
-      });
-    } else {
-      navigator.clipboard.writeText(text);
-      alert('Copied to clipboard!');
+      navigator.share({ text }).catch(() => {});
     }
   };
 

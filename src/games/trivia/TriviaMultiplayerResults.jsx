@@ -49,13 +49,7 @@ export default function TriviaMultiplayerResults({
     const text = lines.join('\n');
 
     if (navigator.share) {
-      navigator.share({ text }).catch(() => {
-        navigator.clipboard.writeText(text);
-        alert('Results copied to clipboard!');
-      });
-    } else {
-      navigator.clipboard.writeText(text);
-      alert('Results copied to clipboard!');
+      navigator.share({ text }).catch(() => {});
     }
   };
 
