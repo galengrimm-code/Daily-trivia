@@ -1,7 +1,7 @@
 // src/games/trivia/triviaMultiplayer.js
 // Multiplayer trivia using Firebase Realtime Database
 
-import { ref, get, set, update, remove, onValue, onDisconnect, query, orderByChild, equalTo, endAt, limitToFirst, serverTimestamp } from 'firebase/database';
+import { ref, get, set, update, remove, onValue, onDisconnect, query, orderByChild, equalTo, serverTimestamp } from 'firebase/database';
 import { rtdb } from '../../utils/firebase';
 import questions from '../../data/questions';
 
