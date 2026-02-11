@@ -1,7 +1,7 @@
 // src/games/trivia/triviaMultiplayer.js
 // Multiplayer trivia using Firebase Realtime Database
 
-import { ref, get, set, update, remove, onValue, query, orderByChild, equalTo, endAt, limitToFirst, serverTimestamp } from 'firebase/database';
+import { ref, get, set, update, remove, onValue, onDisconnect, query, orderByChild, equalTo, endAt, limitToFirst, serverTimestamp } from 'firebase/database';
 import { rtdb } from '../../utils/firebase';
 import questions from '../../data/questions';
 
@@ -123,22 +123,36 @@ async function selectQuestions(categories) {
 // ROOM MANAGEMENT
 // ============================================
 
-// Clean up rooms older than 2 hours
+// Clean up stale rooms:
+// - Rooms older than 2 hours (any status)
+// - Waiting rooms with no activity for 15 minutes
+// - Rooms with no players
 async function cleanupOldRooms() {
   try {
-    const twoHoursAgo = Date.now() - (2 * 60 * 60 * 1000);
-    const roomsQuery = query(
-      ref(rtdb, 'trivia/rooms'),
-      orderByChild('createdAt'),
-      endAt(twoHoursAgo),
-      limitToFirst(10)
-    );
-    const snapshot = await get(roomsQuery);
+    const now = Date.now();
+    const twoHoursAgo = now - (2 * 60 * 60 * 1000);
+    const fifteenMinutesAgo = now - (15 * 60 * 1000);
+
+    // Get all rooms and check each one
+    const snapshot = await get(ref(rtdb, 'trivia/rooms'));
+    if (!snapshot.exists()) return;
 
     const promises = [];
     snapshot.forEach(child => {
-      promises.push(remove(ref(rtdb, `trivia/rooms/${child.key}`)));
+      const room = child.val();
+      const roomRef = ref(rtdb, `trivia/rooms/${child.key}`);
+      const createdAt = room.createdAt || 0;
+      const lastActivity = room.lastActivity || createdAt;
+      const playerCount = Object.keys(room.players || {}).length;
+
+      // Remove if: older than 2 hours, OR waiting with no activity for 15 min, OR no players
+      if (createdAt < twoHoursAgo ||
+          (room.status === 'waiting' && lastActivity < fifteenMinutesAgo) ||
+          playerCount === 0) {
+        promises.push(remove(roomRef));
+      }
     });
+
     await Promise.all(promises);
   } catch (e) {
     console.error('Cleanup error:', e);
@@ -184,6 +198,7 @@ export async function createRoom(userId, displayName, categories) {
       currentQuestion: -1, // -1 means not started, 0-19 during game
       questionStartTime: null,
       createdAt: serverTimestamp(),
+      lastActivity: serverTimestamp(),
       players: {
         [userId]: {
           displayName,
@@ -195,7 +210,12 @@ export async function createRoom(userId, displayName, categories) {
       }
     };
 
-    await set(ref(rtdb, `trivia/rooms/${roomId}`), roomData);
+    const roomRef = ref(rtdb, `trivia/rooms/${roomId}`);
+    await set(roomRef, roomData);
+
+    // Set up automatic cleanup if host disconnects while room is waiting
+    onDisconnect(roomRef).remove();
+
     return { roomId, categories: selectedCategories, questionCount: questions.length };
   } catch (e) {
     console.error('Firebase error:', e);
@@ -226,6 +246,7 @@ export async function joinRoom(roomId, userId, displayName) {
       };
     }
 
+    // Add player and update lastActivity
     await set(ref(rtdb, `trivia/rooms/${roomId}/players/${userId}`), {
       displayName,
       joinedAt: serverTimestamp(),
@@ -233,6 +254,7 @@ export async function joinRoom(roomId, userId, displayName) {
       totalTime: 0,
       answers: {},
     });
+    await update(roomRef, { lastActivity: serverTimestamp() });
 
     const updatedSnapshot = await get(ref(rtdb, `trivia/rooms/${roomId}/players`));
     const players = {};
@@ -264,10 +286,14 @@ export async function startGame(roomId) {
 
     if (playerCount < 1) return { error: 'Need at least 1 player' };
 
+    // Cancel the onDisconnect handler so room isn't deleted mid-game
+    await onDisconnect(roomRef).cancel();
+
     await update(roomRef, {
       status: 'playing',
       currentQuestion: 0,
       questionStartTime: Date.now(),
+      lastActivity: serverTimestamp(),
     });
 
     return { success: true };
