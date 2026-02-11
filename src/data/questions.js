@@ -7657,7 +7657,20 @@ const questions = {
     { "q": "Which river carved the Grand Canyon?", "options": ["Colorado River", "Columbia River", "Rio Grande", "Missouri River"], "correct": 0, "fact": "The Colorado River carved the Grand Canyon over millions of years.", "pool": "multiplayer" },
     { "q": "Which river is the longest in Europe?", "options": ["Danube", "Rhine", "Volga", "Elbe"], "correct": 2, "fact": "The Volga is the longest river in Europe.", "pool": "multiplayer" },
     { "q": "Which river forms part of the US-Mexico border?", "options": ["Rio Grande", "Colorado River", "Arkansas River", "Ohio River"], "correct": 0, "fact": "The Rio Grande forms a major portion of the U.S.-Mexico border.", "pool": "multiplayer" },
-    { "q": "Which river flows through multiple countries and empties into the Black Sea?", "options": ["Danube", "Rhine", "Loire", "Tagus"], "correct": 0, "fact": "The Danube flows through many European countries and empties into the Black Sea.", "pool": "multiplayer" }
+    { "q": "Which river flows through multiple countries and empties into the Black Sea?", "options": ["Danube", "Rhine", "Loire", "Tagus"], "correct": 0, "fact": "The Danube flows through many European countries and empties into the Black Sea.", "pool": "multiplayer" },
+    { "q": "Which direction does the sun rise?", "options": ["North", "South", "East", "West"], "correct": 2, "fact": "The sun rises in the east and sets in the west.", "pool": "multiplayer" },
+    { "q": "Which tool is used to find direction?", "options": ["Thermometer", "Compass", "Barometer", "Scale"], "correct": 1, "fact": "A compass shows north, south, east, and west.", "pool": "multiplayer" },
+    { "q": "Which line divides Earth into Northern and Southern Hemispheres?", "options": ["Prime Meridian", "Tropic of Cancer", "Equator", "International Date Line"], "correct": 2, "fact": "The Equator circles the Earth at 0° latitude.", "pool": "multiplayer" },
+    { "q": "What does a map scale show?", "options": ["Elevation", "Distance", "Population", "Climate"], "correct": 1, "fact": "A map scale shows how distances on a map compare to real distances.", "pool": "multiplayer" },
+    { "q": "Which is larger?", "options": ["City", "State", "Country", "Continent"], "correct": 3, "fact": "A continent is larger than a country, state, or city.", "pool": "multiplayer" },
+    { "q": "Which unit is commonly used to measure distance between cities?", "options": ["Grams", "Kilometers", "Liters", "Degrees"], "correct": 1, "fact": "Kilometers and miles are used for long distances.", "pool": "multiplayer" },
+    { "q": "What do latitude lines measure?", "options": ["East-west distance", "Height above sea level", "North-south position", "Time zones"], "correct": 2, "fact": "Latitude measures distance north or south of the Equator.", "pool": "multiplayer" },
+    { "q": "What does a globe represent?", "options": ["Flat map", "Model of the Earth", "Weather system", "Compass rose"], "correct": 1, "fact": "A globe is a spherical model of Earth.", "pool": "multiplayer" },
+    { "q": "Which feature shows height on a map?", "options": ["Legend", "Contour lines", "Scale", "Grid"], "correct": 1, "fact": "Contour lines show elevation and land shape.", "pool": "multiplayer" },
+    { "q": "Which direction is opposite of west?", "options": ["North", "South", "East", "Up"], "correct": 2, "fact": "East and west are opposite directions.", "pool": "multiplayer" },
+    { "q": "What symbol on a map explains colors and symbols?", "options": ["Scale", "Legend", "Grid", "Compass"], "correct": 1, "fact": "A legend explains map symbols.", "pool": "multiplayer" },
+    { "q": "Which line divides Earth into Eastern and Western Hemispheres?", "options": ["Equator", "Prime Meridian", "Tropic of Capricorn", "Arctic Circle"], "correct": 1, "fact": "The Prime Meridian is at 0° longitude.", "pool": "multiplayer" },
+    { "q": "Which is a man-made feature?", "options": ["River", "Mountain", "Canal", "Desert"], "correct": 2, "fact": "Canals are built by humans.", "pool": "multiplayer" }
   ],
   "Science": [
     {
@@ -14971,7 +14984,32 @@ const questions = {
       ],
       "correct": 3,
       "pool": "multiplayer"
-    }
+    },
+    { "q": "What is 25% of 80?", "options": ["10", "20", "25", "40"], "correct": 1, "fact": "25% is one-quarter. One-quarter of 80 is 20.", "pool": "multiplayer" },
+    { "q": "What is 9 × 7?", "options": ["56", "63", "72", "49"], "correct": 1, "fact": "9 multiplied by 7 equals 63.", "pool": "multiplayer" },
+    { "q": "What is the value of 5²?", "options": ["10", "15", "25", "30"], "correct": 2, "fact": "5 squared means 5 × 5, which equals 25.", "pool": "multiplayer" },
+    { "q": "Which number is even?", "options": ["13", "17", "22", "29"], "correct": 2, "fact": "Even numbers are divisible by 2 with no remainder.", "pool": "multiplayer" },
+    { "q": "What is 3/4 as a decimal?", "options": ["0.25", "0.5", "0.75", "1.25"], "correct": 2, "fact": "3 divided by 4 equals 0.75.", "pool": "multiplayer" },
+    { "q": "What is the perimeter of a square with sides of 5 units?", "options": ["10", "15", "20", "25"], "correct": 2, "fact": "A square has four equal sides. 4 × 5 = 20.", "pool": "multiplayer" },
+    { "q": "Which fraction is the largest?", "options": ["1/4", "2/3", "3/5", "1/2"], "correct": 1, "fact": "2/3 is greater than 1/2, 3/5, and 1/4.", "pool": "multiplayer" },
+    { "q": "What is 120 ÷ 10?", "options": ["10", "12", "15", "20"], "correct": 1, "fact": "Dividing by 10 moves the decimal one place left.", "pool": "multiplayer" },
+    { "q": "Which number is a prime number?", "options": ["9", "15", "17", "21"], "correct": 2, "fact": "17 has exactly two factors: 1 and itself.", "pool": "multiplayer" },
+    { "q": "What is the sum of the angles in a triangle?", "options": ["90°", "180°", "270°", "360°"], "correct": 1, "fact": "All triangles have interior angles that add up to 180°.", "pool": "multiplayer" },
+    { "q": "What is 15% of 200?", "options": ["15", "20", "30", "40"], "correct": 2, "fact": "10% of 200 is 20, plus 5% is 10, total 30.", "pool": "multiplayer" },
+    { "q": "What is the next number: 2, 4, 8, 16, ?", "options": ["18", "24", "32", "64"], "correct": 2, "fact": "Each number doubles from the previous one.", "pool": "multiplayer" },
+    { "q": "Which unit is used to measure weight?", "options": ["Meter", "Liter", "Gram", "Second"], "correct": 2, "fact": "Grams measure mass or weight.", "pool": "multiplayer" },
+    { "q": "What is the area of a rectangle with length 6 and width 4?", "options": ["10", "20", "24", "30"], "correct": 2, "fact": "Area = length × width → 6 × 4 = 24.", "pool": "multiplayer" },
+    { "q": "Which number is closest to 100?", "options": ["89", "95", "102", "110"], "correct": 2, "fact": "102 is only 2 away from 100.", "pool": "multiplayer" },
+    { "q": "What is the average of 4, 6, and 8?", "options": ["5", "6", "7", "8"], "correct": 1, "fact": "Add them (18) and divide by 3 → 6.", "pool": "multiplayer" },
+    { "q": "Which shape has exactly three sides?", "options": ["Square", "Triangle", "Pentagon", "Circle"], "correct": 1, "fact": "A triangle always has three sides.", "pool": "multiplayer" },
+    { "q": "What is 7 × 8?", "options": ["48", "54", "56", "64"], "correct": 2, "fact": "7 multiplied by 8 equals 56.", "pool": "multiplayer" },
+    { "q": "Which number is divisible by 3?", "options": ["14", "22", "27", "40"], "correct": 2, "fact": "27 ÷ 3 = 9 with no remainder.", "pool": "multiplayer" },
+    { "q": "What is 1/2 of 90?", "options": ["40", "45", "50", "55"], "correct": 1, "fact": "Half of 90 is 45.", "pool": "multiplayer" },
+    { "q": "What is 60 ÷ 5?", "options": ["10", "12", "15", "20"], "correct": 1, "fact": "60 divided by 5 equals 12.", "pool": "multiplayer" },
+    { "q": "What is the value of π (pi) rounded to two decimals?", "options": ["3.12", "3.14", "3.16", "3.18"], "correct": 1, "fact": "Pi is commonly rounded to 3.14.", "pool": "multiplayer" },
+    { "q": "Which number is a multiple of 5?", "options": ["18", "21", "25", "32"], "correct": 2, "fact": "Multiples of 5 end in 0 or 5.", "pool": "multiplayer" },
+    { "q": "How many sides does a hexagon have?", "options": ["5", "6", "7", "8"], "correct": 1, "fact": "A hexagon has six sides.", "pool": "multiplayer" },
+    { "q": "What is 10²?", "options": ["20", "50", "100", "200"], "correct": 2, "fact": "10 squared means 10 × 10 = 100.", "pool": "multiplayer" }
   ],
   "Animals": [
     {
