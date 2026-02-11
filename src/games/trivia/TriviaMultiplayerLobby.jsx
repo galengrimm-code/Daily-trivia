@@ -75,7 +75,7 @@ export default function TriviaMultiplayerLobby({
             <p className="text-sm text-text-muted mb-4">
               {selectedCategories.length === 0
                 ? 'Choose at least one category to continue'
-                : `${selectedCategories.length} selected (12 questions total)`}
+                : `${selectedCategories.length} selected (15 questions total)`}
             </p>
 
             <div className="space-y-2">
