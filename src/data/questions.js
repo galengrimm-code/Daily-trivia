@@ -7607,7 +7607,18 @@ const questions = {
       ],
       "correct": 2,
       "pool": "multiplayer"
-    }
+    },
+    { "q": "Which country has territory on two continents and a major city spanning both?", "options": ["Greece", "Turkey", "Portugal", "Sweden"], "correct": 1, "fact": "Turkey spans Europe and Asia, and Istanbul sits on both sides of the Bosporus.", "pool": "multiplayer" },
+    { "q": "Which country has a coastline on both the Atlantic Ocean and the Indian Ocean?", "options": ["South Africa", "Morocco", "Kenya", "Egypt"], "correct": 0, "fact": "South Africa touches the Atlantic on the west and the Indian on the east.", "pool": "multiplayer" },
+    { "q": "Which country is completely surrounded by South Africa?", "options": ["Lesotho", "Eswatini", "Botswana", "Namibia"], "correct": 0, "fact": "Lesotho is an enclave entirely within South Africa.", "pool": "multiplayer" },
+    { "q": "Which is the largest country by land area among these options?", "options": ["France", "Mexico", "Spain", "Japan"], "correct": 1, "fact": "Mexico is approximately 1.96 million km², making it the largest among these options.", "pool": "multiplayer" },
+    { "q": "Which country borders both Spain and Portugal?", "options": ["France", "Andorra", "Morocco", "None of the above"], "correct": 3, "fact": "No country borders both Spain and Portugal—they share the Iberian Peninsula alone.", "pool": "multiplayer" },
+    { "q": "Which U.S. state has the westernmost point due to islands crossing the 180° longitude line?", "options": ["Alaska", "Hawaii", "California", "Washington"], "correct": 0, "fact": "Alaska's Aleutian Islands extend past 180° longitude, making it both the westernmost and easternmost state.", "pool": "multiplayer" },
+    { "q": "Which is the only continent with land in all four hemispheres?", "options": ["Europe", "Africa", "Asia", "Antarctica"], "correct": 1, "fact": "Africa crosses both the Equator and the Prime Meridian, placing it in all four hemispheres.", "pool": "multiplayer" },
+    { "q": "Which of these countries is NOT landlocked?", "options": ["Bolivia", "Paraguay", "Uruguay", "Mongolia"], "correct": 2, "fact": "Uruguay has an Atlantic coastline; the others listed are landlocked.", "pool": "multiplayer" },
+    { "q": "Which country has the most people living above 10,000 feet elevation?", "options": ["Peru", "Bolivia", "Nepal", "Ethiopia"], "correct": 1, "fact": "Bolivia has major high-altitude urban areas like La Paz and El Alto with large populations.", "pool": "multiplayer" },
+    { "q": "Which sea is actually a large saltwater lake with no outlet to the ocean?", "options": ["Black Sea", "Caspian Sea", "Arabian Sea", "Red Sea"], "correct": 1, "fact": "The Caspian Sea is the world's largest inland body of water, a landlocked saltwater lake.", "pool": "multiplayer" },
+    { "q": "What is the largest ocean on Earth?", "options": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"], "correct": 2, "fact": "The Pacific Ocean covers more than 60 million square miles, larger than all land combined.", "pool": "multiplayer" }
   ],
   "Science": [
     {
