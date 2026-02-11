@@ -14995,7 +14995,6 @@ const questions = {
     { "q": "What is 120 ÷ 10?", "options": ["10", "12", "15", "20"], "correct": 1, "fact": "Dividing by 10 moves the decimal one place left.", "pool": "multiplayer" },
     { "q": "Which number is a prime number?", "options": ["9", "15", "17", "21"], "correct": 2, "fact": "17 has exactly two factors: 1 and itself.", "pool": "multiplayer" },
     { "q": "What is the sum of the angles in a triangle?", "options": ["90°", "180°", "270°", "360°"], "correct": 1, "fact": "All triangles have interior angles that add up to 180°.", "pool": "multiplayer" },
-    { "q": "What is 15% of 200?", "options": ["15", "20", "30", "40"], "correct": 2, "fact": "10% of 200 is 20, plus 5% is 10, total 30.", "pool": "multiplayer" },
     { "q": "What is the next number: 2, 4, 8, 16, ?", "options": ["18", "24", "32", "64"], "correct": 2, "fact": "Each number doubles from the previous one.", "pool": "multiplayer" },
     { "q": "Which unit is used to measure weight?", "options": ["Meter", "Liter", "Gram", "Second"], "correct": 2, "fact": "Grams measure mass or weight.", "pool": "multiplayer" },
     { "q": "What is the area of a rectangle with length 6 and width 4?", "options": ["10", "20", "24", "30"], "correct": 2, "fact": "Area = length × width → 6 × 4 = 24.", "pool": "multiplayer" },
@@ -15008,7 +15007,6 @@ const questions = {
     { "q": "What is 60 ÷ 5?", "options": ["10", "12", "15", "20"], "correct": 1, "fact": "60 divided by 5 equals 12.", "pool": "multiplayer" },
     { "q": "What is the value of π (pi) rounded to two decimals?", "options": ["3.12", "3.14", "3.16", "3.18"], "correct": 1, "fact": "Pi is commonly rounded to 3.14.", "pool": "multiplayer" },
     { "q": "Which number is a multiple of 5?", "options": ["18", "21", "25", "32"], "correct": 2, "fact": "Multiples of 5 end in 0 or 5.", "pool": "multiplayer" },
-    { "q": "How many sides does a hexagon have?", "options": ["5", "6", "7", "8"], "correct": 1, "fact": "A hexagon has six sides.", "pool": "multiplayer" },
     { "q": "What is 10²?", "options": ["20", "50", "100", "200"], "correct": 2, "fact": "10 squared means 10 × 10 = 100.", "pool": "multiplayer" }
   ],
   "Animals": [
