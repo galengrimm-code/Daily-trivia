@@ -30,19 +30,16 @@ async function getUsedQuestionHashes() {
   }
 }
 
-// Mark questions as used
+// Mark questions as used (uses update() to avoid race conditions between hosts)
 async function markQuestionsUsed(questionHashes) {
   try {
     const usedRef = ref(rtdb, 'trivia/multiplayer/usedQuestions');
-    const snapshot = await get(usedRef);
-    const existing = snapshot.exists() ? snapshot.val() : {};
-
     const now = Date.now();
+    const updates = {};
     questionHashes.forEach(hash => {
-      existing[hash] = now;
+      updates[hash] = now;
     });
-
-    await set(usedRef, existing);
+    await update(usedRef, updates);
   } catch (e) {
     console.error('Error marking questions used:', e);
   }
