@@ -326,9 +326,16 @@ export default function useBoggleGame() {
     if (!result.duplicates) result.duplicates = [];
     if (!result.players) result.players = [];
 
+    // Calculate all possible words for this board
+    if (dictionary && board.length > 0) {
+      const words = getAllPossibleWords(board, dictionary);
+      setPossibleWords(words);
+      setMaxScore(words.reduce((sum, w) => sum + getWordScore(w), 0));
+    }
+
     setMpResults(result);
     setPhase('mp-results');
-  }, [roomId, showMessage]);
+  }, [roomId, showMessage, dictionary, board]);
 
   const beginMultiplayerPlay = useCallback(() => {
     setFoundWords([]);
