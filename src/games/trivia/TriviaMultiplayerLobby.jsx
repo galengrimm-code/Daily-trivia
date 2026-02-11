@@ -4,7 +4,7 @@ import { ArrowLeft, Copy, Check, Users, Crown } from 'lucide-react';
 import { CATEGORIES } from '../../utils/helpers';
 import questions from '../../data/questions';
 
-const ALL_MP_CATEGORIES = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge', 'US States'];
+const ALL_MP_CATEGORIES = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge', 'US States', 'Logic & Applied Geography'];
 
 // Get count of multiplayer questions per category
 const getMultiplayerCount = (category) => {

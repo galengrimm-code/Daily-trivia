@@ -154,7 +154,7 @@ export async function createRoom(userId, displayName, categories) {
     await cleanupOldRooms();
 
     // Validate categories
-    const validCategories = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge', 'US States'];
+    const validCategories = ['History', 'Geography', 'Science', 'Math', 'Animals', 'Bible', 'General Knowledge', 'US States', 'Logic & Applied Geography'];
     const selectedCategories = categories.filter(c => validCategories.includes(c));
 
     if (selectedCategories.length === 0) {
