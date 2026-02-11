@@ -19,8 +19,10 @@ export default function SpellingBeeResults({
   const rank = getCurrentRank(displayScore, maxScore);
   const pangramCount = foundWords.filter(w => pangrams.has(w)).length;
 
+  // Create lowercase Set of found words for efficient, case-insensitive lookup
+  const foundSet = new Set(foundWords.map(w => w.toLowerCase()));
   const missedWords = validWords
-    ? validWords.filter(w => !foundWords.includes(w)).sort((a, b) => {
+    ? validWords.filter(w => !foundSet.has(w.toLowerCase())).sort((a, b) => {
         const aP = pangrams.has(a) ? 1 : 0;
         const bP = pangrams.has(b) ? 1 : 0;
         if (aP !== bP) return bP - aP;

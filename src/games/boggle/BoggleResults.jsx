@@ -20,8 +20,10 @@ export default function BoggleResults({
   else if (score >= 50) scoreEmoji = '\u{1F525}';
   else if (score >= 25) scoreEmoji = '\u{2B50}';
 
+  // Create lowercase Set of found words for efficient, case-insensitive lookup
+  const foundSet = new Set(foundWords.map(w => w.toLowerCase()));
   const missedWords = possibleWords
-    ? possibleWords.filter(w => !foundWords.includes(w)).sort((a, b) => getWordScore(b) - getWordScore(a))
+    ? possibleWords.filter(w => !foundSet.has(w.toLowerCase())).sort((a, b) => getWordScore(b) - getWordScore(a))
     : [];
 
   const handleShare = () => {
