@@ -2,7 +2,7 @@
 // Master question pool - all questions in one place
 // Each question has a 'pool' field: 'daily' or 'multiplayer'
 //
-// Categories: History, Geography, Science, Math, Animals, Bible, General Knowledge
+// Categories: History, Geography, Science, Math, Animals, Bible, General Knowledge, Logic & Applied Geography
 //
 // Pool counts:
 //   History: 286 daily, 5 multiplayer
@@ -22762,6 +22762,39 @@ const questions = {
     { "q": "Which two states do not observe Daylight Saving Time?", "options": ["Arizona and Hawaii", "Texas and Florida", "California and Oregon", "Alaska and Maine"], "correct": 0, "fact": "Arizona and Hawaii do not observe DST.", "pool": "multiplayer" },
     { "q": "What is the most spoken language in the U.S. after English?", "options": ["French", "Chinese", "Spanish", "German"], "correct": 2, "fact": "Spanish is the second most spoken language.", "pool": "multiplayer" },
     { "q": "What city is the capital of the United States?", "options": ["New York City", "Philadelphia", "Washington, D.C.", "Boston"], "correct": 2, "fact": "Washington, D.C. has been the U.S. capital since 1800.", "pool": "multiplayer" }
+  ],
+  "Logic & Applied Geography": [
+    { "q": "If a country is landlocked, what must be true?", "options": ["It has no rivers", "It has no coastline", "It has no mountains", "It has no borders"], "correct": 1, "fact": "Landlocked countries do not have direct access to the ocean.", "pool": "multiplayer" },
+    { "q": "Which country borders both France and Germany?", "options": ["Spain", "Switzerland", "Portugal", "Denmark"], "correct": 1, "fact": "Switzerland borders both France and Germany.", "pool": "multiplayer" },
+    { "q": "If it is summer in Australia, what season is it in Canada?", "options": ["Summer", "Winter", "Spring", "Fall"], "correct": 1, "fact": "Australia and Canada are in opposite hemispheres.", "pool": "multiplayer" },
+    { "q": "Which statement must be true about the Equator?", "options": ["It passes through Europe", "It divides Earth east and west", "It divides Earth north and south", "It marks time zones"], "correct": 2, "fact": "The Equator separates the Northern and Southern Hemispheres.", "pool": "multiplayer" },
+    { "q": "Which country is NOT in Europe?", "options": ["Italy", "Norway", "Greece", "Egypt"], "correct": 3, "fact": "Egypt is located in North Africa.", "pool": "multiplayer" },
+    { "q": "If a river flows south, where is its source relative to its mouth?", "options": ["East", "West", "North", "Below sea level"], "correct": 2, "fact": "A river flowing south starts north of where it ends.", "pool": "multiplayer" },
+    { "q": "Which must be true of all continents?", "options": ["They have deserts", "They have countries", "They have mountains", "They have rivers"], "correct": 0, "fact": "All continents, including Antarctica, contain deserts.", "pool": "multiplayer" },
+    { "q": "If a city is west of another city, which direction would you travel to get back?", "options": ["North", "South", "East", "West"], "correct": 2, "fact": "To return from west to east, you travel east.", "pool": "multiplayer" },
+    { "q": "Which feature is most likely near tectonic plate boundaries?", "options": ["Deserts", "Volcanoes", "Grasslands", "Glaciers"], "correct": 1, "fact": "Volcanoes commonly form along tectonic plate boundaries.", "pool": "multiplayer" },
+    { "q": "If a country is entirely in the Southern Hemisphere, which continent could it be on?", "options": ["Europe", "Africa", "South America", "Australia"], "correct": 3, "fact": "Australia lies entirely in the Southern Hemisphere.", "pool": "multiplayer" },
+    { "q": "Which statement about longitude is true?", "options": ["It measures north and south", "It measures east and west", "It starts at the Equator", "It measures elevation"], "correct": 1, "fact": "Longitude measures position east or west of the Prime Meridian.", "pool": "multiplayer" },
+    { "q": "If two cities share the same latitude, what do they share?", "options": ["Same time zone", "Same climate", "Same north-south position", "Same elevation"], "correct": 2, "fact": "Latitude measures distance north or south of the Equator.", "pool": "multiplayer" },
+    { "q": "Which ocean would you cross traveling from Africa to South America?", "options": ["Indian", "Pacific", "Atlantic", "Arctic"], "correct": 2, "fact": "The Atlantic Ocean lies between Africa and South America.", "pool": "multiplayer" },
+    { "q": "Which country could logically have the most time zones?", "options": ["Small island nation", "Large country with overseas territories", "Landlocked country", "Equatorial country"], "correct": 1, "fact": "Large countries with overseas territories span multiple time zones.", "pool": "multiplayer" },
+    { "q": "If it is midnight at the Prime Meridian, what time is it 15° east?", "options": ["Midnight", "1 a.m.", "1 p.m.", "Noon"], "correct": 1, "fact": "Every 15° of longitude equals one hour.", "pool": "multiplayer" },
+    { "q": "Which location would have the coldest average temperatures?", "options": ["Equator", "Tropics", "Mid-latitudes", "Polar regions"], "correct": 3, "fact": "Polar regions receive the least direct sunlight.", "pool": "multiplayer" },
+    { "q": "If a country borders only landlocked countries, it must be:", "options": ["An island", "Landlocked", "Coastal", "Mountainous"], "correct": 1, "fact": "It cannot reach the sea through neighbors.", "pool": "multiplayer" },
+    { "q": "Which feature most affects climate?", "options": ["Latitude", "Longitude", "Time zone", "Map scale"], "correct": 0, "fact": "Latitude strongly influences temperature and seasons.", "pool": "multiplayer" },
+    { "q": "Which continent has land in all four hemispheres?", "options": ["Asia", "Europe", "Africa", "South America"], "correct": 2, "fact": "Africa crosses both the Equator and Prime Meridian.", "pool": "multiplayer" },
+    { "q": "Which region would most likely experience midnight sun?", "options": ["Equator", "Tropics", "Arctic Circle", "Mid-latitudes"], "correct": 2, "fact": "Regions within the Arctic Circle experience continuous daylight in summer.", "pool": "multiplayer" },
+    { "q": "Which must be true of all rivers?", "options": ["They flow south", "They start in mountains", "They flow downhill", "They end in oceans"], "correct": 2, "fact": "Rivers always flow from higher to lower elevation.", "pool": "multiplayer" },
+    { "q": "If two cities are in the same time zone but far apart north-south, what may differ?", "options": ["Longitude", "Latitude", "Clock time", "Date"], "correct": 1, "fact": "Latitude can differ even if time zones match.", "pool": "multiplayer" },
+    { "q": "Which is most likely to have a Mediterranean climate?", "options": ["High latitude interior", "West coast mid-latitudes", "Equatorial region", "Polar coast"], "correct": 1, "fact": "Mediterranean climates occur on west coasts in mid-latitudes.", "pool": "multiplayer" },
+    { "q": "Which direction does longitude increase when moving east?", "options": ["Positive", "Negative", "Vertical", "Southward"], "correct": 0, "fact": "Longitude values increase moving east from the Prime Meridian.", "pool": "multiplayer" },
+    { "q": "Which location would likely have the shortest daylight in winter?", "options": ["Equator", "Tropics", "Mid-latitudes", "Polar regions"], "correct": 3, "fact": "Polar regions experience extreme daylight variation.", "pool": "multiplayer" },
+    { "q": "Which continent pattern matches largest to smallest by area?", "options": ["Asia, Africa, North America", "Africa, Asia, Europe", "North America, Asia, Africa", "Asia, Europe, Africa"], "correct": 0, "fact": "Asia is largest, followed by Africa, then North America.", "pool": "multiplayer" },
+    { "q": "Countries near the Equator often share which pattern?", "options": ["Cold winters", "High rainfall", "Snowfall", "Low humidity"], "correct": 1, "fact": "Equatorial regions receive frequent rainfall.", "pool": "multiplayer" },
+    { "q": "Which pattern best describes river flow?", "options": ["Ocean to mountains", "Flat to steep", "High to low elevation", "Random paths"], "correct": 2, "fact": "Rivers always flow downhill.", "pool": "multiplayer" },
+    { "q": "Which climate pattern is common near the poles?", "options": ["Warm and wet", "Cold and dry", "Hot and humid", "Seasonal monsoons"], "correct": 1, "fact": "Polar regions are cold with low precipitation.", "pool": "multiplayer" },
+    { "q": "Which pattern describes population distribution?", "options": ["Even everywhere", "Dense near coasts", "Dense near deserts", "Dense at poles"], "correct": 1, "fact": "Many populations concentrate near coasts.", "pool": "multiplayer" },
+    { "q": "If you fly from New York to London, which ocean do you cross?", "options": ["Pacific", "Indian", "Atlantic", "Arctic"], "correct": 2, "fact": "The Atlantic Ocean lies between North America and Europe.", "pool": "multiplayer" }
   ]
 };
 
