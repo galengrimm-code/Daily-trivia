@@ -10,7 +10,7 @@ const getMultiplayerQuestions = (category) => {
   return (questions[category] || []).filter(q => q.pool === 'multiplayer');
 };
 
-const QUESTIONS_PER_GAME = 12;
+const QUESTIONS_PER_GAME = 15;
 
 // ============================================
 // QUESTION SELECTION
