@@ -73,7 +73,7 @@ export const updateUserStats = async (userId, score, totalQuestions) => {
 // SCORE FUNCTIONS
 // ============================================
 
-export const saveScore = async (userId, displayName, score, totalQuestions, durationSeconds = 0) => {
+export const saveScore = async (userId, displayName, score, totalQuestions, durationSeconds = 0, answers = []) => {
   const today = getTodayKey();
   const scoreId = `${userId}_${today}`;
   const scoreRef = doc(db, 'scores', scoreId);
@@ -85,7 +85,8 @@ export const saveScore = async (userId, displayName, score, totalQuestions, dura
     totalQuestions,
     duration: durationSeconds,
     date: today,
-    timestamp: Timestamp.now()
+    timestamp: Timestamp.now(),
+    answers // Store user's answers for review later
   };
 
   await setDoc(scoreRef, scoreData);

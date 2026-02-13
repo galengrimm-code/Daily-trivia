@@ -103,7 +103,7 @@ export default function Trivia() {
     } else {
       const finalScore = answers.filter(a => a.correct).length;
       const durationSeconds = Math.round((Date.now() - quizStartTime) / 1000);
-      await completeTrivia(finalScore, todaysQuestions.length, durationSeconds);
+      await completeTrivia(finalScore, todaysQuestions.length, durationSeconds, answers);
       setPhase('results');
     }
   };
@@ -213,10 +213,12 @@ export default function Trivia() {
 
   // Review
   if (phase === 'review') {
+    // Use local answers if available, otherwise fall back to saved answers from todayScore
+    const reviewAnswers = answers.length > 0 ? answers : (todayScore?.answers || []);
     return (
       <TriviaReview
         questions={todaysQuestions}
-        userAnswers={answers}
+        userAnswers={reviewAnswers}
         onBack={() => setPhase('results')}
       />
     );

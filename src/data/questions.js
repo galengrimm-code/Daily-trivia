@@ -2,16 +2,20 @@
 // Master question pool - all questions in one place
 // Each question has a 'pool' field: 'daily' or 'multiplayer'
 //
-// Categories: History, Geography, Science, Math, Animals, Bible, General Knowledge, Logic & Applied Geography
+// Daily categories: History, Geography, Bible, Math, Animals, Hymns
+// Multiplayer categories: History, Geography, Science, Math, Animals, Bible, General Knowledge, US States, Logic & Applied Geography
 //
 // Pool counts:
-//   History: 286 daily, 5 multiplayer
-//   Geography: 327 daily, 5 multiplayer
-//   Science: 300 daily, 5 multiplayer
-//   Math: 300 daily, 5 multiplayer
-//   Animals: 300 daily, 5 multiplayer
+//   History: 286 daily, 66 multiplayer
+//   Geography: 327 daily, 68 multiplayer
+//   Science: 0 daily, 305 multiplayer
+//   Math: 300 daily, 28 multiplayer
+//   Animals: 300 daily, 55 multiplayer
 //   Bible: 129 daily, 55 multiplayer
 //   General Knowledge: 0 daily, 161 multiplayer
+//   US States: 0 daily, 110 multiplayer
+//   Logic & Applied Geography: 0 daily, 31 multiplayer
+//   Hymns: 30 daily, 0 multiplayer
 
 const questions = {
   "History": [
@@ -7683,7 +7687,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following men does not have a chemical element named after him?",
@@ -7695,7 +7699,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the same in Celsius and Fahrenheit?",
@@ -7707,7 +7711,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the molecular formula of Ozone?",
@@ -7719,7 +7723,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the elemental symbol for mercury?",
@@ -7731,7 +7735,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many chromosomes are in your body cells?",
@@ -7743,7 +7747,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the scientific name of the red fox?",
@@ -7755,7 +7759,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these stars is the largest?",
@@ -7767,7 +7771,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which chemical element has the lowest boiling point?",
@@ -7779,7 +7783,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The moons, Miranda, Ariel, Umbriel, Titania and Oberon orbit which planet?",
@@ -7791,7 +7795,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which element has the atomic number of 7?",
@@ -7803,7 +7807,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "When was the first mammal successfully cloned?",
@@ -7815,7 +7819,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What did Gregory Mendel use to test genetic crossovers?",
@@ -7827,7 +7831,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Stars consist mainly of hydrogen and which other gas?",
@@ -7839,7 +7843,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the standard SI unit for time?",
@@ -7851,7 +7855,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many types of quarks are there in the standard model of physics?",
@@ -7863,7 +7867,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How much radiation does a banana emit?",
@@ -7875,7 +7879,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these choices is not one of the phases of mitosis?",
@@ -7887,7 +7891,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "This element, when overcome with extreme heat and pressure, creates diamonds.",
@@ -7899,7 +7903,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is not one of the groups on the periodic table?",
@@ -7911,7 +7915,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the molecular formula of the active component of chili peppers(Capsaicin)?",
@@ -7923,7 +7927,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What nucleotide pairs with guanine?",
@@ -7935,7 +7939,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The \"Tibia\" is found in which part of the body?",
@@ -7947,7 +7951,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What are the smallest blood vessels in the human body?",
@@ -7959,7 +7963,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Human cells typically have how many copies of each gene?",
@@ -7971,7 +7975,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Down Syndrome is usually caused by an extra copy of which chromosome?",
@@ -7983,7 +7987,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which Swiss psychologist is synonymous with the concepts of introvert and extrovert personalities?",
@@ -7995,7 +7999,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The word \"science\" stems from the word \"scire\" meaning what?",
@@ -8007,7 +8011,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the largest animal currently on Earth?",
@@ -8019,7 +8023,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which moon is the only satellite in our solar system to possess a dense atmosphere?",
@@ -8031,7 +8035,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the name for the auditory illusion of a note that seems to be rising infinitely?",
@@ -8043,7 +8047,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these Elements is a metalloid?",
@@ -8055,7 +8059,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which one of these is scientific term for \"Brain Freeze\"?",
@@ -8067,7 +8071,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the \"powerhouse\" of the Eukaryotic animal cell?",
@@ -8079,7 +8083,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which color cannot be produced in Roses, even through genetic alteration?",
@@ -8091,7 +8095,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What produces the green colour of most plant leaves?",
@@ -8103,7 +8107,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Folic acid is the synthetic form of which vitamin?",
@@ -8115,7 +8119,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Au on the Periodic Table refers to which element?",
@@ -8127,7 +8131,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the molecular formula of Glucose?",
@@ -8139,7 +8143,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The humerus, paired radius, and ulna come together to form what joint?",
@@ -8151,7 +8155,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What do you study if you are studying entomology?",
@@ -8163,7 +8167,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Burning which of these metals will produce a bright white flame?",
@@ -8175,7 +8179,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "All of the following human genetic haplogroup names are shared between Y-chromosome and mitochondrial DNA haplogroups EXCEPT:",
@@ -8187,7 +8191,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the study of the cells and tissues of plants and animals?",
@@ -8199,7 +8203,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In quantum physics, which of these theorised sub-atomic particles has yet to be observed?",
@@ -8211,7 +8215,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What causes the sound of a heartbeat?",
@@ -8223,7 +8227,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is NOT a passive electrical component?",
@@ -8235,7 +8239,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which type of rock is created by intense heat AND pressure?",
@@ -8247,7 +8251,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "A positron is an antiparticle of a what?",
@@ -8259,7 +8263,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How long is a light-year?",
@@ -8271,7 +8275,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the standard SI unit for electric current?",
@@ -8283,7 +8287,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is radiation measured in?",
@@ -8295,7 +8299,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following spacecraft never touched the moon?",
@@ -8307,7 +8311,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the scientific name of the knee cap?",
@@ -8319,7 +8323,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The asteroid belt is located between which two planets?",
@@ -8331,7 +8335,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "A comet's gaseous envelope (which creates the tail) is called what?",
@@ -8343,7 +8347,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "All the following metal elements are liquids at or near room temperature EXCEPT:",
@@ -8355,7 +8359,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "After which Danish city is the 72th element on the periodic table named?",
@@ -8367,7 +8371,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Dry ice is the solid form of what substance?",
@@ -8379,7 +8383,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is NOT a real element?",
@@ -8391,7 +8395,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the chemical makeup of water?",
@@ -8403,7 +8407,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the atomic number of the element Strontium?",
@@ -8415,7 +8419,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following blood vessels carries deoxygenated blood?",
@@ -8427,7 +8431,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What medication was once commonly used as rat poison?",
@@ -8439,7 +8443,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which is the most abundant element in the universe?",
@@ -8451,7 +8455,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the primary addictive substance found in tobacco?",
@@ -8463,7 +8467,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the standard SI unit for distance?",
@@ -8475,7 +8479,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following liquids is least viscous? Assume temperature is 25°C.",
@@ -8487,7 +8491,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many legs is it biologically impossible for a centipede to have?",
@@ -8499,7 +8503,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the yellow diamond on the NFPA 704 fire diamond represent?",
@@ -8511,7 +8515,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which part of the body does glaucoma affect?",
@@ -8523,7 +8527,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the Linnean name of the domestic apple tree?",
@@ -8535,7 +8539,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "About what percentage of the Earth's surface is water? ",
@@ -8547,7 +8551,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many officially recognized dwarf planets in the solar system are named after Polynesian deities?",
@@ -8559,7 +8563,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Where in the human body is the Pineal Gland located?",
@@ -8571,7 +8575,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What part of the body produces insulin?",
@@ -8583,7 +8587,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "71% of the Earth's surface is made up of",
@@ -8595,7 +8599,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In the Scoville scale, what is the hottest chemical?",
@@ -8607,7 +8611,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many moons does the Earth have?",
@@ -8619,7 +8623,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the chemical formula for ammonia?",
@@ -8631,7 +8635,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these is NOT a part of the structure of a typical neuron?",
@@ -8643,7 +8647,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The core of the Sun can reach which temperature?",
@@ -8655,7 +8659,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the name of the cognitive bias wherein a person with low ability in a particular skill mistake themselves as being superior?",
@@ -8667,7 +8671,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the scientific term for 'taste'?",
@@ -8679,7 +8683,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these bones is hardest to break?",
@@ -8691,7 +8695,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many planets are in our Solar System?",
@@ -8703,7 +8707,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What name is given to all baby marsupials?",
@@ -8715,7 +8719,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following are cells of the adaptive immune system?",
@@ -8727,7 +8731,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What organelle aids in synthesis of DNA in cells?",
@@ -8739,7 +8743,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the standard SI unit for luminous intensity?",
@@ -8751,7 +8755,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is a major muscle of the back?",
@@ -8763,7 +8767,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the half-life of Uranium-235?",
@@ -8775,7 +8779,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "If you planted the seeds of Quercus robur what would grow?",
@@ -8787,7 +8791,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which is the chemical name of H2O?",
@@ -8799,7 +8803,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Approximately what percentage of Earth's atmosphere is Oxygen?",
@@ -8811,7 +8815,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What polymer is used to make CDs, safety goggles and riot shields?",
@@ -8823,7 +8827,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the standard SI unit for mass?",
@@ -8835,7 +8839,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Who discovered the Law of Gravity?",
@@ -8847,7 +8851,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these two plates are best know for forming earthquakes and tsunami's? ",
@@ -8859,7 +8863,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the standard SI unit for temperature?",
@@ -8871,7 +8875,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is NOT a word used to describe an earthquake?",
@@ -8883,7 +8887,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the hottest planet in the Solar System?",
@@ -8895,7 +8899,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the official name of the star located closest to the North Celestial Pole?",
@@ -8907,7 +8911,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What was the name of the first artificial Earth satellite, launched by the Soviet Union in 1957?",
@@ -8919,7 +8923,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The biggest distinction between a eukaryotic cell and a prokaryotic cell is:",
@@ -8931,7 +8935,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The 'Islets of Langerhans' is found in which human organ?",
@@ -8943,7 +8947,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "At what temperature does water boil?",
@@ -8955,7 +8959,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "On the periodic table of elements, what is the symbol for Tin?",
@@ -8967,7 +8971,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these is a type of stretch/deep tendon reflex?",
@@ -8979,7 +8983,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "About how old is Earth?",
@@ -8991,7 +8995,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the scientific name for the extinct hominin known as \"Lucy\"?",
@@ -9003,7 +9007,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which desert is the only desert in the world where the \"Saguaro\" cactus grows indigenously?",
@@ -9015,7 +9019,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following elements is typically used in the doping of the semiconductor silicon?",
@@ -9027,7 +9031,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In Psychology, which need appears highest in the \"Maslow's hierarchy of needs\" pyramid?",
@@ -9039,7 +9043,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the term \"isolation\" refer to in microbiology?",
@@ -9051,7 +9055,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Autosomal-dominant Compelling Helio-Ophthalmic Outburst syndrome is the need to do what when seeing the Sun?",
@@ -9063,7 +9067,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "On the Beaufort Scale of wind force, what wind name is given to number 8?",
@@ -9075,7 +9079,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which scientific unit is named after an Italian nobleman?",
@@ -9087,7 +9091,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Where did the dog breed \"Chihuahua\" originate?",
@@ -9099,7 +9103,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the powerhouse of the cell?",
@@ -9111,7 +9115,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Rhinoplasty is a surgical procedure on what part of the human body?",
@@ -9123,7 +9127,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What term is best associated with Sigmund Freud?",
@@ -9135,7 +9139,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the unit of electrical capacitance?",
@@ -9147,7 +9151,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What are human nails made of?",
@@ -9159,7 +9163,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The medical term for the belly button is which of the following?",
@@ -9171,7 +9175,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the common name of the chemical compound \"dihydrogen monoxide\"?",
@@ -9183,7 +9187,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is the term for \"surgical complications resulting from surgical sponges left inside the patient's body?",
@@ -9195,7 +9199,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What was the first organic compound to be synthesized from inorganic compounds?",
@@ -9207,7 +9211,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the most potent toxin known?",
@@ -9219,7 +9223,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many objects are equivalent to one mole?",
@@ -9231,7 +9235,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these is a semiconductor amplifying device?",
@@ -9243,7 +9247,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the hottest planet in the solar system",
@@ -9255,7 +9259,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Gannymede is the largest moon of which planet?",
@@ -9267,7 +9271,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the speed of light in a vacuum?",
@@ -9279,7 +9283,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the colour of unoxidized blood?",
@@ -9291,7 +9295,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which element has the chemical symbol 'Fe'?",
@@ -9303,7 +9307,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Who developed the first successful polio vaccine in the 1950s?",
@@ -9315,7 +9319,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Where is the Gluteus Maximus muscle located?",
@@ -9327,7 +9331,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Deuterium is an isotope of which element?",
@@ -9339,7 +9343,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Myopia is the scientific term for which condition?",
@@ -9351,7 +9355,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the unit of electrical resistance?",
@@ -9363,7 +9367,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which psychological term refers to the stress of holding contrasting beliefs?",
@@ -9375,7 +9379,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following bones is not in the leg?",
@@ -9387,7 +9391,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is isobutylphenylpropanoic acid more commonly known as?",
@@ -9399,7 +9403,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How old is the universe?",
@@ -9411,7 +9415,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the largest living organism currently known to man?",
@@ -9423,7 +9427,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The Axiom of Preventive Medicine states that people with ___ risk for a disease should be screened and we should treat ___ of those people.",
@@ -9435,7 +9439,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "An organism described as \"heliotropic\" has a tendancy to move towards which of these things?",
@@ -9447,7 +9451,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is considered classical conditioning?",
@@ -9459,7 +9463,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What genetic disease is caused by having an extra Y chromosome (XYY)?",
@@ -9471,7 +9475,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which portion of the Marijuana plant produces the psychoactive substance known as THC?",
@@ -9483,7 +9487,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In aeronautics, flaps and slats are used to control what on an aircraft?",
@@ -9495,7 +9499,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The Sun consists of mostly which two elements?",
@@ -9507,7 +9511,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many degrees Fahrenheit is 100 degrees Celsius? ",
@@ -9519,7 +9523,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is an alternative name for multiple personality disorder?",
@@ -9531,7 +9535,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Coulrophobia is the irrational fear of what?",
@@ -9543,7 +9547,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the atomic number of Uranium ",
@@ -9555,7 +9559,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is Hypernatremia?",
@@ -9567,7 +9571,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which planet in the Solar System is the closest to the Sun?",
@@ -9579,7 +9583,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "When the Falcon Heavy was launched on it's test flight, what was the only part of the operation that failed?",
@@ -9591,7 +9595,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which is the longest bone in the human body? ",
@@ -9603,7 +9607,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these animals belongs in class Chondrichthyes?",
@@ -9615,7 +9619,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Muscle fiber is constructed of bundles small long organelles called what?",
@@ -9627,7 +9631,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The element involved in making human blood red is which of the following?",
@@ -9639,7 +9643,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the thin, outermost layer of the Earth?",
@@ -9651,7 +9655,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which element has the highest melting point?",
@@ -9663,7 +9667,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is the male pollen-producing reproductive part of a flower?",
@@ -9675,7 +9679,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Approximately how long is a year on Uranus?",
@@ -9687,7 +9691,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In human biology, a circadium rhythm relates to a period of roughly how many hours?",
@@ -9699,7 +9703,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In physics, conservation of energy and conservation of momentum are both consequences of which of the following?",
@@ -9711,7 +9715,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which horizon in a soil profile consists of bedrock?",
@@ -9723,7 +9727,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these elements on the Periodic Table is a Noble Gas?",
@@ -9735,7 +9739,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the unit of electrical inductance?",
@@ -9747,7 +9751,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The medical condition osteoporosis affects which part of the body?",
@@ -9759,7 +9763,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which Apollo mission was the first one to land on the Moon?",
@@ -9771,7 +9775,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Deionized water is water with which of the following removed?",
@@ -9783,7 +9787,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Along with Oxygen, which element is primarily responsible for the sky appearing blue?",
@@ -9795,7 +9799,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which noble gas has the lowest atomic number?",
@@ -9807,7 +9811,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these is a stop codon in DNA?",
@@ -9819,7 +9823,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Botanically speaking, which of these fruits is NOT a berry?",
@@ -9831,7 +9835,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which major extinction event was caused by an asteroid collision and eliminated the majority of non-avian dinosaurs?",
@@ -9843,7 +9847,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What lies at the center of our galaxy?",
@@ -9855,7 +9859,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What mineral has the lowest number on the Mohs scale?",
@@ -9867,7 +9871,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What common name is given to the medial condition, tibial stress syndrome (MTSS)?",
@@ -9879,7 +9883,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is \"Stenoma\"?",
@@ -9891,7 +9895,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many protons are in an oxygen atom?",
@@ -9903,7 +9907,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Alzheimer's disease primarily affects which part of the human body?",
@@ -9915,7 +9919,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The Western Lowland Gorilla is scientifically know as?",
@@ -9927,7 +9931,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The human right lung has how many lobes?",
@@ -9939,7 +9943,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "On which mission did the Space Shuttle Columbia break up upon re-entry?",
@@ -9951,7 +9955,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does DNA stand for?",
@@ -9963,7 +9967,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What element on the periodic table has 92 electrons?",
@@ -9975,7 +9979,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which one of these scientists conducted the Gold Foil Experiment which concluded that atoms are mostly made of empty space?",
@@ -9987,7 +9991,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Where did the Great Storm of 1987 make landfall at, first?",
@@ -9999,7 +10003,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many planets make up our Solar System?",
@@ -10011,7 +10015,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In Chemistry, how many isomers does Butanol (C4H9OH) have?",
@@ -10023,7 +10027,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "To the nearest minute, how long does it take for light to travel from the Sun to the Earth?",
@@ -10035,7 +10039,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What physics principle relates the net electric flux out of a closed surface to the charge enclosed by that surface?",
@@ -10047,7 +10051,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does LASER stand for?",
@@ -10059,7 +10063,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The medial meniscus forms which part of what joint in the human body?",
@@ -10071,7 +10075,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does RAID stand for?",
@@ -10083,7 +10087,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "On which computer hardware device is the BIOS chip located?",
@@ -10095,7 +10099,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Lenovo acquired IBM's personal computer division, including the ThinkPad line of laptops and tablets, in what year?",
@@ -10107,7 +10111,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is a personal computer made by the Japanese company Fujitsu?",
@@ -10119,7 +10123,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The Harvard architecture for micro-controllers added which additional bus?",
@@ -10131,7 +10135,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the code name for the mobile operating system Android 7.0?",
@@ -10143,7 +10147,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "While Apple was formed in California, in which western state was Microsoft founded?",
@@ -10155,7 +10159,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many bytes are in a single Kibibyte?",
@@ -10167,7 +10171,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Nvidia's headquarters are based in which Silicon Valley city?",
@@ -10179,7 +10183,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which internet company began life as an online bookstore called 'Cadabra'?",
@@ -10191,7 +10195,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In CSS, which of these values CANNOT be used with the \"position\" property?",
@@ -10203,7 +10207,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What port does HTTP run on?",
@@ -10215,7 +10219,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The Electron computer was released in Britain during 1983 for the home computing market, by which company? ",
@@ -10227,7 +10231,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does CPU stand for?",
@@ -10239,7 +10243,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which computer hardware device provides an interface for all other connected devices to communicate?",
@@ -10251,7 +10255,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the name of the process that sends one qubit of information using two bits of classical information?",
@@ -10263,7 +10267,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does LTS stand for in the software market?",
@@ -10275,7 +10279,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In networking, what does OSPF stand for?",
@@ -10287,7 +10291,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the computer software acronym JVM stand for?",
@@ -10299,7 +10303,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In computing, what does LAN stand for?",
@@ -10311,7 +10315,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How long is an IPv6 address?",
@@ -10323,7 +10327,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Who is the original author of the realtime physics engine called PhysX?",
@@ -10335,7 +10339,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What was the first Android version specifically optimized for tablets?",
@@ -10347,7 +10351,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The computer OEM manufacturer Clevo, known for its Sager notebook line, is based in which country?",
@@ -10359,7 +10363,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which programming language was developed by Sun Microsystems in 1995?",
@@ -10371,7 +10375,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which coding language was the #1 programming language in terms of usage on GitHub in 2015?",
@@ -10383,7 +10387,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "This mobile OS held the largest market share in 2012.",
@@ -10395,7 +10399,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Originally used in PCM adapters, what frequency is the standard for sampling audio in the Compact Disc Digital Audio format?",
@@ -10407,7 +10411,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What five letter word is the motto of the IBM Computer company?",
@@ -10419,7 +10423,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Approximately how many Apple I personal computers were created?",
@@ -10431,7 +10435,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "If you were to code software in this language you'd only be able to type 0's and 1's.",
@@ -10443,7 +10447,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What amount of bits commonly equals one byte?",
@@ -10455,7 +10459,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Released in 2001, the first edition of Apple's Mac OS X operating system (version 10.0) was given what animal code name?",
@@ -10467,7 +10471,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the term GPU stand for?",
@@ -10479,7 +10483,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The acronym \"RIP\" stands for which of these?",
@@ -10491,7 +10495,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What was the name given to Android 4.3?",
@@ -10503,7 +10507,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": ".at is the top-level domain for what country?",
@@ -10515,7 +10519,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following physical typologies are used with Ethernet Networks?",
@@ -10527,7 +10531,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What internet protocol was documented in RFC 1459?",
@@ -10539,7 +10543,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The programming language 'Swift' was created to replace what other programming language?",
@@ -10551,7 +10555,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which SQL keyword is used to fetch data from a database?",
@@ -10563,7 +10567,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The series of the Intel HD graphics generation succeeding that of the 5000 and 6000 series (Broadwell) is called:",
@@ -10575,7 +10579,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Generally, which component of a computer draws the most power?",
@@ -10587,7 +10591,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many bits make up the significand portion of a single precision floating point number?",
@@ -10599,7 +10603,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these is the name for the failed key escrow device introduced by the National Security Agency in 1993?",
@@ -10611,7 +10615,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the 'S' in the RSA encryption algorithm stand for?",
@@ -10623,7 +10627,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is the oldest of these computers by release date?",
@@ -10635,7 +10639,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The internet domain .fm is the country-code top-level domain for which Pacific Ocean island nation?",
@@ -10647,7 +10651,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Unix Time is defined as the number of seconds that have elapsed since when?",
@@ -10659,7 +10663,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the main CPU is the Sega Mega Drive / Sega Genesis?",
@@ -10671,7 +10675,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does GHz stand for?",
@@ -10683,7 +10687,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does AD stand for in relation to Windows Operating Systems? ",
@@ -10695,7 +10699,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Moore's law originally stated that the number of transistors on a microprocessor chip would double every...",
@@ -10707,7 +10711,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What language does Node.js use?",
@@ -10719,7 +10723,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "When was the programming language \"C#\" released?",
@@ -10731,7 +10735,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What was the name of the first Bulgarian personal computer?",
@@ -10743,7 +10747,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "On Twitter, what was the original character limit for a Tweet?",
@@ -10755,7 +10759,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following is NOT a computer science algorithm?",
@@ -10767,7 +10771,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": ".rs is the top-level domain for what country?",
@@ -10779,7 +10783,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which operating system was released first?",
@@ -10791,7 +10795,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the codename of the eighth generation Intel Core micro-architecture launched in October 2017?",
@@ -10803,7 +10807,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "HTML is what type of language?",
@@ -10815,7 +10819,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In the programming language \"Python\", which of these statements would display the string \"Hello World\" correctly?",
@@ -10827,7 +10831,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which computer language would you associate Django framework with?",
@@ -10839,7 +10843,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In programming, the ternary operator is mostly defined with what symbol(s)?",
@@ -10851,7 +10855,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does \"LCD\" stand for?",
@@ -10863,7 +10867,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many values can a single byte represent?",
@@ -10875,7 +10879,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What was the name of the security vulnerability found in Bash in 2014?",
@@ -10887,7 +10891,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The numbering system with a radix of 16 is more commonly referred to as ",
@@ -10899,7 +10903,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which data structure does FILO apply to?",
@@ -10911,7 +10915,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the name of Layer 7 of the OSI model?",
@@ -10923,7 +10927,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What did the name of the Tor Anonymity Network orignially stand for?",
@@ -10935,7 +10939,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In the server hosting industry IaaS stands for...",
@@ -10947,7 +10951,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which one of these is not an official development name for a Ubuntu release?",
@@ -10959,7 +10963,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "On a standard American QWERTY keyboard, what symbol will you enter if you hold the shift key and press 1?",
@@ -10971,7 +10975,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the term MIME stand for, in regards to computing?",
@@ -10983,7 +10987,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the domain name for the country Tuvalu?",
@@ -10995,7 +10999,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following computer components can be built using only NAND gates?",
@@ -11007,7 +11011,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In computing terms, typically what does CLI stand for?",
@@ -11019,7 +11023,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Whistler was the codename of this Microsoft Operating System.",
@@ -11031,7 +11035,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these programming languages is a low-level language?",
@@ -11043,7 +11047,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the Prt Sc button do?",
@@ -11055,7 +11059,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these is not a layer in the OSI model for data communications?",
@@ -11067,7 +11071,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
@@ -11079,7 +11083,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "How many kilobytes in one gigabyte (in decimal)?",
@@ -11091,7 +11095,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "The name of technology company HP stands for what?",
@@ -11103,7 +11107,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the number of keys on a standard Windows Keyboard?",
@@ -11115,7 +11119,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In web design, what does CSS stand for?",
@@ -11127,7 +11131,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these was the name of a bug found in April 2014 in the publicly available OpenSSL cryptography library?",
@@ -11139,7 +11143,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the International System of Quantities refer 1024 bytes as?",
@@ -11151,7 +11155,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these people was NOT a founder of Apple Inc?",
@@ -11163,7 +11167,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What does the acronym CDN stand for in terms of networking?",
@@ -11175,7 +11179,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the most preferred image format used for logos in the Wikimedia database?",
@@ -11187,7 +11191,7 @@ const questions = {
       ],
       "correct": 1,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which of these names was an actual codename for a cancelled Microsoft project?",
@@ -11199,7 +11203,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "According to DeMorgan's Theorem, the Boolean expression (AB)' is equivalent to:",
@@ -11211,7 +11215,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "When did the online streaming service \"Mixer\" launch?",
@@ -11223,7 +11227,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "medium",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "Which kind of algorithm is Ron Rivest not famous for creating?",
@@ -11235,7 +11239,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "hard",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What programming language was GitHub written in?",
@@ -11247,7 +11251,7 @@ const questions = {
       ],
       "correct": 3,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
@@ -11259,7 +11263,7 @@ const questions = {
       ],
       "correct": 2,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "In computing, what does MIDI stand for?",
@@ -11271,7 +11275,7 @@ const questions = {
       ],
       "correct": 0,
       "difficulty": "easy",
-      "pool": "daily"
+      "pool": "multiplayer"
     },
     {
       "q": "What is the chemical symbol for gold?",
@@ -22843,6 +22847,38 @@ const questions = {
     { "q": "Which climate pattern is common near the poles?", "options": ["Warm and wet", "Cold and dry", "Hot and humid", "Seasonal monsoons"], "correct": 1, "fact": "Polar regions are cold with low precipitation.", "pool": "multiplayer" },
     { "q": "Which pattern describes population distribution?", "options": ["Even everywhere", "Dense near coasts", "Dense near deserts", "Dense at poles"], "correct": 1, "fact": "Many populations concentrate near coasts.", "pool": "multiplayer" },
     { "q": "If you fly from New York to London, which ocean do you cross?", "options": ["Pacific", "Indian", "Atlantic", "Arctic"], "correct": 2, "fact": "The Atlantic Ocean lies between North America and Europe.", "pool": "multiplayer" }
+  ],
+  "Hymns": [
+    { "q": "'What a Friend We Have in Jesus' was originally written as what?", "options": ["A sermon outline", "A letter to the author's mother", "A church bulletin poem", "A revival chorus"], "correct": 1, "fact": "Joseph Scriven wrote it as a poem in a letter to comfort his sick mother in Ireland.", "pool": "daily" },
+    { "q": "Joseph Scriven wrote 'What a Friend We Have in Jesus' after experiencing what personal hardship?", "options": ["Financial collapse", "Losing two fiancées", "Exile from his church", "War injury"], "correct": 1, "fact": "Scriven lost two fiancées in separate tragic events before writing the hymn.", "pool": "daily" },
+    { "q": "'What a Friend We Have in Jesus' emphasizes what spiritual discipline?", "options": ["Fasting", "Evangelism", "Prayer", "Tithing"], "correct": 2, "fact": "The hymn highlights bringing everything to God in prayer.", "pool": "daily" },
+    { "q": "Joseph Scriven moved from Ireland to which country?", "options": ["United States", "Canada", "England", "Australia"], "correct": 1, "fact": "Scriven settled in Canada, where he wrote the hymn.", "pool": "daily" },
+    { "q": "'He Leadeth Me' was written after Joseph Gilmore preached from which passage?", "options": ["Matthew 5", "Psalm 23", "John 3", "Romans 8"], "correct": 1, "fact": "Gilmore preached on Psalm 23 and later wrote the hymn reflecting God's guidance.", "pool": "daily" },
+    { "q": "Joseph Gilmore reportedly forgot about writing 'He Leadeth Me' until it was:", "options": ["Sung in church", "Published without his knowledge", "Requested by Moody", "Set to music overseas"], "correct": 1, "fact": "His wife sent it to a publication without telling him, and it was later printed.", "pool": "daily" },
+    { "q": "Who composed the tune for 'He Leadeth Me'?", "options": ["Philip Bliss", "William B. Bradbury", "Lowell Mason", "John Newton"], "correct": 1, "fact": "William B. Bradbury composed the tune in 1864.", "pool": "daily" },
+    { "q": "'It Is Well with My Soul' was written after Horatio Spafford experienced what tragedy?", "options": ["The Great Chicago Fire", "Loss of business", "Death of his four daughters at sea", "War injury"], "correct": 2, "fact": "Spafford's four daughters died in a shipwreck in 1873.", "pool": "daily" },
+    { "q": "Horatio Spafford wrote 'It Is Well with My Soul' while traveling where?", "options": ["To Rome", "Across the Atlantic near the site of the shipwreck", "To Chicago", "To Jerusalem"], "correct": 1, "fact": "He wrote the hymn as his ship passed near where his daughters had drowned.", "pool": "daily" },
+    { "q": "Which composer set the tune for 'It Is Well with My Soul'?", "options": ["Philip P. Bliss", "John Newton", "Charles Wesley", "Joseph Gilmore"], "correct": 0, "fact": "Philip P. Bliss composed the tune and named it 'Ville du Havre.'", "pool": "daily" },
+    { "q": "The tune for 'It Is Well with My Soul' was named after:", "options": ["A Bible city", "The ship that sank", "Spafford's hometown", "A church in Chicago"], "correct": 1, "fact": "The tune 'Ville du Havre' was named after the ship involved in the tragedy.", "pool": "daily" },
+    { "q": "'Brightly Beams Our Father's Mercy' was inspired by a story told by which evangelist?", "options": ["Billy Sunday", "Dwight L. Moody", "Charles Finney", "George Whitefield"], "correct": 1, "fact": "D. L. Moody shared a story about neglected harbor lights leading to a shipwreck.", "pool": "daily" },
+    { "q": "Who wrote both the words and music for 'Brightly Beams Our Father's Mercy'?", "options": ["William F. Sherwin", "Philip P. Bliss", "Fanny Crosby", "Isaac Watts"], "correct": 1, "fact": "Philip P. Bliss wrote both the lyrics and tune in 1871.", "pool": "daily" },
+    { "q": "The 'lower lights' in the hymn 'Brightly Beams Our Father's Mercy' represent:", "options": ["Government leaders", "Church buildings", "Individual Christians", "Missionaries only"], "correct": 2, "fact": "The lower lights symbolize believers shining Christ's light.", "pool": "daily" },
+    { "q": "Philip P. Bliss, associated with several famous hymns, died in:", "options": ["A shipwreck", "A house fire", "A train accident", "Battle"], "correct": 2, "fact": "Bliss died in a tragic train accident in 1876.", "pool": "daily" },
+    { "q": "Who wrote the lyrics to 'Amazing Grace'?", "options": ["John Newton", "Charles Wesley", "Isaac Watts", "Fanny Crosby"], "correct": 0, "fact": "John Newton wrote the hymn in 1772.", "pool": "daily" },
+    { "q": "Before becoming a pastor, John Newton worked as a:", "options": ["Soldier", "Slave ship captain", "Teacher", "Merchant"], "correct": 1, "fact": "Newton was involved in the slave trade before his conversion.", "pool": "daily" },
+    { "q": "Which famous line appears in 'Amazing Grace'?", "options": ["Blessed Redeemer", "How sweet the sound", "It is well", "Nearer my God"], "correct": 1, "fact": "The hymn begins, 'Amazing grace, how sweet the sound.'", "pool": "daily" },
+    { "q": "Who wrote 'Blessed Assurance'?", "options": ["Fanny Crosby", "Horatio Spafford", "John Newton", "Charles Wesley"], "correct": 0, "fact": "Fanny Crosby wrote thousands of hymns including this one.", "pool": "daily" },
+    { "q": "Fanny Crosby, the prolific hymn writer, was known for being:", "options": ["A missionary", "Blind", "A pastor's wife", "A composer only"], "correct": 1, "fact": "Crosby lost her sight in infancy yet became a prolific hymn writer.", "pool": "daily" },
+    { "q": "Which phrase appears in the chorus of 'Blessed Assurance'?", "options": ["This is my story", "Peace like a river", "He leadeth me", "How sweet the sound"], "correct": 0, "fact": "The chorus begins, 'This is my story, this is my song.'", "pool": "daily" },
+    { "q": "Which phrase opens 'It Is Well with My Soul'?", "options": ["Amazing grace", "Blessed assurance", "When peace like a river", "Great is Thy faithfulness"], "correct": 2, "fact": "The hymn begins, 'When peace like a river attendeth my way.'", "pool": "daily" },
+    { "q": "'It Is Well with My Soul' ultimately expresses peace through what?", "options": ["Wealth recovery", "Family reunion", "Faith in Christ", "National healing"], "correct": 2, "fact": "Despite tragedy, Spafford expressed unwavering trust in Christ.", "pool": "daily" },
+    { "q": "The imagery of 'Brightly Beams Our Father's Mercy' most closely aligns with which biblical concept?", "options": ["The armor of God", "Salt of the earth", "Light of the world", "Still small voice"], "correct": 2, "fact": "The hymn echoes Jesus' teaching in Matthew 5 about being the light of the world.", "pool": "daily" },
+    { "q": "Which hymn was born directly out of profound personal loss at sea?", "options": ["He Leadeth Me", "What a Friend We Have in Jesus", "It Is Well with My Soul", "Brightly Beams Our Father's Mercy"], "correct": 2, "fact": "'It Is Well with My Soul' was written after the drowning of Spafford's daughters.", "pool": "daily" },
+    { "q": "'He Leadeth Me' reflects trust in God through what life situations?", "options": ["Only joyful times", "Only times of sorrow", "Both joy and suffering", "Church revivals"], "correct": 2, "fact": "The hymn acknowledges both pleasant paths and darker valleys.", "pool": "daily" },
+    { "q": "The phrase 'When sorrows like sea billows roll' in 'It Is Well' directly reflects what?", "options": ["A metaphor only", "Actual ocean tragedy", "A Bible verse", "A storm in Chicago"], "correct": 1, "fact": "The imagery reflects the ocean tragedy that took his daughters' lives.", "pool": "daily" },
+    { "q": "What theme runs strongly through 'Amazing Grace'?", "options": ["National pride", "Redemption", "Prophecy", "Judgment"], "correct": 1, "fact": "It reflects Newton's personal redemption story.", "pool": "daily" },
+    { "q": "'Blessed Assurance' focuses on assurance of what?", "options": ["National victory", "Personal salvation", "Church unity", "Spiritual gifts"], "correct": 1, "fact": "It emphasizes confidence in salvation through Christ.", "pool": "daily" },
+    { "q": "The message of 'Brightly Beams Our Father's Mercy' encourages believers to:", "options": ["Withdraw from the world", "Prepare for war", "Shine for others", "Await judgment"], "correct": 2, "fact": "The hymn calls Christians to shine as guiding lights.", "pool": "daily" }
   ]
 };
 

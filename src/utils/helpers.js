@@ -108,8 +108,10 @@ export const CATEGORIES = {
   Math: { id: 19, color: 'bg-rose-500', icon: '🔢' },
   Animals: { id: 27, color: 'bg-green-500', icon: '🐾' },
   'General Knowledge': { id: 9, color: 'bg-indigo-500', icon: '🧠' },
-  'US States': { id: null, color: 'bg-red-500', icon: '🇺🇸' }
+  'US States': { id: null, color: 'bg-red-500', icon: '🇺🇸' },
+  'Logic & Applied Geography': { id: null, color: 'bg-teal-500', icon: '🧭' },
+  Hymns: { id: null, color: 'bg-violet-500', icon: '🎵' }
 };
 
-// Daily trivia categories (excludes General Knowledge - that's multiplayer only)
-export const ALL_CATEGORIES = ['History', 'Geography', 'Science', 'Bible', 'Math', 'Animals'];
+// Daily trivia categories (excludes General Knowledge and Science - those are multiplayer only)
+export const ALL_CATEGORIES = ['History', 'Geography', 'Bible', 'Math', 'Animals', 'Hymns'];

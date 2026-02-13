@@ -120,7 +120,7 @@ export default function Leaderboard({
           )}
 
           {/* Wordle Today - only show if entries provided */}
-          {wordleEntries && wordleEntries.length > 0 && (
+          {wordleEntries && (
             <MiniLeaderboard
               title="Wordle"
               icon={'\u{1F7E9}'}

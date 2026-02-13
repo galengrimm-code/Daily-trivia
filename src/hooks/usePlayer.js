@@ -125,14 +125,14 @@ export function PlayerProvider({ children }) {
   };
 
   // Called after completing trivia quiz
-  const completeTrivia = useCallback(async (score, totalQuestions, durationSeconds) => {
+  const completeTrivia = useCallback(async (score, totalQuestions, durationSeconds, answers = []) => {
     if (!user || !userProfile) return;
 
-    await saveScore(user.uid, userProfile.displayName, score, totalQuestions, durationSeconds);
+    await saveScore(user.uid, userProfile.displayName, score, totalQuestions, durationSeconds, answers);
 
     const updatedProfile = await updateUserStats(user.uid, score, totalQuestions);
     setUserProfile(updatedProfile);
-    setTodayScore({ score, totalQuestions });
+    setTodayScore({ score, totalQuestions, answers });
   }, [user, userProfile]);
 
   // Manually refresh today's score check
