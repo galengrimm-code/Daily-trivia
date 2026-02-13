@@ -43,8 +43,9 @@ service cloud.firestore {
       // Anyone authenticated can read settings
       allow read: if request.auth != null;
 
-      // Anyone authenticated can write settings (for token management)
-      allow write: if request.auth != null;
+      // Only admin can write settings
+      allow write: if request.auth != null
+        && request.auth.uid == 'AhpF8YIdjDZ5UsOUVNA7Cd7GRkt2';
     }
   }
 }
