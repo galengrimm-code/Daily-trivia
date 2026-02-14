@@ -1,5 +1,5 @@
 // src/utils/api.js
-import { seededRandom, getTodaySeed, CATEGORIES } from './helpers';
+import { seededRandom, getTodaySeed, CATEGORIES, ALL_CATEGORIES } from './helpers';
 import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getRecentQuestionHashes, addQuestionHash } from './firestore';
 import questions from '../data/questions';
 
@@ -171,7 +171,7 @@ export const getFallbackQuestion = (category, usedHashes, seed) => {
 // Generate fresh questions (called only when no questions exist for today)
 const generateTodaysQuestions = async () => {
   const todaysQuestions = [];
-  const categories = Object.keys(CATEGORIES);
+  const categories = ALL_CATEGORIES; // Use daily categories only (excludes Science, General Knowledge)
   const seed = getTodaySeed();
 
   // Load recently used question hashes to avoid repeats
