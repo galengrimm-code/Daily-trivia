@@ -98,10 +98,10 @@ export default function Home() {
     {
       id: 'memory',
       title: 'Memory',
-      description: 'Coming soon',
-      icon: '\u{1F0CF}',
+      description: 'Match all the pairs',
+      icon: '\u{1F3B4}',
       path: '/memory',
-      status: 'hidden',
+      status: 'play',
     },
   ];
 
