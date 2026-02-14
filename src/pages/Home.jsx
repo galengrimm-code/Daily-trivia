@@ -101,7 +101,7 @@ export default function Home() {
       description: 'Coming soon',
       icon: '\u{1F0CF}',
       path: '/memory',
-      status: 'coming-soon',
+      status: 'hidden',
     },
   ];
 

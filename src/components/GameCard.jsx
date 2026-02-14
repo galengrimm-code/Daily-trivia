@@ -6,6 +6,7 @@ import { Check, ChevronRight } from 'lucide-react';
 export default function GameCard({ title, icon, path, status, score, description }) {
   const navigate = useNavigate();
   const isDisabled = status === 'coming-soon';
+  const isHidden = status === 'hidden';
 
   return (
     <button
@@ -14,6 +15,8 @@ export default function GameCard({ title, icon, path, status, score, description
       className={`w-full bg-white rounded-card p-5 shadow-card text-left transition-all ${
         isDisabled
           ? 'opacity-50 cursor-not-allowed'
+          : isHidden
+          ? 'opacity-50 hover:opacity-70 hover:shadow-card-hover active:scale-[0.98]'
           : 'hover:shadow-card-hover active:scale-[0.98]'
       }`}
     >
@@ -43,7 +46,7 @@ export default function GameCard({ title, icon, path, status, score, description
               <ChevronRight className="w-4 h-4 text-primary" />
             </div>
           )}
-          {status === 'coming-soon' && (
+          {(status === 'coming-soon' || status === 'hidden') && (
             <span className="text-sm text-text-muted font-medium">Soon</span>
           )}
         </div>
