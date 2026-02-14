@@ -21,9 +21,9 @@ export default function MemoryResults({
   // Calculate rating based on moves (8 pairs, optimal is 8 moves)
   const getRating = () => {
     if (moves <= 10) return { stars: 5, label: 'Perfect!' };
-    if (moves <= 12) return { stars: 4, label: 'Excellent!' };
-    if (moves <= 15) return { stars: 3, label: 'Great!' };
-    if (moves <= 20) return { stars: 2, label: 'Good job!' };
+    if (moves <= 13) return { stars: 4, label: 'Excellent!' };
+    if (moves <= 17) return { stars: 3, label: 'Great!' };
+    if (moves <= 22) return { stars: 2, label: 'Good job!' };
     return { stars: 1, label: 'Keep practicing!' };
   };
 

@@ -88,7 +88,7 @@ export default function Memory() {
   }, [phase, user, moves, elapsedTime, personalBest]);
 
   const handleShare = () => {
-    const text = `${getFullDateStr()}, Memory\n\u{1F9E9} ${moves} moves in ${formatTime(elapsedTime)}`;
+    const text = `${getFullDateStr()}\nMemory \u{1F9E9} ${moves} moves\nTime: ${formatTime(elapsedTime)}`;
 
     if (navigator.share) {
       navigator.share({ text }).catch(() => {});

@@ -89,7 +89,7 @@ export const generateShareText = (guesses, target, won, dateString) => {
 
   const score = won ? `${guesses.length}/6` : 'X/6';
 
-  return `${dateString}, Wordle\n\u{1F7E9} ${score}\n\n${emojiGrid}`;
+  return `${dateString}\nWordle \u{1F7E9} ${score}\n\n${emojiGrid}`;
 };
 
 // Animation delays for revealing tiles
