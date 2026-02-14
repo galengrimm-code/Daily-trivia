@@ -1,5 +1,5 @@
 // src/utils/api.js
-import { seededRandom, getTodaySeed, CATEGORIES, ALL_CATEGORIES } from './helpers';
+import { seededRandom, getTodaySeed, ALL_CATEGORIES } from './helpers';
 import { getTodaysQuestionsFromDB, saveTodaysQuestionsToDB, getRecentQuestionHashes, addQuestionHash } from './firestore';
 import questions from '../data/questions';
 
