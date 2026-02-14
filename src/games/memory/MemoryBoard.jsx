@@ -10,7 +10,7 @@ export default function MemoryBoard({
   isProcessing,
 }) {
   return (
-    <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-3 p-2">
+    <div className="grid grid-cols-4 gap-2 sm:gap-3 p-2">
       {cards.map((card) => (
         <MemoryCard
           key={card.id}

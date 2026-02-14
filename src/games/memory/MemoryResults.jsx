@@ -18,13 +18,13 @@ export default function MemoryResults({
   onHome,
   onShare,
 }) {
-  // Calculate rating based on moves (12 pairs, optimal is 12 moves)
+  // Calculate rating based on moves (8 pairs, optimal is 8 moves)
   const getRating = () => {
-    if (moves <= 15) return { stars: 3, label: 'Perfect!' };
-    if (moves <= 20) return { stars: 3, label: 'Excellent!' };
-    if (moves <= 25) return { stars: 2, label: 'Great!' };
-    if (moves <= 30) return { stars: 2, label: 'Good!' };
-    if (moves <= 40) return { stars: 1, label: 'Nice try!' };
+    if (moves <= 10) return { stars: 3, label: 'Perfect!' };
+    if (moves <= 14) return { stars: 3, label: 'Excellent!' };
+    if (moves <= 18) return { stars: 2, label: 'Great!' };
+    if (moves <= 22) return { stars: 2, label: 'Good!' };
+    if (moves <= 28) return { stars: 1, label: 'Nice try!' };
     return { stars: 1, label: 'Keep practicing!' };
   };
 

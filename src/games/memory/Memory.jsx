@@ -150,7 +150,7 @@ export default function Memory() {
             <div className="w-px h-6 bg-gray-200" />
             <div className="flex items-center gap-2">
               <span className="font-bold text-text-main">{matchedPairs.length}</span>
-              <span className="text-text-muted text-sm">/ 12</span>
+              <span className="text-text-muted text-sm">/ 8</span>
             </div>
           </div>
 
@@ -187,7 +187,7 @@ export default function Memory() {
         <div className="text-center py-6 mb-6">
           <div className="text-6xl mb-4">{'\u{1F0CF}'}</div>
           <h2 className="text-2xl font-bold text-text-main mb-2">Concentration</h2>
-          <p className="text-text-muted">Match all 12 pairs as fast as you can!</p>
+          <p className="text-text-muted">Match all 8 pairs as fast as you can!</p>
         </div>
 
         {/* How to Play */}
@@ -208,7 +208,7 @@ export default function Memory() {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-primary font-bold">4.</span>
-              <span>Find all 12 pairs with the fewest moves</span>
+              <span>Find all 8 pairs with the fewest moves</span>
             </li>
           </ul>
         </div>

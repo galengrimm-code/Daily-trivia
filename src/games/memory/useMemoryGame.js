@@ -28,14 +28,20 @@ const shuffleWithSeed = (array, seed) => {
   return shuffled;
 };
 
+// Number of pairs (8 pairs = 16 cards = 4x4 grid)
+const NUM_PAIRS = 8;
+
 // Generate a deck of card pairs
 const generateDeck = (seed) => {
   // Pick a random card set based on seed
   const setIndex = Math.floor(seededRandom(seed) * CARD_SETS.length);
   const cardSet = CARD_SETS[setIndex];
 
-  // Create pairs (12 pairs = 24 cards)
-  const pairs = cardSet.flatMap((emoji, index) => [
+  // Shuffle the card set and take only NUM_PAIRS
+  const shuffledSet = shuffleWithSeed([...cardSet], seed + 1).slice(0, NUM_PAIRS);
+
+  // Create pairs (8 pairs = 16 cards)
+  const pairs = shuffledSet.flatMap((emoji, index) => [
     { id: index * 2, pairId: index, emoji },
     { id: index * 2 + 1, pairId: index, emoji },
   ]);
@@ -73,7 +79,7 @@ export default function useMemoryGame() {
 
   // Check for game completion
   useEffect(() => {
-    if (matchedPairs.length === 12 && phase === 'playing') {
+    if (matchedPairs.length === NUM_PAIRS && phase === 'playing') {
       // All pairs matched - game complete
       clearInterval(timerRef.current);
       setPhase('results');
