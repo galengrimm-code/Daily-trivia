@@ -9,6 +9,7 @@ import Trivia from './games/trivia/Trivia';
 import Boggle from './games/boggle/Boggle';
 import SpellingBee from './games/spelling-bee/SpellingBee';
 import Wordle from './games/wordle/Wordle';
+import Memory from './games/memory/Memory';
 
 function SignIn() {
   const { handleSignIn } = usePlayer();
@@ -56,6 +57,7 @@ function AppRoutes() {
       <Route path="/boggle" element={<ProtectedRoute><Boggle /></ProtectedRoute>} />
       <Route path="/spelling-bee" element={<ProtectedRoute><SpellingBee /></ProtectedRoute>} />
       <Route path="/wordle" element={<ProtectedRoute><Wordle /></ProtectedRoute>} />
+      <Route path="/memory" element={<ProtectedRoute><Memory /></ProtectedRoute>} />
       <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
