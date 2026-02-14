@@ -199,5 +199,5 @@ export function generateShareText(score, foundWords, dateString) {
   });
   const longestLen = longestWord ? longestWord.replace(/qu/gi, 'Q').length : 0;
 
-  return `${dateString}\n\u{1F524} Boggle: ${score} pts\nLongest: ${longestLen} letters`;
+  return `${dateString}, Boggle\n\u{1F524} ${score} pts \u{2022} Longest: ${longestLen} letters`;
 }

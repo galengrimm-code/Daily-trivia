@@ -5,7 +5,7 @@ import { Clock, MousePointer, ChevronRight } from 'lucide-react';
 import { usePlayer } from '../../hooks/usePlayer';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../utils/firebase';
-import { getShortDateStr } from '../../utils/helpers';
+import { getFullDateStr } from '../../utils/helpers';
 import useMemoryGame from './useMemoryGame';
 import MemoryBoard from './MemoryBoard';
 import MemoryResults from './MemoryResults';
@@ -88,7 +88,7 @@ export default function Memory() {
   }, [phase, user, moves, elapsedTime, personalBest]);
 
   const handleShare = () => {
-    const text = `${getShortDateStr()}\n\u{1F3B4} Memory: ${moves} moves\nTime: ${formatTime(elapsedTime)}`;
+    const text = `${getFullDateStr()}, Memory\n\u{1F9E9} ${moves} moves in ${formatTime(elapsedTime)}`;
 
     if (navigator.share) {
       navigator.share({ text }).catch(() => {});
@@ -186,7 +186,7 @@ export default function Memory() {
 
         {/* Hero */}
         <div className="text-center py-6 mb-6">
-          <div className="text-6xl mb-4">{'\u{1F3B4}'}</div>
+          <div className="text-6xl mb-4">{'\u{1F9E9}'}</div>
           <h2 className="text-2xl font-bold text-text-main mb-2">Concentration</h2>
           <p className="text-text-muted">Match all 8 pairs as fast as you can!</p>
         </div>

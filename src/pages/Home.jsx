@@ -99,7 +99,7 @@ export default function Home() {
       id: 'memory',
       title: 'Memory',
       description: 'Match all the pairs',
-      icon: '\u{1F3B4}',
+      icon: '\u{1F9E9}',
       path: '/memory',
       status: 'play',
     },

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Share2, Trophy, Home, RotateCcw, Plus, ChevronDown, ChevronUp } from 'lucide-react';
 import { getWordScore, generateShareText } from './boggleUtils';
-import { getShortDateStr } from '../../utils/helpers';
+import { getFullDateStr } from '../../utils/helpers';
 
 export default function BoggleResults({
   score, maxScore, foundWords, possibleWords, practiceMode, practiceCode, dailyResult,
@@ -27,7 +27,7 @@ export default function BoggleResults({
     : [];
 
   const handleShare = () => {
-    const text = generateShareText(score, foundWords, getShortDateStr());
+    const text = generateShareText(score, foundWords, getFullDateStr());
     if (navigator.share) {
       navigator.share({ text }).catch(() => {});
     }

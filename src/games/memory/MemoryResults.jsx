@@ -20,11 +20,10 @@ export default function MemoryResults({
 }) {
   // Calculate rating based on moves (8 pairs, optimal is 8 moves)
   const getRating = () => {
-    if (moves <= 10) return { stars: 3, label: 'Perfect!' };
-    if (moves <= 14) return { stars: 3, label: 'Excellent!' };
-    if (moves <= 18) return { stars: 2, label: 'Great!' };
-    if (moves <= 22) return { stars: 2, label: 'Good!' };
-    if (moves <= 28) return { stars: 1, label: 'Nice try!' };
+    if (moves <= 10) return { stars: 5, label: 'Perfect!' };
+    if (moves <= 12) return { stars: 4, label: 'Excellent!' };
+    if (moves <= 15) return { stars: 3, label: 'Great!' };
+    if (moves <= 20) return { stars: 2, label: 'Good job!' };
     return { stars: 1, label: 'Keep practicing!' };
   };
 
@@ -48,10 +47,10 @@ export default function MemoryResults({
 
           {/* Stars */}
           <div className="flex justify-center gap-1 mb-6">
-            {[1, 2, 3].map((star) => (
+            {[1, 2, 3, 4, 5].map((star) => (
               <Star
                 key={star}
-                className={`w-8 h-8 ${
+                className={`w-7 h-7 ${
                   star <= rating.stars
                     ? 'text-yellow-400 fill-yellow-400'
                     : 'text-gray-300'

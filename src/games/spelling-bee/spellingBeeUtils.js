@@ -189,12 +189,12 @@ export function generatePracticeCode() {
 // SHARE TEXT
 // ============================================
 
-export function generateShareText(score, maxScore, rankName, wordCount, pangramCount, dateKey) {
+export function generateShareText(score, maxScore, rankName, wordCount, pangramCount, dateString) {
   const pct = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
   const lines = [
-    dateKey,
-    `\u{1F41D} Spelling Bee: ${rankName}`,
-    `${score} pts (${pct}%) \u{2022} ${wordCount} words`,
+    `${dateString}, Spelling Bee`,
+    `\u{1F41D} ${rankName} \u{2022} ${score} pts (${pct}%)`,
+    `${wordCount} words`,
   ];
 
   if (pangramCount > 0) {

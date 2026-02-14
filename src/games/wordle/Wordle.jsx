@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Delete, BarChart2, X } from 'lucide-react';
 import { getTodaysWord, isValidWord, evaluateGuess, getKeyboardStatus, generateShareText, REVEAL_DELAY } from './wordleUtils';
-import { getTodayKey, getShortDateStr } from '../../utils/helpers';
+import { getTodayKey, getFullDateStr } from '../../utils/helpers';
 import { usePlayer } from '../../hooks/usePlayer';
 import { saveWordleScore, getWordleStats, saveWordleStats } from './wordleFirebase';
 
@@ -261,7 +261,7 @@ export default function Wordle() {
   }, [handleKeyPress]);
 
   const handleShare = () => {
-    const text = generateShareText(guesses, target, gameState === 'won', getShortDateStr());
+    const text = generateShareText(guesses, target, gameState === 'won', getFullDateStr());
     if (navigator.share) {
       navigator.share({ text }).catch(() => {});
     }

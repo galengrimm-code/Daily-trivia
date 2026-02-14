@@ -26,6 +26,18 @@ export const getShortDateStr = () => {
   return gameDay.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 };
 
+// Get full date string with ordinal suffix for sharing (e.g., "February 13th")
+export const getFullDateStr = () => {
+  const gameDay = getGameDay();
+  const month = gameDay.toLocaleDateString('en-US', { month: 'long' });
+  const day = gameDay.getDate();
+  const suffix = (day === 1 || day === 21 || day === 31) ? 'st'
+    : (day === 2 || day === 22) ? 'nd'
+    : (day === 3 || day === 23) ? 'rd'
+    : 'th';
+  return `${month} ${day}${suffix}`;
+};
+
 // Seeded random for consistent daily questions
 export const seededRandom = (seed) => {
   const x = Math.sin(seed) * 10000;
