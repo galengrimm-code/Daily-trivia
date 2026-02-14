@@ -70,8 +70,8 @@ export default function BoggleInputBar({ inputMode, setInputMode, currentWord, t
             </span>
           </div>
           <button
-            onClick={onSubmit}
-            disabled={disabled || currentWord.length < 3}
+            onClick={() => onSubmit(currentWord)}
+            disabled={disabled || !currentWord || currentWord.length < 3}
             className="px-5 py-3 bg-primary text-white rounded-button font-bold disabled:opacity-40 transition-colors hover:bg-primary-hover flex items-center gap-2"
           >
             Enter

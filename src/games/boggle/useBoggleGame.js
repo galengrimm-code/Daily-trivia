@@ -33,8 +33,16 @@ export default function useBoggleGame() {
   // Input state
   const [selectedPath, setSelectedPath] = useState([]);
   const [currentWord, setCurrentWord] = useState('');
-  const [inputMode, setInputMode] = useState('swipe');
+  const [inputMode, setInputModeRaw] = useState('swipe');
   const [typedWord, setTypedWord] = useState('');
+
+  // Wrap setInputMode to clear selection when switching modes
+  const setInputMode = useCallback((mode) => {
+    setInputModeRaw(mode);
+    setSelectedPath([]);
+    setCurrentWord('');
+    setTypedWord('');
+  }, []);
 
   // Toast messages
   const [message, setMessage] = useState('');
