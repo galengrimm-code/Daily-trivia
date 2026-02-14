@@ -132,7 +132,7 @@ export default function useMemoryGame() {
         setTimeout(() => {
           setFlippedCards([]);
           setIsProcessing(false);
-        }, 1000);
+        }, 1500);
       }
     }
   }, [cards, flippedCards, matchedPairs, isProcessing]);

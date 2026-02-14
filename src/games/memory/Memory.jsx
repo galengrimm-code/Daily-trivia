@@ -5,6 +5,7 @@ import { Clock, MousePointer, ChevronRight } from 'lucide-react';
 import { usePlayer } from '../../hooks/usePlayer';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../utils/firebase';
+import { getShortDateStr } from '../../utils/helpers';
 import useMemoryGame from './useMemoryGame';
 import MemoryBoard from './MemoryBoard';
 import MemoryResults from './MemoryResults';
@@ -87,7 +88,7 @@ export default function Memory() {
   }, [phase, user, moves, elapsedTime, personalBest]);
 
   const handleShare = () => {
-    const text = `Memory Game\n${moves} moves in ${formatTime(elapsedTime)}\n\nPlay at ${window.location.origin}/memory`;
+    const text = `${getShortDateStr()}\n\u{1F0CF} Memory: ${moves} moves\nTime: ${formatTime(elapsedTime)}`;
 
     if (navigator.share) {
       navigator.share({ text }).catch(() => {});
